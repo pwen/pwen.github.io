@@ -1,0 +1,25 @@
+# Ignore Ruby/Jekyll build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ignore bundler config
+/.bundle
+vendor/
+
+# Ignore macOS files
+.DS_Store
+
+# Ignore editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore node modules (if you add any JS tooling later)
+node_modules/
