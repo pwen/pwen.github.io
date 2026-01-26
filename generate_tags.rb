@@ -18,12 +18,16 @@ Dir.glob('_posts/*.md').each do |post_file|
       tags = front_matter['tags']
       date = front_matter['date']
       
+      # Extract title slug from filename (remove date prefix)
+      filename = File.basename(post_file, '.md')
+      title_slug = filename.sub(/^\d{4}-\d{2}-\d{2}-/, '')
+      
       # Build post data
       post_data = {
         'title' => front_matter['title'],
-        'url' => "/#{date.year}-#{sprintf('%02d', date.month)}-#{sprintf('%02d', date.day)}-#{File.basename(post_file, '.md')}/",
+        'url' => "/posts/#{date.year}-#{sprintf('%02d', date.month)}-#{sprintf('%02d', date.day)}-#{title_slug}/",
         'date' => date.strftime('%m/%d/%y'),
-        'excerpt' => body.strip[0..600],
+        'excerpt' => body.strip[0..1200],
         'image' => front_matter['image']
       }
       

@@ -12,7 +12,8 @@ title: Tags
 
     <div id="tag-posts"></div>
 </div>
-
+<!-- Markdown parser -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
     fetch('/assets/tags-data.json')
         .then(response => response.json())
@@ -54,15 +55,13 @@ title: Tags
                     html += `<h3><a href="${post.url}">${post.title}</a></h3>`;
                     html += `<div class="post-meta-small"><time>${post.date}</time></div>`;
 
-                    // Strip HTML and truncate excerpt
+                    // Parse markdown to HTML and truncate
+                    const htmlExcerpt = marked.parse(post.excerpt);
                     const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = post.excerpt;
-                    const excerpt = (tempDiv.textContent || tempDiv.innerText || '').substring(0, 600);
+                    tempDiv.innerHTML = htmlExcerpt;
+                    const textContent = (tempDiv.textContent || tempDiv.innerText || '').substring(0, 600);
 
-                    html += `<p class="post-excerpt">${excerpt}...</p>`;
-                    html += `<a href="${post.url}" class="read-more">Read More</a>`;
-                    html += '</div>';
-
+                    html += `<p class="post-excerpt">${textContent}...</p>`;
                     article.innerHTML = html;
                     postsDiv.appendChild(article);
                 });
