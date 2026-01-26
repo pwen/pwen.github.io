@@ -9,6 +9,7 @@ baseurl: ""
 markdown: kramdown
 theme: null
 permalink: /:year-:month-:day-:title/
+excerpt_separator: "<!--more-->"
 
 # Languages
 languages: ["en", "zh"]

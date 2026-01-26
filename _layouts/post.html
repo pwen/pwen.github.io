@@ -5,23 +5,25 @@ layout: default
 <article class="post">
     <header class="post-header">
         <div class="post-meta-small">
-            {{ page.author | default: site.author }}
             <time datetime="{{ page.date | date_to_xmlschema }}">
-                {{ page.date | date: "%b %d" }}
+                {{ page.date | date: "%B %d, %Y" }}
             </time>
         </div>
         <h1 class="post-title">{{ page.title }}</h1>
     </header>
 
-    {% if page.image %}
-    <div class="post-image">
-        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
-    </div>
-    {% endif %}
-
     <div class="post-content">
         {{ content }}
     </div>
+
+    {% if page.tags %}
+    <div class="post-tags">
+        {% for tag in page.tags %}
+        {% assign tag_string = tag | append: "" %}
+        <a href="{{ '/tags/' | relative_url }}#{{ tag_string | slugify }}" class="tag-link">#{{ tag }}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
 
     <footer class="post-footer">
         <div class="post-navigation">
