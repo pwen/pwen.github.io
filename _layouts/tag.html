@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div class="tag-page">
+    <h1>{{ page.title }}</h1>
+    <p class="tag-description">All posts tagged "{{ page.tag }}"</p>
+
+    <section class="posts-list">
+        {% assign tag_posts = site.tags[page.tag] %}
+
+        {% if tag_posts.size > 0 %}
+        <div class="posts">
+            {% for post in tag_posts %}
+            <article class="post-preview">
+                {% if post.image %}
+                <div class="post-preview-image">
+                    <a href="{{ post.url | relative_url }}">
+                        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                    </a>
+                </div>
+                {% endif %}
+                <div class="post-preview-content">
+                    <div class="post-meta-small">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">
+                            {{ post.date | date: "%m/%d/%y" }}
+                        </time>
+                    </div>
+                    <h3>
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 600 }}</p>
+                    <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No posts with this tag yet.</p>
+        {% endif %}
+    </section>
+</div>

@@ -1,4 +1,5 @@
---- ---
+---
+---
 
 /* Reset and Base Styles */
 * {
@@ -166,6 +167,16 @@ body {
     color: #666;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.tag-link {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.tag-link:hover {
+    color: var(--secondary-color);
 }
 
 .post-preview h3 {

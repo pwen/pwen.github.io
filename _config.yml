@@ -1,13 +1,14 @@
 # Site settings
-title: Pwen's Blog
-description: A bilingual blog sharing weekly thoughts and insights
-author: Pwen
+title: 东游西荡的老温
+description: 码字的地儿
+author: 老温
 url: "https://pwen.github.io"
 baseurl: ""
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:day/:title/
+theme: null
+permalink: /:year-:month-:day-:title/
 
 # Languages
 languages: ["en", "zh"]
@@ -18,7 +19,7 @@ exclude_from_localization: ["assets", "css", "js"]
 collections:
   posts:
     output: true
-    permalink: /:collection/:year/:month/:day/:title/
+    permalink: /:collection/:year-:month-:day-:title/
 
 # Plugins
 plugins:
@@ -45,6 +46,10 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor/
+
+# Keep tags data in the build
+keep_files:
+  - assets/tags-data.json
 
 # Timezone
 timezone: America/Los_Angeles

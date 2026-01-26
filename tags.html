@@ -1,0 +1,78 @@
+---
+layout: default
+title: Tags
+---
+
+<div class="tags-page">
+    <h1>All Tags</h1>
+
+    <div id="tag-cloud" class="tag-cloud">
+        <p>Loading tags...</p>
+    </div>
+
+    <div id="tag-posts"></div>
+</div>
+
+<script>
+    fetch('/assets/tags-data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Generate tag cloud
+            const tagCloud = document.getElementById('tag-cloud');
+            tagCloud.innerHTML = '';
+
+            const sortedTags = Object.keys(data).sort();
+            sortedTags.forEach(tag => {
+                const count = data[tag].length;
+                const tagLink = document.createElement('a');
+                tagLink.href = `#${tag}`;
+                tagLink.className = 'tag-item';
+                tagLink.textContent = `${tag} (${count})`;
+                tagCloud.appendChild(tagLink);
+            });
+
+            // Generate posts by tag
+            const tagPosts = document.getElementById('tag-posts');
+            sortedTags.forEach(tag => {
+                const section = document.createElement('section');
+                section.className = 'tag-section';
+                section.id = tag;
+
+                const heading = document.createElement('h2');
+                heading.textContent = tag;
+                section.appendChild(heading);
+
+                const postsDiv = document.createElement('div');
+                postsDiv.className = 'posts';
+
+                data[tag].forEach(post => {
+                    const article = document.createElement('article');
+                    article.className = 'post-preview';
+
+                    let html = '<div class="post-preview-content">';
+
+                    html += `<h3><a href="${post.url}">${post.title}</a></h3>`;
+                    html += `<div class="post-meta-small"><time>${post.date}</time></div>`;
+
+                    // Strip HTML and truncate excerpt
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = post.excerpt;
+                    const excerpt = (tempDiv.textContent || tempDiv.innerText || '').substring(0, 600);
+
+                    html += `<p class="post-excerpt">${excerpt}...</p>`;
+                    html += `<a href="${post.url}" class="read-more">Read More</a>`;
+                    html += '</div>';
+
+                    article.innerHTML = html;
+                    postsDiv.appendChild(article);
+                });
+
+                section.appendChild(postsDiv);
+                tagPosts.appendChild(section);
+            });
+        })
+        .catch(error => {
+            console.error('Error loading tags:', error);
+            document.getElementById('tag-cloud').innerHTML = '<p>Error loading tags</p>';
+        });
+</script>

@@ -1,4 +1,4 @@
-.PHONY: help install serve build clean
+.PHONY: help install serve build clean tags
 
 # Default target
 help:
@@ -6,6 +6,7 @@ help:
 	@echo "  make install    - Install dependencies"
 	@echo "  make serve      - Start Jekyll development server"
 	@echo "  make build      - Build the site"
+	@echo "  make tags       - Generate tags data JSON"
 	@echo "  make clean      - Clean generated files"
 	@echo "  make help       - Show this help message"
 
@@ -24,6 +25,11 @@ serve:
 build:
 	@echo "Building site..."
 	bundle exec jekyll build
+
+# Generate tags data
+tags:
+	@echo "Generating tags data..."
+	bundle exec ruby generate_tags.rb
 
 # Clean generated files
 clean:
