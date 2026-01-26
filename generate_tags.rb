@@ -14,6 +14,9 @@ Dir.glob('_posts/*.md').each do |post_file|
     front_matter = YAML.safe_load($1, permitted_classes: [Date, Time], aliases: true)
     body = $'
     
+    # Use custom excerpt from front matter, or fallback to body
+    excerpt_text = front_matter['excerpt'] || body.strip[0..1200]
+    
     if front_matter['tags']
       tags = front_matter['tags']
       date = front_matter['date']
@@ -27,7 +30,7 @@ Dir.glob('_posts/*.md').each do |post_file|
         'title' => front_matter['title'],
         'url' => "/posts/#{date.year}-#{sprintf('%02d', date.month)}-#{sprintf('%02d', date.day)}-#{title_slug}/",
         'date' => date.strftime('%m/%d/%y'),
-        'excerpt' => body.strip[0..1200],
+        'excerpt' => excerpt_text,
         'image' => front_matter['image']
       }
       

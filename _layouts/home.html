@@ -35,7 +35,7 @@ layout: default
                     <h3>
                         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                     </h3>
-                    <div class="post-excerpt">{{ post.content | strip_html | newline_to_br | truncate: 600 }}</div>
+                    <div class="post-excerpt">{{ post.excerpt | strip_html | newline_to_br }}</div>
                     <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
                 </div>
             </article>
