@@ -30,7 +30,8 @@ layout: default
                         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                     </h3>
                     <p class="post-excerpt">{{ post.excerpt | strip_html | newline_to_br }}</p>
-                    <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+                    <a href="{{ post.url | relative_url }}" class="read-more">{% if page.lang == 'zh' %}阅读全文{% else
+                        %}Read More{% endif %}</a>
                 </div>
             </article>
             {% endfor %}

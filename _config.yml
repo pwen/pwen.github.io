@@ -10,6 +10,7 @@ markdown: kramdown
 theme: null
 permalink: /:year-:month-:day-:title/
 excerpt_separator: "<!--more-->"
+future: true
 
 # Languages
 languages: ["en", "zh"]
