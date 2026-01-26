@@ -1,0 +1,51 @@
+# Site settings
+title: Pwen's Blog
+description: A bilingual blog sharing weekly thoughts and insights
+author: Pwen
+email: your-email@example.com
+url: "https://pwen.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Languages
+languages: ["en", "zh"]
+default_lang: "en"
+exclude_from_localization: ["assets", "css", "js"]
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+
+# Timezone
+timezone: America/Los_Angeles
