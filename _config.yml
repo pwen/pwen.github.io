@@ -2,7 +2,6 @@
 title: Pwen's Blog
 description: A bilingual blog sharing weekly thoughts and insights
 author: Pwen
-email: your-email@example.com
 url: "https://pwen.github.io"
 baseurl: ""
 
@@ -12,7 +11,7 @@ permalink: /:year/:month/:day/:title/
 
 # Languages
 languages: ["en", "zh"]
-default_lang: "en"
+default_lang: "zh"
 exclude_from_localization: ["assets", "css", "js"]
 
 # Collections
