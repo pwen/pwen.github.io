@@ -116,5 +116,5 @@ excerpt: |
 贵金属这边，现在接近合理定价。我仍然长期看多，仍然持有，但暂时不会加仓。
 
 **仓位变化：**
-- ETF: INDA +2% FLCH +1% ILF +1% IBIT +1% XLU +1% AMLP +2% VTI -1% VT -0.5%
+- ETF: INDA +2% AMLP +2% FLCH +1% ILF +1% IBIT +1% XLU +1% VTI -3% VT -1%
 - Stock: JD +1.5% OKE +1.5% ITUB +0.5%
