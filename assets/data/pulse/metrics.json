@@ -4,7 +4,7 @@
     "dxy": {
       "name": "US Dollar Index",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
-      "description": "Dollar vs a basket of major fiat currencies (euro-heavy). A relative measure \u2014 if all currencies debase together, DXY stays flat while purchasing power erodes.",
+      "description": "Measures the dollar against a basket of 6 major currencies (euro-heavy at ~58%). Rising = dollar strengthening, falling = dollar weakening. Caveat: DXY is a relative measure \u2014 if all currencies debase together, DXY stays flat while purchasing power still erodes. \ud83d\udd17 Weak Dollar thesis: expect DXY to grind lower as fiscal dominance takes hold. Fragmentation thesis: a weaker dollar benefits commodity exporters and EM.",
       "value": 96.88,
       "direction": "down",
       "unit": "index",
@@ -1076,7 +1076,7 @@
     "eurusd": {
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
-      "description": "The euro is DXY's largest component (~58%). EUR/USD rising = dollar weakening in its most liquid pair. Also reflects relative ECB vs Fed policy divergence.",
+      "description": "Euro-dollar exchange rate, the most liquid currency pair in the world. EUR/USD rising = dollar weakening. Since the euro is ~58% of DXY, this pair largely drives the dollar index. Also reflects relative ECB vs Fed policy divergence. \ud83d\udd17 Weak Dollar thesis: expect EUR/USD to move higher as US fiscal pressures force the Fed toward accommodation.",
       "value": 1.1868,
       "direction": "down",
       "unit": "rate",
@@ -2148,7 +2148,7 @@
     "usdcny": {
       "name": "USD/CNY",
       "name_zh": "\u7f8e\u5143/\u4eba\u6c11\u5e01",
-      "description": "Dollar-yuan exchange rate. Falling = yuan strengthening. A sustained move below 7.00 signals meaningful capital flow shift toward China.",
+      "description": "Dollar-yuan exchange rate. Rising = dollar strengthening vs yuan, falling = yuan strengthening. The PBOC manages this rate tightly, so moves are deliberate policy signals. A sustained move below 7.0 signals meaningful capital flow shifts toward China. \ud83d\udd17 China thesis: expect USD/CNY to decline as China\u2019s recovery draws capital inflows and the PBOC allows gradual appreciation.",
       "value": 6.9001,
       "direction": "down",
       "unit": "rate",
@@ -3220,7 +3220,7 @@
     "usd_reserves_share": {
       "name": "USD Share of Reserves",
       "name_zh": "\u7f8e\u5143\u50a8\u5907\u5360\u6bd4",
-      "description": "How much of global central bank reserves are held in dollars (IMF COFER data, quarterly, lagged). Dropped from 72% in 2000 \u2014 slow-moving but structural and largely irreversible.",
+      "description": "Percentage of global central bank FX reserves held in US dollars (IMF COFER data, quarterly with lag). Fell from 72% in 2000 to ~57% \u2014 slow-moving but structurally one-directional. Rising = dollar maintaining reserve status, falling = diversification away. \ud83d\udd17 Weak Dollar thesis: expect continued decline as central banks diversify into gold, yuan, and other reserves. This is the slow-burning structural confirmation.",
       "value": 56.3,
       "direction": "down",
       "unit": "%",
@@ -3312,7 +3312,7 @@
     "us_10y": {
       "name": "US 10Y Yield",
       "name_zh": "\u7f8e\u56fd\u5341\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
-      "description": "The stress thermometer for US fiscal health. Rising yields = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
+      "description": "Yield on the 10-year US Treasury note \u2014 the global benchmark risk-free rate. Rising = market demanding more compensation to hold US debt (or pricing higher growth/inflation). Falling = flight to safety or rate-cut expectations. Above 5% is a yellow flag; above 6% likely forces Fed intervention. \ud83d\udd17 Weak Dollar thesis: persistently high yields despite Fed discomfort = the bond market forcing the government\u2019s hand, confirming fiscal dominance.",
       "value": 4.056,
       "direction": "down",
       "unit": "%",
@@ -4384,7 +4384,7 @@
     "yield_curve": {
       "name": "10Y-2Y Spread",
       "name_zh": "\u6536\u76ca\u7387\u66f2\u7ebf\uff0810Y-2Y\u5229\u5dee\uff09",
-      "description": "The classic recession signal. Inverted (negative) = market pricing rate cuts ahead. Re-steepening after inversion historically precedes recessions within 6-18 months.",
+      "description": "Spread between 10-year and 2-year Treasury yields. Positive = normal (long-term rates higher). Negative (inverted) = market pricing rate cuts ahead, a classic recession signal. Re-steepening after prolonged inversion historically precedes recessions within 6-18 months. Watch this for timing of the next downturn and potential Fed pivot.",
       "value": 0.64,
       "direction": "up",
       "unit": "% spread",
