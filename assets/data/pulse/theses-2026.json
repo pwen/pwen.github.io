@@ -9,11 +9,16 @@
             "icon": "💵",
             "metrics": [
                 "dxy",
+                "eurusd",
                 "gold",
                 "us_10y",
+                "tips_5y",
+                "breakeven_10y",
                 "fed_balance_sheet",
+                "tga",
                 "debt_to_gdp",
-                "usd_reserves_share"
+                "usd_reserves_share",
+                "btc"
             ]
         },
         {
@@ -24,10 +29,12 @@
             "icon": "🇨🇳",
             "metrics": [
                 "csi300",
+                "hsi",
                 "usdcny",
                 "china_pmi",
                 "china_retail_sales",
-                "kweb"
+                "kweb",
+                "eem"
             ]
         },
         {
@@ -38,10 +45,12 @@
             "icon": "⚔️",
             "metrics": [
                 "oil",
+                "natgas",
                 "uranium",
                 "copper",
                 "gold",
-                "dxy"
+                "dxy",
+                "eem"
             ]
         },
         {
@@ -51,9 +60,12 @@
             "color": "#5b8def",
             "icon": "🤖",
             "metrics": [
+                "sp500",
                 "qqq",
                 "smh",
+                "xlu",
                 "energy_cpi",
+                "natgas",
                 "copper"
             ]
         },
@@ -65,10 +77,14 @@
             "icon": "⛏️",
             "metrics": [
                 "gold",
+                "silver",
                 "oil",
+                "natgas",
                 "copper",
                 "uranium",
-                "gsci_spy_ratio"
+                "gsci_spy_ratio",
+                "tips_5y",
+                "cb_gold_buying"
             ]
         }
     ],

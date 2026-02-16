@@ -1,0 +1,19 @@
+---
+layout: default
+title: Charts
+permalink: /charts/
+---
+
+<div class="charts-page">
+    <div class="charts-header">
+        <h1>Charts</h1>
+        <p class="charts-subtitle">All metrics grouped by category. Click to expand.</p>
+        <p class="charts-updated" id="charts-updated"></p>
+    </div>
+
+    <div class="charts-categories" id="charts-categories"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<link rel="stylesheet" href="{{ '/assets/css/charts.css' | relative_url }}">
+<script src="{{ '/assets/js/charts.js' | relative_url }}"></script>

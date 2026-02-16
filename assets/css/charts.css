@@ -1,0 +1,241 @@
+/* ─── Charts Page — Sruth-style category sections ─── */
+
+.charts-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+.charts-header {
+    margin-bottom: 2rem;
+}
+
+.charts-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0 0 0.25rem;
+}
+
+.charts-subtitle {
+    color: #888;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.charts-updated {
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+/* ─── Category sections ─── */
+.chart-category {
+    background: #12121a;
+    border: 1px solid #1e1e2e;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.chart-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+}
+
+.chart-category-header:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.chart-category-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #4cdfb0;
+}
+
+.chart-category-toggle {
+    font-size: 1.2rem;
+    color: #4cdfb0;
+    font-weight: 300;
+    line-height: 1;
+    width: 24px;
+    text-align: center;
+}
+
+/* Category body (collapsible) */
+.chart-category-body {
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+    max-height: 3000px;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.chart-category-body.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* ─── Metric rows ─── */
+.chart-metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.2rem;
+    cursor: pointer;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background 0.12s;
+}
+
+.chart-metric-row:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.chart-metric-row.active {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.chart-metric-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 0;
+}
+
+.chart-metric-arrow {
+    color: #666;
+    font-size: 0.75rem;
+    transition: transform 0.15s;
+    flex-shrink: 0;
+}
+
+.chart-metric-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chart-metric-data {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.chart-metric-value {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ccc;
+    font-variant-numeric: tabular-nums;
+}
+
+.chart-metric-change {
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+    min-width: 80px;
+    text-align: right;
+}
+
+.chart-metric-change.up { color: #4caf87; }
+.chart-metric-change.down { color: #e05555; }
+
+.chart-metric-icon {
+    font-size: 0.85rem;
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.chart-metric-row:hover .chart-metric-icon {
+    opacity: 0.7;
+}
+
+/* ─── Expandable chart section ─── */
+.chart-metric-expand {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s ease;
+    padding: 0 1.2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: none;
+}
+
+.chart-metric-expand.expanded {
+    max-height: 500px;
+    padding: 1rem 1.2rem 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.chart-metric-desc {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.chart-metric-canvas-wrap {
+    position: relative;
+    height: 280px;
+    width: 100%;
+}
+
+.chart-metric-canvas-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+    .charts-page {
+        padding: 0 0.5rem;
+    }
+
+    .chart-category-header {
+        padding: 0.7rem 0.8rem;
+    }
+
+    .chart-category-name {
+        font-size: 0.72rem;
+    }
+
+    .chart-metric-row {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .chart-metric-name {
+        font-size: 0.82rem;
+    }
+
+    .chart-metric-data {
+        gap: 0.5rem;
+    }
+
+    .chart-metric-value {
+        font-size: 0.82rem;
+    }
+
+    .chart-metric-change {
+        font-size: 0.72rem;
+        min-width: 60px;
+    }
+
+    .chart-metric-icon {
+        display: none;
+    }
+
+    .chart-metric-expand.expanded {
+        padding: 0.75rem 0.8rem 1rem;
+    }
+
+    .chart-metric-canvas-wrap {
+        height: 220px;
+    }
+}

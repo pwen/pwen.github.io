@@ -2,13 +2,45 @@
 
 ## Status
 
-**Phase 1 DONE** — Frontend built with sample data.
-- pulse.html, pulse.css, pulse.js — interactive thesis tracker
-- theses-2026.json — thesis definitions with colors, icons, metric mappings
-- metrics.json — sample metric data (placeholder values, will be replaced by GitHub Action)
-- 5 thesis markdown files in _pulse/ — expandable write-ups
+### ✅ Phase 1 DONE — Frontend + Content
+
+**Frontend (Sruth-style redesign):**
+- `pulse.html` — thesis tracker with chart modal overlay
+- `pulse.css` — table-row layout, modal styles, responsive
+- `pulse.js` — table rendering, click-to-chart modal (Chart.js), markdown-to-HTML converter
+- `charts.html` — category-grouped metrics page (sruth.app/charts style)
+- `charts.css` — collapsible category sections, inline chart expand styles
+- `charts.js` — category rendering, click-to-expand inline Chart.js, accordion logic
+- `theses-2026.json` — 5 theses with Chinese titles/summaries, colors, icons, metric mappings
+- `metrics.json` — 33 metrics across 8 categories with sample data + descriptions (placeholder values, will be replaced by GitHub Action)
 - Year selector for future year-over-year support
-- Reflection section for past year reviews
+- Reflection section (currently `null`)
+
+**Metrics (33 total, 8 categories):**
+- 💵 Currencies (4): DXY, EUR/USD, USD/CNY, USD Share of Reserves
+- 🏛️ Rates & Yields (5): US 10Y, 10Y-2Y Spread, 5Y TIPS, 10Y Breakeven, HY Credit Spread
+- 🏦 Liquidity & Fiscal (3): Fed Balance Sheet, Debt/GDP, TGA
+- ⛏️ Metals (4): Gold, Silver, Copper, Uranium
+- ⛽ Energy (3): WTI Oil, Natural Gas, Energy CPI
+- 📈 US Equities & Sectors (5): S&P 500, QQQ, SMH, XLU, GSCI/SPY Ratio
+- 🌡️ Sentiment & Alternatives (3): VIX, Bitcoin, Central Bank Gold Buying
+- 🌏 EM & China (6): CSI 300, Hang Seng, KWEB, China PMI, China Retail Sales, EEM
+
+**Thesis write-ups (all Mandarin, 口语化又专业性):**
+- ✅ `2026-dollar.md` — 美元结构性走弱 (债务螺旋, 美联储接盘, 美元信用)
+- ✅ `2026-china.md` — 中国资产重估 (消费转型, 制度改革, A股长牛起点)
+- ✅ `2026-fragmentation.md` — 旧秩序瓦解 (战国时代, 战略资源溢价, 结构性通胀)
+- ✅ `2026-ai.md` — AI革命 (码农亲历, 张笑宇《技术与文明》, 受益者轮动, 中美AI路线分化)
+- ✅ `2026-hard-assets.md` — 实物资产牛市 (四大驱动力: 投资不足/货币贬值/能源转型/地缘溢价)
+
+**JSON titles & summaries (all Chinese):**
+- 💵 美元正在结构性走弱
+- 🇨🇳 中国资产正在被重估
+- ⚔️ 旧秩序正在瓦解，地缘竞争加剧
+- 🤖 AI正在改变一切，而我们还没有做好准备
+- ⛏️ 实物资产正在进入结构性牛市
+
+**Dashboard layout:** Sruth-style table rows (not cards). Metrics shown as rows with columns: name, value, change, direction dot. Click any row → Chart.js modal popup with historical chart. No inline sparklines.
 
 **Next: Phase 2** — Build GitHub Action data pipeline to auto-update metrics.json daily.
 
@@ -167,42 +199,32 @@ jobs:
 
 ---
 
-## Phase 2 — Dashboard Page (Jekyll + Chart.js)
+## Phase 2 — Dashboard Page (Jekyll + Chart.js) ✅ DONE
 
-### 2a. Files to create
+Completed as Sruth-style redesign:
+- Table rows instead of card grid
+- Click-to-chart modal instead of inline sparklines
+- Responsive (table head hidden on mobile, modal adapts)
+- Chart.js 4 for on-demand chart rendering in modal
 
-| File                      | Purpose                              |
-|---------------------------|--------------------------------------|
-| `dashboard.html`          | Jekyll page (layout: default)        |
-| `assets/js/dashboard.js`  | Fetch JSON, render cards + charts    |
-| `assets/css/dashboard.css`| Dashboard-specific styles            |
+### 2b. Implemented layout (Sruth-style)
 
-### 2b. Page layout (top → bottom)
+1. **Thesis tabs** — 5 colored tabs across top, click to filter metrics
+2. **Metric table** — Header row + metric rows with columns: name, value, change, direction dot
+3. **Chart modal** — Click any row → overlay with Chart.js line chart, close via ×/backdrop/Escape
+4. **Thesis write-up** — Markdown content loaded from `pulse-content/2026/` files, rendered inline below metrics
+5. **Year selector** — Dropdown for future year-over-year support
 
-1. **Header** — "DASHBOARD" + last updated timestamp
-2. **AI Summary** — Collapsible card with the daily market wrap
-3. **Metric Cards** — Grid of cards grouped by section:
-   - **Rates** — Fed funds, 2Y, 10Y, 30Y, yield curve
-   - **Markets** — S&P, Dow, Nasdaq, VIX
-   - **Economy** — CPI, unemployment, GDP
-   - **Commodities & Crypto** — Gold, oil, BTC, DXY
-4. **Historical Charts** — Click any card to expand a Chart.js line chart
-   showing 1Y/3Y history
+### 2c. Row design (implemented)
 
-### 2c. Card design
-
-Each card shows:
+Each metric row shows:
 ```
-┌────────────────────┐
-│ S&P 500            │
-│ 6,821.92     ▼1.45%│
-│ ▁▂▃▄▅▅▆▇▇█        │  ← sparkline (tiny inline chart)
-└────────────────────┘
+│ Gold          │ $2,935  │ +8.2%  │ 🟢 │
 ```
 
-- Green/red for positive/negative 1D change
-- Optional sparkline using Chart.js (small 60-day line)
-- Click → expands to a full-width 1Y/3Y chart below
+- Green/red dot for positive/negative change
+- Click → full chart modal with historical data
+- No inline sparklines (removed for performance)
 
 ### 2d. Tech choices
 
@@ -249,17 +271,20 @@ In the Python fetch script, after fetching all data:
 
 ## Implementation Order
 
-1. Register FRED API key, add to GitHub secrets
-2. Write Python fetch script (FRED + yfinance + Claude)
-3. Create GitHub Action workflow
-4. Test with `workflow_dispatch` (manual run)
-5. Create `dashboard.html` page + layout
-6. Build `dashboard.js` — card rendering from JSON
-7. Build `dashboard.css` — dark cards, grid, responsive
-8. Add Chart.js historical charts (click-to-expand)
-9. Add AI summary display
-10. Add sparklines to cards
-11. Wire into site nav
+1. ~~Register FRED API key, add to GitHub secrets~~
+2. ~~Write Python fetch script (FRED + yfinance + Claude)~~ → not yet started
+3. ~~Create GitHub Action workflow~~ → not yet started
+4. ~~Test with `workflow_dispatch` (manual run)~~ → not yet started
+5. ✅ Create `pulse.html` page + layout (Sruth-style redesign)
+6. ✅ Build `pulse.js` — table rendering + chart modal from JSON
+7. ✅ Build `pulse.css` — dark table rows, modal, responsive
+8. ✅ Chart.js historical charts (click-to-expand modal)
+9. ~~Add AI summary display~~ → Phase 3
+10. ~~Add sparklines to cards~~ → removed (modal chart only)
+11. ~~Wire into site nav~~ → not yet
+12. ✅ Write all 5 thesis write-ups in Mandarin
+13. ✅ Translate all JSON titles/summaries to Chinese
+14. ✅ Add metric descriptions/tooltips (18 metrics)
 
 ---
 
