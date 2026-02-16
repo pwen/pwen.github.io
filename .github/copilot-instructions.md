@@ -26,18 +26,22 @@ This is a multi-project workspace:
 - GitHub Actions daily cron at 7AM UTC
 
 ### Data Architecture
-- Metrics split into **per-category JSON files**: `currencies.json`, `rates.json`, `liquidity.json`, `metals.json`, `energy.json`, `equities.json`, `sentiment.json`, `em.json`
-- Combined `metrics.json` kept for backfill compatibility
+- 56 metrics across 9 categories, LOOKBACK_YEARS=11 (~11 years of weekly data)
+- Metrics split into **per-category JSON files**: `currencies.json`, `rates.json`, `liquidity.json`, `china.json`, `metals.json`, `energy.json`, `equities.json`, `sentiment.json`, `row.json`
+- Lightweight `metrics.json` index (metadata only, no history arrays)
 - All files in `assets/data/pulse/`
-- `fetch_pulse_data.py` writes both per-category files and combined file
+- `fetch_pulse_data.py` writes per-category files (with history) + metrics.json (slim index)
 - `charts.js` and `pulse.js` load per-category files in parallel via `Promise.all`
+- Chart periods: 1M, 3M, 6M, YTD, 1Y, 5Y, 10Y
 - Theses defined in `theses-2026.json`
+- Manual CSVs in `data/backfill/` extended back to 2015
+- AI-assisted backfill prompt template in `prompts/BACKFILL_MANUAL_METRICS.md`
 
 ### Metric Source Types
 - `yfinance`: daily close via yfinance
 - `fred`: FRED API series
 - `derived`: computed from other data at fetch time (e.g., ratio of two tickers like GSG/SPY, normalized basket ratio like atoms_bits, or arithmetic on fetched metrics like cn_us_spread = cn_10y - us_10y)
-- `manual`: backfilled from CSV in `data/backfill/`
+- `manual`: backfilled from CSV in `data/backfill/` (11 metrics, data back to 2015)
 
 ### Backfill Command
 ```bash
@@ -55,6 +59,7 @@ When the user asks to "update manual metrics" or similar:
 Manual metrics and their sources/frequencies:
 - `china_pmi` (Monthly, NBS)
 - `china_retail_sales` (Monthly, NBS)
+- `china_cpi` (Monthly, NBS)
 - `china_gdp` (Quarterly, NBS)
 - `china_m2` (Monthly, PBOC)
 - `cn_10y` (Monthly, PBOC/CEIC)

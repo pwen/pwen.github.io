@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T16:26:08Z",
+  "updated": "2026-02-16T16:48:43Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -10,7 +10,7 @@
       "unit": "index",
       "source": "yfinance:DX-Y.NYB",
       "change_ytd_pct": -1.6,
-      "zscore": -0.8,
+      "zscore": -0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -23,7 +23,7 @@
       "unit": "rate",
       "source": "yfinance:EURUSD=X",
       "change_ytd_pct": 1.0,
-      "zscore": 1.4,
+      "zscore": 1.3,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -36,7 +36,7 @@
       "unit": "rate",
       "source": "yfinance:CNY=X",
       "change_ytd_pct": -1.4,
-      "zscore": -0.1,
+      "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -49,8 +49,8 @@
       "unit": "rate",
       "source": "yfinance:JPY=X",
       "change_ytd_pct": -2.5,
-      "zscore": 0.9,
-      "signal": "NORMAL",
+      "zscore": 1.7,
+      "signal": "ELEVATED",
       "trend": "down"
     },
     "usd_reserves_share": {
@@ -75,7 +75,7 @@
       "unit": "%",
       "source": "yfinance:^TNX",
       "change_ytd_bp": -13,
-      "zscore": 0.6,
+      "zscore": 1.2,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -88,7 +88,7 @@
       "unit": "% spread",
       "source": "fred:T10Y2Y",
       "change_ytd_bp": -8,
-      "zscore": 0.7,
+      "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -101,7 +101,7 @@
       "unit": "%",
       "source": "fred:DFII5",
       "change_ytd_bp": -24,
-      "zscore": 0.3,
+      "zscore": 0.7,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -114,7 +114,7 @@
       "unit": "%",
       "source": "fred:T10YIE",
       "change_ytd_bp": 2,
-      "zscore": -0.5,
+      "zscore": 0.7,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -127,7 +127,7 @@
       "unit": "%",
       "source": "fred:IRLTLT01JPM156N",
       "change_ytd_bp": 0,
-      "zscore": 2.7,
+      "zscore": 3.6,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -141,7 +141,7 @@
       "source": "manual",
       "note": "Monthly \u2014 PBOC / CEIC (no free API)",
       "change_ytd_bp": 0,
-      "zscore": -1.6,
+      "zscore": -2.2,
       "signal": "ELEVATED",
       "trend": "down"
     },
@@ -154,7 +154,7 @@
       "unit": "%",
       "source": "fred:BAMLH0A0HYM2",
       "change_ytd_bp": 9,
-      "zscore": -1.0,
+      "zscore": -1.1,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -167,7 +167,7 @@
       "unit": "$T",
       "source": "fred:WALCL",
       "change_ytd_pct": 0.8,
-      "zscore": -1.4,
+      "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -180,7 +180,7 @@
       "unit": "%",
       "source": "fred:GFDEGDQ188S",
       "note": "Quarterly, interpolated",
-      "zscore": 0.8,
+      "zscore": 1.0,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -206,7 +206,7 @@
       "unit": "$/oz",
       "source": "yfinance:GC=F",
       "change_ytd_pct": 16.4,
-      "zscore": 3.5,
+      "zscore": 4.4,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -219,7 +219,7 @@
       "unit": "$/oz",
       "source": "yfinance:SI=F",
       "change_ytd_pct": 10.3,
-      "zscore": 4.1,
+      "zscore": 5.4,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -232,7 +232,7 @@
       "unit": "$/lb",
       "source": "yfinance:HG=F",
       "change_ytd_pct": 2.7,
-      "zscore": 2.9,
+      "zscore": 2.6,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -242,10 +242,10 @@
       "description": "Aluminum futures. The most China-sensitive industrial metal (~60% of global production). Proxy for Chinese industrial activity and global construction/infrastructure demand.",
       "value": 3015.75,
       "direction": "down",
-      "unit": "$/lb",
+      "unit": "$/t",
       "source": "yfinance:ALI=F",
       "change_ytd_pct": 2.6,
-      "zscore": 1.6,
+      "zscore": 2.0,
       "signal": "ELEVATED",
       "trend": "up"
     },
@@ -258,7 +258,7 @@
       "unit": "$",
       "source": "yfinance:URA",
       "change_ytd_pct": 12.7,
-      "zscore": 3.0,
+      "zscore": 3.7,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -271,8 +271,8 @@
       "unit": "$",
       "source": "yfinance:REMX",
       "change_ytd_pct": 16.8,
-      "zscore": 0.9,
-      "signal": "NORMAL",
+      "zscore": 1.6,
+      "signal": "ELEVATED",
       "trend": "up"
     },
     "oil": {
@@ -284,7 +284,7 @@
       "unit": "$/bbl",
       "source": "yfinance:CL=F",
       "change_ytd_pct": 9.7,
-      "zscore": -1.0,
+      "zscore": 0.0,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -297,7 +297,7 @@
       "unit": "$/bbl",
       "source": "yfinance:BZ=F",
       "change_ytd_pct": 11.5,
-      "zscore": -0.9,
+      "zscore": 0.1,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -310,7 +310,7 @@
       "unit": "$/MMBtu",
       "source": "yfinance:NG=F",
       "change_ytd_pct": -10.4,
-      "zscore": -0.3,
+      "zscore": 0.1,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -324,7 +324,7 @@
       "source": "fred:CUSR0000SEHF",
       "change_ytd_pct": 0.0,
       "note": "Monthly, lagged",
-      "zscore": 0.1,
+      "zscore": 0.7,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -337,7 +337,7 @@
       "unit": "index",
       "source": "yfinance:^GSPC",
       "change_ytd_pct": -0.3,
-      "zscore": 2.0,
+      "zscore": 2.3,
       "signal": "ELEVATED",
       "trend": "flat"
     },
@@ -350,7 +350,7 @@
       "unit": "index",
       "source": "yfinance:^DJI",
       "change_ytd_pct": 2.3,
-      "zscore": 2.4,
+      "zscore": 2.3,
       "signal": "ELEVATED",
       "trend": "up"
     },
@@ -363,7 +363,7 @@
       "unit": "$",
       "source": "yfinance:QQQ",
       "change_ytd_pct": -1.8,
-      "zscore": 1.9,
+      "zscore": 2.2,
       "signal": "ELEVATED",
       "trend": "down"
     },
@@ -376,8 +376,8 @@
       "unit": "$",
       "source": "yfinance:IWM",
       "change_ytd_pct": 5.7,
-      "zscore": 2.6,
-      "signal": "EXTREME",
+      "zscore": 2.4,
+      "signal": "ELEVATED",
       "trend": "up"
     },
     "smh": {
@@ -389,7 +389,7 @@
       "unit": "$",
       "source": "yfinance:SMH",
       "change_ytd_pct": 9.2,
-      "zscore": 2.9,
+      "zscore": 3.4,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -415,7 +415,7 @@
       "unit": "ratio",
       "source": "derived:GSG",
       "change_ytd_pct": 7.4,
-      "zscore": -0.9,
+      "zscore": -1.0,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -428,7 +428,7 @@
       "unit": "index",
       "source": "yfinance:^VIX",
       "change_ytd_pct": 42.0,
-      "zscore": 0.3,
+      "zscore": 0.4,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -441,7 +441,7 @@
       "unit": "$",
       "source": "yfinance:BTC-USD",
       "change_ytd_pct": -22.5,
-      "zscore": 0.5,
+      "zscore": 1.3,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -454,7 +454,7 @@
       "unit": "tonnes/yr",
       "source": "manual",
       "note": "Quarterly, lagged \u2014 World Gold Council",
-      "zscore": 1.6,
+      "zscore": 2.2,
       "signal": "ELEVATED",
       "trend": "down"
     },
@@ -480,7 +480,7 @@
       "unit": "index",
       "source": "yfinance:^HSI",
       "change_ytd_pct": 0.9,
-      "zscore": 1.2,
+      "zscore": 0.7,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -493,7 +493,7 @@
       "unit": "$",
       "source": "yfinance:KWEB",
       "change_ytd_pct": -8.0,
-      "zscore": 0.0,
+      "zscore": -0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -506,7 +506,7 @@
       "unit": "index",
       "source": "manual",
       "note": "NBS monthly",
-      "zscore": 0.3,
+      "zscore": -0.0,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -519,7 +519,7 @@
       "unit": "% YoY",
       "source": "manual",
       "note": "NBS monthly",
-      "zscore": -0.2,
+      "zscore": -0.4,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -532,7 +532,7 @@
       "unit": "$",
       "source": "yfinance:EEM",
       "change_ytd_pct": 8.7,
-      "zscore": 3.1,
+      "zscore": 3.4,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -545,8 +545,8 @@
       "unit": "$",
       "source": "yfinance:INDA",
       "change_ytd_pct": -3.1,
-      "zscore": 1.0,
-      "signal": "NORMAL",
+      "zscore": 1.6,
+      "signal": "ELEVATED",
       "trend": "down"
     },
     "ilf": {
@@ -558,7 +558,7 @@
       "unit": "$",
       "source": "yfinance:ILF",
       "change_ytd_pct": 17.6,
-      "zscore": 4.1,
+      "zscore": 4.2,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -572,7 +572,7 @@
       "source": "manual",
       "note": "Monthly \u2014 NBS",
       "change_ytd_pct": 0.0,
-      "zscore": 0.1,
+      "zscore": -0.6,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -585,7 +585,7 @@
       "unit": "% YoY",
       "source": "manual",
       "note": "Quarterly \u2014 NBS",
-      "zscore": -0.1,
+      "zscore": -0.2,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -598,7 +598,7 @@
       "unit": "% YoY",
       "source": "manual",
       "note": "Monthly \u2014 PBOC",
-      "zscore": -0.9,
+      "zscore": -1.2,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -612,7 +612,7 @@
       "source": "manual",
       "note": "ICE BofA \u2014 backfill required",
       "change_ytd_pct": -2.5,
-      "zscore": 0.3,
+      "zscore": 1.0,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -626,7 +626,7 @@
       "source": "manual",
       "note": "Monthly \u2014 ISM (no free API, backfill from CSV)",
       "change_ytd_pct": 0.0,
-      "zscore": -0.1,
+      "zscore": -0.4,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -639,7 +639,7 @@
       "unit": "% QoQ",
       "source": "fred:A191RL1Q225SBEA",
       "note": "Quarterly, annualized \u2014 BEA",
-      "zscore": 0.6,
+      "zscore": 0.2,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -653,7 +653,7 @@
       "source": "fred:CPIAUCSL",
       "change_ytd_pct": 0.0,
       "note": "Monthly, lagged ~2 weeks \u2014 BLS",
-      "zscore": -0.8,
+      "zscore": -0.2,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -666,7 +666,7 @@
       "unit": "index",
       "source": "fred:UMCSENT",
       "note": "Monthly \u2014 UMich",
-      "zscore": -1.5,
+      "zscore": -1.8,
       "signal": "ELEVATED",
       "trend": "up"
     },
@@ -680,7 +680,7 @@
       "source": "manual",
       "note": "Quarterly, compiled from earnings \u2014 MSFT+GOOGL+AMZN+META+ORCL",
       "change_ytd_pct": 0.0,
-      "zscore": 2.7,
+      "zscore": 3.5,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -693,7 +693,7 @@
       "unit": "ratio",
       "source": "derived:VUG",
       "change_ytd_pct": -11.9,
-      "zscore": 0.2,
+      "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -706,20 +706,20 @@
       "unit": "ratio",
       "source": "derived:SPY",
       "change_ytd_pct": -5.1,
-      "zscore": 1.2,
-      "signal": "NORMAL",
+      "zscore": 1.8,
+      "signal": "ELEVATED",
       "trend": "down"
     },
     "atoms_bits": {
       "name": "Atoms vs Bits",
       "name_zh": "\u5b9e\u7269/\u6570\u5b57\u6bd4\u7387",
       "description": "Physical-economy ETFs (XLB+XLI+XLE+XME) vs digital-economy ETFs (IGV+WCLD). Rising = hard assets outperforming software/cloud. A sustained rise signals regime change from bits to atoms.",
-      "value": 3.0085,
+      "value": 2.003,
       "direction": "down",
       "unit": "ratio",
       "source": "derived:XLB+XLI+XLE+XME",
-      "change_ytd_pct": 39.1,
-      "zscore": 3.0,
+      "change_ytd_pct": 38.0,
+      "zscore": 3.3,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -733,8 +733,8 @@
       "source": "derived:cn_10y+us_10y",
       "change_ytd_bp": 0,
       "note": "Derived: (cn_10y \u2212 us_10y) \u00d7 100",
-      "zscore": -1.1,
-      "signal": "NORMAL",
+      "zscore": -1.9,
+      "signal": "ELEVATED",
       "trend": "up"
     }
   }

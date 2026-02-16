@@ -38,7 +38,7 @@ from fredapi import Fred
 FRED_API_KEY = os.environ.get("FRED_API_KEY")
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "assets" / "data" / "pulse"
 OUTPUT_PATH = OUTPUT_DIR / "metrics.json"  # lightweight index (metadata only, no history)
-LOOKBACK_YEARS = 5
+LOOKBACK_YEARS = 11
 
 # Category → metric IDs  (mirrors charts.js CATEGORIES)
 CATEGORY_MAP = [
@@ -806,11 +806,15 @@ def main():
     print(f"Fetching data: {start_date} → {end_date}")
     print(f"Output: {OUTPUT_PATH}\n")
 
-    # Load existing file to preserve manual metrics
+    # Load existing data from category JSON files (which include history arrays)
+    # so that manual metrics preserved here retain their history for derived metrics.
     existing = {}
-    if OUTPUT_PATH.exists():
-        with open(OUTPUT_PATH) as f:
-            existing = json.load(f).get("metrics", {})
+    for cat_id, _ in CATEGORY_MAP:
+        cat_path = OUTPUT_DIR / f"{cat_id}.json"
+        if cat_path.exists():
+            with open(cat_path) as f:
+                cat_data = json.load(f).get("metrics", {})
+                existing.update(cat_data)
 
     result_metrics = {}
     errors = []

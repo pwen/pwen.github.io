@@ -22,7 +22,7 @@
         { id: 'row', name: 'REST OF WORLD', metrics: ['eem', 'inda', 'ilf'] }
     ];
 
-    const PERIODS = ['1M', '3M', '6M', 'YTD', '1Y', '5Y'];
+    const PERIODS = ['1M', '3M', '6M', 'YTD', '1Y', '5Y', '10Y'];
 
     // ─── Bootstrap ───
     async function init() {
@@ -278,6 +278,7 @@
                 case 'YTD': cutoff = new Date(now.getFullYear(), 0, 1); break;
                 case '1Y': cutoff = new Date(now); cutoff.setFullYear(cutoff.getFullYear() - 1); break;
                 case '5Y': cutoff = new Date(now); cutoff.setFullYear(cutoff.getFullYear() - 5); break;
+                case '10Y': cutoff = new Date(now); cutoff.setFullYear(cutoff.getFullYear() - 10); break;
                 default: cutoff = new Date(now.getFullYear(), 0, 1);
             }
 
@@ -350,6 +351,9 @@
                                 const label = this.getLabelForValue(val);
                                 if (label && label.match(/^\d{4}-\d{2}-\d{2}$/)) {
                                     const d = new Date(label + 'T00:00:00');
+                                    if (activePeriod === '10Y') {
+                                        return d.toLocaleDateString('en-US', { year: 'numeric' });
+                                    }
                                     if (activePeriod === '5Y') {
                                         return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
                                     }
@@ -539,13 +543,12 @@
             if (!m) return;
 
             const spans = row.querySelectorAll('.chart-metric-change');
-            if (spans.length < 4) return;
+            if (spans.length < 3) return;
 
             const periods = [
-                { el: spans[0], days: 7 },
-                { el: spans[1], days: 30 },
-                { el: spans[2], days: null }, // YTD
-                { el: spans[3], days: 365 }
+                { el: spans[0], days: 30 },
+                { el: spans[1], days: null }, // YTD
+                { el: spans[2], days: 365 }
             ];
 
             periods.forEach(({ el, days }) => {

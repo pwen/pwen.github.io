@@ -38,7 +38,7 @@ Content should be served locally at `http://localhost:4000`
 
 ## 📊 Pulse Data Pipeline
 
-The Pulse macro dashboard tracks ~49 metrics across 8 categories, organized around 5 macro theses. Most are fetched automatically from yfinance and FRED; some require manual CSV backfill.
+The Pulse macro dashboard tracks 56 metrics across 9 categories, organized around 5 macro theses. Most are fetched automatically from yfinance and FRED; some require manual CSV backfill.
 
 ### Metric Source Types
 
@@ -57,16 +57,17 @@ The Pulse macro dashboard tracks ~49 metrics across 8 categories, organized arou
 make fetch-data
 ```
 
-Runs daily via GitHub Actions (7AM UTC). Pulls 5 years of weekly data from yfinance and FRED, writes per-category files + combined metrics.json.
+Runs daily via GitHub Actions (7AM UTC). Pulls 11 years of weekly data from yfinance and FRED, writes per-category files + lightweight metrics.json index. Chart supports periods: 1M, 3M, 6M, YTD, 1Y, 5Y, 10Y.
 
 ### Manual Metric Updates
 
-These metrics have no free API. Their data lives in CSV files under `data/backfill/`. To update, add a new row to the CSV and re-run backfill:
+These metrics have no free API. Their data lives in CSV files under `data/backfill/` (extended back to 2015). To update, add a new row to the CSV and re-run backfill:
 
 | Metric ID | Name | Source | Frequency | Where to Find |
 |-----------|------|--------|-----------|---------------|
 | `china_pmi` | China Mfg PMI (中国制造业PMI) | NBS | Monthly | [data.stats.gov.cn](https://data.stats.gov.cn) |
 | `china_retail_sales` | China Retail Sales YoY (中国社零同比) | NBS | Monthly | [data.stats.gov.cn](https://data.stats.gov.cn) |
+| `china_cpi` | China CPI YoY (中国CPI同比) | NBS | Monthly | [data.stats.gov.cn](https://data.stats.gov.cn) |
 | `china_gdp` | China GDP YoY (中国GDP同比) | NBS | Quarterly | [data.stats.gov.cn](https://data.stats.gov.cn) |
 | `china_m2` | China M2 YoY (中国M2同比) | PBOC | Monthly | [pbc.gov.cn](http://www.pbc.gov.cn/diaochatongjisi/116219/116319/index.html) |
 | `cn_10y` | China 10Y Yield (中国10年期国债) | PBOC/CEIC | Monthly | [ceicdata.com](https://www.ceicdata.com) or PBOC |
