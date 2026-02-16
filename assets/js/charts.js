@@ -15,9 +15,9 @@
         { id: 'rates', name: 'RATES & YIELDS', metrics: ['us_10y', 'jp_10y', 'cn_10y', 'cn_us_spread', 'yield_curve', 'tips_5y', 'breakeven_10y', 'hy_spread', 'move'] },
         { id: 'liquidity', name: 'LIQUIDITY & FISCAL', metrics: ['fed_balance_sheet', 'debt_to_gdp', 'tga'] },
         { id: 'china', name: 'CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'china_cpi', 'china_gdp', 'china_m2'] },
-        { id: 'metals', name: 'METALS', metrics: ['gold', 'silver', 'copper', 'uranium'] },
-        { id: 'energy', name: 'ENERGY', metrics: ['oil', 'natgas', 'energy_cpi'] },
-        { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio', 'bigtech_capex', 'growth_value', 'cap_equal', 'atoms_bits'] },
+        { id: 'metals', name: 'METALS', metrics: ['gold', 'silver', 'copper', 'aluminum', 'uranium', 'remx'] },
+        { id: 'energy', name: 'ENERGY', metrics: ['oil', 'brent', 'natgas', 'energy_cpi'] },
+        { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'djia', 'qqq', 'iwm', 'smh', 'xlu', 'gsci_spy_ratio', 'bigtech_capex', 'growth_value', 'cap_equal', 'atoms_bits'] },
         { id: 'sentiment', name: 'SENTIMENT & ALTERNATIVES', metrics: ['vix', 'btc', 'cb_gold_buying', 'us_ism_pmi', 'us_gdp', 'us_cpi', 'umich_sentiment'] },
         { id: 'row', name: 'REST OF WORLD', metrics: ['eem', 'inda', 'ilf'] }
     ];
@@ -92,6 +92,18 @@
                 </div>
             `;
         }).join('');
+
+        // Append "last updated" footer
+        if (metricsData?.updated) {
+            const d = new Date(metricsData.updated);
+            const ts = d.toLocaleDateString('en-US', {
+                month: 'short', day: 'numeric', year: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+            });
+            container.insertAdjacentHTML('beforeend',
+                `<div class="charts-footer">Last updated: ${ts}</div>`
+            );
+        }
 
         container.querySelectorAll('.chart-category-header').forEach(header => {
             header.addEventListener('click', () => {
@@ -389,6 +401,7 @@
         if (m.unit === '$') return `$${v.toLocaleString()}`;
         if (m.unit === '$/bbl') return `$${v.toFixed(2)}`;
         if (m.unit === '$/lb') return `$${v.toFixed(2)}`;
+        if (m.unit === '$/t') return `$${v.toLocaleString()}`;
         if (m.unit === '$/MMBtu') return `$${v.toFixed(2)}`;
         if (m.unit === '%') return `${v.toFixed(2)}%`;
         if (m.unit === '% spread') return `${v.toFixed(2)}%`;
@@ -574,6 +587,7 @@
         if (m.unit === '$B') return '$' + raw + 'B';
         if (m.unit === '$/bbl') return '$' + raw.toFixed(2);
         if (m.unit === '$/lb') return '$' + raw.toFixed(2);
+        if (m.unit === '$/t') return '$' + raw.toLocaleString();
         if (m.unit === '$/MMBtu') return '$' + raw.toFixed(2);
         if (m.unit === 'rate') return raw.toFixed(4);
         if (m.unit === 'ratio') return raw.toFixed(4);

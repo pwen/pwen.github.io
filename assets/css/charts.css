@@ -30,6 +30,13 @@
     margin-top: 0.25rem;
 }
 
+.charts-footer {
+    text-align: right;
+    color: #999;
+    font-size: 0.75rem;
+    padding: 0.75rem 0.5rem 0;
+}
+
 /* ─── Category sections ─── */
 .chart-category {
     background: #fff;

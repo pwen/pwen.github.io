@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T14:45:58Z",
+  "updated": "2026-02-16T14:50:42Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -236,6 +236,19 @@
       "signal": "EXTREME",
       "trend": "up"
     },
+    "aluminum": {
+      "name": "Aluminum",
+      "name_zh": "\u94dd",
+      "description": "Aluminum futures. The most China-sensitive industrial metal (~60% of global production). Proxy for Chinese industrial activity and global construction/infrastructure demand.",
+      "value": 3015.75,
+      "direction": "down",
+      "unit": "$/lb",
+      "source": "yfinance:ALI=F",
+      "change_ytd_pct": 2.6,
+      "zscore": 1.6,
+      "signal": "ELEVATED",
+      "trend": "up"
+    },
     "uranium": {
       "name": "Uranium (URA ETF)",
       "name_zh": "\u94c0",
@@ -249,6 +262,19 @@
       "signal": "EXTREME",
       "trend": "up"
     },
+    "remx": {
+      "name": "Rare Earth ETF (REMX)",
+      "name_zh": "\u7a00\u571fETF",
+      "description": "VanEck Rare Earth/Strategic Metals ETF. Proxy for rare earth supply chain. China controls ~70% of processing. Critical for EV motors, wind turbines, defense, and AI hardware.",
+      "value": 89.7,
+      "direction": "up",
+      "unit": "$",
+      "source": "yfinance:REMX",
+      "change_ytd_pct": 16.8,
+      "zscore": 0.9,
+      "signal": "NORMAL",
+      "trend": "up"
+    },
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
@@ -259,6 +285,19 @@
       "source": "yfinance:CL=F",
       "change_ytd_pct": 9.7,
       "zscore": -1.0,
+      "signal": "NORMAL",
+      "trend": "up"
+    },
+    "brent": {
+      "name": "Brent Crude",
+      "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
+      "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
+      "value": 67.75,
+      "direction": "up",
+      "unit": "$/bbl",
+      "source": "yfinance:BZ=F",
+      "change_ytd_pct": 11.5,
+      "zscore": -0.9,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -302,6 +341,19 @@
       "signal": "ELEVATED",
       "trend": "flat"
     },
+    "djia": {
+      "name": "Dow Jones",
+      "name_zh": "\u9053\u743c\u65af\u5de5\u4e1a\u6307\u6570",
+      "description": "Dow Jones Industrial Average \u2014 30 blue-chip, old-economy-heavy stocks. When Dow outperforms QQQ, market is rotating from tech into industrials/real economy.",
+      "value": 49500.9297,
+      "direction": "up",
+      "unit": "index",
+      "source": "yfinance:^DJI",
+      "change_ytd_pct": 2.3,
+      "zscore": 2.4,
+      "signal": "ELEVATED",
+      "trend": "up"
+    },
     "qqq": {
       "name": "Nasdaq 100 ETF (QQQ)",
       "name_zh": "\u7eb3\u65af\u8fbe\u514b100",
@@ -314,6 +366,19 @@
       "zscore": 1.9,
       "signal": "ELEVATED",
       "trend": "down"
+    },
+    "iwm": {
+      "name": "Russell 2000 ETF (IWM)",
+      "name_zh": "\u7f57\u7d202000\u5c0f\u76d8\u80a1",
+      "description": "iShares Russell 2000 ETF \u2014 US small-cap proxy. Most rate-sensitive part of the market. Small-cap strength = domestic economic confidence; weakness = credit stress hitting Main Street.",
+      "value": 262.96,
+      "direction": "up",
+      "unit": "$",
+      "source": "yfinance:IWM",
+      "change_ytd_pct": 5.7,
+      "zscore": 2.6,
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "smh": {
       "name": "Semiconductor ETF (SMH)",

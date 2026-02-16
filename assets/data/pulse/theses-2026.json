@@ -51,7 +51,8 @@
                 "china_gdp",
                 "china_m2",
                 "kweb",
-                "eem"
+                "eem",
+                "aluminum"
             ]
         },
         {
@@ -74,7 +75,10 @@
                 "inda",
                 "ilf",
                 "us_ism_pmi",
-                "usdjpy"
+                "usdjpy",
+                "brent",
+                "aluminum",
+                "remx"
             ]
         },
         {
@@ -118,7 +122,10 @@
                 "us_cpi",
                 "hy_spread",
                 "usdjpy",
-                "jp_10y"
+                "jp_10y",
+                "brent",
+                "aluminum",
+                "remx"
             ]
         }
     ],
