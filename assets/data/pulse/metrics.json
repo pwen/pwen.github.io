@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T15:02:36Z",
+  "updated": "2026-02-16T16:26:08Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -617,8 +617,8 @@
       "trend": "down"
     },
     "us_ism_pmi": {
-      "name": "US Manufacturing PMI",
-      "name_zh": "\u7f8e\u56fd\u5236\u9020\u4e1aPMI\uff08ISM\uff09",
+      "name": "US Manufacturing PMI (ISM)",
+      "name_zh": "\u7f8e\u56fd\u5236\u9020\u4e1aPMI",
       "description": "ISM Manufacturing PMI: the oldest US manufacturing indicator. Above 50 = expansion, below 50 = contraction. Sustained expansion signals onshoring and supply chain diversification.",
       "value": 50.9,
       "direction": "up",
