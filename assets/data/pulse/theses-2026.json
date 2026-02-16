@@ -37,8 +37,12 @@
                 "cn_us_spread",
                 "china_pmi",
                 "china_retail_sales",
+                "china_cpi",
+                "china_gdp",
+                "china_m2",
                 "kweb",
-                "eem"
+                "eem",
+                "inda"
             ]
         },
         {

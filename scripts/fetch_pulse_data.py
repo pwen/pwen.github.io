@@ -48,8 +48,8 @@ CATEGORY_MAP = [
     ("metals", ["gold", "silver", "copper", "uranium"]),
     ("energy", ["oil", "natgas", "energy_cpi"]),
     ("equities", ["sp500", "qqq", "smh", "xlu", "gsci_spy_ratio", "bigtech_capex", "growth_value", "cap_equal", "atoms_bits"]),
-    ("sentiment", ["vix", "btc", "cb_gold_buying", "us_ism_pmi"]),
-    ("em", ["csi300", "hsi", "kweb", "china_pmi", "china_retail_sales", "eem"]),
+    ("sentiment", ["vix", "btc", "cb_gold_buying", "us_ism_pmi", "us_gdp", "us_cpi", "umich_sentiment"]),
+    ("em", ["csi300", "hsi", "kweb", "inda", "ilf", "eem", "china_pmi", "china_retail_sales", "china_cpi", "china_gdp", "china_m2"]),
 ]
 
 # ─── Metric definitions ─────────────────────────────────────────────────────
@@ -371,6 +371,50 @@ METRICS = {
         "ticker": "EEM",
         "unit": "$",
     },
+    "inda": {
+        "name": "India ETF (INDA)",
+        "name_zh": "印度ETF",
+        "description": "iShares MSCI India ETF. Tracks large and mid-cap Indian equities. India is the fastest-growing major economy with strong demographics and manufacturing push (Make in India).",
+        "source_type": "yfinance",
+        "ticker": "INDA",
+        "unit": "$",
+    },
+    "ilf": {
+        "name": "Latin America ETF (ILF)",
+        "name_zh": "拉美ETF",
+        "description": "iShares Latin America 40 ETF. Tracks Brazil, Mexico, Chile, Colombia. Commodity-rich region benefiting from nearshoring (Mexico) and resource nationalism.",
+        "source_type": "yfinance",
+        "ticker": "ILF",
+        "unit": "$",
+    },
+    "china_cpi": {
+        "name": "China CPI YoY",
+        "name_zh": "中国CPI（同比）",
+        "description": "Year-over-year change in China consumer prices. Negative = deflation risk, the #1 macro worry for China bulls. Sustained positive CPI needed to confirm reflation thesis.",
+        "source_type": "fred",
+        "series": "CHNCPIALLMINMEI",
+        "unit": "% YoY",
+        "transform_yoy": True,
+        "note": "Monthly, lagged ~2 months",
+    },
+    "china_gdp": {
+        "name": "China GDP YoY",
+        "name_zh": "中国GDP（同比）",
+        "description": "China real GDP year-over-year growth rate. Headline execution metric for the 15-year plan. Target ~5%. Sustained above-target growth validates the re-rating thesis.",
+        "source_type": "manual",
+        "frequency": "quarterly",
+        "unit": "% YoY",
+        "note": "Quarterly — NBS",
+    },
+    "china_m2": {
+        "name": "China M2 YoY",
+        "name_zh": "中国M2（同比）",
+        "description": "China broad money supply year-over-year growth. M2 > 10% = PBOC actively stimulating. Rising M2 is a leading indicator for credit impulse and asset reflation.",
+        "source_type": "manual",
+        "frequency": "monthly",
+        "unit": "% YoY",
+        "note": "Monthly — PBOC",
+    },
 
     # ── Volatility & Macro Signals ──
     "move": {
@@ -390,6 +434,36 @@ METRICS = {
         "frequency": "monthly",
         "unit": "index",
         "note": "Monthly — ISM (no free API, backfill from CSV)",
+    },
+
+    # ── US Macro ──
+    "us_gdp": {
+        "name": "US Real GDP Growth",
+        "name_zh": "美国实际GDP增速",
+        "description": "Real GDP growth rate (SAAR). The headline US growth number. Above 2% = solid, above 3% = strong, below 0% for 2 consecutive quarters = recession.",
+        "source_type": "fred",
+        "series": "A191RL1Q225SBEA",
+        "unit": "% QoQ",
+        "note": "Quarterly, annualized — BEA",
+    },
+    "us_cpi": {
+        "name": "US CPI YoY",
+        "name_zh": "美国CPI（同比）",
+        "description": "Headline consumer price inflation, year-over-year. The Fed's dual mandate target is 2%. Above 3% = hawkish pressure, below 2% = rate cut runway. Drives gold, bonds, and dollar.",
+        "source_type": "fred",
+        "series": "CPIAUCSL",
+        "unit": "% YoY",
+        "transform_yoy": True,
+        "note": "Monthly, lagged ~2 weeks — BLS",
+    },
+    "umich_sentiment": {
+        "name": "UMich Consumer Sentiment",
+        "name_zh": "密歇根消费者信心指数",
+        "description": "University of Michigan consumer sentiment index. Below 60 = deep pessimism (recession risk), above 80 = confidence. A leading indicator: consumers cut spending before GDP falls.",
+        "source_type": "fred",
+        "series": "UMCSENT",
+        "unit": "index",
+        "note": "Monthly — UMich",
     },
 
     # ── AI & Rotation ──

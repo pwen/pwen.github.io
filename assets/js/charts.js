@@ -17,8 +17,8 @@
         { id: 'metals', name: 'METALS', metrics: ['gold', 'silver', 'copper', 'uranium'] },
         { id: 'energy', name: 'ENERGY', metrics: ['oil', 'natgas', 'energy_cpi'] },
         { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio', 'bigtech_capex', 'growth_value', 'cap_equal', 'atoms_bits'] },
-        { id: 'sentiment', name: 'SENTIMENT & ALTERNATIVES', metrics: ['vix', 'btc', 'cb_gold_buying', 'us_ism_pmi'] },
-        { id: 'em', name: 'EM & CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'eem'] }
+        { id: 'sentiment', name: 'SENTIMENT & ALTERNATIVES', metrics: ['vix', 'btc', 'cb_gold_buying', 'us_ism_pmi', 'us_gdp', 'us_cpi', 'umich_sentiment'] },
+        { id: 'em', name: 'EM & CHINA', metrics: ['csi300', 'hsi', 'kweb', 'inda', 'ilf', 'eem', 'china_pmi', 'china_retail_sales', 'china_cpi', 'china_gdp', 'china_m2'] }
     ];
 
     const PERIODS = ['1M', '3M', '6M', 'YTD', '1Y', '5Y'];
