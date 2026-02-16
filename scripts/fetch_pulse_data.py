@@ -55,7 +55,7 @@ CATEGORY_MAP = [
 # ─── Metric definitions ─────────────────────────────────────────────────────
 
 # Each metric: key → config dict
-# source_type: "yfinance", "fred", "computed", "derived", "manual"
+# source_type: "yfinance", "fred", "derived", "manual"
 METRICS = {
     # ── Currencies ──
     "dxy": {
@@ -288,7 +288,7 @@ METRICS = {
         "name": "Commodities / S&P 500",
         "name_zh": "大宗商品/标普500比率",
         "description": "GSG/SPY ratio: real assets vs financial assets. Rising = commodities outperforming equities. Turning up from decades-long lows.",
-        "source_type": "computed",
+        "source_type": "derived",
         "components": ["GSG", "SPY"],
         "unit": "ratio",
     },
@@ -391,11 +391,10 @@ METRICS = {
         "name": "China CPI YoY",
         "name_zh": "中国CPI（同比）",
         "description": "Year-over-year change in China consumer prices. Negative = deflation risk, the #1 macro worry for China bulls. Sustained positive CPI needed to confirm reflation thesis.",
-        "source_type": "fred",
-        "series": "CHNCPIALLMINMEI",
+        "source_type": "manual",
+        "frequency": "monthly",
         "unit": "% YoY",
-        "transform_yoy": True,
-        "note": "Monthly, lagged ~2 months",
+        "note": "Monthly — NBS",
     },
     "china_gdp": {
         "name": "China GDP YoY",
@@ -480,7 +479,7 @@ METRICS = {
         "name": "Growth / Value",
         "name_zh": "成长/价值比率",
         "description": "VUG/VTV ratio. Rising = growth stocks outperforming value, falling = value winning. A declining ratio signals rotation from tech/financial assets into real-economy sectors.",
-        "source_type": "computed",
+        "source_type": "derived",
         "components": ["VUG", "VTV"],
         "unit": "ratio",
     },
@@ -488,7 +487,7 @@ METRICS = {
         "name": "Cap-Weight / Equal-Weight",
         "name_zh": "市值加权/等权比率",
         "description": "SPY/RSP ratio. Rising = mega-cap concentration winning, falling = market breadth broadening. A declining ratio means the average stock is outperforming the index.",
-        "source_type": "computed",
+        "source_type": "derived",
         "components": ["SPY", "RSP"],
         "unit": "ratio",
     },
@@ -496,7 +495,7 @@ METRICS = {
         "name": "Atoms vs Bits",
         "name_zh": "实物/数字比率",
         "description": "Physical-economy ETFs (XLB+XLI+XLE+XME) vs digital-economy ETFs (IGV+WCLD). Rising = hard assets outperforming software/cloud. A sustained rise signals regime change from bits to atoms.",
-        "source_type": "basket_ratio",
+        "source_type": "derived",
         "basket_a": ["XLB", "XLI", "XLE", "XME"],
         "basket_b": ["IGV", "WCLD"],
         "unit": "ratio",
@@ -712,19 +711,19 @@ def main():
             if config.get("transform_yoy"):
                 history = compute_yoy(history)
 
-        elif source == "computed":
-            components = config["components"]
-            history = compute_ratio(components[0], components[1], start_date, end_date)
-
-        elif source == "basket_ratio":
-            history = compute_basket_ratio(
-                config["basket_a"], config["basket_b"], start_date, end_date
-            )
-
         elif source == "derived":
-            # Defer — computed in second pass after all other metrics are fetched
-            print("deferred (derived)")
-            continue
+            # Check what kind of derived metric this is
+            if "components" in config:
+                components = config["components"]
+                history = compute_ratio(components[0], components[1], start_date, end_date)
+            elif "basket_a" in config:
+                history = compute_basket_ratio(
+                    config["basket_a"], config["basket_b"], start_date, end_date
+                )
+            elif "derive_from" in config:
+                # Defer: computed in second pass after all other metrics are fetched
+                print("deferred (derived)")
+                continue
 
         elif source == "manual":
             # Keep existing data for manual metrics
@@ -794,9 +793,9 @@ def main():
         count = len(history_weekly)
         print(f"✓ {count} points, value={current_value}")
 
-    # ── Second pass: derived metrics ──
+    # ── Second pass: derived metrics that depend on other fetched metrics ──
     for metric_id, config in METRICS.items():
-        if config["source_type"] != "derived":
+        if config["source_type"] != "derived" or "derive_from" not in config:
             continue
         print(f"  [{metric_id}] (derived) ...", end=" ", flush=True)
 

@@ -474,7 +474,7 @@
         if (m.unit === '$/lb') return `$${v.toFixed(2)}`;
         if (m.unit === '$T') return `$${v}T`;
         if (m.unit === '%') return `${v}%`;
-        if (m.unit === '% YoY') return `${v}%`;
+        if (m.unit === '% YoY' || m.unit === '% QoQ') return `${v}%`;
         if (m.unit === 'ratio') return v.toFixed(2);
         if (m.unit === 'rate') return v.toFixed(2);
         if (m.unit === 'index') return v.toLocaleString();

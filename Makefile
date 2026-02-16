@@ -1,4 +1,7 @@
-.PHONY: help install serve build clean tags optimize-image fetch-data backfill-metric
+.PHONY: help install serve build clean tags optimize-image fetch-data backfill-metric backfill-all
+
+# All manual metrics (update this list when adding new manual metrics)
+MANUAL_METRICS := china_pmi china_retail_sales china_gdp china_m2 china_cpi cn_10y cb_gold_buying usd_reserves_share move us_ism_pmi bigtech_capex
 
 # Default target
 help:
@@ -9,6 +12,7 @@ help:
 	@echo "  make tags                - Generate tags data JSON"
 	@echo "  make fetch-data          - Fetch latest pulse metrics data"
 	@echo "  make backfill-metric    - Load manual metric from CSV (e.g. make backfill-metric ID=china_pmi)"
+	@echo "  make backfill-all        - Load ALL manual metrics from CSVs"
 	@echo "  make optimize-image IMG=<filename> - Optimize image for web"
 	@echo "  make clean               - Clean generated files"
 	@echo "  make help                - Show this help message"
@@ -73,3 +77,12 @@ backfill-metric:
 		exit 1; \
 	fi
 	@uv run scripts/fetch_pulse_data.py backfill $(ID) $${CSV:-data/backfill/$(ID).csv}
+
+# Load ALL manual metrics from CSVs
+backfill-all:
+	@echo "Loading all manual metrics..."
+	@for id in $(MANUAL_METRICS); do \
+		echo "  Backfilling $$id..."; \
+		uv run scripts/fetch_pulse_data.py backfill $$id data/backfill/$$id.csv; \
+	done
+	@echo "Done. Run 'make fetch-data' to regenerate JSON."

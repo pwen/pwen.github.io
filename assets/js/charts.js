@@ -349,7 +349,7 @@
         if (m.unit === '% spread') return `${v.toFixed(2)}%`;
         if (m.unit === 'rate') return v.toFixed(4);
         if (m.unit === 'ratio') return v.toFixed(2);
-        if (m.unit === '%YoY') return `${v.toFixed(1)}%`;
+        if (m.unit === '% YoY' || m.unit === '% QoQ') return `${v.toFixed(1)}%`;
         if (m.unit === 'tonnes/yr') return `${v.toLocaleString()}t`;
         if (typeof v === 'number' && v > 1000) return v.toLocaleString(undefined, { maximumFractionDigits: 2 });
         if (typeof v === 'number') return v.toFixed(2);
@@ -523,7 +523,7 @@
     }
 
     function formatRawValue(raw, m) {
-        if (m.unit === '%' || m.unit === '% spread' || m.unit === '%YoY') return raw.toFixed(2) + '%';
+        if (m.unit === '%' || m.unit === '% spread' || m.unit === '% YoY' || m.unit === '% QoQ') return raw.toFixed(2) + '%';
         if (m.unit === '$/oz' || m.unit === '$') return '$' + raw.toLocaleString();
         if (m.unit === '$T') return '$' + raw + 'T';
         if (m.unit === '$B') return '$' + raw + 'B';

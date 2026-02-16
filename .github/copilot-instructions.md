@@ -36,8 +36,7 @@ This is a multi-project workspace:
 ### Metric Source Types
 - `yfinance`: daily close via yfinance
 - `fred`: FRED API series
-- `computed`: ratio of two tickers (e.g., GSG/SPY)
-- `basket_ratio`: normalized basket A / basket B (e.g., atoms_bits = XLB+XLI+XLE+XME / IGV+WCLD)
+- `derived`: computed from other data at fetch time (e.g., ratio of two tickers like GSG/SPY, normalized basket ratio like atoms_bits, or arithmetic on fetched metrics like cn_us_spread = cn_10y - us_10y)
 - `manual`: backfilled from CSV in `data/backfill/`
 
 ### Backfill Command
@@ -45,6 +44,25 @@ This is a multi-project workspace:
 uv run scripts/fetch_pulse_data.py backfill <metric_id> <csv_path>
 ```
 CSV format: `date,value` (header row, one per line).
+
+### Manual Metrics Maintenance
+When the user asks to "update manual metrics" or similar:
+1. Look up the latest values from public sources (NBS, PBOC, ISM, etc.)
+2. Add new rows to the corresponding CSV in `data/backfill/`
+3. Run `make backfill-metric ID=<metric_id>` for each updated metric
+4. Run `make fetch-data` to regenerate all category JSON files
+
+Manual metrics and their sources/frequencies:
+- `china_pmi` (Monthly, NBS)
+- `china_retail_sales` (Monthly, NBS)
+- `china_gdp` (Quarterly, NBS)
+- `china_m2` (Monthly, PBOC)
+- `cn_10y` (Monthly, PBOC/CEIC)
+- `cb_gold_buying` (Quarterly, World Gold Council)
+- `usd_reserves_share` (Quarterly, IMF COFER)
+- `move` (Daily, ICE BofA)
+- `us_ism_pmi` (Monthly, ISM)
+- `bigtech_capex` (Quarterly, earnings reports)
 
 ### Description Style
 - What it measures + directional meaning only

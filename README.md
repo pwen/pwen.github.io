@@ -38,7 +38,7 @@ Content should be served locally at `http://localhost:4000`
 
 ## 📊 Pulse Data Pipeline
 
-The Pulse macro dashboard tracks ~40 metrics across 8 categories, organized around 5 macro theses. Most are fetched automatically from yfinance and FRED; some require manual CSV backfill.
+The Pulse macro dashboard tracks ~49 metrics across 8 categories, organized around 5 macro theses. Most are fetched automatically from yfinance and FRED; some require manual CSV backfill.
 
 ### Metric Source Types
 
@@ -46,8 +46,7 @@ The Pulse macro dashboard tracks ~40 metrics across 8 categories, organized arou
 |------|-------------|
 | `yfinance` | Daily close via yfinance |
 | `fred` | FRED API series |
-| `computed` | Ratio of two tickers (e.g., GSG/SPY) |
-| `basket_ratio` | Normalized basket A / basket B (e.g., atoms_bits) |
+| `derived` | Computed from other data at fetch time (ratios, baskets, arithmetic on fetched metrics) |
 | `manual` | Backfilled from CSV in `data/backfill/` |
 
 ### Automatic Fetch
@@ -66,6 +65,9 @@ These metrics have no free API. Their data lives in CSV files under `data/backfi
 |-----------|------|--------|-----------|---------------|
 | `china_pmi` | China Mfg PMI (中国制造业PMI) | NBS | Monthly | [data.stats.gov.cn](https://data.stats.gov.cn) |
 | `china_retail_sales` | China Retail Sales YoY (中国社零同比) | NBS | Monthly | [data.stats.gov.cn](https://data.stats.gov.cn) |
+| `china_gdp` | China GDP YoY (中国GDP同比) | NBS | Quarterly | [data.stats.gov.cn](https://data.stats.gov.cn) |
+| `china_m2` | China M2 YoY (中国M2同比) | PBOC | Monthly | [pbc.gov.cn](http://www.pbc.gov.cn/diaochatongjisi/116219/116319/index.html) |
+| `cn_10y` | China 10Y Yield (中国10年期国债) | PBOC/CEIC | Monthly | [ceicdata.com](https://www.ceicdata.com) or PBOC |
 | `cb_gold_buying` | Central Bank Gold Buying (央行购金量) | World Gold Council | Quarterly | [gold.org/goldhub](https://www.gold.org/goldhub/data/gold-demand-by-country) |
 | `usd_reserves_share` | USD Share of Reserves (美元储备占比) | IMF COFER | Quarterly | [data.imf.org](https://data.imf.org/regular.aspx?key=41175) |
 | `move` | MOVE Index (国债波动率指数) | ICE BofA | Daily | [ice.com](https://www.ice.com/marketdata/reports/258) |
@@ -82,14 +84,8 @@ These metrics have no free API. Their data lives in CSV files under `data/backfi
 # Load one metric
 make backfill-metric ID=china_pmi
 
-# Load all manual metrics
-make backfill-metric ID=china_pmi && \
-make backfill-metric ID=china_retail_sales && \
-make backfill-metric ID=cb_gold_buying && \
-make backfill-metric ID=usd_reserves_share && \
-make backfill-metric ID=move && \
-make backfill-metric ID=us_ism_pmi && \
-make backfill-metric ID=bigtech_capex
+# Load all manual metrics at once
+make backfill-all
 ```
 
 CSV format: columns `date,value`, one row per period:

@@ -20,7 +20,13 @@
                 "debt_to_gdp",
                 "usd_reserves_share",
                 "btc",
-                "move"
+                "move",
+                "eem",
+                "inda",
+                "ilf",
+                "us_gdp",
+                "us_cpi",
+                "umich_sentiment"
             ]
         },
         {
@@ -97,7 +103,8 @@
                 "cb_gold_buying",
                 "growth_value",
                 "cap_equal",
-                "atoms_bits"
+                "atoms_bits",
+                "us_cpi"
             ]
         }
     ],
