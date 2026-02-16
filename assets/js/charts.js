@@ -95,11 +95,14 @@
             `<button class="chart-period-btn${p === activePeriod ? ' active' : ''}" data-period="${p}">${p}</button>`
         ).join('');
 
+        const zhName = m.name_zh ? `<span class="chart-metric-name-zh">${m.name_zh}</span>` : '';
+
         return `
             <div class="chart-metric-row" data-metric="${id}">
                 <div class="chart-metric-info">
                     <span class="chart-metric-arrow">▸</span>
                     <span class="chart-metric-name">${m.name}</span>
+                    ${zhName}
                 </div>
                 <div class="chart-metric-data">
                     <span class="chart-metric-value">${formatValue(m)}</span>

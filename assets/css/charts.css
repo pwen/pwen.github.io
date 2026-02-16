@@ -124,6 +124,12 @@
     text-overflow: ellipsis;
 }
 
+.chart-metric-name-zh {
+    font-size: 0.78rem;
+    color: #999;
+    white-space: nowrap;
+}
+
 .chart-metric-data {
     display: flex;
     align-items: center;

@@ -41,6 +41,7 @@ METRICS = {
     # ── Currencies ──
     "dxy": {
         "name": "US Dollar Index",
+        "name_zh": "美元指数",
         "description": "Dollar vs a basket of major fiat currencies (euro-heavy). A relative measure — if all currencies debase together, DXY stays flat while purchasing power erodes.",
         "source_type": "yfinance",
         "ticker": "DX-Y.NYB",
@@ -48,6 +49,7 @@ METRICS = {
     },
     "eurusd": {
         "name": "EUR/USD",
+        "name_zh": "欧元/美元",
         "description": "The euro is DXY's largest component (~58%). EUR/USD rising = dollar weakening in its most liquid pair. Also reflects relative ECB vs Fed policy divergence.",
         "source_type": "yfinance",
         "ticker": "EURUSD=X",
@@ -55,6 +57,7 @@ METRICS = {
     },
     "usdcny": {
         "name": "USD/CNY",
+        "name_zh": "美元/人民币",
         "description": "Dollar-yuan exchange rate. Falling = yuan strengthening. A sustained move below 7.00 signals meaningful capital flow shift toward China.",
         "source_type": "yfinance",
         "ticker": "CNY=X",
@@ -62,6 +65,7 @@ METRICS = {
     },
     "usd_reserves_share": {
         "name": "USD Share of Reserves",
+        "name_zh": "美元储备占比",
         "description": "How much of global central bank reserves are held in dollars (IMF COFER data, quarterly, lagged). Dropped from 72% in 2000 — slow-moving but structural and largely irreversible.",
         "source_type": "manual",
         "unit": "%",
@@ -71,6 +75,7 @@ METRICS = {
     # ── Rates & Yields ──
     "us_10y": {
         "name": "US 10Y Yield",
+        "name_zh": "美国十年期国债收益率",
         "description": "The stress thermometer for US fiscal health. Rising yields = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
         "source_type": "yfinance",
         "ticker": "^TNX",
@@ -79,6 +84,7 @@ METRICS = {
     },
     "yield_curve": {
         "name": "10Y-2Y Spread",
+        "name_zh": "收益率曲线（10Y-2Y利差）",
         "description": "The classic recession signal. Inverted (negative) = market pricing rate cuts ahead. Re-steepening after inversion historically precedes recessions within 6-18 months.",
         "source_type": "fred",
         "series": "T10Y2Y",
@@ -87,6 +93,7 @@ METRICS = {
     },
     "tips_5y": {
         "name": "US 5Y TIPS (Real Yield)",
+        "name_zh": "五年期实际利率（TIPS）",
         "description": "The real cost of money after inflation. When negative, holding cash loses purchasing power — the engine that drives capital into gold and hard assets. Gromen's key metric for fiscal dominance.",
         "source_type": "fred",
         "series": "DFII5",
@@ -95,6 +102,7 @@ METRICS = {
     },
     "breakeven_10y": {
         "name": "10Y Breakeven Inflation",
+        "name_zh": "十年期盈亏平衡通胀率",
         "description": "Market-implied inflation expectation for the next 10 years. Rising breakevens = market pricing structurally higher inflation. Directly validates or challenges the debasement thesis.",
         "source_type": "fred",
         "series": "T10YIE",
@@ -103,6 +111,7 @@ METRICS = {
     },
     "hy_spread": {
         "name": "HY Credit Spread (OAS)",
+        "name_zh": "高收益债利差",
         "description": "High-yield bond spread over Treasuries. Widening = stress in credit markets, risk-off. Tight spreads = complacency. A spike above 5% historically signals recession risk.",
         "source_type": "fred",
         "series": "BAMLH0A0HYM2",
@@ -113,6 +122,7 @@ METRICS = {
     # ── Liquidity & Fiscal ──
     "fed_balance_sheet": {
         "name": "Fed Balance Sheet",
+        "name_zh": "美联储资产负债表",
         "description": "The ammo reserve of the buyer of last resort. Currently shrinking (QT), but any Treasury market stress forces re-expansion. Direction tells you whether fiscal dominance has gone from implicit to explicit.",
         "source_type": "fred",
         "series": "WALCL",
@@ -121,6 +131,7 @@ METRICS = {
     },
     "debt_to_gdp": {
         "name": "US Debt/GDP",
+        "name_zh": "美国债务/GDP",
         "description": "The denominator matters as much as the numerator. If GDP grows faster than debt, the ratio stabilizes. If not, the compounding math takes over. As long as this number climbs, all other pressures persist.",
         "source_type": "fred",
         "series": "GFDEGDQ188S",
@@ -129,6 +140,7 @@ METRICS = {
     },
     "tga": {
         "name": "Treasury General Account",
+        "name_zh": "财政部一般账户（TGA）",
         "description": "The US government's checking account at the Fed. Drawdowns inject liquidity into markets (bullish). Refills (post-debt-ceiling) drain it. Liquidity plumbing that moves risk assets.",
         "source_type": "fred",
         "series": "WTREGEN",
@@ -139,6 +151,7 @@ METRICS = {
     # ── Metals ──
     "gold": {
         "name": "Gold",
+        "name_zh": "黄金",
         "description": "The trust scoreboard. When gold rises alongside rising yields and a falling dollar, the market is pricing loss of confidence in the fiscal trajectory. Central banks buying gold = voting with their reserves.",
         "source_type": "yfinance",
         "ticker": "GC=F",
@@ -146,6 +159,7 @@ METRICS = {
     },
     "silver": {
         "name": "Silver",
+        "name_zh": "白银",
         "description": "Dual identity: monetary metal (like gold) AND industrial metal (solar panels, electronics). The silver market is in structural deficit. Outperforms gold in bull runs, more volatile.",
         "source_type": "yfinance",
         "ticker": "SI=F",
@@ -153,6 +167,7 @@ METRICS = {
     },
     "copper": {
         "name": "Copper",
+        "name_zh": "铜",
         "description": "The electrification bellwether. EVs use 3-4x more copper than ICE vehicles. Data centers, wind turbines, grid upgrades all need copper. Supply growth structurally constrained (mines take 7-15 years). Goldman calls it 'the new oil.'",
         "source_type": "yfinance",
         "ticker": "HG=F",
@@ -160,6 +175,7 @@ METRICS = {
     },
     "uranium": {
         "name": "Uranium (URA ETF)",
+        "name_zh": "铀（URA ETF）",
         "description": "Global X Uranium ETF. Proxy for the nuclear renaissance thesis — 30+ countries committed to tripling nuclear capacity. Supply constrained: Russia controls 40% of global enrichment.",
         "source_type": "yfinance",
         "ticker": "URA",
@@ -169,6 +185,7 @@ METRICS = {
     # ── Energy ──
     "oil": {
         "name": "WTI Crude",
+        "name_zh": "WTI原油",
         "description": "West Texas Intermediate crude oil. The one commodity with significant political suppression risk (Saudi deals, SPR releases). Tension between political will to lower prices and geological reality of tight supply.",
         "source_type": "yfinance",
         "ticker": "CL=F",
@@ -176,6 +193,7 @@ METRICS = {
     },
     "natgas": {
         "name": "Natural Gas",
+        "name_zh": "天然气",
         "description": "Key energy source for power generation. AI data centers are driving massive new electricity demand, tightening the gas market. Also a geopolitical commodity (Russia/Europe, LNG exports).",
         "source_type": "yfinance",
         "ticker": "NG=F",
@@ -183,6 +201,7 @@ METRICS = {
     },
     "energy_cpi": {
         "name": "Energy Services CPI YoY",
+        "name_zh": "能源服务CPI（同比）",
         "description": "Year-over-year change in energy services prices (BLS). The hottest CPI component — directly tied to AI data center power demand. Above 7% creates real political backlash against AI deployment.",
         "source_type": "fred",
         "series": "CUSR0000SEHF",
@@ -194,6 +213,7 @@ METRICS = {
     # ── US Equities & Sectors ──
     "sp500": {
         "name": "S&P 500",
+        "name_zh": "标普500",
         "description": "The broad US equity benchmark. Tracks overall market health. Compare with QQQ/SMH to see whether tech is leading or lagging the broader market.",
         "source_type": "yfinance",
         "ticker": "^GSPC",
@@ -201,6 +221,7 @@ METRICS = {
     },
     "qqq": {
         "name": "Nasdaq 100 ETF",
+        "name_zh": "纳斯达克100 ETF",
         "description": "Tracks the 100 largest Nasdaq-listed non-financial companies. AI-heavy (Mag7 dominant). Watch QQQ vs SMH divergence to gauge whether AI beneficiary rotation is underway.",
         "source_type": "yfinance",
         "ticker": "QQQ",
@@ -208,6 +229,7 @@ METRICS = {
     },
     "smh": {
         "name": "Semiconductor ETF",
+        "name_zh": "半导体ETF",
         "description": "VanEck Semiconductor ETF. The AI picks-and-shovels trade (Nvidia, TSMC, ASML). If SMH underperforms QQQ, leadership is rotating from builders to enablers/adopters.",
         "source_type": "yfinance",
         "ticker": "SMH",
@@ -215,6 +237,7 @@ METRICS = {
     },
     "xlu": {
         "name": "Utilities ETF (XLU)",
+        "name_zh": "公用事业ETF",
         "description": "The 'boring' AI winner. Data centers need massive electricity — utilities are the enablers. XLU outperforming tech = market rotating into AI infrastructure over AI hype.",
         "source_type": "yfinance",
         "ticker": "XLU",
@@ -222,6 +245,7 @@ METRICS = {
     },
     "gsci_spy_ratio": {
         "name": "Commodities / S&P 500",
+        "name_zh": "大宗商品/标普500比率",
         "description": "GSG/SPY ratio — the broadest measure of real vs financial asset performance. A sustained move above 1.0 confirms the regime change from financial assets to hard assets. Currently turning from decades-long lows.",
         "source_type": "computed",
         "components": ["GSG", "SPY"],
@@ -231,6 +255,7 @@ METRICS = {
     # ── Sentiment & Alternatives ──
     "vix": {
         "name": "VIX",
+        "name_zh": "恐慌指数",
         "description": "The 'fear gauge'. Measures S&P 500 implied volatility. Below 15 = complacency, above 25 = elevated fear, above 35 = panic. Spikes tend to be short-lived but signal regime shifts.",
         "source_type": "yfinance",
         "ticker": "^VIX",
@@ -238,6 +263,7 @@ METRICS = {
     },
     "btc": {
         "name": "Bitcoin",
+        "name_zh": "比特币",
         "description": "Digital debasement hedge. Correlates with global liquidity — when central banks expand balance sheets, BTC tends to rise. Also a barometer of risk appetite and monetary system distrust.",
         "source_type": "yfinance",
         "ticker": "BTC-USD",
@@ -245,6 +271,7 @@ METRICS = {
     },
     "cb_gold_buying": {
         "name": "Central Bank Gold Buying",
+        "name_zh": "央行购金量",
         "description": "Quarterly data from World Gold Council. Central banks have been net buyers since 2010, accelerating post-2022 (sanctions on Russia). This is the structural floor under gold — sovereign entities voting to de-dollarize.",
         "source_type": "manual",
         "unit": "tonnes/yr",
@@ -254,6 +281,7 @@ METRICS = {
     # ── EM & China ──
     "csi300": {
         "name": "CSI 300",
+        "name_zh": "沪深300",
         "description": "China's benchmark equity index (top 300 A-shares). The cleanest signal of whether domestic and foreign capital is returning to Chinese markets.",
         "source_type": "yfinance",
         "ticker": "000300.SS",
@@ -261,6 +289,7 @@ METRICS = {
     },
     "hsi": {
         "name": "Hang Seng Index",
+        "name_zh": "恒生指数",
         "description": "Hong Kong's benchmark — the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment toward China than onshore CSI 300.",
         "source_type": "yfinance",
         "ticker": "^HSI",
@@ -268,6 +297,7 @@ METRICS = {
     },
     "kweb": {
         "name": "China Internet ETF",
+        "name_zh": "中概互联网ETF",
         "description": "KraneShares CSI China Internet ETF. Tracks Chinese tech (Alibaba, Tencent, PDD, etc.). A proxy for foreign investor sentiment on Chinese tech and regulatory risk.",
         "source_type": "yfinance",
         "ticker": "KWEB",
@@ -275,6 +305,7 @@ METRICS = {
     },
     "china_pmi": {
         "name": "China Mfg PMI",
+        "name_zh": "中国制造业PMI",
         "description": "NBS Manufacturing PMI. 50 = expansion/contraction line. Sustained above 51 confirms recovery is real; below 49 signals contraction.",
         "source_type": "manual",
         "unit": "index",
@@ -282,6 +313,7 @@ METRICS = {
     },
     "china_retail_sales": {
         "name": "China Retail Sales YoY",
+        "name_zh": "中国社零同比",
         "description": "Monthly year-over-year growth in Chinese retail sales (NBS). The key gauge for whether China's consumption pivot thesis is playing out. Needs to sustain 4%+ and ideally move toward 5-6%.",
         "source_type": "manual",
         "unit": "% YoY",
@@ -289,6 +321,7 @@ METRICS = {
     },
     "eem": {
         "name": "MSCI Emerging Markets ETF",
+        "name_zh": "新兴市场ETF",
         "description": "Broad EM equity benchmark. Tracks whether capital is flowing into or out of developing markets. EM outperforming DM = dollar-weakness + fragmentation trade working.",
         "source_type": "yfinance",
         "ticker": "EEM",
@@ -475,6 +508,7 @@ def main():
                 print("manual (no existing data)")
                 result_metrics[metric_id] = {
                     "name": config["name"],
+                    "name_zh": config.get("name_zh", ""),
                     "description": config["description"],
                     "value": None,
                     "direction": "flat",
@@ -515,6 +549,7 @@ def main():
         # Build metric object
         m = {
             "name": config["name"],
+            "name_zh": config.get("name_zh", ""),
             "description": config["description"],
             "value": current_value,
             "direction": direction,
