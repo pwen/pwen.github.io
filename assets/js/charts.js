@@ -80,7 +80,6 @@
                             <span class="ch-name">NAME</span>
                             <span class="ch-signal">SIGNAL</span>
                             <span class="ch-val">LATEST</span>
-                            <span class="ch-chg">1W</span>
                             <span class="ch-chg">1M</span>
                             <span class="ch-chg">YTD</span>
                             <span class="ch-chg">1Y</span>
@@ -135,8 +134,6 @@
 
         const zhName = m.name_zh ? `<span class="chart-metric-name-zh">${m.name_zh}</span>` : '';
 
-        const chg1w = formatPeriodChange(m, 7);
-        const dir1w = periodChangeDir(m, 7);
         const chg1m = formatPeriodChange(m, 30);
         const dir1m = periodChangeDir(m, 30);
         const chg1y = formatPeriodChange(m, 365);
@@ -155,7 +152,6 @@
                 <div class="chart-metric-data">
                     <span class="chart-metric-signal ${(m.signal || 'NORMAL').toLowerCase()}">${formatSignal(m)}</span>
                     <span class="chart-metric-value">${formatValue(m)}</span>
-                    <span class="chart-metric-change ${dir1w}">${chg1w}</span>
                     <span class="chart-metric-change ${dir1m}">${chg1m}</span>
                     <span class="chart-metric-change ytd ${dirYtd}">${changeText}</span>
                     <span class="chart-metric-change ${dir1y}">${chg1y}</span>
