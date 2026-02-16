@@ -16,7 +16,7 @@
         { id: 'liquidity', name: 'LIQUIDITY & FISCAL', metrics: ['fed_balance_sheet', 'debt_to_gdp', 'tga'] },
         { id: 'metals', name: 'METALS', metrics: ['gold', 'silver', 'copper', 'uranium'] },
         { id: 'energy', name: 'ENERGY', metrics: ['oil', 'natgas', 'energy_cpi'] },
-        { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio', 'bigtech_capex', 'iwf_iwd'] },
+        { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio', 'bigtech_capex', 'growth_value', 'cap_equal', 'atoms_bits'] },
         { id: 'sentiment', name: 'SENTIMENT & ALTERNATIVES', metrics: ['vix', 'btc', 'cb_gold_buying', 'us_ism_pmi'] },
         { id: 'em', name: 'EM & CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'eem'] }
     ];
@@ -26,8 +26,20 @@
     // ─── Bootstrap ───
     async function init() {
         try {
-            const resp = await fetch(`${BASE}/metrics.json`);
-            metricsData = await resp.json();
+            // Load per-category JSON files in parallel
+            const fetches = CATEGORIES.map(cat =>
+                fetch(`${BASE}/${cat.id}.json`).then(r => r.json())
+            );
+            const results = await Promise.all(fetches);
+
+            // Merge into single metricsData object
+            metricsData = { updated: null, metrics: {} };
+            for (const catData of results) {
+                if (catData.updated && (!metricsData.updated || catData.updated > metricsData.updated)) {
+                    metricsData.updated = catData.updated;
+                }
+                Object.assign(metricsData.metrics, catData.metrics);
+            }
             renderUpdated();
             renderCategories();
         } catch (err) {

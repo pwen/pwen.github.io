@@ -88,7 +88,9 @@
                 "gsci_spy_ratio",
                 "tips_5y",
                 "cb_gold_buying",
-                "iwf_iwd"
+                "growth_value",
+                "cap_equal",
+                "atoms_bits"
             ]
         }
     ],

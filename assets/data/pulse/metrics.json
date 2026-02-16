@@ -1,10 +1,10 @@
 {
-  "updated": "2026-02-16T01:33:50Z",
+  "updated": "2026-02-16T01:43:40Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
-      "description": "Dollar vs a basket of major fiat currencies (euro-heavy). A relative measure \u2014 if all currencies debase together, DXY stays flat while purchasing power erodes.",
+      "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
       "value": 96.88,
       "direction": "down",
       "unit": "index",
@@ -1076,7 +1076,7 @@
     "eurusd": {
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
-      "description": "The euro is DXY's largest component (~58%). EUR/USD rising = dollar weakening in its most liquid pair. Also reflects relative ECB vs Fed policy divergence.",
+      "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
       "value": 1.1868,
       "direction": "down",
       "unit": "rate",
@@ -2148,7 +2148,7 @@
     "usdcny": {
       "name": "USD/CNY",
       "name_zh": "\u7f8e\u5143/\u4eba\u6c11\u5e01",
-      "description": "Dollar-yuan exchange rate. Falling = yuan strengthening. A sustained move below 7.00 signals meaningful capital flow shift toward China.",
+      "description": "Dollar-yuan exchange rate. Rising = yuan weakening, falling = yuan strengthening. Below 7.00 signals meaningful capital flow shift toward China.",
       "value": 6.9001,
       "direction": "down",
       "unit": "rate",
@@ -3220,7 +3220,7 @@
     "usd_reserves_share": {
       "name": "USD Share of Reserves",
       "name_zh": "\u7f8e\u5143\u50a8\u5907\u5360\u6bd4",
-      "description": "Percentage of global central bank FX reserves held in US dollars (IMF COFER data, quarterly with lag). Fell from 72% in 2000 to ~57% \u2014 slow-moving but structurally one-directional. Rising = dollar maintaining reserve status, falling = diversification away. \ud83d\udd17 Weak Dollar thesis: expect continued decline as central banks diversify into gold, yuan, and other reserves. This is the slow-burning structural confirmation.",
+      "description": "Share of global central bank reserves held in dollars (IMF COFER, quarterly, lagged). Falling = structural de-dollarization. Dropped from 72% in 2000: slow-moving but largely irreversible.",
       "value": 56.3,
       "direction": "down",
       "unit": "%",
@@ -3312,7 +3312,7 @@
     "us_10y": {
       "name": "US 10Y Yield",
       "name_zh": "\u7f8e\u56fd\u5341\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
-      "description": "The stress thermometer for US fiscal health. Rising yields = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
+      "description": "Benchmark Treasury yield. Rising = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
       "value": 4.056,
       "direction": "down",
       "unit": "%",
@@ -4384,7 +4384,7 @@
     "yield_curve": {
       "name": "10Y-2Y Spread",
       "name_zh": "\u6536\u76ca\u7387\u66f2\u7ebf\uff0810Y-2Y\u5229\u5dee\uff09",
-      "description": "The classic recession signal. Inverted (negative) = market pricing rate cuts ahead. Re-steepening after inversion historically precedes recessions within 6-18 months.",
+      "description": "10Y minus 2Y Treasury yield. Inverted (negative) = market pricing rate cuts ahead. Re-steepening after inversion historically precedes recessions within 6-18 months.",
       "value": 0.64,
       "direction": "up",
       "unit": "% spread",
@@ -5456,7 +5456,7 @@
     "tips_5y": {
       "name": "US 5Y TIPS (Real Yield)",
       "name_zh": "\u4e94\u5e74\u671f\u5b9e\u9645\u5229\u7387\uff08TIPS\uff09",
-      "description": "The real cost of money after inflation. When negative, holding cash loses purchasing power \u2014 the engine that drives capital into gold and hard assets. Gromen's key metric for fiscal dominance.",
+      "description": "Real cost of money after inflation. Rising = tighter real conditions, falling = looser. Negative real yields push capital toward gold and hard assets.",
       "value": 1.22,
       "direction": "down",
       "unit": "%",
@@ -6528,7 +6528,7 @@
     "breakeven_10y": {
       "name": "10Y Breakeven Inflation",
       "name_zh": "\u5341\u5e74\u671f\u76c8\u4e8f\u5e73\u8861\u901a\u80c0\u7387",
-      "description": "Market-implied inflation expectation for the next 10 years. Rising breakevens = market pricing structurally higher inflation. Directly validates or challenges the debasement thesis.",
+      "description": "Market-implied inflation expectation for the next 10 years. Rising = market pricing higher inflation, falling = disinflation expectations.",
       "value": 2.27,
       "direction": "down",
       "unit": "%",
@@ -7600,7 +7600,7 @@
     "hy_spread": {
       "name": "HY Credit Spread (OAS)",
       "name_zh": "\u9ad8\u6536\u76ca\u503a\u5229\u5dee",
-      "description": "High-yield bond spread over Treasuries. Widening = stress in credit markets, risk-off. Tight spreads = complacency. A spike above 5% historically signals recession risk.",
+      "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% historically signals recession risk.",
       "value": 2.92,
       "direction": "up",
       "unit": "%",
@@ -8672,7 +8672,7 @@
     "fed_balance_sheet": {
       "name": "Fed Balance Sheet",
       "name_zh": "\u7f8e\u8054\u50a8\u8d44\u4ea7\u8d1f\u503a\u8868",
-      "description": "The ammo reserve of the buyer of last resort. Currently shrinking (QT), but any Treasury market stress forces re-expansion. Direction tells you whether fiscal dominance has gone from implicit to explicit.",
+      "description": "Total assets held by the Federal Reserve. Rising = QE / liquidity injection, falling = QT / tightening. Treasury market stress forces re-expansion.",
       "value": 6.62,
       "direction": "up",
       "unit": "$T",
@@ -9744,7 +9744,7 @@
     "debt_to_gdp": {
       "name": "US Debt/GDP",
       "name_zh": "\u7f8e\u56fd\u503a\u52a1/GDP",
-      "description": "The denominator matters as much as the numerator. If GDP grows faster than debt, the ratio stabilizes. If not, the compounding math takes over. As long as this number climbs, all other pressures persist.",
+      "description": "Federal debt as a share of GDP. Rising = fiscal trajectory worsening. If GDP grows faster than debt, the ratio stabilizes; otherwise compounding takes over.",
       "value": 121.0288,
       "direction": "up",
       "unit": "%",
@@ -9832,7 +9832,7 @@
     "tga": {
       "name": "Treasury General Account",
       "name_zh": "\u8d22\u653f\u90e8\u4e00\u822c\u8d26\u6237\uff08TGA\uff09",
-      "description": "The US government's checking account at the Fed. Drawdowns inject liquidity into markets (bullish). Refills (post-debt-ceiling) drain it. Liquidity plumbing that moves risk assets.",
+      "description": "US government's checking account at the Fed. Drawdowns inject liquidity into markets (bullish for risk assets). Refills drain liquidity.",
       "value": 915.3,
       "direction": "up",
       "unit": "$B",
@@ -10904,7 +10904,7 @@
     "gold": {
       "name": "Gold",
       "name_zh": "\u9ec4\u91d1",
-      "description": "The trust scoreboard. When gold rises alongside rising yields and a falling dollar, the market is pricing loss of confidence in the fiscal trajectory. Central banks buying gold = voting with their reserves.",
+      "description": "Spot gold price. Rising = inflation hedge demand / loss of confidence in fiat. Central banks buying gold = voting to diversify away from dollars.",
       "value": 5022.0,
       "direction": "up",
       "unit": "$/oz",
@@ -11976,7 +11976,7 @@
     "silver": {
       "name": "Silver",
       "name_zh": "\u767d\u94f6",
-      "description": "Dual identity: monetary metal (like gold) AND industrial metal (solar panels, electronics). The silver market is in structural deficit. Outperforms gold in bull runs, more volatile.",
+      "description": "Both monetary and industrial metal (solar, electronics). Market in structural deficit. Outperforms gold in bull runs, more volatile.",
       "value": 77.851,
       "direction": "up",
       "unit": "$/oz",
@@ -13048,7 +13048,7 @@
     "copper": {
       "name": "Copper",
       "name_zh": "\u94dc",
-      "description": "The electrification bellwether. EVs use 3-4x more copper than ICE vehicles. Data centers, wind turbines, grid upgrades all need copper. Supply growth structurally constrained (mines take 7-15 years). Goldman calls it 'the new oil.'",
+      "description": "Electrification bellwether: EVs, data centers, wind turbines, grid upgrades. Supply structurally constrained (mines take 7-15 years). Rising = industrial and green demand outpacing supply.",
       "value": 5.7925,
       "direction": "up",
       "unit": "$/lb",
@@ -14120,7 +14120,7 @@
     "uranium": {
       "name": "Uranium (URA ETF)",
       "name_zh": "\u94c0\uff08URA ETF\uff09",
-      "description": "Global X Uranium ETF. Proxy for the nuclear renaissance thesis \u2014 30+ countries committed to tripling nuclear capacity. Supply constrained: Russia controls 40% of global enrichment.",
+      "description": "Global X Uranium ETF. Proxy for nuclear renaissance: 30+ countries committed to tripling capacity. Supply constrained, Russia controls 40% of enrichment.",
       "value": 51.91,
       "direction": "up",
       "unit": "$",
@@ -14135,7 +14135,7 @@
         ],
         [
           "2021-02-05",
-          13.376
+          13.3759
         ],
         [
           "2021-02-12",
@@ -14291,7 +14291,7 @@
         ],
         [
           "2021-11-05",
-          23.8745
+          23.8744
         ],
         [
           "2021-11-12",
@@ -14311,7 +14311,7 @@
         ],
         [
           "2021-12-10",
-          19.8652
+          19.8653
         ],
         [
           "2021-12-17",
@@ -14339,7 +14339,7 @@
         ],
         [
           "2022-01-28",
-          17.3471
+          17.3472
         ],
         [
           "2022-02-04",
@@ -14387,7 +14387,7 @@
         ],
         [
           "2022-04-22",
-          21.2388
+          21.2387
         ],
         [
           "2022-04-29",
@@ -15192,7 +15192,7 @@
     "oil": {
       "name": "WTI Crude",
       "name_zh": "WTI\u539f\u6cb9",
-      "description": "West Texas Intermediate crude oil. The one commodity with significant political suppression risk (Saudi deals, SPR releases). Tension between political will to lower prices and geological reality of tight supply.",
+      "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
       "value": 62.89,
       "direction": "up",
       "unit": "$/bbl",
@@ -16264,7 +16264,7 @@
     "natgas": {
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
-      "description": "Key energy source for power generation. AI data centers are driving massive new electricity demand, tightening the gas market. Also a geopolitical commodity (Russia/Europe, LNG exports).",
+      "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
       "value": 3.243,
       "direction": "up",
       "unit": "$/MMBtu",
@@ -17336,7 +17336,7 @@
     "energy_cpi": {
       "name": "Energy Services CPI YoY",
       "name_zh": "\u80fd\u6e90\u670d\u52a1CPI\uff08\u540c\u6bd4\uff09",
-      "description": "Year-over-year change in energy services prices (BLS). The hottest CPI component \u2014 directly tied to AI data center power demand. Above 7% creates real political backlash against AI deployment.",
+      "description": "Year-over-year change in energy services prices (BLS). Rising = energy inflation accelerating. Directly tied to AI data center power demand. Above 7% creates political backlash.",
       "value": 7.8,
       "direction": "down",
       "unit": "% YoY",
@@ -17541,7 +17541,7 @@
     "sp500": {
       "name": "S&P 500",
       "name_zh": "\u6807\u666e500",
-      "description": "The broad US equity benchmark. Tracks overall market health. Compare with QQQ/SMH to see whether tech is leading or lagging the broader market.",
+      "description": "Broad US equity benchmark. Rising = risk-on, falling = risk-off. Compare with QQQ/SMH to gauge whether tech is leading or lagging.",
       "value": 6836.1699,
       "direction": "up",
       "unit": "index",
@@ -18613,14 +18613,14 @@
     "qqq": {
       "name": "Nasdaq 100 ETF",
       "name_zh": "\u7eb3\u65af\u8fbe\u514b100 ETF",
-      "description": "Tracks the 100 largest Nasdaq-listed non-financial companies. AI-heavy (Mag7 dominant). Watch QQQ vs SMH divergence to gauge whether AI beneficiary rotation is underway.",
+      "description": "100 largest Nasdaq non-financial companies. AI/tech-heavy (Mag7 dominant). QQQ vs SMH divergence signals whether AI leadership is rotating.",
       "value": 601.92,
       "direction": "up",
       "unit": "$",
       "history": [
         [
           "2021-01-22",
-          315.7967
+          315.7968
         ],
         [
           "2021-01-29",
@@ -18644,15 +18644,15 @@
         ],
         [
           "2021-03-05",
-          299.5516
+          299.5517
         ],
         [
           "2021-03-12",
-          306.1312
+          306.1313
         ],
         [
           "2021-03-19",
-          303.8799
+          303.8798
         ],
         [
           "2021-03-26",
@@ -18660,7 +18660,7 @@
         ],
         [
           "2021-04-01",
-          315.3698
+          315.3697
         ],
         [
           "2021-04-09",
@@ -18684,7 +18684,7 @@
         ],
         [
           "2021-05-14",
-          317.138
+          317.1381
         ],
         [
           "2021-05-21",
@@ -18696,35 +18696,35 @@
         ],
         [
           "2021-06-04",
-          326.0871
+          326.087
         ],
         [
           "2021-06-11",
-          331.5671
+          331.5672
         ],
         [
           "2021-06-18",
-          332.9178
+          332.9177
         ],
         [
           "2021-06-25",
-          339.948
+          339.9479
         ],
         [
           "2021-07-02",
-          348.8781
+          348.8782
         ],
         [
           "2021-07-09",
-          351.1837
+          351.1836
         ],
         [
           "2021-07-16",
-          347.8665
+          347.8664
         ],
         [
           "2021-07-23",
-          358.1779
+          358.178
         ],
         [
           "2021-07-30",
@@ -18736,23 +18736,23 @@
         ],
         [
           "2021-08-13",
-          358.781
+          358.7811
         ],
         [
           "2021-08-20",
-          357.7207
+          357.7208
         ],
         [
           "2021-08-27",
-          365.8045
+          365.8046
         ],
         [
           "2021-09-03",
-          371.1841
+          371.184
         ],
         [
           "2021-09-10",
-          366.3395
+          366.3396
         ],
         [
           "2021-09-17",
@@ -18784,7 +18784,7 @@
         ],
         [
           "2021-11-05",
-          388.1803
+          388.1804
         ],
         [
           "2021-11-12",
@@ -18800,11 +18800,11 @@
         ],
         [
           "2021-12-03",
-          373.1147
+          373.1148
         ],
         [
           "2021-12-10",
-          387.6058
+          387.6057
         ],
         [
           "2021-12-17",
@@ -18816,23 +18816,23 @@
         ],
         [
           "2021-12-31",
-          387.9449
+          387.9448
         ],
         [
           "2022-01-07",
-          370.4027
+          370.4026
         ],
         [
           "2022-01-14",
-          370.5489
+          370.549
         ],
         [
           "2022-01-21",
-          342.9341
+          342.934
         ],
         [
           "2022-01-28",
-          343.0413
+          343.0414
         ],
         [
           "2022-02-04",
@@ -18848,7 +18848,7 @@
         ],
         [
           "2022-02-25",
-          337.1613
+          337.1614
         ],
         [
           "2022-03-04",
@@ -18856,7 +18856,7 @@
         ],
         [
           "2022-03-11",
-          316.3234
+          316.3235
         ],
         [
           "2022-03-18",
@@ -18876,7 +18876,7 @@
         ],
         [
           "2022-04-14",
-          330.4121
+          330.4122
         ],
         [
           "2022-04-22",
@@ -18888,7 +18888,7 @@
         ],
         [
           "2022-05-06",
-          301.9235
+          301.9234
         ],
         [
           "2022-05-13",
@@ -18896,15 +18896,15 @@
         ],
         [
           "2022-05-20",
-          281.8408
+          281.8409
         ],
         [
           "2022-05-27",
-          301.777
+          301.7771
         ],
         [
           "2022-06-03",
-          298.9457
+          298.9458
         ],
         [
           "2022-06-10",
@@ -18924,7 +18924,7 @@
         ],
         [
           "2022-07-08",
-          288.9071
+          288.907
         ],
         [
           "2022-07-15",
@@ -18952,11 +18952,11 @@
         ],
         [
           "2022-08-26",
-          300.7334
+          300.7333
         ],
         [
           "2022-09-02",
-          288.731
+          288.7311
         ],
         [
           "2022-09-09",
@@ -18980,7 +18980,7 @@
         ],
         [
           "2022-10-14",
-          255.5104
+          255.5105
         ],
         [
           "2022-10-21",
@@ -18988,15 +18988,15 @@
         ],
         [
           "2022-10-28",
-          275.5797
+          275.5796
         ],
         [
           "2022-11-04",
-          259.3714
+          259.3713
         ],
         [
           "2022-11-11",
-          282.1845
+          282.1844
         ],
         [
           "2022-11-18",
@@ -19008,11 +19008,11 @@
         ],
         [
           "2022-12-02",
-          286.6824
+          286.6825
         ],
         [
           "2022-12-09",
-          276.3832
+          276.3833
         ],
         [
           "2022-12-16",
@@ -19024,19 +19024,19 @@
         ],
         [
           "2022-12-30",
-          261.564
+          261.5641
         ],
         [
           "2023-01-06",
-          264.0393
+          264.0394
         ],
         [
           "2023-01-13",
-          275.9938
+          275.9939
         ],
         [
           "2023-01-20",
-          277.6735
+          277.6736
         ],
         [
           "2023-01-27",
@@ -19044,7 +19044,7 @@
         ],
         [
           "2023-02-03",
-          300.7574
+          300.7573
         ],
         [
           "2023-02-10",
@@ -19056,7 +19056,7 @@
         ],
         [
           "2023-02-24",
-          286.6812
+          286.6811
         ],
         [
           "2023-03-03",
@@ -19068,7 +19068,7 @@
         ],
         [
           "2023-03-17",
-          299.9518
+          299.9519
         ],
         [
           "2023-03-24",
@@ -19084,11 +19084,11 @@
         ],
         [
           "2023-04-14",
-          313.4123
+          313.4124
         ],
         [
           "2023-04-21",
-          311.484
+          311.4842
         ],
         [
           "2023-04-28",
@@ -19104,7 +19104,7 @@
         ],
         [
           "2023-05-19",
-          331.062
+          331.0619
         ],
         [
           "2023-05-26",
@@ -19112,7 +19112,7 @@
         ],
         [
           "2023-06-02",
-          348.9083
+          348.9082
         ],
         [
           "2023-06-09",
@@ -19120,11 +19120,11 @@
         ],
         [
           "2023-06-16",
-          361.9732
+          361.9733
         ],
         [
           "2023-06-23",
-          357.1598
+          357.1597
         ],
         [
           "2023-06-30",
@@ -19132,11 +19132,11 @@
         ],
         [
           "2023-07-07",
-          360.8048
+          360.8049
         ],
         [
           "2023-07-14",
-          373.4444
+          373.4445
         ],
         [
           "2023-07-21",
@@ -19144,7 +19144,7 @@
         ],
         [
           "2023-07-28",
-          377.7891
+          377.789
         ],
         [
           "2023-08-04",
@@ -19152,7 +19152,7 @@
         ],
         [
           "2023-08-11",
-          360.8048
+          360.8049
         ],
         [
           "2023-08-18",
@@ -19160,7 +19160,7 @@
         ],
         [
           "2023-08-25",
-          358.6177
+          358.6178
         ],
         [
           "2023-09-01",
@@ -19176,11 +19176,11 @@
         ],
         [
           "2023-09-22",
-          353.1088
+          353.1089
         ],
         [
           "2023-09-29",
-          353.464
+          353.4641
         ],
         [
           "2023-10-06",
@@ -19204,11 +19204,11 @@
         ],
         [
           "2023-11-10",
-          373.3142
+          373.3141
         ],
         [
           "2023-11-17",
-          380.8616
+          380.8615
         ],
         [
           "2023-11-24",
@@ -19240,7 +19240,7 @@
         ],
         [
           "2024-01-12",
-          405.0861
+          405.086
         ],
         [
           "2024-01-19",
@@ -19256,11 +19256,11 @@
         ],
         [
           "2024-02-09",
-          432.2757
+          432.2758
         ],
         [
           "2024-02-16",
-          425.8666
+          425.8665
         ],
         [
           "2024-02-23",
@@ -19280,11 +19280,11 @@
         ],
         [
           "2024-03-22",
-          442.0876
+          442.0877
         ],
         [
           "2024-03-28",
-          439.7404
+          439.7405
         ],
         [
           "2024-04-05",
@@ -19300,11 +19300,11 @@
         ],
         [
           "2024-04-26",
-          426.8556
+          426.8555
         ],
         [
           "2024-05-03",
-          431.2925
+          431.2924
         ],
         [
           "2024-05-10",
@@ -19372,7 +19372,7 @@
         ],
         [
           "2024-08-30",
-          472.44
+          472.4399
         ],
         [
           "2024-09-06",
@@ -19384,7 +19384,7 @@
         ],
         [
           "2024-09-20",
-          478.5604
+          478.5603
         ],
         [
           "2024-09-27",
@@ -19685,14 +19685,14 @@
     "smh": {
       "name": "Semiconductor ETF",
       "name_zh": "\u534a\u5bfc\u4f53ETF",
-      "description": "VanEck Semiconductor ETF. The AI picks-and-shovels trade (Nvidia, TSMC, ASML). If SMH underperforms QQQ, leadership is rotating from builders to enablers/adopters.",
+      "description": "VanEck Semiconductor ETF: Nvidia, TSMC, ASML. The AI picks-and-shovels trade. SMH underperforming QQQ = leadership rotating from chip builders to enablers/adopters.",
       "value": 407.72,
       "direction": "up",
       "unit": "$",
       "history": [
         [
           "2021-01-22",
-          116.8831
+          116.883
         ],
         [
           "2021-01-29",
@@ -19792,7 +19792,7 @@
         ],
         [
           "2021-07-16",
-          119.7551
+          119.755
         ],
         [
           "2021-07-23",
@@ -20757,7 +20757,7 @@
     "xlu": {
       "name": "Utilities ETF (XLU)",
       "name_zh": "\u516c\u7528\u4e8b\u4e1aETF",
-      "description": "The 'boring' AI winner. Data centers need massive electricity \u2014 utilities are the enablers. XLU outperforming tech = market rotating into AI infrastructure over AI hype.",
+      "description": "Utilities sector ETF. Data centers need massive electricity: XLU outperforming tech = market rotating into AI infrastructure over AI hype.",
       "value": 46.5,
       "direction": "up",
       "unit": "$",
@@ -20864,7 +20864,7 @@
         ],
         [
           "2021-07-16",
-          28.889
+          28.8889
         ],
         [
           "2021-07-23",
@@ -20956,7 +20956,7 @@
         ],
         [
           "2021-12-23",
-          30.8638
+          30.8637
         ],
         [
           "2021-12-31",
@@ -21080,7 +21080,7 @@
         ],
         [
           "2022-07-29",
-          33.2187
+          33.2188
         ],
         [
           "2022-08-05",
@@ -21288,7 +21288,7 @@
         ],
         [
           "2023-07-28",
-          31.0397
+          31.0398
         ],
         [
           "2023-08-04",
@@ -21364,7 +21364,7 @@
         ],
         [
           "2023-12-08",
-          29.5969
+          29.597
         ],
         [
           "2023-12-15",
@@ -21829,7 +21829,7 @@
     "gsci_spy_ratio": {
       "name": "Commodities / S&P 500",
       "name_zh": "\u5927\u5b97\u5546\u54c1/\u6807\u666e500\u6bd4\u7387",
-      "description": "GSG/SPY ratio \u2014 the broadest measure of real vs financial asset performance. A sustained move above 1.0 confirms the regime change from financial assets to hard assets. Currently turning from decades-long lows.",
+      "description": "GSG/SPY ratio: real assets vs financial assets. Rising = commodities outperforming equities. Turning up from decades-long lows.",
       "value": 0.0363,
       "direction": "up",
       "unit": "ratio",
@@ -22901,7 +22901,7 @@
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
-      "description": "The 'fear gauge'. Measures S&P 500 implied volatility. Below 15 = complacency, above 25 = elevated fear, above 35 = panic. Spikes tend to be short-lived but signal regime shifts.",
+      "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
       "value": 20.6,
       "direction": "down",
       "unit": "index",
@@ -23973,7 +23973,7 @@
     "btc": {
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
-      "description": "Digital debasement hedge. Correlates with global liquidity \u2014 when central banks expand balance sheets, BTC tends to rise. Also a barometer of risk appetite and monetary system distrust.",
+      "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
       "value": 68788.1875,
       "direction": "down",
       "unit": "$",
@@ -25045,7 +25045,7 @@
     "cb_gold_buying": {
       "name": "Central Bank Gold Buying",
       "name_zh": "\u592e\u884c\u8d2d\u91d1\u91cf",
-      "description": "Annual central bank gold purchases (World Gold Council data, quarterly updates). Central banks have been net buyers since 2010, sharply accelerating after 2022 when Western sanctions froze Russia\u2019s FX reserves. Rising = central banks diversifying away from dollars into gold. \ud83d\udd17 Hard Assets thesis: this is the structural floor under gold prices. Sovereign entities are voting with their reserves to de-dollarize \u2014 the most powerful validation of the hard-assets regime shift.",
+      "description": "Quarterly net purchases by central banks (World Gold Council). Net buyers since 2010, accelerating post-2022. Rising = structural de-dollarization demand.",
       "value": 1000.0,
       "direction": "up",
       "unit": "tonnes/yr",
@@ -25137,7 +25137,7 @@
     "csi300": {
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
-      "description": "China's benchmark equity index (top 300 A-shares). The cleanest signal of whether domestic and foreign capital is returning to Chinese markets.",
+      "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
       "value": 4660.4102,
       "direction": "down",
       "unit": "index",
@@ -26161,7 +26161,7 @@
     "hsi": {
       "name": "Hang Seng Index",
       "name_zh": "\u6052\u751f\u6307\u6570",
-      "description": "Hong Kong's benchmark \u2014 the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment toward China than onshore CSI 300.",
+      "description": "Hong Kong's benchmark: the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment than onshore CSI 300.",
       "value": 26567.1191,
       "direction": "down",
       "unit": "index",
@@ -27233,7 +27233,7 @@
     "kweb": {
       "name": "China Internet ETF",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
-      "description": "KraneShares CSI China Internet ETF. Tracks Chinese tech (Alibaba, Tencent, PDD, etc.). A proxy for foreign investor sentiment on Chinese tech and regulatory risk.",
+      "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
       "value": 32.79,
       "direction": "up",
       "unit": "$",
@@ -27244,7 +27244,7 @@
         ],
         [
           "2021-01-29",
-          72.4614
+          72.4615
         ],
         [
           "2021-02-05",
@@ -27292,7 +27292,7 @@
         ],
         [
           "2021-04-23",
-          64.9389
+          64.939
         ],
         [
           "2021-04-30",
@@ -27324,7 +27324,7 @@
         ],
         [
           "2021-06-18",
-          56.5816
+          56.5815
         ],
         [
           "2021-06-25",
@@ -27352,7 +27352,7 @@
         ],
         [
           "2021-08-06",
-          40.6348
+          40.6349
         ],
         [
           "2021-08-13",
@@ -27568,7 +27568,7 @@
         ],
         [
           "2022-08-19",
-          24.4663
+          24.4664
         ],
         [
           "2022-08-26",
@@ -27596,7 +27596,7 @@
         ],
         [
           "2022-10-07",
-          22.1639
+          22.164
         ],
         [
           "2022-10-14",
@@ -27676,7 +27676,7 @@
         ],
         [
           "2023-02-24",
-          25.8997
+          25.8998
         ],
         [
           "2023-03-03",
@@ -28305,7 +28305,7 @@
     "china_pmi": {
       "name": "China Mfg PMI",
       "name_zh": "\u4e2d\u56fd\u5236\u9020\u4e1aPMI",
-      "description": "National Bureau of Statistics Manufacturing Purchasing Managers Index. Above 50 = manufacturing expanding, below 50 = contracting. The most timely monthly gauge of China\u2019s factory sector health. \ud83d\udd17 China thesis: sustained readings above 51 confirm the recovery is real and broadening, not just stimulus-driven. Below 49 would challenge the thesis.",
+      "description": "NBS Manufacturing PMI. Above 50 = expansion, below 50 = contraction. Sustained above 51 confirms recovery; below 49 signals deepening weakness.",
       "value": 50.1,
       "direction": "down",
       "unit": "index",
@@ -28557,7 +28557,7 @@
     "china_retail_sales": {
       "name": "China Retail Sales YoY",
       "name_zh": "\u4e2d\u56fd\u793e\u96f6\u540c\u6bd4",
-      "description": "Year-over-year growth in Chinese retail sales (NBS, monthly). The key gauge of whether Chinese consumers are spending again. Rising = domestic consumption recovering, falling = consumer confidence still weak. \ud83d\udd17 China thesis: the consumption pivot is central to the bull case. Needs to sustain 4%+ and ideally move toward 5-6% to confirm China\u2019s economy is rebalancing from investment to consumption. Below 3% is a warning sign.",
+      "description": "Monthly YoY growth in Chinese retail sales (NBS). Rising = consumer recovery gaining traction. Needs to sustain 4%+ to confirm consumption pivot.",
       "value": 3.7,
       "direction": "up",
       "unit": "% YoY",
@@ -28809,7 +28809,7 @@
     "eem": {
       "name": "MSCI Emerging Markets ETF",
       "name_zh": "\u65b0\u5174\u5e02\u573aETF",
-      "description": "Broad EM equity benchmark. Tracks whether capital is flowing into or out of developing markets. EM outperforming DM = dollar-weakness + fragmentation trade working.",
+      "description": "Broad EM equity benchmark. Rising = capital flowing into developing markets. EM outperforming DM = dollar weakness + fragmentation trade working.",
       "value": 61.12,
       "direction": "up",
       "unit": "$",
@@ -28932,7 +28932,7 @@
         ],
         [
           "2021-08-13",
-          46.2325
+          46.2326
         ],
         [
           "2021-08-20",
@@ -29076,11 +29076,11 @@
         ],
         [
           "2022-04-22",
-          38.4391
+          38.4392
         ],
         [
           "2022-04-29",
-          38.4391
+          38.4392
         ],
         [
           "2022-05-06",
@@ -29092,7 +29092,7 @@
         ],
         [
           "2022-05-20",
-          37.3145
+          37.3144
         ],
         [
           "2022-05-27",
@@ -29208,7 +29208,7 @@
         ],
         [
           "2022-12-09",
-          35.6923
+          35.6924
         ],
         [
           "2022-12-16",
@@ -29324,7 +29324,7 @@
         ],
         [
           "2023-06-30",
-          37.0256
+          37.0257
         ],
         [
           "2023-07-07",
@@ -29348,7 +29348,7 @@
         ],
         [
           "2023-08-11",
-          37.0256
+          37.0257
         ],
         [
           "2023-08-18",
@@ -29540,7 +29540,7 @@
         ],
         [
           "2024-07-12",
-          42.7394
+          42.7395
         ],
         [
           "2024-07-19",
@@ -29604,7 +29604,7 @@
         ],
         [
           "2024-11-01",
-          42.7202
+          42.7203
         ],
         [
           "2024-11-08",
@@ -29881,7 +29881,7 @@
     "move": {
       "name": "MOVE Index",
       "name_zh": "\u56fd\u503a\u6ce2\u52a8\u7387\u6307\u6570",
-      "description": "ICE BofA MOVE Index \u2014 measures Treasury market implied volatility across 2Y, 5Y, 10Y, and 30Y maturities. The bond market's version of VIX. Above 120 = elevated stress, above 150 = potential basis trade unwinds and forced Fed intervention. \ud83d\udd17 Weak Dollar thesis: MOVE spikes force the Fed to step in as buyer of last resort, expanding the balance sheet.",
+      "description": "ICE BofA MOVE Index: Treasury market implied volatility across 2Y-30Y maturities. The bond market's VIX. Above 120 = elevated stress, above 150 = potential basis trade unwinds and forced Fed intervention.",
       "value": 112.55,
       "direction": "down",
       "unit": "index",
@@ -30141,7 +30141,7 @@
     "us_ism_pmi": {
       "name": "US Manufacturing PMI",
       "name_zh": "\u7f8e\u56fd\u5236\u9020\u4e1aPMI\uff08ISM\uff09",
-      "description": "ISM Manufacturing PMI \u2014 the oldest and most-watched US manufacturing indicator. Above 50 = expansion, below 50 = contraction. January 2026 reading of 52.6 triggered a \u2018manufacturing recovery signal\u2019 for the first time in ~14 months. Historical median 12-month returns after this signal: COPX +82%, DBC +44%. \ud83d\udd17 Fragmentation thesis: onshoring and supply chain diversification drive US manufacturing recovery, supporting commodity demand and real-economy assets.",
+      "description": "ISM Manufacturing PMI: the oldest US manufacturing indicator. Above 50 = expansion, below 50 = contraction. Sustained expansion signals onshoring and supply chain diversification.",
       "value": null,
       "direction": "flat",
       "unit": "index",
@@ -30152,7 +30152,7 @@
     "bigtech_capex": {
       "name": "Big Tech CapEx",
       "name_zh": "\u5927\u578b\u79d1\u6280\u516c\u53f8\u8d44\u672c\u5f00\u652f",
-      "description": "Combined capital expenditures of MSFT, GOOGL, AMZN, META, and ORCL. Grew from $239B (2024) to $390B (2025) to $674B estimate (2026), ~2.2% of US GDP. The single most important metric for the AI thesis: follow the capex, not the capex spenders. \ud83d\udd17 AI thesis: rising capex = infrastructure buildout accelerating.",
+      "description": "Combined capex of MSFT, GOOGL, AMZN, META, ORCL (quarterly). Rising = AI infrastructure buildout accelerating. Follow the capex, not the capex spenders.",
       "value": 480.0,
       "direction": "up",
       "unit": "$B",
@@ -30246,9 +30246,9 @@
       "note": "Quarterly, compiled from earnings \u2014 MSFT+GOOGL+AMZN+META+ORCL"
     },
     "iwf_iwd": {
-      "name": "Growth / Value",
+      "name": "Growth / Value (LEGACY)",
       "name_zh": "\u6210\u957f/\u4ef7\u503c\u6bd4\u7387",
-      "description": "Ratio of iShares Russell 1000 Growth (IWF) to Russell 1000 Value (IWD). Rising = growth outperforming, falling = value outperforming. A clean measure of the market's preference between tech/financial assets and real-economy/physical assets. Also a ~80% proxy for 'Atoms vs Bits.' \ud83d\udd17 Hard Assets thesis: expect this ratio to decline as regime shifts from growth to value.",
+      "description": "Legacy metric: replaced by growth_value (VUG/VTV).",
       "value": 1.9989,
       "direction": "down",
       "unit": "ratio",
@@ -31316,6 +31316,3222 @@
       ],
       "source": "computed:IWF",
       "change_ytd_pct": -10.1
+    },
+    "growth_value": {
+      "name": "Growth / Value",
+      "name_zh": "\u6210\u957f/\u4ef7\u503c\u6bd4\u7387",
+      "description": "VUG/VTV ratio. Rising = growth stocks outperforming value, falling = value winning. A declining ratio signals rotation from tech/financial assets into real-economy sectors.",
+      "value": 2.2218,
+      "direction": "down",
+      "unit": "ratio",
+      "history": [
+        [
+          "2021-01-22",
+          2.3387
+        ],
+        [
+          "2021-01-29",
+          2.3297
+        ],
+        [
+          "2021-02-05",
+          2.3665
+        ],
+        [
+          "2021-02-12",
+          2.3687
+        ],
+        [
+          "2021-02-19",
+          2.3254
+        ],
+        [
+          "2021-02-26",
+          2.2376
+        ],
+        [
+          "2021-03-05",
+          2.1279
+        ],
+        [
+          "2021-03-12",
+          2.1226
+        ],
+        [
+          "2021-03-19",
+          2.117
+        ],
+        [
+          "2021-03-26",
+          2.105
+        ],
+        [
+          "2021-04-01",
+          2.1606
+        ],
+        [
+          "2021-04-09",
+          2.2243
+        ],
+        [
+          "2021-04-16",
+          2.2308
+        ],
+        [
+          "2021-04-23",
+          2.2288
+        ],
+        [
+          "2021-04-30",
+          2.2071
+        ],
+        [
+          "2021-05-07",
+          2.1055
+        ],
+        [
+          "2021-05-14",
+          2.0645
+        ],
+        [
+          "2021-05-21",
+          2.0788
+        ],
+        [
+          "2021-05-28",
+          2.1138
+        ],
+        [
+          "2021-06-04",
+          2.0992
+        ],
+        [
+          "2021-06-11",
+          2.146
+        ],
+        [
+          "2021-06-18",
+          2.2493
+        ],
+        [
+          "2021-06-25",
+          2.2414
+        ],
+        [
+          "2021-07-02",
+          2.2761
+        ],
+        [
+          "2021-07-09",
+          2.3012
+        ],
+        [
+          "2021-07-16",
+          2.3029
+        ],
+        [
+          "2021-07-23",
+          2.3578
+        ],
+        [
+          "2021-07-30",
+          2.3181
+        ],
+        [
+          "2021-08-06",
+          2.3172
+        ],
+        [
+          "2021-08-13",
+          2.2875
+        ],
+        [
+          "2021-08-20",
+          2.3117
+        ],
+        [
+          "2021-08-27",
+          2.3266
+        ],
+        [
+          "2021-09-03",
+          2.3661
+        ],
+        [
+          "2021-09-10",
+          2.3875
+        ],
+        [
+          "2021-09-17",
+          2.3859
+        ],
+        [
+          "2021-09-24",
+          2.3843
+        ],
+        [
+          "2021-10-01",
+          2.3175
+        ],
+        [
+          "2021-10-08",
+          2.2911
+        ],
+        [
+          "2021-10-15",
+          2.3178
+        ],
+        [
+          "2021-10-22",
+          2.3151
+        ],
+        [
+          "2021-10-29",
+          2.3823
+        ],
+        [
+          "2021-11-05",
+          2.4019
+        ],
+        [
+          "2021-11-12",
+          2.3819
+        ],
+        [
+          "2021-11-19",
+          2.4722
+        ],
+        [
+          "2021-11-26",
+          2.4085
+        ],
+        [
+          "2021-12-03",
+          2.3761
+        ],
+        [
+          "2021-12-10",
+          2.409
+        ],
+        [
+          "2021-12-17",
+          2.3357
+        ],
+        [
+          "2021-12-23",
+          2.3771
+        ],
+        [
+          "2021-12-31",
+          2.35
+        ],
+        [
+          "2022-01-07",
+          2.1933
+        ],
+        [
+          "2022-01-14",
+          2.1656
+        ],
+        [
+          "2022-01-21",
+          2.0987
+        ],
+        [
+          "2022-01-28",
+          2.1045
+        ],
+        [
+          "2022-02-04",
+          2.1173
+        ],
+        [
+          "2022-02-11",
+          2.0697
+        ],
+        [
+          "2022-02-18",
+          2.0594
+        ],
+        [
+          "2022-02-25",
+          2.0619
+        ],
+        [
+          "2022-03-04",
+          1.9968
+        ],
+        [
+          "2022-03-11",
+          1.9675
+        ],
+        [
+          "2022-03-18",
+          2.056
+        ],
+        [
+          "2022-03-25",
+          2.0499
+        ],
+        [
+          "2022-04-01",
+          2.0858
+        ],
+        [
+          "2022-04-08",
+          2.0004
+        ],
+        [
+          "2022-04-14",
+          1.9579
+        ],
+        [
+          "2022-04-22",
+          1.9163
+        ],
+        [
+          "2022-04-29",
+          1.9104
+        ],
+        [
+          "2022-05-06",
+          1.8473
+        ],
+        [
+          "2022-05-13",
+          1.821
+        ],
+        [
+          "2022-05-20",
+          1.7893
+        ],
+        [
+          "2022-05-27",
+          1.8094
+        ],
+        [
+          "2022-06-03",
+          1.8248
+        ],
+        [
+          "2022-06-10",
+          1.7922
+        ],
+        [
+          "2022-06-17",
+          1.821
+        ],
+        [
+          "2022-06-24",
+          1.8777
+        ],
+        [
+          "2022-07-01",
+          1.8034
+        ],
+        [
+          "2022-07-08",
+          1.8826
+        ],
+        [
+          "2022-07-15",
+          1.8662
+        ],
+        [
+          "2022-07-22",
+          1.9068
+        ],
+        [
+          "2022-07-29",
+          1.9411
+        ],
+        [
+          "2022-08-05",
+          1.9939
+        ],
+        [
+          "2022-08-12",
+          1.981
+        ],
+        [
+          "2022-08-19",
+          1.9408
+        ],
+        [
+          "2022-08-26",
+          1.9041
+        ],
+        [
+          "2022-09-02",
+          1.8776
+        ],
+        [
+          "2022-09-09",
+          1.9036
+        ],
+        [
+          "2022-09-16",
+          1.8563
+        ],
+        [
+          "2022-09-23",
+          1.8472
+        ],
+        [
+          "2022-09-30",
+          1.8407
+        ],
+        [
+          "2022-10-07",
+          1.8255
+        ],
+        [
+          "2022-10-14",
+          1.7536
+        ],
+        [
+          "2022-10-21",
+          1.779
+        ],
+        [
+          "2022-10-28",
+          1.7263
+        ],
+        [
+          "2022-11-04",
+          1.6299
+        ],
+        [
+          "2022-11-11",
+          1.7184
+        ],
+        [
+          "2022-11-18",
+          1.6892
+        ],
+        [
+          "2022-11-25",
+          1.6762
+        ],
+        [
+          "2022-12-02",
+          1.6966
+        ],
+        [
+          "2022-12-09",
+          1.6759
+        ],
+        [
+          "2022-12-16",
+          1.6571
+        ],
+        [
+          "2022-12-23",
+          1.6097
+        ],
+        [
+          "2022-12-30",
+          1.6043
+        ],
+        [
+          "2023-01-06",
+          1.578
+        ],
+        [
+          "2023-01-13",
+          1.6451
+        ],
+        [
+          "2023-01-20",
+          1.6939
+        ],
+        [
+          "2023-01-27",
+          1.7354
+        ],
+        [
+          "2023-02-03",
+          1.7863
+        ],
+        [
+          "2023-02-10",
+          1.7505
+        ],
+        [
+          "2023-02-17",
+          1.7561
+        ],
+        [
+          "2023-02-24",
+          1.7361
+        ],
+        [
+          "2023-03-03",
+          1.7669
+        ],
+        [
+          "2023-03-10",
+          1.7763
+        ],
+        [
+          "2023-03-17",
+          1.891
+        ],
+        [
+          "2023-03-24",
+          1.9029
+        ],
+        [
+          "2023-03-31",
+          1.9001
+        ],
+        [
+          "2023-04-06",
+          1.8728
+        ],
+        [
+          "2023-04-14",
+          1.8647
+        ],
+        [
+          "2023-04-21",
+          1.8637
+        ],
+        [
+          "2023-04-28",
+          1.8864
+        ],
+        [
+          "2023-05-05",
+          1.9163
+        ],
+        [
+          "2023-05-12",
+          1.9495
+        ],
+        [
+          "2023-05-19",
+          1.993
+        ],
+        [
+          "2023-05-26",
+          2.0589
+        ],
+        [
+          "2023-06-02",
+          2.0635
+        ],
+        [
+          "2023-06-09",
+          2.0377
+        ],
+        [
+          "2023-06-16",
+          2.0682
+        ],
+        [
+          "2023-06-23",
+          2.0873
+        ],
+        [
+          "2023-06-30",
+          2.0843
+        ],
+        [
+          "2023-07-07",
+          2.0881
+        ],
+        [
+          "2023-07-14",
+          2.1195
+        ],
+        [
+          "2023-07-21",
+          2.0514
+        ],
+        [
+          "2023-07-28",
+          2.0823
+        ],
+        [
+          "2023-08-04",
+          2.0474
+        ],
+        [
+          "2023-08-11",
+          2.0148
+        ],
+        [
+          "2023-08-18",
+          2.0188
+        ],
+        [
+          "2023-08-25",
+          2.0615
+        ],
+        [
+          "2023-09-01",
+          2.1047
+        ],
+        [
+          "2023-09-08",
+          2.0963
+        ],
+        [
+          "2023-09-15",
+          2.0672
+        ],
+        [
+          "2023-09-22",
+          2.0327
+        ],
+        [
+          "2023-09-29",
+          2.0563
+        ],
+        [
+          "2023-10-06",
+          2.1276
+        ],
+        [
+          "2023-10-13",
+          2.1102
+        ],
+        [
+          "2023-10-20",
+          2.0819
+        ],
+        [
+          "2023-10-27",
+          2.0739
+        ],
+        [
+          "2023-11-03",
+          2.1035
+        ],
+        [
+          "2023-11-10",
+          2.1832
+        ],
+        [
+          "2023-11-17",
+          2.1803
+        ],
+        [
+          "2023-11-24",
+          2.1859
+        ],
+        [
+          "2023-12-01",
+          2.1592
+        ],
+        [
+          "2023-12-08",
+          2.1794
+        ],
+        [
+          "2023-12-15",
+          2.1586
+        ],
+        [
+          "2023-12-22",
+          2.1671
+        ],
+        [
+          "2023-12-29",
+          2.1549
+        ],
+        [
+          "2024-01-05",
+          2.0874
+        ],
+        [
+          "2024-01-12",
+          2.1697
+        ],
+        [
+          "2024-01-19",
+          2.2224
+        ],
+        [
+          "2024-01-26",
+          2.2139
+        ],
+        [
+          "2024-02-02",
+          2.2414
+        ],
+        [
+          "2024-02-09",
+          2.2961
+        ],
+        [
+          "2024-02-16",
+          2.2479
+        ],
+        [
+          "2024-02-23",
+          2.2504
+        ],
+        [
+          "2024-03-01",
+          2.27
+        ],
+        [
+          "2024-03-08",
+          2.2239
+        ],
+        [
+          "2024-03-15",
+          2.2112
+        ],
+        [
+          "2024-03-22",
+          2.2254
+        ],
+        [
+          "2024-03-28",
+          2.1793
+        ],
+        [
+          "2024-04-05",
+          2.2008
+        ],
+        [
+          "2024-04-12",
+          2.2522
+        ],
+        [
+          "2024-04-19",
+          2.132
+        ],
+        [
+          "2024-04-26",
+          2.1888
+        ],
+        [
+          "2024-05-03",
+          2.2157
+        ],
+        [
+          "2024-05-10",
+          2.1966
+        ],
+        [
+          "2024-05-17",
+          2.2093
+        ],
+        [
+          "2024-05-24",
+          2.2788
+        ],
+        [
+          "2024-05-31",
+          2.2435
+        ],
+        [
+          "2024-06-07",
+          2.3217
+        ],
+        [
+          "2024-06-14",
+          2.3978
+        ],
+        [
+          "2024-06-21",
+          2.3776
+        ],
+        [
+          "2024-06-28",
+          2.392
+        ],
+        [
+          "2024-07-05",
+          2.4786
+        ],
+        [
+          "2024-07-12",
+          2.4107
+        ],
+        [
+          "2024-07-19",
+          2.3066
+        ],
+        [
+          "2024-07-26",
+          2.2233
+        ],
+        [
+          "2024-08-02",
+          2.2166
+        ],
+        [
+          "2024-08-09",
+          2.2289
+        ],
+        [
+          "2024-08-16",
+          2.2829
+        ],
+        [
+          "2024-08-23",
+          2.2732
+        ],
+        [
+          "2024-08-30",
+          2.229
+        ],
+        [
+          "2024-09-06",
+          2.1829
+        ],
+        [
+          "2024-09-13",
+          2.2481
+        ],
+        [
+          "2024-09-20",
+          2.2498
+        ],
+        [
+          "2024-09-27",
+          2.2456
+        ],
+        [
+          "2024-10-04",
+          2.2431
+        ],
+        [
+          "2024-10-11",
+          2.253
+        ],
+        [
+          "2024-10-18",
+          2.2534
+        ],
+        [
+          "2024-10-25",
+          2.3095
+        ],
+        [
+          "2024-11-01",
+          2.2902
+        ],
+        [
+          "2024-11-08",
+          2.3328
+        ],
+        [
+          "2024-11-15",
+          2.3076
+        ],
+        [
+          "2024-11-22",
+          2.2923
+        ],
+        [
+          "2024-11-29",
+          2.2984
+        ],
+        [
+          "2024-12-06",
+          2.4254
+        ],
+        [
+          "2024-12-13",
+          2.473
+        ],
+        [
+          "2024-12-20",
+          2.5066
+        ],
+        [
+          "2024-12-27",
+          2.4998
+        ],
+        [
+          "2025-01-03",
+          2.4867
+        ],
+        [
+          "2025-01-10",
+          2.4701
+        ],
+        [
+          "2025-01-17",
+          2.4218
+        ],
+        [
+          "2025-01-24",
+          2.4332
+        ],
+        [
+          "2025-01-31",
+          2.4081
+        ],
+        [
+          "2025-02-07",
+          2.4177
+        ],
+        [
+          "2025-02-14",
+          2.4516
+        ],
+        [
+          "2025-02-21",
+          2.3996
+        ],
+        [
+          "2025-02-28",
+          2.3167
+        ],
+        [
+          "2025-03-07",
+          2.2664
+        ],
+        [
+          "2025-03-14",
+          2.2464
+        ],
+        [
+          "2025-03-21",
+          2.2429
+        ],
+        [
+          "2025-03-28",
+          2.1956
+        ],
+        [
+          "2025-04-04",
+          2.155
+        ],
+        [
+          "2025-04-11",
+          2.2537
+        ],
+        [
+          "2025-04-17",
+          2.2042
+        ],
+        [
+          "2025-04-25",
+          2.3138
+        ],
+        [
+          "2025-05-02",
+          2.3387
+        ],
+        [
+          "2025-05-09",
+          2.3365
+        ],
+        [
+          "2025-05-16",
+          2.4295
+        ],
+        [
+          "2025-05-23",
+          2.4223
+        ],
+        [
+          "2025-05-30",
+          2.4408
+        ],
+        [
+          "2025-06-06",
+          2.4696
+        ],
+        [
+          "2025-06-13",
+          2.4431
+        ],
+        [
+          "2025-06-20",
+          2.4385
+        ],
+        [
+          "2025-06-27",
+          2.5011
+        ],
+        [
+          "2025-07-03",
+          2.4806
+        ],
+        [
+          "2025-07-11",
+          2.4977
+        ],
+        [
+          "2025-07-18",
+          2.5445
+        ],
+        [
+          "2025-07-25",
+          2.5349
+        ],
+        [
+          "2025-08-01",
+          2.5564
+        ],
+        [
+          "2025-08-08",
+          2.6007
+        ],
+        [
+          "2025-08-15",
+          2.5844
+        ],
+        [
+          "2025-08-22",
+          2.5186
+        ],
+        [
+          "2025-08-29",
+          2.5236
+        ],
+        [
+          "2025-09-05",
+          2.5548
+        ],
+        [
+          "2025-09-12",
+          2.5705
+        ],
+        [
+          "2025-09-19",
+          2.6085
+        ],
+        [
+          "2025-09-26",
+          2.5745
+        ],
+        [
+          "2025-10-03",
+          2.5779
+        ],
+        [
+          "2025-10-10",
+          2.5832
+        ],
+        [
+          "2025-10-17",
+          2.5869
+        ],
+        [
+          "2025-10-24",
+          2.6134
+        ],
+        [
+          "2025-10-31",
+          2.6966
+        ],
+        [
+          "2025-11-07",
+          2.6133
+        ],
+        [
+          "2025-11-14",
+          2.5943
+        ],
+        [
+          "2025-11-21",
+          2.545
+        ],
+        [
+          "2025-11-28",
+          2.5876
+        ],
+        [
+          "2025-12-05",
+          2.6063
+        ],
+        [
+          "2025-12-12",
+          2.5313
+        ],
+        [
+          "2025-12-19",
+          2.5647
+        ],
+        [
+          "2025-12-26",
+          2.568
+        ],
+        [
+          "2026-01-02",
+          2.5217
+        ],
+        [
+          "2026-01-09",
+          2.4948
+        ],
+        [
+          "2026-01-16",
+          2.4454
+        ],
+        [
+          "2026-01-23",
+          2.447
+        ],
+        [
+          "2026-01-30",
+          2.4108
+        ],
+        [
+          "2026-02-06",
+          2.2704
+        ],
+        [
+          "2026-02-13",
+          2.2218
+        ]
+      ],
+      "source": "computed:VUG",
+      "change_ytd_pct": -11.9
+    },
+    "cap_equal": {
+      "name": "Cap-Weight / Equal-Weight",
+      "name_zh": "\u5e02\u503c\u52a0\u6743/\u7b49\u6743\u6bd4\u7387",
+      "description": "SPY/RSP ratio. Rising = mega-cap concentration winning, falling = market breadth broadening. A declining ratio means the average stock is outperforming the index.",
+      "value": 3.3605,
+      "direction": "down",
+      "unit": "ratio",
+      "history": [
+        [
+          "2021-01-22",
+          2.9532
+        ],
+        [
+          "2021-01-29",
+          2.9659
+        ],
+        [
+          "2021-02-05",
+          2.9654
+        ],
+        [
+          "2021-02-12",
+          2.9419
+        ],
+        [
+          "2021-02-19",
+          2.9161
+        ],
+        [
+          "2021-02-26",
+          2.8734
+        ],
+        [
+          "2021-03-05",
+          2.8374
+        ],
+        [
+          "2021-03-12",
+          2.8214
+        ],
+        [
+          "2021-03-19",
+          2.8184
+        ],
+        [
+          "2021-03-26",
+          2.82
+        ],
+        [
+          "2021-04-01",
+          2.8348
+        ],
+        [
+          "2021-04-09",
+          2.8706
+        ],
+        [
+          "2021-04-16",
+          2.8709
+        ],
+        [
+          "2021-04-23",
+          2.852
+        ],
+        [
+          "2021-04-30",
+          2.8493
+        ],
+        [
+          "2021-05-07",
+          2.8184
+        ],
+        [
+          "2021-05-14",
+          2.8064
+        ],
+        [
+          "2021-05-21",
+          2.8129
+        ],
+        [
+          "2021-05-28",
+          2.8141
+        ],
+        [
+          "2021-06-04",
+          2.8101
+        ],
+        [
+          "2021-06-11",
+          2.823
+        ],
+        [
+          "2021-06-18",
+          2.8739
+        ],
+        [
+          "2021-06-25",
+          2.8589
+        ],
+        [
+          "2021-07-02",
+          2.8858
+        ],
+        [
+          "2021-07-09",
+          2.9021
+        ],
+        [
+          "2021-07-16",
+          2.926
+        ],
+        [
+          "2021-07-23",
+          2.937
+        ],
+        [
+          "2021-07-30",
+          2.909
+        ],
+        [
+          "2021-08-06",
+          2.9091
+        ],
+        [
+          "2021-08-13",
+          2.9079
+        ],
+        [
+          "2021-08-20",
+          2.928
+        ],
+        [
+          "2021-08-27",
+          2.9129
+        ],
+        [
+          "2021-09-03",
+          2.9252
+        ],
+        [
+          "2021-09-10",
+          2.9295
+        ],
+        [
+          "2021-09-17",
+          2.9307
+        ],
+        [
+          "2021-09-24",
+          2.9221
+        ],
+        [
+          "2021-10-01",
+          2.8953
+        ],
+        [
+          "2021-10-08",
+          2.8954
+        ],
+        [
+          "2021-10-15",
+          2.8992
+        ],
+        [
+          "2021-10-22",
+          2.8941
+        ],
+        [
+          "2021-10-29",
+          2.9472
+        ],
+        [
+          "2021-11-05",
+          2.9409
+        ],
+        [
+          "2021-11-12",
+          2.9265
+        ],
+        [
+          "2021-11-19",
+          2.9734
+        ],
+        [
+          "2021-11-26",
+          2.9699
+        ],
+        [
+          "2021-12-03",
+          2.9712
+        ],
+        [
+          "2021-12-10",
+          2.9835
+        ],
+        [
+          "2021-12-17",
+          2.9766
+        ],
+        [
+          "2021-12-23",
+          2.9753
+        ],
+        [
+          "2021-12-31",
+          2.9564
+        ],
+        [
+          "2022-01-07",
+          2.9187
+        ],
+        [
+          "2022-01-14",
+          2.9136
+        ],
+        [
+          "2022-01-21",
+          2.8982
+        ],
+        [
+          "2022-01-28",
+          2.9208
+        ],
+        [
+          "2022-02-04",
+          2.9188
+        ],
+        [
+          "2022-02-11",
+          2.8728
+        ],
+        [
+          "2022-02-18",
+          2.8648
+        ],
+        [
+          "2022-02-25",
+          2.858
+        ],
+        [
+          "2022-03-04",
+          2.8506
+        ],
+        [
+          "2022-03-11",
+          2.8461
+        ],
+        [
+          "2022-03-18",
+          2.874
+        ],
+        [
+          "2022-03-25",
+          2.899
+        ],
+        [
+          "2022-04-01",
+          2.8968
+        ],
+        [
+          "2022-04-08",
+          2.8868
+        ],
+        [
+          "2022-04-14",
+          2.8485
+        ],
+        [
+          "2022-04-22",
+          2.8291
+        ],
+        [
+          "2022-04-29",
+          2.8275
+        ],
+        [
+          "2022-05-06",
+          2.8269
+        ],
+        [
+          "2022-05-13",
+          2.8133
+        ],
+        [
+          "2022-05-20",
+          2.7926
+        ],
+        [
+          "2022-05-27",
+          2.7951
+        ],
+        [
+          "2022-06-03",
+          2.8038
+        ],
+        [
+          "2022-06-10",
+          2.8033
+        ],
+        [
+          "2022-06-17",
+          2.8354
+        ],
+        [
+          "2022-06-24",
+          2.8559
+        ],
+        [
+          "2022-07-01",
+          2.8364
+        ],
+        [
+          "2022-07-08",
+          2.867
+        ],
+        [
+          "2022-07-15",
+          2.8658
+        ],
+        [
+          "2022-07-22",
+          2.8458
+        ],
+        [
+          "2022-07-29",
+          2.8556
+        ],
+        [
+          "2022-08-05",
+          2.8651
+        ],
+        [
+          "2022-08-12",
+          2.8475
+        ],
+        [
+          "2022-08-19",
+          2.8555
+        ],
+        [
+          "2022-08-26",
+          2.8427
+        ],
+        [
+          "2022-09-02",
+          2.835
+        ],
+        [
+          "2022-09-09",
+          2.8202
+        ],
+        [
+          "2022-09-16",
+          2.8206
+        ],
+        [
+          "2022-09-23",
+          2.8493
+        ],
+        [
+          "2022-09-30",
+          2.8355
+        ],
+        [
+          "2022-10-07",
+          2.8165
+        ],
+        [
+          "2022-10-14",
+          2.8187
+        ],
+        [
+          "2022-10-21",
+          2.8463
+        ],
+        [
+          "2022-10-28",
+          2.804
+        ],
+        [
+          "2022-11-04",
+          2.7574
+        ],
+        [
+          "2022-11-11",
+          2.7564
+        ],
+        [
+          "2022-11-18",
+          2.7687
+        ],
+        [
+          "2022-11-25",
+          2.7561
+        ],
+        [
+          "2022-12-02",
+          2.7605
+        ],
+        [
+          "2022-12-09",
+          2.759
+        ],
+        [
+          "2022-12-16",
+          2.7521
+        ],
+        [
+          "2022-12-23",
+          2.7396
+        ],
+        [
+          "2022-12-30",
+          2.737
+        ],
+        [
+          "2023-01-06",
+          2.7013
+        ],
+        [
+          "2023-01-13",
+          2.7024
+        ],
+        [
+          "2023-01-20",
+          2.7139
+        ],
+        [
+          "2023-01-27",
+          2.7195
+        ],
+        [
+          "2023-02-03",
+          2.7234
+        ],
+        [
+          "2023-02-10",
+          2.7324
+        ],
+        [
+          "2023-02-17",
+          2.7259
+        ],
+        [
+          "2023-02-24",
+          2.7286
+        ],
+        [
+          "2023-03-03",
+          2.7322
+        ],
+        [
+          "2023-03-10",
+          2.7772
+        ],
+        [
+          "2023-03-17",
+          2.8671
+        ],
+        [
+          "2023-03-24",
+          2.8846
+        ],
+        [
+          "2023-03-31",
+          2.8582
+        ],
+        [
+          "2023-04-06",
+          2.8874
+        ],
+        [
+          "2023-04-14",
+          2.879
+        ],
+        [
+          "2023-04-21",
+          2.8719
+        ],
+        [
+          "2023-04-28",
+          2.8935
+        ],
+        [
+          "2023-05-05",
+          2.9128
+        ],
+        [
+          "2023-05-12",
+          2.9365
+        ],
+        [
+          "2023-05-19",
+          2.9586
+        ],
+        [
+          "2023-05-26",
+          3.0058
+        ],
+        [
+          "2023-06-02",
+          3.0061
+        ],
+        [
+          "2023-06-09",
+          2.9902
+        ],
+        [
+          "2023-06-16",
+          2.9924
+        ],
+        [
+          "2023-06-23",
+          3.0195
+        ],
+        [
+          "2023-06-30",
+          2.9891
+        ],
+        [
+          "2023-07-07",
+          2.9796
+        ],
+        [
+          "2023-07-14",
+          2.9814
+        ],
+        [
+          "2023-07-21",
+          2.9607
+        ],
+        [
+          "2023-07-28",
+          2.9861
+        ],
+        [
+          "2023-08-04",
+          2.9791
+        ],
+        [
+          "2023-08-11",
+          2.9727
+        ],
+        [
+          "2023-08-18",
+          2.9906
+        ],
+        [
+          "2023-08-25",
+          3.0158
+        ],
+        [
+          "2023-09-01",
+          3.0243
+        ],
+        [
+          "2023-09-08",
+          3.0447
+        ],
+        [
+          "2023-09-15",
+          3.0422
+        ],
+        [
+          "2023-09-22",
+          3.0413
+        ],
+        [
+          "2023-09-29",
+          3.0419
+        ],
+        [
+          "2023-10-06",
+          3.0934
+        ],
+        [
+          "2023-10-13",
+          3.1011
+        ],
+        [
+          "2023-10-20",
+          3.0995
+        ],
+        [
+          "2023-10-27",
+          3.0979
+        ],
+        [
+          "2023-11-03",
+          3.0954
+        ],
+        [
+          "2023-11-10",
+          3.156
+        ],
+        [
+          "2023-11-17",
+          3.124
+        ],
+        [
+          "2023-11-24",
+          3.1247
+        ],
+        [
+          "2023-12-01",
+          3.075
+        ],
+        [
+          "2023-12-08",
+          3.0816
+        ],
+        [
+          "2023-12-15",
+          3.0376
+        ],
+        [
+          "2023-12-22",
+          3.042
+        ],
+        [
+          "2023-12-29",
+          3.0374
+        ],
+        [
+          "2024-01-05",
+          3.0303
+        ],
+        [
+          "2024-01-12",
+          3.0803
+        ],
+        [
+          "2024-01-19",
+          3.122
+        ],
+        [
+          "2024-01-26",
+          3.1206
+        ],
+        [
+          "2024-02-02",
+          3.1522
+        ],
+        [
+          "2024-02-09",
+          3.18
+        ],
+        [
+          "2024-02-16",
+          3.1475
+        ],
+        [
+          "2024-02-23",
+          3.1612
+        ],
+        [
+          "2024-03-01",
+          3.1547
+        ],
+        [
+          "2024-03-08",
+          3.1177
+        ],
+        [
+          "2024-03-15",
+          3.1365
+        ],
+        [
+          "2024-03-22",
+          3.1507
+        ],
+        [
+          "2024-03-28",
+          3.111
+        ],
+        [
+          "2024-04-05",
+          3.1386
+        ],
+        [
+          "2024-04-12",
+          3.1769
+        ],
+        [
+          "2024-04-19",
+          3.1212
+        ],
+        [
+          "2024-04-26",
+          3.1521
+        ],
+        [
+          "2024-05-03",
+          3.1638
+        ],
+        [
+          "2024-05-10",
+          3.1585
+        ],
+        [
+          "2024-05-17",
+          3.1739
+        ],
+        [
+          "2024-05-24",
+          3.214
+        ],
+        [
+          "2024-05-31",
+          3.2045
+        ],
+        [
+          "2024-06-07",
+          3.2689
+        ],
+        [
+          "2024-06-14",
+          3.3404
+        ],
+        [
+          "2024-06-21",
+          3.3231
+        ],
+        [
+          "2024-06-28",
+          3.3344
+        ],
+        [
+          "2024-07-05",
+          3.4107
+        ],
+        [
+          "2024-07-12",
+          3.3445
+        ],
+        [
+          "2024-07-19",
+          3.2814
+        ],
+        [
+          "2024-07-26",
+          3.2285
+        ],
+        [
+          "2024-08-02",
+          3.2163
+        ],
+        [
+          "2024-08-09",
+          3.2192
+        ],
+        [
+          "2024-08-16",
+          3.267
+        ],
+        [
+          "2024-08-23",
+          3.2462
+        ],
+        [
+          "2024-08-30",
+          3.2261
+        ],
+        [
+          "2024-09-06",
+          3.1909
+        ],
+        [
+          "2024-09-13",
+          3.2323
+        ],
+        [
+          "2024-09-20",
+          3.2333
+        ],
+        [
+          "2024-09-27",
+          3.2119
+        ],
+        [
+          "2024-10-04",
+          3.2269
+        ],
+        [
+          "2024-10-11",
+          3.24
+        ],
+        [
+          "2024-10-18",
+          3.2326
+        ],
+        [
+          "2024-10-25",
+          3.2695
+        ],
+        [
+          "2024-11-01",
+          3.2556
+        ],
+        [
+          "2024-11-08",
+          3.2677
+        ],
+        [
+          "2024-11-15",
+          3.2556
+        ],
+        [
+          "2024-11-22",
+          3.228
+        ],
+        [
+          "2024-11-29",
+          3.2298
+        ],
+        [
+          "2024-12-06",
+          3.3007
+        ],
+        [
+          "2024-12-13",
+          3.3357
+        ],
+        [
+          "2024-12-20",
+          3.3766
+        ],
+        [
+          "2024-12-27",
+          3.3861
+        ],
+        [
+          "2025-01-03",
+          3.3758
+        ],
+        [
+          "2025-01-10",
+          3.3691
+        ],
+        [
+          "2025-01-17",
+          3.3375
+        ],
+        [
+          "2025-01-24",
+          3.3554
+        ],
+        [
+          "2025-01-31",
+          3.3389
+        ],
+        [
+          "2025-02-07",
+          3.3519
+        ],
+        [
+          "2025-02-14",
+          3.3856
+        ],
+        [
+          "2025-02-21",
+          3.3547
+        ],
+        [
+          "2025-02-28",
+          3.3159
+        ],
+        [
+          "2025-03-07",
+          3.2775
+        ],
+        [
+          "2025-03-14",
+          3.2776
+        ],
+        [
+          "2025-03-21",
+          3.272
+        ],
+        [
+          "2025-03-28",
+          3.2464
+        ],
+        [
+          "2025-04-04",
+          3.2266
+        ],
+        [
+          "2025-04-11",
+          3.3078
+        ],
+        [
+          "2025-04-17",
+          3.2483
+        ],
+        [
+          "2025-04-25",
+          3.3006
+        ],
+        [
+          "2025-05-02",
+          3.3095
+        ],
+        [
+          "2025-05-09",
+          3.2824
+        ],
+        [
+          "2025-05-16",
+          3.3136
+        ],
+        [
+          "2025-05-23",
+          3.3343
+        ],
+        [
+          "2025-05-30",
+          3.3531
+        ],
+        [
+          "2025-06-06",
+          3.3654
+        ],
+        [
+          "2025-06-13",
+          3.3787
+        ],
+        [
+          "2025-06-20",
+          3.3676
+        ],
+        [
+          "2025-06-27",
+          3.4082
+        ],
+        [
+          "2025-07-03",
+          3.3857
+        ],
+        [
+          "2025-07-11",
+          3.3903
+        ],
+        [
+          "2025-07-18",
+          3.4163
+        ],
+        [
+          "2025-07-25",
+          3.4025
+        ],
+        [
+          "2025-08-01",
+          3.4332
+        ],
+        [
+          "2025-08-08",
+          3.4894
+        ],
+        [
+          "2025-08-15",
+          3.4709
+        ],
+        [
+          "2025-08-22",
+          3.4144
+        ],
+        [
+          "2025-08-29",
+          3.4287
+        ],
+        [
+          "2025-09-05",
+          3.4436
+        ],
+        [
+          "2025-09-12",
+          3.4881
+        ],
+        [
+          "2025-09-19",
+          3.5266
+        ],
+        [
+          "2025-09-26",
+          3.5133
+        ],
+        [
+          "2025-10-03",
+          3.5027
+        ],
+        [
+          "2025-10-10",
+          3.5311
+        ],
+        [
+          "2025-10-17",
+          3.5374
+        ],
+        [
+          "2025-10-24",
+          3.5446
+        ],
+        [
+          "2025-10-31",
+          3.633
+        ],
+        [
+          "2025-11-07",
+          3.581
+        ],
+        [
+          "2025-11-14",
+          3.5903
+        ],
+        [
+          "2025-11-21",
+          3.5514
+        ],
+        [
+          "2025-11-28",
+          3.5717
+        ],
+        [
+          "2025-12-05",
+          3.5749
+        ],
+        [
+          "2025-12-12",
+          3.5285
+        ],
+        [
+          "2025-12-19",
+          3.5426
+        ],
+        [
+          "2025-12-26",
+          3.5612
+        ],
+        [
+          "2026-01-02",
+          3.5423
+        ],
+        [
+          "2026-01-09",
+          3.5125
+        ],
+        [
+          "2026-01-16",
+          3.4748
+        ],
+        [
+          "2026-01-23",
+          3.4675
+        ],
+        [
+          "2026-01-30",
+          3.4934
+        ],
+        [
+          "2026-02-06",
+          3.4145
+        ],
+        [
+          "2026-02-13",
+          3.3605
+        ]
+      ],
+      "source": "computed:SPY",
+      "change_ytd_pct": -5.1
+    },
+    "atoms_bits": {
+      "name": "Atoms vs Bits",
+      "name_zh": "\u5b9e\u7269/\u6570\u5b57\u6bd4\u7387",
+      "description": "Physical-economy ETFs (XLB+XLI+XLE+XME) vs digital-economy ETFs (IGV+WCLD). Rising = hard assets outperforming software/cloud. A sustained rise signals regime change from bits to atoms.",
+      "value": 3.0085,
+      "direction": "down",
+      "unit": "ratio",
+      "history": [
+        [
+          "2021-01-22",
+          0.9594
+        ],
+        [
+          "2021-01-29",
+          0.94
+        ],
+        [
+          "2021-02-05",
+          0.9167
+        ],
+        [
+          "2021-02-12",
+          0.9171
+        ],
+        [
+          "2021-02-19",
+          0.9466
+        ],
+        [
+          "2021-02-26",
+          1.0401
+        ],
+        [
+          "2021-03-05",
+          1.178
+        ],
+        [
+          "2021-03-12",
+          1.1889
+        ],
+        [
+          "2021-03-19",
+          1.1849
+        ],
+        [
+          "2021-03-26",
+          1.2215
+        ],
+        [
+          "2021-04-01",
+          1.1817
+        ],
+        [
+          "2021-04-09",
+          1.1319
+        ],
+        [
+          "2021-04-16",
+          1.1307
+        ],
+        [
+          "2021-04-23",
+          1.1317
+        ],
+        [
+          "2021-04-30",
+          1.1583
+        ],
+        [
+          "2021-05-07",
+          1.3304
+        ],
+        [
+          "2021-05-14",
+          1.3412
+        ],
+        [
+          "2021-05-21",
+          1.2838
+        ],
+        [
+          "2021-05-28",
+          1.2666
+        ],
+        [
+          "2021-06-04",
+          1.2924
+        ],
+        [
+          "2021-06-11",
+          1.2196
+        ],
+        [
+          "2021-06-18",
+          1.0984
+        ],
+        [
+          "2021-06-25",
+          1.1179
+        ],
+        [
+          "2021-07-02",
+          1.1131
+        ],
+        [
+          "2021-07-09",
+          1.0914
+        ],
+        [
+          "2021-07-16",
+          1.0804
+        ],
+        [
+          "2021-07-23",
+          1.0347
+        ],
+        [
+          "2021-07-30",
+          1.078
+        ],
+        [
+          "2021-08-06",
+          1.0497
+        ],
+        [
+          "2021-08-13",
+          1.0813
+        ],
+        [
+          "2021-08-20",
+          1.0299
+        ],
+        [
+          "2021-08-27",
+          1.029
+        ],
+        [
+          "2021-09-03",
+          1.0011
+        ],
+        [
+          "2021-09-10",
+          1.0207
+        ],
+        [
+          "2021-09-17",
+          0.9938
+        ],
+        [
+          "2021-09-24",
+          0.9946
+        ],
+        [
+          "2021-10-01",
+          1.0589
+        ],
+        [
+          "2021-10-08",
+          1.0875
+        ],
+        [
+          "2021-10-15",
+          1.0614
+        ],
+        [
+          "2021-10-22",
+          1.0452
+        ],
+        [
+          "2021-10-29",
+          1.032
+        ],
+        [
+          "2021-11-05",
+          1.0513
+        ],
+        [
+          "2021-11-12",
+          1.0558
+        ],
+        [
+          "2021-11-19",
+          1.0424
+        ],
+        [
+          "2021-11-26",
+          1.0915
+        ],
+        [
+          "2021-12-03",
+          1.1709
+        ],
+        [
+          "2021-12-10",
+          1.1734
+        ],
+        [
+          "2021-12-17",
+          1.1832
+        ],
+        [
+          "2021-12-23",
+          1.1772
+        ],
+        [
+          "2021-12-31",
+          1.2131
+        ],
+        [
+          "2022-01-07",
+          1.3878
+        ],
+        [
+          "2022-01-14",
+          1.4458
+        ],
+        [
+          "2022-01-21",
+          1.4487
+        ],
+        [
+          "2022-01-28",
+          1.4433
+        ],
+        [
+          "2022-02-04",
+          1.444
+        ],
+        [
+          "2022-02-11",
+          1.4995
+        ],
+        [
+          "2022-02-18",
+          1.5912
+        ],
+        [
+          "2022-02-25",
+          1.5796
+        ],
+        [
+          "2022-03-04",
+          1.7706
+        ],
+        [
+          "2022-03-11",
+          1.8716
+        ],
+        [
+          "2022-03-18",
+          1.6882
+        ],
+        [
+          "2022-03-25",
+          1.804
+        ],
+        [
+          "2022-04-01",
+          1.7324
+        ],
+        [
+          "2022-04-08",
+          1.8301
+        ],
+        [
+          "2022-04-14",
+          1.8955
+        ],
+        [
+          "2022-04-22",
+          1.9174
+        ],
+        [
+          "2022-04-29",
+          1.9148
+        ],
+        [
+          "2022-05-06",
+          2.0892
+        ],
+        [
+          "2022-05-13",
+          2.0645
+        ],
+        [
+          "2022-05-20",
+          2.1052
+        ],
+        [
+          "2022-05-27",
+          2.1455
+        ],
+        [
+          "2022-06-03",
+          2.1393
+        ],
+        [
+          "2022-06-10",
+          2.2085
+        ],
+        [
+          "2022-06-17",
+          2.0572
+        ],
+        [
+          "2022-06-24",
+          1.8466
+        ],
+        [
+          "2022-07-01",
+          1.934
+        ],
+        [
+          "2022-07-08",
+          1.8004
+        ],
+        [
+          "2022-07-15",
+          1.8921
+        ],
+        [
+          "2022-07-22",
+          1.8606
+        ],
+        [
+          "2022-07-29",
+          1.9856
+        ],
+        [
+          "2022-08-05",
+          1.8132
+        ],
+        [
+          "2022-08-12",
+          1.8763
+        ],
+        [
+          "2022-08-19",
+          1.9552
+        ],
+        [
+          "2022-08-26",
+          2.0747
+        ],
+        [
+          "2022-09-02",
+          2.0836
+        ],
+        [
+          "2022-09-09",
+          2.0114
+        ],
+        [
+          "2022-09-16",
+          2.0486
+        ],
+        [
+          "2022-09-23",
+          2.0322
+        ],
+        [
+          "2022-09-30",
+          2.0447
+        ],
+        [
+          "2022-10-07",
+          2.153
+        ],
+        [
+          "2022-10-14",
+          2.2889
+        ],
+        [
+          "2022-10-21",
+          2.2937
+        ],
+        [
+          "2022-10-28",
+          2.2554
+        ],
+        [
+          "2022-11-04",
+          2.6062
+        ],
+        [
+          "2022-11-11",
+          2.3821
+        ],
+        [
+          "2022-11-18",
+          2.488
+        ],
+        [
+          "2022-11-25",
+          2.502
+        ],
+        [
+          "2022-12-02",
+          2.4579
+        ],
+        [
+          "2022-12-09",
+          2.4129
+        ],
+        [
+          "2022-12-16",
+          2.3885
+        ],
+        [
+          "2022-12-23",
+          2.5246
+        ],
+        [
+          "2022-12-30",
+          2.467
+        ],
+        [
+          "2023-01-06",
+          2.5893
+        ],
+        [
+          "2023-01-13",
+          2.5282
+        ],
+        [
+          "2023-01-20",
+          2.4704
+        ],
+        [
+          "2023-01-27",
+          2.3597
+        ],
+        [
+          "2023-02-03",
+          2.2416
+        ],
+        [
+          "2023-02-10",
+          2.3078
+        ],
+        [
+          "2023-02-17",
+          2.2539
+        ],
+        [
+          "2023-02-24",
+          2.2818
+        ],
+        [
+          "2023-03-03",
+          2.3003
+        ],
+        [
+          "2023-03-10",
+          2.3082
+        ],
+        [
+          "2023-03-17",
+          2.0906
+        ],
+        [
+          "2023-03-24",
+          2.1115
+        ],
+        [
+          "2023-03-31",
+          2.1088
+        ],
+        [
+          "2023-04-06",
+          2.1543
+        ],
+        [
+          "2023-04-14",
+          2.1954
+        ],
+        [
+          "2023-04-21",
+          2.1557
+        ],
+        [
+          "2023-04-28",
+          2.2099
+        ],
+        [
+          "2023-05-05",
+          2.1731
+        ],
+        [
+          "2023-05-12",
+          2.0987
+        ],
+        [
+          "2023-05-19",
+          2.0009
+        ],
+        [
+          "2023-05-26",
+          1.8984
+        ],
+        [
+          "2023-06-02",
+          1.8897
+        ],
+        [
+          "2023-06-09",
+          1.9053
+        ],
+        [
+          "2023-06-16",
+          1.8525
+        ],
+        [
+          "2023-06-23",
+          1.8817
+        ],
+        [
+          "2023-06-30",
+          1.9095
+        ],
+        [
+          "2023-07-07",
+          1.9277
+        ],
+        [
+          "2023-07-14",
+          1.8496
+        ],
+        [
+          "2023-07-21",
+          1.8824
+        ],
+        [
+          "2023-07-28",
+          1.9005
+        ],
+        [
+          "2023-08-04",
+          1.9538
+        ],
+        [
+          "2023-08-11",
+          2.019
+        ],
+        [
+          "2023-08-18",
+          2.0328
+        ],
+        [
+          "2023-08-25",
+          1.9735
+        ],
+        [
+          "2023-09-01",
+          1.9503
+        ],
+        [
+          "2023-09-08",
+          1.9301
+        ],
+        [
+          "2023-09-15",
+          2.0114
+        ],
+        [
+          "2023-09-22",
+          2.0289
+        ],
+        [
+          "2023-09-29",
+          2.0358
+        ],
+        [
+          "2023-10-06",
+          1.9478
+        ],
+        [
+          "2023-10-13",
+          1.9967
+        ],
+        [
+          "2023-10-20",
+          2.0202
+        ],
+        [
+          "2023-10-27",
+          2.0331
+        ],
+        [
+          "2023-11-03",
+          1.9875
+        ],
+        [
+          "2023-11-10",
+          1.8874
+        ],
+        [
+          "2023-11-17",
+          1.8819
+        ],
+        [
+          "2023-11-24",
+          1.8693
+        ],
+        [
+          "2023-12-01",
+          1.8179
+        ],
+        [
+          "2023-12-08",
+          1.7881
+        ],
+        [
+          "2023-12-15",
+          1.7968
+        ],
+        [
+          "2023-12-22",
+          1.8133
+        ],
+        [
+          "2023-12-29",
+          1.8095
+        ],
+        [
+          "2024-01-05",
+          1.8929
+        ],
+        [
+          "2024-01-12",
+          1.7727
+        ],
+        [
+          "2024-01-19",
+          1.7131
+        ],
+        [
+          "2024-01-26",
+          1.7284
+        ],
+        [
+          "2024-02-02",
+          1.7115
+        ],
+        [
+          "2024-02-09",
+          1.6461
+        ],
+        [
+          "2024-02-16",
+          1.7304
+        ],
+        [
+          "2024-02-23",
+          1.7683
+        ],
+        [
+          "2024-03-01",
+          1.7522
+        ],
+        [
+          "2024-03-08",
+          1.8149
+        ],
+        [
+          "2024-03-15",
+          1.8712
+        ],
+        [
+          "2024-03-22",
+          1.8588
+        ],
+        [
+          "2024-03-28",
+          1.9073
+        ],
+        [
+          "2024-04-05",
+          1.9835
+        ],
+        [
+          "2024-04-12",
+          1.9808
+        ],
+        [
+          "2024-04-19",
+          2.061
+        ],
+        [
+          "2024-04-26",
+          2.0019
+        ],
+        [
+          "2024-05-03",
+          1.9949
+        ],
+        [
+          "2024-05-10",
+          2.026
+        ],
+        [
+          "2024-05-17",
+          1.9821
+        ],
+        [
+          "2024-05-24",
+          1.989
+        ],
+        [
+          "2024-05-31",
+          2.128
+        ],
+        [
+          "2024-06-07",
+          2.0167
+        ],
+        [
+          "2024-06-14",
+          1.9358
+        ],
+        [
+          "2024-06-21",
+          1.9366
+        ],
+        [
+          "2024-06-28",
+          1.8914
+        ],
+        [
+          "2024-07-05",
+          1.8607
+        ],
+        [
+          "2024-07-12",
+          1.9314
+        ],
+        [
+          "2024-07-19",
+          1.9713
+        ],
+        [
+          "2024-07-26",
+          1.9757
+        ],
+        [
+          "2024-08-02",
+          2.0124
+        ],
+        [
+          "2024-08-09",
+          1.9773
+        ],
+        [
+          "2024-08-16",
+          1.9345
+        ],
+        [
+          "2024-08-23",
+          1.9357
+        ],
+        [
+          "2024-08-30",
+          1.9498
+        ],
+        [
+          "2024-09-06",
+          1.914
+        ],
+        [
+          "2024-09-13",
+          1.8948
+        ],
+        [
+          "2024-09-20",
+          1.903
+        ],
+        [
+          "2024-09-27",
+          1.9443
+        ],
+        [
+          "2024-10-04",
+          1.9678
+        ],
+        [
+          "2024-10-11",
+          1.921
+        ],
+        [
+          "2024-10-18",
+          1.9304
+        ],
+        [
+          "2024-10-25",
+          1.8911
+        ],
+        [
+          "2024-11-01",
+          1.8565
+        ],
+        [
+          "2024-11-08",
+          1.7969
+        ],
+        [
+          "2024-11-15",
+          1.7604
+        ],
+        [
+          "2024-11-22",
+          1.7165
+        ],
+        [
+          "2024-11-29",
+          1.7287
+        ],
+        [
+          "2024-12-06",
+          1.5806
+        ],
+        [
+          "2024-12-13",
+          1.5937
+        ],
+        [
+          "2024-12-20",
+          1.5412
+        ],
+        [
+          "2024-12-27",
+          1.5698
+        ],
+        [
+          "2025-01-03",
+          1.5921
+        ],
+        [
+          "2025-01-10",
+          1.6624
+        ],
+        [
+          "2025-01-17",
+          1.7015
+        ],
+        [
+          "2025-01-24",
+          1.6419
+        ],
+        [
+          "2025-01-31",
+          1.5961
+        ],
+        [
+          "2025-02-07",
+          1.5908
+        ],
+        [
+          "2025-02-14",
+          1.5862
+        ],
+        [
+          "2025-02-21",
+          1.6643
+        ],
+        [
+          "2025-02-28",
+          1.7201
+        ],
+        [
+          "2025-03-07",
+          1.7581
+        ],
+        [
+          "2025-03-14",
+          1.808
+        ],
+        [
+          "2025-03-21",
+          1.7961
+        ],
+        [
+          "2025-03-28",
+          1.8526
+        ],
+        [
+          "2025-04-04",
+          1.8107
+        ],
+        [
+          "2025-04-11",
+          1.7789
+        ],
+        [
+          "2025-04-17",
+          1.821
+        ],
+        [
+          "2025-04-25",
+          1.7076
+        ],
+        [
+          "2025-05-02",
+          1.6684
+        ],
+        [
+          "2025-05-09",
+          1.6609
+        ],
+        [
+          "2025-05-16",
+          1.6292
+        ],
+        [
+          "2025-05-23",
+          1.6522
+        ],
+        [
+          "2025-05-30",
+          1.6311
+        ],
+        [
+          "2025-06-06",
+          1.6467
+        ],
+        [
+          "2025-06-13",
+          1.6991
+        ],
+        [
+          "2025-06-20",
+          1.7156
+        ],
+        [
+          "2025-06-27",
+          1.6787
+        ],
+        [
+          "2025-07-03",
+          1.6811
+        ],
+        [
+          "2025-07-11",
+          1.7876
+        ],
+        [
+          "2025-07-18",
+          1.7208
+        ],
+        [
+          "2025-07-25",
+          1.7362
+        ],
+        [
+          "2025-08-01",
+          1.7402
+        ],
+        [
+          "2025-08-08",
+          1.7873
+        ],
+        [
+          "2025-08-15",
+          1.8018
+        ],
+        [
+          "2025-08-22",
+          1.8375
+        ],
+        [
+          "2025-08-29",
+          1.8419
+        ],
+        [
+          "2025-09-05",
+          1.8291
+        ],
+        [
+          "2025-09-12",
+          1.8095
+        ],
+        [
+          "2025-09-19",
+          1.7664
+        ],
+        [
+          "2025-09-26",
+          1.8328
+        ],
+        [
+          "2025-10-03",
+          1.8702
+        ],
+        [
+          "2025-10-10",
+          1.8921
+        ],
+        [
+          "2025-10-17",
+          1.9105
+        ],
+        [
+          "2025-10-24",
+          1.8551
+        ],
+        [
+          "2025-10-31",
+          1.83
+        ],
+        [
+          "2025-11-07",
+          1.8948
+        ],
+        [
+          "2025-11-14",
+          1.9293
+        ],
+        [
+          "2025-11-21",
+          1.996
+        ],
+        [
+          "2025-11-28",
+          2.0293
+        ],
+        [
+          "2025-12-05",
+          1.9621
+        ],
+        [
+          "2025-12-12",
+          1.9977
+        ],
+        [
+          "2025-12-19",
+          2.0051
+        ],
+        [
+          "2025-12-26",
+          2.0341
+        ],
+        [
+          "2026-01-02",
+          2.1623
+        ],
+        [
+          "2026-01-09",
+          2.2174
+        ],
+        [
+          "2026-01-16",
+          2.4628
+        ],
+        [
+          "2026-01-23",
+          2.5433
+        ],
+        [
+          "2026-01-30",
+          2.671
+        ],
+        [
+          "2026-02-06",
+          3.03
+        ],
+        [
+          "2026-02-13",
+          3.0085
+        ]
+      ],
+      "source": "basket_ratio:XLB+XLI+XLE+XME",
+      "change_ytd_pct": 39.1
     }
   }
 }

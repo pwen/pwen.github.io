@@ -9,6 +9,11 @@
     let activeThesis = 'all'; // 'all' or a thesis id
     let currentYear = 2026;
 
+    const CATEGORY_FILES = [
+        'currencies', 'rates', 'liquidity', 'metals',
+        'energy', 'equities', 'sentiment', 'em'
+    ];
+
     // ─── Bootstrap ───
     async function init() {
         const yearSelect = document.getElementById('pulse-year');
@@ -23,12 +28,23 @@
 
     async function loadYear(year) {
         try {
-            const [thesesResp, metricsResp] = await Promise.all([
-                fetch(`${BASE}/theses-${year}.json`),
-                fetch(`${BASE}/metrics.json`)
-            ]);
-            thesesData = await thesesResp.json();
-            metricsData = await metricsResp.json();
+            // Load theses + all category metric files in parallel
+            const thesesResp = fetch(`${BASE}/theses-${year}.json`).then(r => r.json());
+            const metricFetches = CATEGORY_FILES.map(cat =>
+                fetch(`${BASE}/${cat}.json`).then(r => r.json())
+            );
+            const [thesesResult, ...metricResults] = await Promise.all([thesesResp, ...metricFetches]);
+
+            thesesData = thesesResult;
+
+            // Merge category files into single metricsData
+            metricsData = { updated: null, metrics: {} };
+            for (const catData of metricResults) {
+                if (catData.updated && (!metricsData.updated || catData.updated > metricsData.updated)) {
+                    metricsData.updated = catData.updated;
+                }
+                Object.assign(metricsData.metrics, catData.metrics);
+            }
 
             // Also fetch thesis markdown bodies
             await loadThesisBodies(thesesData.theses);

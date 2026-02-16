@@ -36,8 +36,21 @@ from fredapi import Fred
 # ─── Configuration ───────────────────────────────────────────────────────────
 
 FRED_API_KEY = os.environ.get("FRED_API_KEY")
-OUTPUT_PATH = Path(__file__).resolve().parent.parent / "assets" / "data" / "pulse" / "metrics.json"
+OUTPUT_DIR = Path(__file__).resolve().parent.parent / "assets" / "data" / "pulse"
+OUTPUT_PATH = OUTPUT_DIR / "metrics.json"  # legacy single-file (kept for backfill compat)
 LOOKBACK_YEARS = 5
+
+# Category → metric IDs  (mirrors charts.js CATEGORIES)
+CATEGORY_MAP = [
+    ("currencies", ["dxy", "eurusd", "usdcny", "usd_reserves_share"]),
+    ("rates", ["us_10y", "yield_curve", "tips_5y", "breakeven_10y", "hy_spread", "move"]),
+    ("liquidity", ["fed_balance_sheet", "debt_to_gdp", "tga"]),
+    ("metals", ["gold", "silver", "copper", "uranium"]),
+    ("energy", ["oil", "natgas", "energy_cpi"]),
+    ("equities", ["sp500", "qqq", "smh", "xlu", "gsci_spy_ratio", "bigtech_capex", "growth_value", "cap_equal", "atoms_bits"]),
+    ("sentiment", ["vix", "btc", "cb_gold_buying", "us_ism_pmi"]),
+    ("em", ["csi300", "hsi", "kweb", "china_pmi", "china_retail_sales", "eem"]),
+]
 
 # ─── Metric definitions ─────────────────────────────────────────────────────
 
@@ -48,7 +61,7 @@ METRICS = {
     "dxy": {
         "name": "US Dollar Index",
         "name_zh": "美元指数",
-        "description": "Dollar vs a basket of major fiat currencies (euro-heavy). A relative measure — if all currencies debase together, DXY stays flat while purchasing power erodes.",
+        "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
         "source_type": "yfinance",
         "ticker": "DX-Y.NYB",
         "unit": "index",
@@ -56,7 +69,7 @@ METRICS = {
     "eurusd": {
         "name": "EUR/USD",
         "name_zh": "欧元/美元",
-        "description": "The euro is DXY's largest component (~58%). EUR/USD rising = dollar weakening in its most liquid pair. Also reflects relative ECB vs Fed policy divergence.",
+        "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
         "source_type": "yfinance",
         "ticker": "EURUSD=X",
         "unit": "rate",
@@ -64,7 +77,7 @@ METRICS = {
     "usdcny": {
         "name": "USD/CNY",
         "name_zh": "美元/人民币",
-        "description": "Dollar-yuan exchange rate. Falling = yuan strengthening. A sustained move below 7.00 signals meaningful capital flow shift toward China.",
+        "description": "Dollar-yuan exchange rate. Rising = yuan weakening, falling = yuan strengthening. Below 7.00 signals meaningful capital flow shift toward China.",
         "source_type": "yfinance",
         "ticker": "CNY=X",
         "unit": "rate",
@@ -72,7 +85,7 @@ METRICS = {
     "usd_reserves_share": {
         "name": "USD Share of Reserves",
         "name_zh": "美元储备占比",
-        "description": "How much of global central bank reserves are held in dollars (IMF COFER data, quarterly, lagged). Dropped from 72% in 2000 — slow-moving but structural and largely irreversible.",
+        "description": "Share of global central bank reserves held in dollars (IMF COFER, quarterly, lagged). Falling = structural de-dollarization. Dropped from 72% in 2000: slow-moving but largely irreversible.",
         "source_type": "manual",
         "frequency": "quarterly",
         "unit": "%",
@@ -83,7 +96,7 @@ METRICS = {
     "us_10y": {
         "name": "US 10Y Yield",
         "name_zh": "美国十年期国债收益率",
-        "description": "The stress thermometer for US fiscal health. Rising yields = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
+        "description": "Benchmark Treasury yield. Rising = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
         "source_type": "yfinance",
         "ticker": "^TNX",
         "unit": "%",
@@ -92,7 +105,7 @@ METRICS = {
     "yield_curve": {
         "name": "10Y-2Y Spread",
         "name_zh": "收益率曲线（10Y-2Y利差）",
-        "description": "The classic recession signal. Inverted (negative) = market pricing rate cuts ahead. Re-steepening after inversion historically precedes recessions within 6-18 months.",
+        "description": "10Y minus 2Y Treasury yield. Inverted (negative) = market pricing rate cuts ahead. Re-steepening after inversion historically precedes recessions within 6-18 months.",
         "source_type": "fred",
         "series": "T10Y2Y",
         "unit": "% spread",
@@ -101,7 +114,7 @@ METRICS = {
     "tips_5y": {
         "name": "US 5Y TIPS (Real Yield)",
         "name_zh": "五年期实际利率（TIPS）",
-        "description": "The real cost of money after inflation. When negative, holding cash loses purchasing power — the engine that drives capital into gold and hard assets. Gromen's key metric for fiscal dominance.",
+        "description": "Real cost of money after inflation. Rising = tighter real conditions, falling = looser. Negative real yields push capital toward gold and hard assets.",
         "source_type": "fred",
         "series": "DFII5",
         "unit": "%",
@@ -110,7 +123,7 @@ METRICS = {
     "breakeven_10y": {
         "name": "10Y Breakeven Inflation",
         "name_zh": "十年期盈亏平衡通胀率",
-        "description": "Market-implied inflation expectation for the next 10 years. Rising breakevens = market pricing structurally higher inflation. Directly validates or challenges the debasement thesis.",
+        "description": "Market-implied inflation expectation for the next 10 years. Rising = market pricing higher inflation, falling = disinflation expectations.",
         "source_type": "fred",
         "series": "T10YIE",
         "unit": "%",
@@ -119,7 +132,7 @@ METRICS = {
     "hy_spread": {
         "name": "HY Credit Spread (OAS)",
         "name_zh": "高收益债利差",
-        "description": "High-yield bond spread over Treasuries. Widening = stress in credit markets, risk-off. Tight spreads = complacency. A spike above 5% historically signals recession risk.",
+        "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% historically signals recession risk.",
         "source_type": "fred",
         "series": "BAMLH0A0HYM2",
         "unit": "%",
@@ -130,7 +143,7 @@ METRICS = {
     "fed_balance_sheet": {
         "name": "Fed Balance Sheet",
         "name_zh": "美联储资产负债表",
-        "description": "The ammo reserve of the buyer of last resort. Currently shrinking (QT), but any Treasury market stress forces re-expansion. Direction tells you whether fiscal dominance has gone from implicit to explicit.",
+        "description": "Total assets held by the Federal Reserve. Rising = QE / liquidity injection, falling = QT / tightening. Treasury market stress forces re-expansion.",
         "source_type": "fred",
         "series": "WALCL",
         "unit": "$T",
@@ -139,7 +152,7 @@ METRICS = {
     "debt_to_gdp": {
         "name": "US Debt/GDP",
         "name_zh": "美国债务/GDP",
-        "description": "The denominator matters as much as the numerator. If GDP grows faster than debt, the ratio stabilizes. If not, the compounding math takes over. As long as this number climbs, all other pressures persist.",
+        "description": "Federal debt as a share of GDP. Rising = fiscal trajectory worsening. If GDP grows faster than debt, the ratio stabilizes; otherwise compounding takes over.",
         "source_type": "fred",
         "series": "GFDEGDQ188S",
         "unit": "%",
@@ -148,7 +161,7 @@ METRICS = {
     "tga": {
         "name": "Treasury General Account",
         "name_zh": "财政部一般账户（TGA）",
-        "description": "The US government's checking account at the Fed. Drawdowns inject liquidity into markets (bullish). Refills (post-debt-ceiling) drain it. Liquidity plumbing that moves risk assets.",
+        "description": "US government's checking account at the Fed. Drawdowns inject liquidity into markets (bullish for risk assets). Refills drain liquidity.",
         "source_type": "fred",
         "series": "WTREGEN",
         "unit": "$B",
@@ -159,7 +172,7 @@ METRICS = {
     "gold": {
         "name": "Gold",
         "name_zh": "黄金",
-        "description": "The trust scoreboard. When gold rises alongside rising yields and a falling dollar, the market is pricing loss of confidence in the fiscal trajectory. Central banks buying gold = voting with their reserves.",
+        "description": "Spot gold price. Rising = inflation hedge demand / loss of confidence in fiat. Central banks buying gold = voting to diversify away from dollars.",
         "source_type": "yfinance",
         "ticker": "GC=F",
         "unit": "$/oz",
@@ -167,7 +180,7 @@ METRICS = {
     "silver": {
         "name": "Silver",
         "name_zh": "白银",
-        "description": "Dual identity: monetary metal (like gold) AND industrial metal (solar panels, electronics). The silver market is in structural deficit. Outperforms gold in bull runs, more volatile.",
+        "description": "Both monetary and industrial metal (solar, electronics). Market in structural deficit. Outperforms gold in bull runs, more volatile.",
         "source_type": "yfinance",
         "ticker": "SI=F",
         "unit": "$/oz",
@@ -175,7 +188,7 @@ METRICS = {
     "copper": {
         "name": "Copper",
         "name_zh": "铜",
-        "description": "The electrification bellwether. EVs use 3-4x more copper than ICE vehicles. Data centers, wind turbines, grid upgrades all need copper. Supply growth structurally constrained (mines take 7-15 years). Goldman calls it 'the new oil.'",
+        "description": "Electrification bellwether: EVs, data centers, wind turbines, grid upgrades. Supply structurally constrained (mines take 7-15 years). Rising = industrial and green demand outpacing supply.",
         "source_type": "yfinance",
         "ticker": "HG=F",
         "unit": "$/lb",
@@ -183,7 +196,7 @@ METRICS = {
     "uranium": {
         "name": "Uranium (URA ETF)",
         "name_zh": "铀（URA ETF）",
-        "description": "Global X Uranium ETF. Proxy for the nuclear renaissance thesis — 30+ countries committed to tripling nuclear capacity. Supply constrained: Russia controls 40% of global enrichment.",
+        "description": "Global X Uranium ETF. Proxy for nuclear renaissance: 30+ countries committed to tripling capacity. Supply constrained, Russia controls 40% of enrichment.",
         "source_type": "yfinance",
         "ticker": "URA",
         "unit": "$",
@@ -193,7 +206,7 @@ METRICS = {
     "oil": {
         "name": "WTI Crude",
         "name_zh": "WTI原油",
-        "description": "West Texas Intermediate crude oil. The one commodity with significant political suppression risk (Saudi deals, SPR releases). Tension between political will to lower prices and geological reality of tight supply.",
+        "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
         "source_type": "yfinance",
         "ticker": "CL=F",
         "unit": "$/bbl",
@@ -201,7 +214,7 @@ METRICS = {
     "natgas": {
         "name": "Natural Gas",
         "name_zh": "天然气",
-        "description": "Key energy source for power generation. AI data centers are driving massive new electricity demand, tightening the gas market. Also a geopolitical commodity (Russia/Europe, LNG exports).",
+        "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
         "source_type": "yfinance",
         "ticker": "NG=F",
         "unit": "$/MMBtu",
@@ -209,7 +222,7 @@ METRICS = {
     "energy_cpi": {
         "name": "Energy Services CPI YoY",
         "name_zh": "能源服务CPI（同比）",
-        "description": "Year-over-year change in energy services prices (BLS). The hottest CPI component — directly tied to AI data center power demand. Above 7% creates real political backlash against AI deployment.",
+        "description": "Year-over-year change in energy services prices (BLS). Rising = energy inflation accelerating. Directly tied to AI data center power demand. Above 7% creates political backlash.",
         "source_type": "fred",
         "series": "CUSR0000SEHF",
         "unit": "% YoY",
@@ -221,7 +234,7 @@ METRICS = {
     "sp500": {
         "name": "S&P 500",
         "name_zh": "标普500",
-        "description": "The broad US equity benchmark. Tracks overall market health. Compare with QQQ/SMH to see whether tech is leading or lagging the broader market.",
+        "description": "Broad US equity benchmark. Rising = risk-on, falling = risk-off. Compare with QQQ/SMH to gauge whether tech is leading or lagging.",
         "source_type": "yfinance",
         "ticker": "^GSPC",
         "unit": "index",
@@ -229,7 +242,7 @@ METRICS = {
     "qqq": {
         "name": "Nasdaq 100 ETF",
         "name_zh": "纳斯达克100 ETF",
-        "description": "Tracks the 100 largest Nasdaq-listed non-financial companies. AI-heavy (Mag7 dominant). Watch QQQ vs SMH divergence to gauge whether AI beneficiary rotation is underway.",
+        "description": "100 largest Nasdaq non-financial companies. AI/tech-heavy (Mag7 dominant). QQQ vs SMH divergence signals whether AI leadership is rotating.",
         "source_type": "yfinance",
         "ticker": "QQQ",
         "unit": "$",
@@ -237,7 +250,7 @@ METRICS = {
     "smh": {
         "name": "Semiconductor ETF",
         "name_zh": "半导体ETF",
-        "description": "VanEck Semiconductor ETF. The AI picks-and-shovels trade (Nvidia, TSMC, ASML). If SMH underperforms QQQ, leadership is rotating from builders to enablers/adopters.",
+        "description": "VanEck Semiconductor ETF: Nvidia, TSMC, ASML. The AI picks-and-shovels trade. SMH underperforming QQQ = leadership rotating from chip builders to enablers/adopters.",
         "source_type": "yfinance",
         "ticker": "SMH",
         "unit": "$",
@@ -245,7 +258,7 @@ METRICS = {
     "xlu": {
         "name": "Utilities ETF (XLU)",
         "name_zh": "公用事业ETF",
-        "description": "The 'boring' AI winner. Data centers need massive electricity — utilities are the enablers. XLU outperforming tech = market rotating into AI infrastructure over AI hype.",
+        "description": "Utilities sector ETF. Data centers need massive electricity: XLU outperforming tech = market rotating into AI infrastructure over AI hype.",
         "source_type": "yfinance",
         "ticker": "XLU",
         "unit": "$",
@@ -253,7 +266,7 @@ METRICS = {
     "gsci_spy_ratio": {
         "name": "Commodities / S&P 500",
         "name_zh": "大宗商品/标普500比率",
-        "description": "GSG/SPY ratio — the broadest measure of real vs financial asset performance. A sustained move above 1.0 confirms the regime change from financial assets to hard assets. Currently turning from decades-long lows.",
+        "description": "GSG/SPY ratio: real assets vs financial assets. Rising = commodities outperforming equities. Turning up from decades-long lows.",
         "source_type": "computed",
         "components": ["GSG", "SPY"],
         "unit": "ratio",
@@ -263,7 +276,7 @@ METRICS = {
     "vix": {
         "name": "VIX",
         "name_zh": "恐慌指数",
-        "description": "The 'fear gauge'. Measures S&P 500 implied volatility. Below 15 = complacency, above 25 = elevated fear, above 35 = panic. Spikes tend to be short-lived but signal regime shifts.",
+        "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
         "source_type": "yfinance",
         "ticker": "^VIX",
         "unit": "index",
@@ -271,7 +284,7 @@ METRICS = {
     "btc": {
         "name": "Bitcoin",
         "name_zh": "比特币",
-        "description": "Digital debasement hedge. Correlates with global liquidity — when central banks expand balance sheets, BTC tends to rise. Also a barometer of risk appetite and monetary system distrust.",
+        "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
         "source_type": "yfinance",
         "ticker": "BTC-USD",
         "unit": "$",
@@ -279,7 +292,7 @@ METRICS = {
     "cb_gold_buying": {
         "name": "Central Bank Gold Buying",
         "name_zh": "央行购金量",
-        "description": "Quarterly data from World Gold Council. Central banks have been net buyers since 2010, accelerating post-2022 (sanctions on Russia). This is the structural floor under gold — sovereign entities voting to de-dollarize.",
+        "description": "Quarterly net purchases by central banks (World Gold Council). Net buyers since 2010, accelerating post-2022. Rising = structural de-dollarization demand.",
         "source_type": "manual",
         "frequency": "quarterly",
         "unit": "tonnes/yr",
@@ -290,7 +303,7 @@ METRICS = {
     "csi300": {
         "name": "CSI 300",
         "name_zh": "沪深300",
-        "description": "China's benchmark equity index (top 300 A-shares). The cleanest signal of whether domestic and foreign capital is returning to Chinese markets.",
+        "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
         "source_type": "yfinance",
         "ticker": "000300.SS",
         "unit": "index",
@@ -298,7 +311,7 @@ METRICS = {
     "hsi": {
         "name": "Hang Seng Index",
         "name_zh": "恒生指数",
-        "description": "Hong Kong's benchmark — the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment toward China than onshore CSI 300.",
+        "description": "Hong Kong's benchmark: the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment than onshore CSI 300.",
         "source_type": "yfinance",
         "ticker": "^HSI",
         "unit": "index",
@@ -306,7 +319,7 @@ METRICS = {
     "kweb": {
         "name": "China Internet ETF",
         "name_zh": "中概互联网ETF",
-        "description": "KraneShares CSI China Internet ETF. Tracks Chinese tech (Alibaba, Tencent, PDD, etc.). A proxy for foreign investor sentiment on Chinese tech and regulatory risk.",
+        "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
         "source_type": "yfinance",
         "ticker": "KWEB",
         "unit": "$",
@@ -314,7 +327,7 @@ METRICS = {
     "china_pmi": {
         "name": "China Mfg PMI",
         "name_zh": "中国制造业PMI",
-        "description": "NBS Manufacturing PMI. 50 = expansion/contraction line. Sustained above 51 confirms recovery is real; below 49 signals contraction.",
+        "description": "NBS Manufacturing PMI. Above 50 = expansion, below 50 = contraction. Sustained above 51 confirms recovery; below 49 signals deepening weakness.",
         "source_type": "manual",
         "frequency": "monthly",
         "unit": "index",
@@ -323,7 +336,7 @@ METRICS = {
     "china_retail_sales": {
         "name": "China Retail Sales YoY",
         "name_zh": "中国社零同比",
-        "description": "Monthly year-over-year growth in Chinese retail sales (NBS). The key gauge for whether China's consumption pivot thesis is playing out. Needs to sustain 4%+ and ideally move toward 5-6%.",
+        "description": "Monthly YoY growth in Chinese retail sales (NBS). Rising = consumer recovery gaining traction. Needs to sustain 4%+ to confirm consumption pivot.",
         "source_type": "manual",
         "frequency": "monthly",
         "unit": "% YoY",
@@ -332,7 +345,7 @@ METRICS = {
     "eem": {
         "name": "MSCI Emerging Markets ETF",
         "name_zh": "新兴市场ETF",
-        "description": "Broad EM equity benchmark. Tracks whether capital is flowing into or out of developing markets. EM outperforming DM = dollar-weakness + fragmentation trade working.",
+        "description": "Broad EM equity benchmark. Rising = capital flowing into developing markets. EM outperforming DM = dollar weakness + fragmentation trade working.",
         "source_type": "yfinance",
         "ticker": "EEM",
         "unit": "$",
@@ -342,7 +355,7 @@ METRICS = {
     "move": {
         "name": "MOVE Index",
         "name_zh": "国债波动率指数",
-        "description": "ICE BofA MOVE Index — measures Treasury market implied volatility across 2Y, 5Y, 10Y, and 30Y maturities. The bond market's version of VIX. Above 120 = elevated stress, above 150 = potential basis trade unwinds and forced Fed intervention. 🔗 Weak Dollar thesis: MOVE spikes force the Fed to step in as buyer of last resort, expanding the balance sheet.",
+        "description": "ICE BofA MOVE Index: Treasury market implied volatility across 2Y-30Y maturities. The bond market's VIX. Above 120 = elevated stress, above 150 = potential basis trade unwinds and forced Fed intervention.",
         "source_type": "manual",
         "frequency": "daily",
         "unit": "index",
@@ -351,7 +364,7 @@ METRICS = {
     "us_ism_pmi": {
         "name": "US Manufacturing PMI",
         "name_zh": "美国制造业PMI（ISM）",
-        "description": "ISM Manufacturing PMI — the oldest and most-watched US manufacturing indicator. Above 50 = expansion, below 50 = contraction. January 2026 reading of 52.6 triggered a 'manufacturing recovery signal' — historical median 12-month returns after this signal: COPX +82%, DBC +44%. 🔗 Fragmentation thesis: onshoring and supply chain diversification drive US manufacturing recovery.",
+        "description": "ISM Manufacturing PMI: the oldest US manufacturing indicator. Above 50 = expansion, below 50 = contraction. Sustained expansion signals onshoring and supply chain diversification.",
         "source_type": "fred",
         "series": "NAPM",
         "unit": "index",
@@ -362,18 +375,43 @@ METRICS = {
     "bigtech_capex": {
         "name": "Big Tech CapEx",
         "name_zh": "大型科技公司资本开支",
-        "description": "Combined capital expenditures of MSFT, GOOGL, AMZN, META, and ORCL. Grew from $239B (2024) to $390B (2025) to $674B estimate (2026), ~2.2% of US GDP. The single most important metric for the AI thesis: follow the capex, not the capex spenders. 🔗 AI thesis: rising capex = infrastructure buildout accelerating.",
+        "description": "Combined capex of MSFT, GOOGL, AMZN, META, ORCL (quarterly). Rising = AI infrastructure buildout accelerating. Follow the capex, not the capex spenders.",
         "source_type": "manual",
         "frequency": "quarterly",
         "unit": "$B",
         "note": "Quarterly, compiled from earnings — MSFT+GOOGL+AMZN+META+ORCL",
     },
     "iwf_iwd": {
-        "name": "Growth / Value",
+        "name": "Growth / Value (LEGACY)",
         "name_zh": "成长/价值比率",
-        "description": "Ratio of iShares Russell 1000 Growth (IWF) to Russell 1000 Value (IWD). Rising = growth outperforming, falling = value outperforming. A clean measure of the market's preference between tech/financial assets and real-economy/physical assets. Also a ~80% proxy for 'Atoms vs Bits.' 🔗 Hard Assets thesis: expect this ratio to decline as regime shifts from growth to value.",
+        "description": "Legacy metric — replaced by growth_value (VUG/VTV).",
         "source_type": "computed",
         "components": ["IWF", "IWD"],
+        "unit": "ratio",
+    },
+    "growth_value": {
+        "name": "Growth / Value",
+        "name_zh": "成长/价值比率",
+        "description": "VUG/VTV ratio. Rising = growth stocks outperforming value, falling = value winning. A declining ratio signals rotation from tech/financial assets into real-economy sectors.",
+        "source_type": "computed",
+        "components": ["VUG", "VTV"],
+        "unit": "ratio",
+    },
+    "cap_equal": {
+        "name": "Cap-Weight / Equal-Weight",
+        "name_zh": "市值加权/等权比率",
+        "description": "SPY/RSP ratio. Rising = mega-cap concentration winning, falling = market breadth broadening. A declining ratio means the average stock is outperforming the index.",
+        "source_type": "computed",
+        "components": ["SPY", "RSP"],
+        "unit": "ratio",
+    },
+    "atoms_bits": {
+        "name": "Atoms vs Bits",
+        "name_zh": "实物/数字比率",
+        "description": "Physical-economy ETFs (XLB+XLI+XLE+XME) vs digital-economy ETFs (IGV+WCLD). Rising = hard assets outperforming software/cloud. A sustained rise signals regime change from bits to atoms.",
+        "source_type": "basket_ratio",
+        "basket_a": ["XLB", "XLI", "XLE", "XME"],
+        "basket_b": ["IGV", "WCLD"],
         "unit": "ratio",
     },
 }
@@ -439,6 +477,50 @@ def compute_ratio(ticker_a: str, ticker_b: str, start: str, end: str) -> list[tu
         print(f"  ✗ computed ratio error: {e}")
         return []
 
+def compute_basket_ratio(basket_a: list[str], basket_b: list[str], start: str, end: str) -> list[tuple[str, float]]:
+    """Compute ratio of equal-weight basket A to equal-weight basket B.
+
+    Each basket's daily value = equal-weight average of normalized prices
+    (each ticker normalized to 1.0 on first common date).
+    Result = basket_a_value / basket_b_value.
+    """
+    import pandas as pd
+    try:
+        all_tickers = basket_a + basket_b
+        series = {}
+        for ticker in all_tickers:
+            df = yf.Ticker(ticker).history(start=start, end=end, auto_adjust=True)
+            if df.empty:
+                print(f"  \u26a0 basket: no data for {ticker}")
+                return []
+            series[ticker] = df["Close"]
+
+        # Find common dates across ALL tickers
+        common = series[all_tickers[0]].index
+        for ticker in all_tickers[1:]:
+            common = common.intersection(series[ticker].index)
+        if len(common) == 0:
+            print(f"  \u26a0 basket: no common dates")
+            return []
+
+        # Normalize each to 1.0 on first date, then equal-weight average per basket
+        first_date = common[0]
+        norm = {}
+        for ticker in all_tickers:
+            s = series[ticker][common]
+            norm[ticker] = s / s.iloc[0]
+
+        basket_a_val = sum(norm[t] for t in basket_a) / len(basket_a)
+        basket_b_val = sum(norm[t] for t in basket_b) / len(basket_b)
+        ratio = (basket_a_val / basket_b_val).dropna()
+
+        result = []
+        for idx, val in ratio.items():
+            result.append((idx.strftime("%Y-%m-%d"), round(float(val), 4)))
+        return result
+    except Exception as e:
+        print(f"  \u2717 basket ratio error: {e}")
+        return []
 
 def downsample_weekly(data: list[tuple[str, float]]) -> list[tuple[str, float]]:
     """Downsample daily data to weekly (keep last trading day of each week)."""
@@ -547,6 +629,11 @@ def main():
             components = config["components"]
             history = compute_ratio(components[0], components[1], start_date, end_date)
 
+        elif source == "basket_ratio":
+            history = compute_basket_ratio(
+                config["basket_a"], config["basket_b"], start_date, end_date
+            )
+
         elif source == "manual":
             # Keep existing data for manual metrics
             if metric_id in existing:
@@ -604,7 +691,7 @@ def main():
             "direction": direction,
             "unit": config["unit"],
             "history": history_weekly,  # [[date, value], ...]
-            "source": f"{source}:{config.get('ticker') or config.get('series') or config.get('components', [''])[0]}",
+            "source": f"{source}:{config.get('ticker') or config.get('series') or config.get('components', [''])[0] or '+'.join(config.get('basket_a', ['']))}",
         }
         m.update(ytd)
 
@@ -615,21 +702,29 @@ def main():
         count = len(history_weekly)
         print(f"✓ {count} points, value={current_value}")
 
-    # Build output
-    output = {
-        "updated": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "metrics": result_metrics,
-    }
+    # Write per-category files
+    updated_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Write
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    total_written = 0
+    for cat_id, metric_ids in CATEGORY_MAP:
+        cat_metrics = {mid: result_metrics[mid] for mid in metric_ids if mid in result_metrics}
+        cat_output = {"updated": updated_str, "metrics": cat_metrics}
+        cat_path = OUTPUT_DIR / f"{cat_id}.json"
+        with open(cat_path, "w") as f:
+            json.dump(cat_output, f, indent=2)
+        total_written += len(cat_metrics)
+        print(f"  → {cat_path.name}: {len(cat_metrics)} metrics ({cat_path.stat().st_size / 1024:.0f} KB)")
+
+    # Also write combined metrics.json (for backfill compatibility)
+    combined = {"updated": updated_str, "metrics": result_metrics}
     with open(OUTPUT_PATH, "w") as f:
-        json.dump(output, f, indent=2)
+        json.dump(combined, f, indent=2)
 
-    print(f"\n✓ Wrote {len(result_metrics)} metrics to {OUTPUT_PATH}")
+    print(f"\n✓ Wrote {total_written} metrics across {len(CATEGORY_MAP)} category files + metrics.json")
     if errors:
         print(f"⚠ Failed metrics: {', '.join(errors)}")
-    print(f"  File size: {OUTPUT_PATH.stat().st_size / 1024:.0f} KB")
+    print(f"  Combined file size: {OUTPUT_PATH.stat().st_size / 1024:.0f} KB")
 
 
 def backfill_from_csv(metric_id: str, csv_path: str) -> None:
