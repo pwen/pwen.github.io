@@ -1,8 +1,9 @@
 {
-  "updated": "2026-02-15T23:22:17Z",
+  "updated": "2026-02-15T23:25:50Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index",
+      "name_zh": "\u7f8e\u5143\u6307\u6570",
       "description": "Dollar vs a basket of major fiat currencies (euro-heavy). A relative measure \u2014 if all currencies debase together, DXY stays flat while purchasing power erodes.",
       "value": 96.88,
       "direction": "down",
@@ -1074,6 +1075,7 @@
     },
     "eurusd": {
       "name": "EUR/USD",
+      "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "The euro is DXY's largest component (~58%). EUR/USD rising = dollar weakening in its most liquid pair. Also reflects relative ECB vs Fed policy divergence.",
       "value": 1.1868,
       "direction": "down",
@@ -2145,6 +2147,7 @@
     },
     "usdcny": {
       "name": "USD/CNY",
+      "name_zh": "\u7f8e\u5143/\u4eba\u6c11\u5e01",
       "description": "Dollar-yuan exchange rate. Falling = yuan strengthening. A sustained move below 7.00 signals meaningful capital flow shift toward China.",
       "value": 6.9001,
       "direction": "down",
@@ -3308,6 +3311,7 @@
     },
     "us_10y": {
       "name": "US 10Y Yield",
+      "name_zh": "\u7f8e\u56fd\u5341\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
       "description": "The stress thermometer for US fiscal health. Rising yields = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
       "value": 4.056,
       "direction": "down",
@@ -4379,6 +4383,7 @@
     },
     "yield_curve": {
       "name": "10Y-2Y Spread",
+      "name_zh": "\u6536\u76ca\u7387\u66f2\u7ebf\uff0810Y-2Y\u5229\u5dee\uff09",
       "description": "The classic recession signal. Inverted (negative) = market pricing rate cuts ahead. Re-steepening after inversion historically precedes recessions within 6-18 months.",
       "value": 0.64,
       "direction": "up",
@@ -5450,6 +5455,7 @@
     },
     "tips_5y": {
       "name": "US 5Y TIPS (Real Yield)",
+      "name_zh": "\u4e94\u5e74\u671f\u5b9e\u9645\u5229\u7387\uff08TIPS\uff09",
       "description": "The real cost of money after inflation. When negative, holding cash loses purchasing power \u2014 the engine that drives capital into gold and hard assets. Gromen's key metric for fiscal dominance.",
       "value": 1.22,
       "direction": "down",
@@ -6521,6 +6527,7 @@
     },
     "breakeven_10y": {
       "name": "10Y Breakeven Inflation",
+      "name_zh": "\u5341\u5e74\u671f\u76c8\u4e8f\u5e73\u8861\u901a\u80c0\u7387",
       "description": "Market-implied inflation expectation for the next 10 years. Rising breakevens = market pricing structurally higher inflation. Directly validates or challenges the debasement thesis.",
       "value": 2.27,
       "direction": "down",
@@ -7592,6 +7599,7 @@
     },
     "hy_spread": {
       "name": "HY Credit Spread (OAS)",
+      "name_zh": "\u9ad8\u6536\u76ca\u503a\u5229\u5dee",
       "description": "High-yield bond spread over Treasuries. Widening = stress in credit markets, risk-off. Tight spreads = complacency. A spike above 5% historically signals recession risk.",
       "value": 2.92,
       "direction": "up",
@@ -8663,6 +8671,7 @@
     },
     "fed_balance_sheet": {
       "name": "Fed Balance Sheet",
+      "name_zh": "\u7f8e\u8054\u50a8\u8d44\u4ea7\u8d1f\u503a\u8868",
       "description": "The ammo reserve of the buyer of last resort. Currently shrinking (QT), but any Treasury market stress forces re-expansion. Direction tells you whether fiscal dominance has gone from implicit to explicit.",
       "value": 6.62,
       "direction": "up",
@@ -9734,6 +9743,7 @@
     },
     "debt_to_gdp": {
       "name": "US Debt/GDP",
+      "name_zh": "\u7f8e\u56fd\u503a\u52a1/GDP",
       "description": "The denominator matters as much as the numerator. If GDP grows faster than debt, the ratio stabilizes. If not, the compounding math takes over. As long as this number climbs, all other pressures persist.",
       "value": 121.0288,
       "direction": "up",
@@ -9821,6 +9831,7 @@
     },
     "tga": {
       "name": "Treasury General Account",
+      "name_zh": "\u8d22\u653f\u90e8\u4e00\u822c\u8d26\u6237\uff08TGA\uff09",
       "description": "The US government's checking account at the Fed. Drawdowns inject liquidity into markets (bullish). Refills (post-debt-ceiling) drain it. Liquidity plumbing that moves risk assets.",
       "value": 915.3,
       "direction": "up",
@@ -10892,6 +10903,7 @@
     },
     "gold": {
       "name": "Gold",
+      "name_zh": "\u9ec4\u91d1",
       "description": "The trust scoreboard. When gold rises alongside rising yields and a falling dollar, the market is pricing loss of confidence in the fiscal trajectory. Central banks buying gold = voting with their reserves.",
       "value": 5022.0,
       "direction": "up",
@@ -11963,6 +11975,7 @@
     },
     "silver": {
       "name": "Silver",
+      "name_zh": "\u767d\u94f6",
       "description": "Dual identity: monetary metal (like gold) AND industrial metal (solar panels, electronics). The silver market is in structural deficit. Outperforms gold in bull runs, more volatile.",
       "value": 77.851,
       "direction": "up",
@@ -13034,6 +13047,7 @@
     },
     "copper": {
       "name": "Copper",
+      "name_zh": "\u94dc",
       "description": "The electrification bellwether. EVs use 3-4x more copper than ICE vehicles. Data centers, wind turbines, grid upgrades all need copper. Supply growth structurally constrained (mines take 7-15 years). Goldman calls it 'the new oil.'",
       "value": 5.7925,
       "direction": "up",
@@ -14105,6 +14119,7 @@
     },
     "uranium": {
       "name": "Uranium (URA ETF)",
+      "name_zh": "\u94c0\uff08URA ETF\uff09",
       "description": "Global X Uranium ETF. Proxy for the nuclear renaissance thesis \u2014 30+ countries committed to tripling nuclear capacity. Supply constrained: Russia controls 40% of global enrichment.",
       "value": 51.91,
       "direction": "up",
@@ -14196,7 +14211,7 @@
         ],
         [
           "2021-06-18",
-          17.1344
+          17.1343
         ],
         [
           "2021-06-25",
@@ -14276,7 +14291,7 @@
         ],
         [
           "2021-11-05",
-          23.8744
+          23.8745
         ],
         [
           "2021-11-12",
@@ -15176,6 +15191,7 @@
     },
     "oil": {
       "name": "WTI Crude",
+      "name_zh": "WTI\u539f\u6cb9",
       "description": "West Texas Intermediate crude oil. The one commodity with significant political suppression risk (Saudi deals, SPR releases). Tension between political will to lower prices and geological reality of tight supply.",
       "value": 62.89,
       "direction": "up",
@@ -16247,6 +16263,7 @@
     },
     "natgas": {
       "name": "Natural Gas",
+      "name_zh": "\u5929\u7136\u6c14",
       "description": "Key energy source for power generation. AI data centers are driving massive new electricity demand, tightening the gas market. Also a geopolitical commodity (Russia/Europe, LNG exports).",
       "value": 3.243,
       "direction": "up",
@@ -17318,6 +17335,7 @@
     },
     "energy_cpi": {
       "name": "Energy Services CPI YoY",
+      "name_zh": "\u80fd\u6e90\u670d\u52a1CPI\uff08\u540c\u6bd4\uff09",
       "description": "Year-over-year change in energy services prices (BLS). The hottest CPI component \u2014 directly tied to AI data center power demand. Above 7% creates real political backlash against AI deployment.",
       "value": 7.8,
       "direction": "down",
@@ -17522,6 +17540,7 @@
     },
     "sp500": {
       "name": "S&P 500",
+      "name_zh": "\u6807\u666e500",
       "description": "The broad US equity benchmark. Tracks overall market health. Compare with QQQ/SMH to see whether tech is leading or lagging the broader market.",
       "value": 6836.1699,
       "direction": "up",
@@ -18593,6 +18612,7 @@
     },
     "qqq": {
       "name": "Nasdaq 100 ETF",
+      "name_zh": "\u7eb3\u65af\u8fbe\u514b100 ETF",
       "description": "Tracks the 100 largest Nasdaq-listed non-financial companies. AI-heavy (Mag7 dominant). Watch QQQ vs SMH divergence to gauge whether AI beneficiary rotation is underway.",
       "value": 601.92,
       "direction": "up",
@@ -18608,7 +18628,7 @@
         ],
         [
           "2021-02-05",
-          321.561
+          321.5611
         ],
         [
           "2021-02-12",
@@ -18644,11 +18664,11 @@
         ],
         [
           "2021-04-09",
-          327.5541
+          327.5542
         ],
         [
           "2021-04-16",
-          332.3152
+          332.3154
         ],
         [
           "2021-04-23",
@@ -18664,19 +18684,19 @@
         ],
         [
           "2021-05-14",
-          317.1382
+          317.1381
         ],
         [
           "2021-05-21",
-          317.7405
+          317.7406
         ],
         [
           "2021-05-28",
-          324.4643
+          324.4644
         ],
         [
           "2021-06-04",
-          326.087
+          326.0869
         ],
         [
           "2021-06-11",
@@ -18684,19 +18704,19 @@
         ],
         [
           "2021-06-18",
-          332.9178
+          332.9177
         ],
         [
           "2021-06-25",
-          339.9481
+          339.948
         ],
         [
           "2021-07-02",
-          348.8782
+          348.8781
         ],
         [
           "2021-07-09",
-          351.1836
+          351.1837
         ],
         [
           "2021-07-16",
@@ -18708,7 +18728,7 @@
         ],
         [
           "2021-07-30",
-          354.6468
+          354.6467
         ],
         [
           "2021-08-06",
@@ -18716,7 +18736,7 @@
         ],
         [
           "2021-08-13",
-          358.781
+          358.7811
         ],
         [
           "2021-08-20",
@@ -18732,7 +18752,7 @@
         ],
         [
           "2021-09-10",
-          366.3395
+          366.3396
         ],
         [
           "2021-09-17",
@@ -18748,7 +18768,7 @@
         ],
         [
           "2021-10-08",
-          351.7191
+          351.719
         ],
         [
           "2021-10-15",
@@ -18768,7 +18788,7 @@
         ],
         [
           "2021-11-12",
-          384.3824
+          384.3823
         ],
         [
           "2021-11-19",
@@ -18808,7 +18828,7 @@
         ],
         [
           "2022-01-21",
-          342.9341
+          342.934
         ],
         [
           "2022-01-28",
@@ -18816,11 +18836,11 @@
         ],
         [
           "2022-02-04",
-          349.0968
+          349.0967
         ],
         [
           "2022-02-11",
-          338.4194
+          338.4193
         ],
         [
           "2022-02-18",
@@ -18828,7 +18848,7 @@
         ],
         [
           "2022-02-25",
-          337.1615
+          337.1614
         ],
         [
           "2022-03-04",
@@ -18848,11 +18868,11 @@
         ],
         [
           "2022-04-01",
-          353.2773
+          353.2774
         ],
         [
           "2022-04-08",
-          340.8782
+          340.8781
         ],
         [
           "2022-04-14",
@@ -18864,11 +18884,11 @@
         ],
         [
           "2022-04-29",
-          305.8288
+          305.8287
         ],
         [
           "2022-05-06",
-          301.9235
+          301.9234
         ],
         [
           "2022-05-13",
@@ -18876,11 +18896,11 @@
         ],
         [
           "2022-05-20",
-          281.8408
+          281.8409
         ],
         [
           "2022-05-27",
-          301.7771
+          301.777
         ],
         [
           "2022-06-03",
@@ -18904,7 +18924,7 @@
         ],
         [
           "2022-07-08",
-          288.907
+          288.9071
         ],
         [
           "2022-07-15",
@@ -18916,7 +18936,7 @@
         ],
         [
           "2022-07-29",
-          308.5784
+          308.5783
         ],
         [
           "2022-08-05",
@@ -18924,11 +18944,11 @@
         ],
         [
           "2022-08-12",
-          323.1827
+          323.1828
         ],
         [
           "2022-08-19",
-          315.8169
+          315.817
         ],
         [
           "2022-08-26",
@@ -18940,7 +18960,7 @@
         ],
         [
           "2022-09-09",
-          300.391
+          300.3909
         ],
         [
           "2022-09-16",
@@ -18948,7 +18968,7 @@
         ],
         [
           "2022-09-23",
-          269.9842
+          269.9843
         ],
         [
           "2022-09-30",
@@ -18960,11 +18980,11 @@
         ],
         [
           "2022-10-14",
-          255.5105
+          255.5104
         ],
         [
           "2022-10-21",
-          269.8961
+          269.896
         ],
         [
           "2022-10-28",
@@ -18972,11 +18992,11 @@
         ],
         [
           "2022-11-04",
-          259.3714
+          259.3715
         ],
         [
           "2022-11-11",
-          282.1845
+          282.1844
         ],
         [
           "2022-11-18",
@@ -18988,7 +19008,7 @@
         ],
         [
           "2022-12-02",
-          286.6824
+          286.6825
         ],
         [
           "2022-12-09",
@@ -18996,11 +19016,11 @@
         ],
         [
           "2022-12-16",
-          268.7494
+          268.7495
         ],
         [
           "2022-12-23",
-          262.6249
+          262.6248
         ],
         [
           "2022-12-30",
@@ -19012,15 +19032,15 @@
         ],
         [
           "2023-01-13",
-          275.9939
+          275.9938
         ],
         [
           "2023-01-20",
-          277.6735
+          277.6736
         ],
         [
           "2023-01-27",
-          291.0131
+          291.013
         ],
         [
           "2023-02-03",
@@ -19044,11 +19064,11 @@
         ],
         [
           "2023-03-10",
-          283.4396
+          283.4395
         ],
         [
           "2023-03-17",
-          299.9519
+          299.9518
         ],
         [
           "2023-03-24",
@@ -19076,15 +19096,15 @@
         ],
         [
           "2023-05-05",
-          317.6625
+          317.6624
         ],
         [
           "2023-05-12",
-          319.7679
+          319.7678
         ],
         [
           "2023-05-19",
-          331.0619
+          331.062
         ],
         [
           "2023-05-26",
@@ -19092,7 +19112,7 @@
         ],
         [
           "2023-06-02",
-          348.9083
+          348.9082
         ],
         [
           "2023-06-09",
@@ -19104,7 +19124,7 @@
         ],
         [
           "2023-06-23",
-          357.1598
+          357.1597
         ],
         [
           "2023-06-30",
@@ -19112,11 +19132,11 @@
         ],
         [
           "2023-07-07",
-          360.8048
+          360.8049
         ],
         [
           "2023-07-14",
-          373.4444
+          373.4445
         ],
         [
           "2023-07-21",
@@ -19132,7 +19152,7 @@
         ],
         [
           "2023-08-11",
-          360.8048
+          360.8049
         ],
         [
           "2023-08-18",
@@ -19148,7 +19168,7 @@
         ],
         [
           "2023-09-08",
-          367.0508
+          367.0507
         ],
         [
           "2023-09-15",
@@ -19160,7 +19180,7 @@
         ],
         [
           "2023-09-29",
-          353.464
+          353.4641
         ],
         [
           "2023-10-06",
@@ -19180,7 +19200,7 @@
         ],
         [
           "2023-11-03",
-          362.7773
+          362.7774
         ],
         [
           "2023-11-10",
@@ -19188,7 +19208,7 @@
         ],
         [
           "2023-11-17",
-          380.8616
+          380.8615
         ],
         [
           "2023-11-24",
@@ -19208,7 +19228,7 @@
         ],
         [
           "2023-12-22",
-          403.7067
+          403.7066
         ],
         [
           "2023-12-29",
@@ -19240,15 +19260,15 @@
         ],
         [
           "2024-02-16",
-          425.8665
+          425.8666
         ],
         [
           "2024-02-23",
-          432.0087
+          432.0088
         ],
         [
           "2024-03-01",
-          440.7423
+          440.7422
         ],
         [
           "2024-03-08",
@@ -19272,7 +19292,7 @@
         ],
         [
           "2024-04-12",
-          434.0557
+          434.0556
         ],
         [
           "2024-04-19",
@@ -19284,7 +19304,7 @@
         ],
         [
           "2024-05-03",
-          431.2925
+          431.2924
         ],
         [
           "2024-05-10",
@@ -19292,7 +19312,7 @@
         ],
         [
           "2024-05-17",
-          447.4159
+          447.416
         ],
         [
           "2024-05-24",
@@ -19344,7 +19364,7 @@
         ],
         [
           "2024-08-16",
-          471.2099
+          471.21
         ],
         [
           "2024-08-23",
@@ -19352,11 +19372,11 @@
         ],
         [
           "2024-08-30",
-          472.4399
+          472.44
         ],
         [
           "2024-09-06",
-          445.0817
+          445.0818
         ],
         [
           "2024-09-13",
@@ -19380,7 +19400,7 @@
         ],
         [
           "2024-10-18",
-          491.1828
+          491.1829
         ],
         [
           "2024-10-25",
@@ -19388,7 +19408,7 @@
         ],
         [
           "2024-11-01",
-          484.1897
+          484.1896
         ],
         [
           "2024-11-08",
@@ -19412,7 +19432,7 @@
         ],
         [
           "2024-12-13",
-          527.0031
+          527.0032
         ],
         [
           "2024-12-20",
@@ -19424,7 +19444,7 @@
         ],
         [
           "2025-01-03",
-          515.9632
+          515.9633
         ],
         [
           "2025-01-10",
@@ -19464,7 +19484,7 @@
         ],
         [
           "2025-03-14",
-          477.2397
+          477.2396
         ],
         [
           "2025-03-21",
@@ -19500,7 +19520,7 @@
         ],
         [
           "2025-05-16",
-          519.6523
+          519.6522
         ],
         [
           "2025-05-23",
@@ -19516,7 +19536,7 @@
         ],
         [
           "2025-06-13",
-          525.0829
+          525.0828
         ],
         [
           "2025-06-20",
@@ -19664,6 +19684,7 @@
     },
     "smh": {
       "name": "Semiconductor ETF",
+      "name_zh": "\u534a\u5bfc\u4f53ETF",
       "description": "VanEck Semiconductor ETF. The AI picks-and-shovels trade (Nvidia, TSMC, ASML). If SMH underperforms QQQ, leadership is rotating from builders to enablers/adopters.",
       "value": 407.72,
       "direction": "up",
@@ -19775,7 +19796,7 @@
         ],
         [
           "2021-07-23",
-          124.8295
+          124.8296
         ],
         [
           "2021-07-30",
@@ -19795,7 +19816,7 @@
         ],
         [
           "2021-08-27",
-          131.9755
+          131.9756
         ],
         [
           "2021-09-03",
@@ -19851,7 +19872,7 @@
         ],
         [
           "2021-12-03",
-          146.0977
+          146.0978
         ],
         [
           "2021-12-10",
@@ -20011,7 +20032,7 @@
         ],
         [
           "2022-09-09",
-          105.7694
+          105.7693
         ],
         [
           "2022-09-16",
@@ -20735,6 +20756,7 @@
     },
     "xlu": {
       "name": "Utilities ETF (XLU)",
+      "name_zh": "\u516c\u7528\u4e8b\u4e1aETF",
       "description": "The 'boring' AI winner. Data centers need massive electricity \u2014 utilities are the enablers. XLU outperforming tech = market rotating into AI infrastructure over AI hype.",
       "value": 46.5,
       "direction": "up",
@@ -20758,7 +20780,7 @@
         ],
         [
           "2021-02-19",
-          26.3671
+          26.3672
         ],
         [
           "2021-02-26",
@@ -21266,7 +21288,7 @@
         ],
         [
           "2023-07-28",
-          31.0398
+          31.0397
         ],
         [
           "2023-08-04",
@@ -21574,7 +21596,7 @@
         ],
         [
           "2025-01-17",
-          38.3252
+          38.3253
         ],
         [
           "2025-01-24",
@@ -21614,11 +21636,11 @@
         ],
         [
           "2025-03-28",
-          38.1763
+          38.1762
         ],
         [
           "2025-04-04",
-          36.4872
+          36.4873
         ],
         [
           "2025-04-11",
@@ -21806,6 +21828,7 @@
     },
     "gsci_spy_ratio": {
       "name": "Commodities / S&P 500",
+      "name_zh": "\u5927\u5b97\u5546\u54c1/\u6807\u666e500\u6bd4\u7387",
       "description": "GSG/SPY ratio \u2014 the broadest measure of real vs financial asset performance. A sustained move above 1.0 confirms the regime change from financial assets to hard assets. Currently turning from decades-long lows.",
       "value": 0.0363,
       "direction": "up",
@@ -22877,6 +22900,7 @@
     },
     "vix": {
       "name": "VIX",
+      "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "The 'fear gauge'. Measures S&P 500 implied volatility. Below 15 = complacency, above 25 = elevated fear, above 35 = panic. Spikes tend to be short-lived but signal regime shifts.",
       "value": 20.6,
       "direction": "down",
@@ -23948,6 +23972,7 @@
     },
     "btc": {
       "name": "Bitcoin",
+      "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity \u2014 when central banks expand balance sheets, BTC tends to rise. Also a barometer of risk appetite and monetary system distrust.",
       "value": 69767.625,
       "direction": "up",
@@ -25115,6 +25140,7 @@
     },
     "csi300": {
       "name": "CSI 300",
+      "name_zh": "\u6caa\u6df1300",
       "description": "China's benchmark equity index (top 300 A-shares). The cleanest signal of whether domestic and foreign capital is returning to Chinese markets.",
       "value": 4660.4102,
       "direction": "down",
@@ -26138,6 +26164,7 @@
     },
     "hsi": {
       "name": "Hang Seng Index",
+      "name_zh": "\u6052\u751f\u6307\u6570",
       "description": "Hong Kong's benchmark \u2014 the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment toward China than onshore CSI 300.",
       "value": 26567.1191,
       "direction": "down",
@@ -27209,6 +27236,7 @@
     },
     "kweb": {
       "name": "China Internet ETF",
+      "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
       "description": "KraneShares CSI China Internet ETF. Tracks Chinese tech (Alibaba, Tencent, PDD, etc.). A proxy for foreign investor sentiment on Chinese tech and regulatory risk.",
       "value": 32.79,
       "direction": "up",
@@ -27544,7 +27572,7 @@
         ],
         [
           "2022-08-19",
-          24.4663
+          24.4664
         ],
         [
           "2022-08-26",
@@ -27572,7 +27600,7 @@
         ],
         [
           "2022-10-07",
-          22.164
+          22.1639
         ],
         [
           "2022-10-14",
@@ -28784,6 +28812,7 @@
     },
     "eem": {
       "name": "MSCI Emerging Markets ETF",
+      "name_zh": "\u65b0\u5174\u5e02\u573aETF",
       "description": "Broad EM equity benchmark. Tracks whether capital is flowing into or out of developing markets. EM outperforming DM = dollar-weakness + fragmentation trade working.",
       "value": 61.12,
       "direction": "up",
@@ -29067,7 +29096,7 @@
         ],
         [
           "2022-05-20",
-          37.3144
+          37.3145
         ],
         [
           "2022-05-27",
@@ -29155,7 +29184,7 @@
         ],
         [
           "2022-10-21",
-          32.2621
+          32.2622
         ],
         [
           "2022-10-28",
@@ -29579,7 +29608,7 @@
         ],
         [
           "2024-11-01",
-          42.7202
+          42.7203
         ],
         [
           "2024-11-08",

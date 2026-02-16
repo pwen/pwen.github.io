@@ -275,6 +275,12 @@
                                 const label = this.getLabelForValue(val);
                                 if (label && label.match(/^\d{4}-\d{2}-\d{2}$/)) {
                                     const d = new Date(label + 'T00:00:00');
+                                    if (activePeriod === '5Y') {
+                                        return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                                    }
+                                    if (activePeriod === '1Y') {
+                                        return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+                                    }
                                     return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
                                 }
                                 return label;
