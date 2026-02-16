@@ -337,6 +337,45 @@ METRICS = {
         "ticker": "EEM",
         "unit": "$",
     },
+
+    # ── Volatility & Macro Signals ──
+    "move": {
+        "name": "MOVE Index",
+        "name_zh": "国债波动率指数",
+        "description": "ICE BofA MOVE Index — measures Treasury market implied volatility across 2Y, 5Y, 10Y, and 30Y maturities. The bond market's version of VIX. Above 120 = elevated stress, above 150 = potential basis trade unwinds and forced Fed intervention. 🔗 Weak Dollar thesis: MOVE spikes force the Fed to step in as buyer of last resort, expanding the balance sheet.",
+        "source_type": "manual",
+        "frequency": "daily",
+        "unit": "index",
+        "note": "ICE BofA — backfill required",
+    },
+    "us_ism_pmi": {
+        "name": "US Manufacturing PMI",
+        "name_zh": "美国制造业PMI（ISM）",
+        "description": "ISM Manufacturing PMI — the oldest and most-watched US manufacturing indicator. Above 50 = expansion, below 50 = contraction. January 2026 reading of 52.6 triggered a 'manufacturing recovery signal' — historical median 12-month returns after this signal: COPX +82%, DBC +44%. 🔗 Fragmentation thesis: onshoring and supply chain diversification drive US manufacturing recovery.",
+        "source_type": "fred",
+        "series": "NAPM",
+        "unit": "index",
+        "note": "Monthly — ISM via FRED",
+    },
+
+    # ── AI & Rotation ──
+    "bigtech_capex": {
+        "name": "Big Tech CapEx",
+        "name_zh": "大型科技公司资本开支",
+        "description": "Combined capital expenditures of MSFT, GOOGL, AMZN, META, and ORCL. Grew from $239B (2024) to $390B (2025) to $674B estimate (2026), ~2.2% of US GDP. The single most important metric for the AI thesis: follow the capex, not the capex spenders. 🔗 AI thesis: rising capex = infrastructure buildout accelerating.",
+        "source_type": "manual",
+        "frequency": "quarterly",
+        "unit": "$B",
+        "note": "Quarterly, compiled from earnings — MSFT+GOOGL+AMZN+META+ORCL",
+    },
+    "iwf_iwd": {
+        "name": "Growth / Value",
+        "name_zh": "成长/价值比率",
+        "description": "Ratio of iShares Russell 1000 Growth (IWF) to Russell 1000 Value (IWD). Rising = growth outperforming, falling = value outperforming. A clean measure of the market's preference between tech/financial assets and real-economy/physical assets. Also a ~80% proxy for 'Atoms vs Bits.' 🔗 Hard Assets thesis: expect this ratio to decline as regime shifts from growth to value.",
+        "source_type": "computed",
+        "components": ["IWF", "IWD"],
+        "unit": "ratio",
+    },
 }
 
 

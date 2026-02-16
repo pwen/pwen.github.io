@@ -1,0 +1,32 @@
+date,value
+# Big Tech Combined CapEx (MSFT + GOOGL + AMZN + META + ORCL)
+# Source: Quarterly earnings reports, compiled manually
+# Value = trailing 4-quarter sum in $B (annualized)
+# Date = last day of fiscal quarter
+# 2021
+2021-03-31,93
+2021-06-30,102
+2021-09-30,113
+2021-12-31,127
+# 2022
+2022-03-31,136
+2022-06-30,147
+2022-09-30,155
+2022-12-31,160
+# 2023
+2023-03-31,152
+2023-06-30,148
+2023-09-30,150
+2023-12-31,157
+# 2024
+2024-03-31,175
+2024-06-30,198
+2024-09-30,221
+2024-12-31,239
+# 2025
+2025-03-31,275
+2025-06-30,320
+2025-09-30,358
+2025-12-31,390
+# 2026 (estimates from guidance + consensus)
+2026-03-31,480

@@ -12,12 +12,12 @@
 
     const CATEGORIES = [
         { id: 'currencies', name: 'CURRENCIES', metrics: ['dxy', 'eurusd', 'usdcny', 'usd_reserves_share'] },
-        { id: 'rates', name: 'RATES & YIELDS', metrics: ['us_10y', 'yield_curve', 'tips_5y', 'breakeven_10y', 'hy_spread'] },
+        { id: 'rates', name: 'RATES & YIELDS', metrics: ['us_10y', 'yield_curve', 'tips_5y', 'breakeven_10y', 'hy_spread', 'move'] },
         { id: 'liquidity', name: 'LIQUIDITY & FISCAL', metrics: ['fed_balance_sheet', 'debt_to_gdp', 'tga'] },
         { id: 'metals', name: 'METALS', metrics: ['gold', 'silver', 'copper', 'uranium'] },
         { id: 'energy', name: 'ENERGY', metrics: ['oil', 'natgas', 'energy_cpi'] },
-        { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio'] },
-        { id: 'sentiment', name: 'SENTIMENT & ALTERNATIVES', metrics: ['vix', 'btc', 'cb_gold_buying'] },
+        { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio', 'bigtech_capex', 'iwf_iwd'] },
+        { id: 'sentiment', name: 'SENTIMENT & ALTERNATIVES', metrics: ['vix', 'btc', 'cb_gold_buying', 'us_ism_pmi'] },
         { id: 'em', name: 'EM & CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'eem'] }
     ];
 

@@ -18,7 +18,8 @@
                 "tga",
                 "debt_to_gdp",
                 "usd_reserves_share",
-                "btc"
+                "btc",
+                "move"
             ]
         },
         {
@@ -39,7 +40,7 @@
         },
         {
             "id": "fragmentation",
-            "title": "旧秩序正在瓦解，地缘竞争加剧",
+            "title": "旧秩序正在瓦解",
             "summary": "美国主导的单极霸权正在瓦解，谁有资源就有筹码。Stay nimble.",
             "color": "#4caf87",
             "icon": "⚔️",
@@ -50,7 +51,8 @@
                 "copper",
                 "gold",
                 "dxy",
-                "eem"
+                "eem",
+                "us_ism_pmi"
             ]
         },
         {
@@ -66,7 +68,8 @@
                 "xlu",
                 "energy_cpi",
                 "natgas",
-                "copper"
+                "copper",
+                "bigtech_capex"
             ]
         },
         {
@@ -84,7 +87,8 @@
                 "uranium",
                 "gsci_spy_ratio",
                 "tips_5y",
-                "cb_gold_buying"
+                "cb_gold_buying",
+                "iwf_iwd"
             ]
         }
     ],
