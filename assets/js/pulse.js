@@ -127,15 +127,35 @@
         })}`;
     }
 
-    function shortTitle(id) {
-        const map = {
-            'dollar': 'Weak Dollar',
-            'china': 'China Ascending',
-            'fragmentation': '战国时期',
-            'ai': 'AI Boom',
-            'hard-assets': 'Hard Assets'
-        };
-        return map[id] || id;
+    function thesisTitle(id) {
+        if (!thesesData) return id;
+        const t = thesesData.theses.find(th => th.id === id);
+        return t ? t.title : id;
+    }
+
+    // ─── Floating tooltip for thesis dots ───
+    let dotTooltipEl = null;
+    function ensureDotTooltip() {
+        if (dotTooltipEl) return dotTooltipEl;
+        dotTooltipEl = document.createElement('div');
+        dotTooltipEl.className = 'dot-tooltip';
+        document.body.appendChild(dotTooltipEl);
+        return dotTooltipEl;
+    }
+
+    function showDotTooltip(dot) {
+        const tip = ensureDotTooltip();
+        const thesisId = dot.dataset.thesis;
+        tip.textContent = thesisTitle(thesisId);
+        const rect = dot.getBoundingClientRect();
+        tip.style.left = `${rect.left + rect.width / 2}px`;
+        tip.style.top = `${rect.top - 4}px`;
+        tip.style.transform = 'translate(-50%, -100%)';
+        tip.classList.add('visible');
+    }
+
+    function hideDotTooltip() {
+        if (dotTooltipEl) dotTooltipEl.classList.remove('visible');
     }
 
     function setActiveThesis(thesis) {
@@ -214,7 +234,8 @@
                 dot.className = 'thesis-dot';
                 dot.style.background = t.color;
                 dot.dataset.thesis = t.id;
-                dot.dataset.tooltip = shortTitle(t.id);
+                dot.addEventListener('mouseenter', () => showDotTooltip(dot));
+                dot.addEventListener('mouseleave', hideDotTooltip);
                 dot.addEventListener('click', e => {
                     e.stopPropagation();
                     setActiveThesis(t.id);
@@ -324,7 +345,7 @@
             const changeDir = formatChangeDir(m);
 
             const dotsHtml = relatedTheses.map(t =>
-                `<span class="metric-dot" style="background:${t.color}" data-tooltip="${shortTitle(t.id)}" data-thesis="${t.id}"></span>`
+                `<span class="metric-dot" style="background:${t.color}" data-thesis="${t.id}"></span>`
             ).join('');
 
             const infoHtml = m.description
@@ -355,6 +376,8 @@
                 e.stopPropagation();
                 setActiveThesis(dot.dataset.thesis);
             });
+            dot.addEventListener('mouseenter', () => showDotTooltip(dot));
+            dot.addEventListener('mouseleave', hideDotTooltip);
         });
 
         // Info icon → stop propagation

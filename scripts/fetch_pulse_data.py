@@ -365,10 +365,10 @@ METRICS = {
         "name": "US Manufacturing PMI",
         "name_zh": "美国制造业PMI（ISM）",
         "description": "ISM Manufacturing PMI: the oldest US manufacturing indicator. Above 50 = expansion, below 50 = contraction. Sustained expansion signals onshoring and supply chain diversification.",
-        "source_type": "fred",
-        "series": "NAPM",
+        "source_type": "manual",
+        "frequency": "monthly",
         "unit": "index",
-        "note": "Monthly — ISM via FRED",
+        "note": "Monthly — ISM (no free API, backfill from CSV)",
     },
 
     # ── AI & Rotation ──
@@ -380,14 +380,6 @@ METRICS = {
         "frequency": "quarterly",
         "unit": "$B",
         "note": "Quarterly, compiled from earnings — MSFT+GOOGL+AMZN+META+ORCL",
-    },
-    "iwf_iwd": {
-        "name": "Growth / Value (LEGACY)",
-        "name_zh": "成长/价值比率",
-        "description": "Legacy metric — replaced by growth_value (VUG/VTV).",
-        "source_type": "computed",
-        "components": ["IWF", "IWD"],
-        "unit": "ratio",
     },
     "growth_value": {
         "name": "Growth / Value",

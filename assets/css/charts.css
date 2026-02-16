@@ -419,21 +419,7 @@
     transform: scale(1.6);
 }
 
-.thesis-dot[data-tooltip]:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 14px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    white-space: nowrap;
-    z-index: 10;
-    pointer-events: none;
-}
+/* Tooltip handled by JS floating element in pulse.css (.dot-tooltip) */
 
 /* ─── Thesis filter states (applied by pulse.js) ─── */
 .chart-metric-row.thesis-dimmed {

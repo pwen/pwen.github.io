@@ -45,10 +45,6 @@ uv run scripts/fetch_pulse_data.py backfill <metric_id> <csv_path>
 ```
 CSV format: `date,value` (header row, one per line).
 
-### Known Issues
-- `us_ism_pmi`: FRED series "NAPM" doesn't exist. Currently source_type="fred" but broken. Deferred fix.
-- `iwf_iwd`: legacy metric, replaced by `growth_value` (VUG/VTV). Still in pipeline.
-
 ### Description Style
 - What it measures + directional meaning only
 - No thesis explanations, no 🔗 links

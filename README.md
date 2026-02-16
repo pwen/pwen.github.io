@@ -69,6 +69,7 @@ These metrics have no free API. Their data lives in CSV files under `data/backfi
 | `cb_gold_buying` | Central Bank Gold Buying (央行购金量) | World Gold Council | Quarterly | [gold.org/goldhub](https://www.gold.org/goldhub/data/gold-demand-by-country) |
 | `usd_reserves_share` | USD Share of Reserves (美元储备占比) | IMF COFER | Quarterly | [data.imf.org](https://data.imf.org/regular.aspx?key=41175) |
 | `move` | MOVE Index (国债波动率指数) | ICE BofA | Daily | [ice.com](https://www.ice.com/marketdata/reports/258) |
+| `us_ism_pmi` | US Manufacturing PMI (美国制造业PMI) | ISM | Monthly | [ismworld.org](https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/) |
 | `bigtech_capex` | Big Tech CapEx (大型科技公司资本开支) | Earnings reports | Quarterly | MSFT+GOOGL+AMZN+META+ORCL quarterly filings |
 
 **Workflow:**
@@ -87,6 +88,7 @@ make backfill-metric ID=china_retail_sales && \
 make backfill-metric ID=cb_gold_buying && \
 make backfill-metric ID=usd_reserves_share && \
 make backfill-metric ID=move && \
+make backfill-metric ID=us_ism_pmi && \
 make backfill-metric ID=bigtech_capex
 ```
 
