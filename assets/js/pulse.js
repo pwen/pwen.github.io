@@ -54,6 +54,7 @@
             renderDashboard();
             renderReflection();
             waitForChartsAndInjectDots();
+            applyUrlThesis();
         } catch (err) {
             console.error('Failed to load Pulse data:', err);
         }
@@ -162,6 +163,11 @@
         // Toggle: clicking the same thesis again goes back to "all"
         if (activeThesis === thesis) thesis = 'all';
         activeThesis = thesis;
+
+        // Update URL with thesis state
+        if (window.__pulseUpdateUrl) {
+            window.__pulseUpdateUrl({ thesis: thesis !== 'all' ? thesis : null });
+        }
 
         // Update thesis card states
         document.querySelectorAll('.thesis-card').forEach(card => {
@@ -524,6 +530,15 @@
             content.innerHTML = `<div class="pulse-reflection-content">${markdownToHtml(thesesData.reflection)}</div>`;
         } else {
             container.style.display = 'none';
+        }
+    }
+
+    // ─── URL state: restore thesis from URL ───
+    function applyUrlThesis() {
+        const params = new URLSearchParams(window.location.search);
+        const thesisId = params.get('thesis');
+        if (thesisId && thesesData?.theses.find(t => t.id === thesisId)) {
+            setActiveThesis(thesisId);
         }
     }
 

@@ -43,6 +43,7 @@
             }
             renderUpdated();
             renderCategories();
+            applyUrlState();
         } catch (err) {
             console.error('Failed to load metrics data:', err);
         }
@@ -152,8 +153,11 @@
             <div class="chart-metric-expand" id="expand-${id}">
                 <div class="chart-expand-header">
                     <div class="chart-metric-desc" id="desc-${id}"></div>
-                    <div class="chart-period-bar" id="periods-${id}">
-                        ${periodButtons}
+                    <div class="chart-expand-actions">
+                        <button class="chart-share-btn" data-metric="${id}" title="Copy share link">Copy Share Link</button>
+                        <div class="chart-period-bar" id="periods-${id}">
+                            ${periodButtons}
+                        </div>
                     </div>
                 </div>
                 <div class="chart-metric-canvas-wrap">
@@ -175,6 +179,7 @@
             row.querySelector('.chart-metric-arrow').textContent = '▸';
             if (activeChart) { activeChart.destroy(); activeChart = null; }
             expandedMetric = null;
+            updateUrlState({ metric: null });
             return;
         }
 
@@ -194,9 +199,30 @@
         row.querySelector('.chart-metric-arrow').textContent = '▾';
         expandedMetric = metricId;
 
+        // Update URL with expanded metric
+        updateUrlState({ metric: metricId });
+
         const m = metricsData.metrics[metricId];
         const descEl = document.getElementById(`desc-${metricId}`);
         if (descEl && m.description) descEl.textContent = m.description;
+
+        // Bind share button
+        const shareBtn = expandEl.querySelector('.chart-share-btn');
+        if (shareBtn) {
+            shareBtn.onclick = (e) => {
+                e.stopPropagation();
+                const url = new URL(window.location.href);
+                url.searchParams.set('metric', metricId);
+                navigator.clipboard.writeText(url.toString()).then(() => {
+                    shareBtn.textContent = 'Copied!';
+                    shareBtn.classList.add('copied');
+                    setTimeout(() => {
+                        shareBtn.textContent = 'Copy Share Link';
+                        shareBtn.classList.remove('copied');
+                    }, 2000);
+                });
+            };
+        }
 
         // Bind period buttons & sync to current activePeriod
         const periodBar = document.getElementById(`periods-${metricId}`);
@@ -560,6 +586,35 @@
         const b = parseInt(hex.slice(5, 7), 16);
         return `rgba(${r},${g},${b},${alpha})`;
     }
+
+    // ─── URL state helpers ───
+    function updateUrlState(params) {
+        const url = new URL(window.location.href);
+        for (const [key, value] of Object.entries(params)) {
+            if (value) {
+                url.searchParams.set(key, value);
+            } else {
+                url.searchParams.delete(key);
+            }
+        }
+        history.replaceState(null, '', url.toString());
+    }
+
+    function applyUrlState() {
+        const params = new URLSearchParams(window.location.search);
+        const metricId = params.get('metric');
+        if (metricId && metricsData?.metrics[metricId]) {
+            // Scroll the metric into view and expand it
+            const row = document.querySelector(`.chart-metric-row[data-metric="${metricId}"]`);
+            if (row) {
+                row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                toggleMetricChart(metricId);
+            }
+        }
+    }
+
+    // Expose for pulse.js to set thesis param
+    window.__pulseUpdateUrl = updateUrlState;
 
     // ─── Init on DOM ready ───
     if (document.readyState === 'loading') {

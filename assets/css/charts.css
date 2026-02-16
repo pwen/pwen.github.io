@@ -293,6 +293,37 @@
     margin-bottom: 0.75rem;
 }
 
+.chart-expand-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.chart-share-btn {
+    background: var(--primary-color, #2c3e50);
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    font-family: inherit;
+    white-space: nowrap;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.chart-share-btn:hover {
+    background: var(--accent-color, #3498db);
+    transform: translateY(-1px);
+}
+
+.chart-share-btn.copied {
+    background: #4caf87;
+}
+
 .chart-metric-desc {
     font-size: 0.82rem;
     color: #666;
@@ -424,6 +455,11 @@
     .chart-expand-header {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .chart-expand-actions {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .chart-metric-expand.expanded {
