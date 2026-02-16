@@ -2,7 +2,7 @@
   "updated": "2026-02-16T13:34:51Z",
   "metrics": {
     "dxy": {
-      "name": "US Dollar Index",
+      "name": "US Dollar Index (DXY)",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
       "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
       "value": 96.88,

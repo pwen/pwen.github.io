@@ -60,7 +60,7 @@ CATEGORY_MAP = [
 METRICS = {
     # ── Currencies ──
     "dxy": {
-        "name": "US Dollar Index",
+        "name": "US Dollar Index (DXY)",
         "name_zh": "美元指数",
         "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
         "source_type": "yfinance",
@@ -84,9 +84,9 @@ METRICS = {
         "unit": "rate",
     },
     "usd_reserves_share": {
-        "name": "USD Share of Reserves",
-        "name_zh": "美元储备占比",
-        "description": "Share of global central bank reserves held in dollars (IMF COFER, quarterly, lagged). Falling = structural de-dollarization. Dropped from 72% in 2000: slow-moving but largely irreversible.",
+        "name": "USD Share of FX Reserves",
+        "name_zh": "美元外汇储备占比",
+        "description": "USD share of global foreign-exchange reserves held by central banks (IMF COFER, quarterly, ~1 Q lag). Falling = structural de-dollarization. Down from 72 % in 2000 to ~57 %: slow-moving but largely irreversible.",
         "source_type": "manual",
         "frequency": "quarterly",
         "unit": "%",
@@ -217,7 +217,7 @@ METRICS = {
     },
     "uranium": {
         "name": "Uranium (URA ETF)",
-        "name_zh": "铀（URA ETF）",
+        "name_zh": "铀",
         "description": "Global X Uranium ETF. Proxy for nuclear renaissance: 30+ countries committed to tripling capacity. Supply constrained, Russia controls 40% of enrichment.",
         "source_type": "yfinance",
         "ticker": "URA",
@@ -227,7 +227,7 @@ METRICS = {
     # ── Energy ──
     "oil": {
         "name": "WTI Crude",
-        "name_zh": "WTI原油",
+        "name_zh": "原油",
         "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
         "source_type": "yfinance",
         "ticker": "CL=F",
@@ -262,16 +262,16 @@ METRICS = {
         "unit": "index",
     },
     "qqq": {
-        "name": "Nasdaq 100 ETF",
-        "name_zh": "纳斯达克100 ETF",
+        "name": "Nasdaq 100 ETF (QQQ)",
+        "name_zh": "纳斯达克100",
         "description": "100 largest Nasdaq non-financial companies. AI/tech-heavy (Mag7 dominant). QQQ vs SMH divergence signals whether AI leadership is rotating.",
         "source_type": "yfinance",
         "ticker": "QQQ",
         "unit": "$",
     },
     "smh": {
-        "name": "Semiconductor ETF",
-        "name_zh": "半导体ETF",
+        "name": "Semiconductor ETF (SMH)",
+        "name_zh": "半导体",
         "description": "VanEck Semiconductor ETF: Nvidia, TSMC, ASML. The AI picks-and-shovels trade. SMH underperforming QQQ = leadership rotating from chip builders to enablers/adopters.",
         "source_type": "yfinance",
         "ticker": "SMH",
@@ -279,7 +279,7 @@ METRICS = {
     },
     "xlu": {
         "name": "Utilities ETF (XLU)",
-        "name_zh": "公用事业ETF",
+        "name_zh": "公用事业",
         "description": "Utilities sector ETF. Data centers need massive electricity: XLU outperforming tech = market rotating into AI infrastructure over AI hype.",
         "source_type": "yfinance",
         "ticker": "XLU",
@@ -339,7 +339,7 @@ METRICS = {
         "unit": "index",
     },
     "kweb": {
-        "name": "China Internet ETF",
+        "name": "China Internet ETF (KWEB)",
         "name_zh": "中概互联网ETF",
         "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
         "source_type": "yfinance",
@@ -365,7 +365,7 @@ METRICS = {
         "note": "NBS monthly",
     },
     "eem": {
-        "name": "MSCI Emerging Markets ETF",
+        "name": "MSCI Emerging Markets ETF (EEM)",
         "name_zh": "新兴市场ETF",
         "description": "Broad EM equity benchmark. Rising = capital flowing into developing markets. EM outperforming DM = dollar weakness + fragmentation trade working.",
         "source_type": "yfinance",
@@ -427,8 +427,8 @@ METRICS = {
         "note": "ICE BofA — backfill required",
     },
     "us_ism_pmi": {
-        "name": "US Manufacturing PMI",
-        "name_zh": "美国制造业PMI（ISM）",
+        "name": "US Manufacturing PMI (ISM)",
+        "name_zh": "美国制造业PMI",
         "description": "ISM Manufacturing PMI: the oldest US manufacturing indicator. Above 50 = expansion, below 50 = contraction. Sustained expansion signals onshoring and supply chain diversification.",
         "source_type": "manual",
         "frequency": "monthly",
