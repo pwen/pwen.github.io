@@ -8,6 +8,7 @@
     let activeChart = null;
     let expandedMetric = null;
     let activePeriod = 'YTD';
+    let changeMode = 'auto'; // 'auto' | 'bp' | 'pct'
 
     const CATEGORIES = [
         { id: 'currencies', name: 'CURRENCIES', metrics: ['dxy', 'eurusd', 'usdcny', 'usd_reserves_share'] },
@@ -61,6 +62,15 @@
                         <span class="chart-category-toggle">−</span>
                     </div>
                     <div class="chart-category-body" id="cat-body-${cat.id}">
+                        <div class="chart-col-headers">
+                            <span class="ch-name">NAME</span>
+                            <span class="ch-val">LATEST</span>
+                            <span class="ch-chg">1W</span>
+                            <span class="ch-chg">1M</span>
+                            <span class="ch-chg">YTD</span>
+                            <span class="ch-chg">1Y</span>
+                            <span class="ch-dots"></span>
+                        </div>
                         ${metricRows}
                     </div>
                 </div>
@@ -97,6 +107,13 @@
 
         const zhName = m.name_zh ? `<span class="chart-metric-name-zh">${m.name_zh}</span>` : '';
 
+        const chg1w = formatPeriodChange(m, 7);
+        const dir1w = periodChangeDir(m, 7);
+        const chg1m = formatPeriodChange(m, 30);
+        const dir1m = periodChangeDir(m, 30);
+        const chg1y = formatPeriodChange(m, 365);
+        const dir1y = periodChangeDir(m, 365);
+
         return `
             <div class="chart-metric-row" data-metric="${id}">
                 <div class="chart-metric-info">
@@ -106,7 +123,10 @@
                 </div>
                 <div class="chart-metric-data">
                     <span class="chart-metric-value">${formatValue(m)}</span>
+                    <span class="chart-metric-change ${dir1w}">${chg1w}</span>
+                    <span class="chart-metric-change ${dir1m}">${chg1m}</span>
                     <span class="chart-metric-change ${dir}">${changeText}</span>
+                    <span class="chart-metric-change ${dir1y}">${chg1y}</span>
                 </div>
             </div>
             <div class="chart-metric-expand" id="expand-${id}">
@@ -321,10 +341,160 @@
     }
 
     function formatChangeText(m) {
-        if (m.change_ytd_bp != null) return `${m.change_ytd_bp > 0 ? '+' : ''}${m.change_ytd_bp}bp YTD`;
-        if (m.change_ytd_pct != null) return `${m.change_ytd_pct > 0 ? '+' : ''}${m.change_ytd_pct}% YTD`;
-        if (m.change_1d != null) return `${m.change_1d > 0 ? '+' : ''}${m.change_1d.toFixed(2)} 1D`;
-        return '';
+        const useBp = shouldUseBp(m);
+        if (useBp) {
+            const bp = m.change_ytd_bp != null ? m.change_ytd_bp : computeChangeBp(m, 'ytd');
+            if (bp == null) return '—';
+            return `${bp > 0 ? '+' : ''}${bp}bp`;
+        } else {
+            const pct = m.change_ytd_pct != null ? m.change_ytd_pct : computeChangePct(m, 'ytd');
+            if (pct == null) return '—';
+            return `${pct > 0 ? '+' : ''}${pct.toFixed(1)}%`;
+        }
+    }
+
+    function formatChangeDir(m) {
+        const val = m.change_ytd_pct ?? m.change_ytd_bp ?? 0;
+        return val > 0 ? 'up' : val < 0 ? 'down' : 'flat';
+    }
+
+    // Determine whether to show bp or % for a given metric
+    function shouldUseBp(m) {
+        if (changeMode === 'bp') return true;
+        if (changeMode === 'pct') return false;
+        // auto: use bp for rate/yield metrics
+        return m.change_ytd_bp != null;
+    }
+
+    // Find value at a given lookback from history
+    function findHistoricalValue(m, daysAgo) {
+        if (!m.history || m.history.length < 2) return null;
+        const now = new Date();
+        const cutoff = new Date(now);
+        cutoff.setDate(cutoff.getDate() - daysAgo);
+        let closest = null;
+        let closestDiff = Infinity;
+        for (const [dateStr, val] of m.history) {
+            const d = new Date(dateStr);
+            const diff = Math.abs(d - cutoff);
+            if (diff < closestDiff) {
+                closestDiff = diff;
+                closest = val;
+            }
+        }
+        return closest;
+    }
+
+    function computeChangeBp(m, period) {
+        const daysMap = { '1w': 7, '1m': 30, 'ytd': null, '1y': 365 };
+        let oldVal;
+        if (period === 'ytd') {
+            // Find value closest to Jan 1 of current year
+            const jan1 = new Date(new Date().getFullYear(), 0, 1);
+            let closest = null, closestDiff = Infinity;
+            for (const [dateStr, val] of (m.history || [])) {
+                const diff = Math.abs(new Date(dateStr) - jan1);
+                if (diff < closestDiff) { closestDiff = diff; closest = val; }
+            }
+            oldVal = closest;
+        } else {
+            oldVal = findHistoricalValue(m, daysMap[period]);
+        }
+        if (oldVal == null) return null;
+        return Math.round((m.value - oldVal) * 100);
+    }
+
+    function computeChangePct(m, period) {
+        const daysMap = { '1w': 7, '1m': 30, 'ytd': null, '1y': 365 };
+        let oldVal;
+        if (period === 'ytd') {
+            const jan1 = new Date(new Date().getFullYear(), 0, 1);
+            let closest = null, closestDiff = Infinity;
+            for (const [dateStr, val] of (m.history || [])) {
+                const diff = Math.abs(new Date(dateStr) - jan1);
+                if (diff < closestDiff) { closestDiff = diff; closest = val; }
+            }
+            oldVal = closest;
+        } else {
+            oldVal = findHistoricalValue(m, daysMap[period]);
+        }
+        if (oldVal == null || oldVal === 0) return null;
+        return ((m.value - oldVal) / Math.abs(oldVal)) * 100;
+    }
+
+    // Compute change for a lookback period respecting current changeMode
+    function computeChange(m, daysAgo) {
+        const oldVal = findHistoricalValue(m, daysAgo);
+        if (oldVal == null || oldVal === 0) return null;
+        if (shouldUseBp(m)) {
+            return Math.round((m.value - oldVal) * 100);
+        } else {
+            return ((m.value - oldVal) / Math.abs(oldVal)) * 100;
+        }
+    }
+
+    function formatPeriodChange(m, daysAgo) {
+        const change = computeChange(m, daysAgo);
+        if (change == null) return '—';
+        if (shouldUseBp(m)) {
+            const sign = change > 0 ? '+' : '';
+            return `${sign}${change}bp`;
+        } else {
+            const sign = change > 0 ? '+' : '';
+            return `${sign}${change.toFixed(1)}%`;
+        }
+    }
+
+    function periodChangeDir(m, daysAgo) {
+        const change = computeChange(m, daysAgo);
+        if (change == null) return 'flat';
+        return change > 0 ? 'up' : change < 0 ? 'down' : 'flat';
+    }
+
+    // Update all change cells in-place when toggle changes
+    function updateChangeDisplay() {
+        document.querySelectorAll('.chart-metric-row[data-metric]').forEach(row => {
+            const id = row.dataset.metric;
+            const m = metricsData.metrics[id];
+            if (!m) return;
+
+            const spans = row.querySelectorAll('.chart-metric-change');
+            if (spans.length < 4) return;
+
+            const periods = [
+                { el: spans[0], days: 7 },
+                { el: spans[1], days: 30 },
+                { el: spans[2], days: null }, // YTD
+                { el: spans[3], days: 365 }
+            ];
+
+            periods.forEach(({ el, days }) => {
+                let text, dir;
+                if (days === null) {
+                    text = formatChangeText(m);
+                    dir = formatChangeDir(m);
+                } else {
+                    text = formatPeriodChange(m, days);
+                    dir = periodChangeDir(m, days);
+                }
+                el.textContent = text;
+                el.className = `chart-metric-change ${dir}`;
+            });
+        });
+    }
+
+    // Bind the toggle buttons
+    function bindChangeToggle() {
+        const toggle = document.getElementById('change-mode-toggle');
+        if (!toggle) return;
+        toggle.querySelectorAll('.change-mode-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                changeMode = btn.dataset.mode;
+                toggle.querySelectorAll('.change-mode-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                updateChangeDisplay();
+            });
+        });
     }
 
     function formatRawValue(raw, m) {
@@ -349,8 +519,9 @@
 
     // ─── Init on DOM ready ───
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', () => { bindChangeToggle(); init(); });
     } else {
+        bindChangeToggle();
         init();
     }
 })();

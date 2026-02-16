@@ -183,6 +183,21 @@
 }
 
 /* ─── Section Title ─── */
+.pulse-section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pulse-section-header .pulse-section-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
 .pulse-section-title {
     font-size: 1.3rem;
     font-weight: 600;
@@ -190,6 +205,43 @@
     margin-bottom: 1.25rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-color);
+}
+
+/* Change mode toggle (auto / bp / %) */
+.change-mode-toggle {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.change-mode-btn {
+    background: #fff;
+    border: none;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #999;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    font-family: inherit;
+    text-transform: lowercase;
+    border-right: 1px solid var(--border-color);
+}
+
+.change-mode-btn:last-child {
+    border-right: none;
+}
+
+.change-mode-btn.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.change-mode-btn:hover:not(.active) {
+    background: var(--light-gray, #f5f5f5);
+    color: #555;
 }
 
 /* ─── Dashboard Table ─── */

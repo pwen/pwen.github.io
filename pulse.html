@@ -22,7 +22,14 @@ permalink: /pulse/
     <div class="pulse-theses" id="pulse-theses"></div>
 
     <!-- Charts by category (sruth-style collapsible) -->
-    <h2 class="pulse-section-title">看图说话</h2>
+    <div class="pulse-section-header">
+        <h2 class="pulse-section-title">看图说话</h2>
+        <div class="change-mode-toggle" id="change-mode-toggle">
+            <button class="change-mode-btn active" data-mode="auto">auto</button>
+            <button class="change-mode-btn" data-mode="bp">bp</button>
+            <button class="change-mode-btn" data-mode="pct">%</button>
+        </div>
+    </div>
     <div class="charts-categories" id="charts-categories"></div>
 
     <!-- Year reflection (shown for past years) -->
