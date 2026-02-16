@@ -1,4 +1,4 @@
-.PHONY: help install serve build clean tags optimize-image fetch-data
+.PHONY: help install serve build clean tags optimize-image fetch-data update-metric
 
 # Default target
 help:
@@ -8,6 +8,7 @@ help:
 	@echo "  make build               - Build the site"
 	@echo "  make tags                - Generate tags data JSON"
 	@echo "  make fetch-data          - Fetch latest pulse metrics data"
+	@echo "  make update-metric      - Update a manual metric (e.g. make update-metric ID=china_pmi VAL=50.1 DATE=2026-02-01)"
 	@echo "  make optimize-image IMG=<filename> - Optimize image for web"
 	@echo "  make clean               - Clean generated files"
 	@echo "  make help                - Show this help message"
@@ -61,3 +62,17 @@ clean:
 fetch-data:
 	@echo "Fetching pulse data..."
 	@export $$(cat .env | xargs) && uv run scripts/fetch_pulse_data.py
+
+# Update a manual metric
+update-metric:
+	@if [ -z "$(ID)" ] || [ -z "$(VAL)" ]; then \
+		echo "Usage: make update-metric ID=<metric_id> VAL=<value> [DATE=YYYY-MM-DD]"; \
+		echo ""; \
+		uv run scripts/fetch_pulse_data.py update --list; \
+		exit 1; \
+	fi
+	@if [ -n "$(DATE)" ]; then \
+		uv run scripts/fetch_pulse_data.py update $(ID) $(VAL) --date $(DATE); \
+	else \
+		uv run scripts/fetch_pulse_data.py update $(ID) $(VAL); \
+	fi

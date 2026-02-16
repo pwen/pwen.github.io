@@ -15,34 +15,6 @@ Content should be served locally at `http://localhost:4000`
 2. Name it with the format: `YYYY-MM-DD-title.md` (for English) or `YYYY-MM-DD-title-zh.md` (for Mandarin)
 3. Add the front matter at the top of the file:
 
-**English Post Example:**
-```markdown
----
-layout: post
-title: "Your Post Title"
-date: 2026-01-25 10:00:00 -0800
-lang: en
-tags: [tag1, tag2]
-image: /assets/images/your-image.jpg  # Optional
----
-
-Your content here...
-```
-
-**Mandarin Post Example:**
-```markdown
----
-layout: post
-title: "你的文章标题"
-date: 2026-01-25 10:00:00 -0800
-lang: zh
-tags: [标签1, 标签2]
-image: /assets/images/your-image.jpg  # Optional
----
-
-你的内容在这里...
-```
-
 **To add images**:
 
 1. Place your images in the `assets/images/` directory
@@ -55,41 +27,49 @@ image: /assets/images/your-image.jpg  # Optional
    image: /assets/images/your-image.jpg
    ```
 
-#### 🌐 Bilingual Support
-
-This blog supports both English and Mandarin:
-
-- English posts should have `lang: en` in the front matter
-- Mandarin posts should have `lang: zh` in the front matter
-- The homepage automatically filters posts by language
-- The language switcher in the header allows users to toggle between languages
-
-## 📂 Project Structure
-
-```
-pwen.github.io/
-├── _config.yml           # Site configuration
-├── _layouts/             # Page templates
-│   ├── default.html      # Base layout
-│   ├── home.html         # Homepage layout
-│   └── post.html         # Blog post layout
-├── _posts/               # Your blog posts
-│   ├── 2026-01-25-welcome-to-my-blog.md
-│   └── 2026-01-25-welcome-to-my-blog-zh.md
-├── assets/
-│   ├── css/
-│   │   └── style.css     # Main stylesheet
-│   └── images/           # Your images
-├── index.md              # English homepage
-├── zh.md                 # Mandarin homepage
-├── about.html            # About page
-├── Gemfile               # Ruby dependencies
-└── README.md             # This file
-```
-
 ### 📚 Resources
 
 - [Jekyll Documentation](https://jekyllrb.com/docs/)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [Markdown Guide](https://www.markdownguide.org/)
 - [Liquid Template Language](https://shopify.github.io/liquid/)
+
+---
+
+## 📊 Pulse Data Pipeline
+
+The Pulse macro dashboard tracks 33 metrics. Most are fetched automatically from yfinance and FRED, but **4 metrics** require manual updates because they come from sources without free APIs.
+
+### Automatic Fetch
+
+```bash
+make fetch-data
+```
+
+Runs daily via GitHub Actions. Pulls 5 years of weekly data from yfinance (market) and FRED (economic indicators).
+
+### Manual Metric Updates
+
+These 4 metrics must be updated by hand when new data is released:
+
+| Metric ID | Name | Source | Frequency | Where to Find |
+|-----------|------|--------|-----------|---------------|
+| `china_pmi` | China Mfg PMI (中国制造业PMI) | NBS | Monthly | [data.stats.gov.cn](https://data.stats.gov.cn) |
+| `china_retail_sales` | China Retail Sales YoY (中国社零同比) | NBS | Monthly | [data.stats.gov.cn](https://data.stats.gov.cn) |
+| `cb_gold_buying` | Central Bank Gold Buying (央行购金量) | World Gold Council | Quarterly | [gold.org/goldhub](https://www.gold.org/goldhub/data/gold-demand-by-country) |
+| `usd_reserves_share` | USD Share of Reserves (美元储备占比) | IMF COFER | Quarterly | [data.imf.org](https://data.imf.org/regular.aspx?key=41175) |
+
+**Usage:**
+
+```bash
+# List all manual metrics and their current values
+make update-metric
+
+# Update a metric (DATE defaults to today if omitted)
+make update-metric ID=china_pmi VAL=50.1 DATE=2026-02-01
+make update-metric ID=china_retail_sales VAL=4.2 DATE=2026-01-15
+make update-metric ID=cb_gold_buying VAL=1037 DATE=2025-12-31
+make update-metric ID=usd_reserves_share VAL=57.8 DATE=2025-12-31
+```
+
+Each update appends a data point to the metric's history. If the same date already exists, it replaces the value.

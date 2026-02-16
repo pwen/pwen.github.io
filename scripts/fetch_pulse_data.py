@@ -12,12 +12,21 @@ Fetch macro data for Pulse dashboard.
 Sources: yfinance (market data), FRED API (economic indicators).
 
 Usage:
+    # Fetch all API-sourced metrics:
     export FRED_API_KEY=your_key_here
     uv run scripts/fetch_pulse_data.py
+
+    # Manually update a metric (for metrics with no free API):
+    uv run scripts/fetch_pulse_data.py update china_pmi 50.1 --date 2026-02-01
+    uv run scripts/fetch_pulse_data.py update cb_gold_buying 1037 --date 2025-12-31
+
+    # List all manual metrics:
+    uv run scripts/fetch_pulse_data.py update --list
 
 Output: assets/data/pulse/metrics.json
 """
 
+import argparse
 import json
 import os
 import sys
@@ -583,5 +592,118 @@ def main():
     print(f"  File size: {OUTPUT_PATH.stat().st_size / 1024:.0f} KB")
 
 
+def update_manual(metric_id: str, value: float, date_str: str | None = None) -> None:
+    """Update a single manual metric in metrics.json."""
+    manual_ids = [k for k, v in METRICS.items() if v["source_type"] == "manual"]
+
+    if metric_id not in METRICS:
+        print(f"✗ Unknown metric: {metric_id}")
+        print(f"  Available manual metrics: {', '.join(manual_ids)}")
+        sys.exit(1)
+
+    if METRICS[metric_id]["source_type"] != "manual":
+        print(f"✗ '{metric_id}' is not a manual metric (it's {METRICS[metric_id]['source_type']}-sourced).")
+        print(f"  Manual metrics: {', '.join(manual_ids)}")
+        sys.exit(1)
+
+    date = date_str or datetime.now().strftime("%Y-%m-%d")
+    config = METRICS[metric_id]
+
+    # Load existing
+    if OUTPUT_PATH.exists():
+        with open(OUTPUT_PATH) as f:
+            data = json.load(f)
+    else:
+        data = {"updated": "", "metrics": {}}
+
+    existing = data["metrics"].get(metric_id, {})
+    history = existing.get("history", [])
+
+    # Append or replace the latest point on the same date
+    if history and history[-1][0] == date:
+        history[-1][1] = value
+    else:
+        history.append([date, value])
+        # Keep sorted
+        history.sort(key=lambda x: x[0])
+
+    # Compute direction from last two points
+    direction = "flat"
+    if len(history) >= 2:
+        prev, curr = history[-2][1], history[-1][1]
+        if curr > prev:
+            direction = "up"
+        elif curr < prev:
+            direction = "down"
+
+    data["metrics"][metric_id] = {
+        "name": config["name"],
+        "name_zh": config.get("name_zh", ""),
+        "description": config["description"],
+        "value": value,
+        "direction": direction,
+        "unit": config["unit"],
+        "history": history,
+        "source": "manual",
+        "note": config.get("note", ""),
+    }
+    data["updated"] = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    with open(OUTPUT_PATH, "w") as f:
+        json.dump(data, f, indent=2)
+
+    print(f"✓ Updated {metric_id} = {value} ({config['unit']}) on {date}")
+    print(f"  History: {len(history)} data points")
+    print(f"  Direction: {direction}")
+
+
+def list_manual_metrics() -> None:
+    """Print all manual metrics and their current values."""
+    manual = {k: v for k, v in METRICS.items() if v["source_type"] == "manual"}
+
+    existing = {}
+    if OUTPUT_PATH.exists():
+        with open(OUTPUT_PATH) as f:
+            existing = json.load(f).get("metrics", {})
+
+    print(f"\nManual metrics ({len(manual)} total):")
+    print(f"{'─' * 60}")
+    for mid, config in manual.items():
+        current = existing.get(mid, {})
+        val = current.get("value")
+        pts = len(current.get("history", []))
+        last_date = current["history"][-1][0] if current.get("history") else "never"
+        val_str = f"{val} {config['unit']}" if val is not None else "(no data)"
+        print(f"  {mid:25s} {val_str:20s} last={last_date}  pts={pts}")
+        print(f"  {'':25s} {config['note']}")
+    print(f"{'─' * 60}")
+    print(f"\nUsage: uv run scripts/fetch_pulse_data.py update <metric_id> <value> [--date YYYY-MM-DD]")
+
+
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Pulse data pipeline")
+    sub = parser.add_subparsers(dest="command")
+
+    # Default fetch (no subcommand)
+    sub.add_parser("fetch", help="Fetch all API-sourced metrics (default)")
+
+    # Update manual metric
+    up = sub.add_parser("update", help="Update a manual metric")
+    up.add_argument("metric_id", nargs="?", help="Metric key (e.g. china_pmi)")
+    up.add_argument("value", nargs="?", type=float, help="New value")
+    up.add_argument("--date", "-d", help="Date for the data point (YYYY-MM-DD, default: today)")
+    up.add_argument("--list", "-l", action="store_true", help="List all manual metrics")
+
+    args = parser.parse_args()
+
+    if args.command == "update":
+        if args.list or args.metric_id is None:
+            list_manual_metrics()
+        elif args.value is None:
+            print(f"✗ Missing value. Usage: update {args.metric_id} <value> [--date YYYY-MM-DD]")
+            sys.exit(1)
+        else:
+            update_manual(args.metric_id, args.value, args.date)
+    else:
+        # Default: fetch
+        main()
