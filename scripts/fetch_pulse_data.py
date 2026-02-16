@@ -692,6 +692,32 @@ def compute_zscore(history: list) -> dict:
     return {"zscore": z, "signal": signal}
 
 
+def compute_trend(history: list, lookback: int = 8) -> dict:
+    """Compute trend direction over the last `lookback` data points.
+
+    Compares latest value to the value `lookback` points ago.
+    Returns 'up', 'down', or 'flat' (change < 0.5%).
+    """
+    if not history or len(history) < lookback + 1:
+        return {}
+
+    values = [h[1] if isinstance(h, list) else h for h in history]
+    latest = values[-1]
+    past = values[-(lookback + 1)]
+
+    if past == 0:
+        return {"trend": "flat"}
+
+    pct_change = (latest - past) / abs(past) * 100
+
+    if pct_change > 0.5:
+        return {"trend": "up"}
+    elif pct_change < -0.5:
+        return {"trend": "down"}
+    else:
+        return {"trend": "flat"}
+
+
 def compute_yoy(data: list[tuple[str, float]]) -> list[tuple[str, float]]:
     """Compute YoY percent change for monthly data."""
     if len(data) < 13:
@@ -905,12 +931,15 @@ def main():
         result_metrics[metric_id] = m
         print(f"✓ {len(history_weekly)} points, value={current_value}")
 
-    # Compute z-scores for all metrics
+    # Compute z-scores and trends for all metrics
     for mid, mdata in result_metrics.items():
         hist = mdata.get("history", [])
         zinfo = compute_zscore(hist)
         if zinfo:
             mdata.update(zinfo)
+        tinfo = compute_trend(hist)
+        if tinfo:
+            mdata.update(tinfo)
 
     # Write per-category files
     updated_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -1065,6 +1094,9 @@ def backfill_from_csv(metric_id: str, csv_path: str) -> None:
     zinfo = compute_zscore(history)
     if zinfo:
         metric_obj.update(zinfo)
+    tinfo = compute_trend(history)
+    if tinfo:
+        metric_obj.update(tinfo)
 
     updated_str = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
     data["metrics"][metric_id] = metric_obj

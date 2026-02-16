@@ -131,6 +131,16 @@
     white-space: nowrap;
 }
 
+.chart-metric-trend {
+    font-size: 0.55rem;
+    margin-left: 0.15rem;
+    vertical-align: middle;
+}
+
+.chart-metric-trend.up { color: #4caf87; }
+.chart-metric-trend.down { color: #e05555; }
+.chart-metric-trend.flat { display: none; }
+
 .chart-metric-data {
     display: flex;
     align-items: center;

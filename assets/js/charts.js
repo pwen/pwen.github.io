@@ -137,6 +137,7 @@
                     <span class="chart-metric-arrow">▸</span>
                     <span class="chart-metric-name">${m.name}</span>
                     ${zhName}
+                    <span class="chart-metric-trend ${m.trend || 'flat'}">${trendArrow(m)}</span>
                 </div>
                 <div class="chart-metric-data">
                     <span class="chart-metric-signal ${(m.signal || 'NORMAL').toLowerCase()}">${formatSignal(m)}</span>
@@ -197,10 +198,11 @@
         const descEl = document.getElementById(`desc-${metricId}`);
         if (descEl && m.description) descEl.textContent = m.description;
 
-        // Bind period buttons
+        // Bind period buttons & sync to current activePeriod
         const periodBar = document.getElementById(`periods-${metricId}`);
         if (periodBar) {
             periodBar.querySelectorAll('.chart-period-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.period === activePeriod);
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     activePeriod = btn.dataset.period;
@@ -338,6 +340,13 @@
     }
 
     // ─── Formatting helpers ───
+    function trendArrow(m) {
+        if (!m.trend) return '';
+        if (m.trend === 'up') return '▲';
+        if (m.trend === 'down') return '▼';
+        return '';
+    }
+
     function formatSignal(m) {
         if (m.zscore == null) return '';
         const z = m.zscore;

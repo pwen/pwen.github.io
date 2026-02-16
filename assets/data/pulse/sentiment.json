@@ -1073,7 +1073,8 @@
       "source": "yfinance:^VIX",
       "change_ytd_pct": 42.0,
       "zscore": 0.3,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "btc": {
       "name": "Bitcoin",
@@ -2147,7 +2148,8 @@
       "source": "yfinance:BTC-USD",
       "change_ytd_pct": -22.5,
       "zscore": 0.5,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "cb_gold_buying": {
       "name": "Central Bank Gold Buying",
@@ -2241,7 +2243,8 @@
       "source": "manual",
       "note": "Quarterly, lagged \u2014 World Gold Council",
       "zscore": 1.6,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "down"
     },
     "us_ism_pmi": {
       "name": "US Manufacturing PMI",
@@ -2500,7 +2503,8 @@
       "note": "Monthly \u2014 ISM (no free API, backfill from CSV)",
       "change_ytd_pct": 0.0,
       "zscore": -0.1,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "us_gdp": {
       "name": "US Real GDP Growth",
@@ -2590,7 +2594,8 @@
       "source": "fred:A191RL1Q225SBEA",
       "note": "Quarterly, annualized \u2014 BEA",
       "zscore": 0.6,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "us_cpi": {
       "name": "US CPI YoY",
@@ -2797,7 +2802,8 @@
       "change_ytd_pct": 0.0,
       "note": "Monthly, lagged ~2 weeks \u2014 BLS",
       "zscore": -0.8,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "umich_sentiment": {
       "name": "UMich Consumer Sentiment",
@@ -3051,7 +3057,8 @@
       "source": "fred:UMCSENT",
       "note": "Monthly \u2014 UMich",
       "zscore": -1.5,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "up"
     }
   }
 }

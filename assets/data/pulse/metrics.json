@@ -11,7 +11,8 @@
       "source": "yfinance:DX-Y.NYB",
       "change_ytd_pct": -1.6,
       "zscore": -0.8,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "eurusd": {
       "name": "EUR/USD",
@@ -23,7 +24,8 @@
       "source": "yfinance:EURUSD=X",
       "change_ytd_pct": 1.0,
       "zscore": 1.4,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "usdcny": {
       "name": "USD/CNY",
@@ -35,7 +37,8 @@
       "source": "yfinance:CNY=X",
       "change_ytd_pct": -1.4,
       "zscore": -0.1,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "usd_reserves_share": {
       "name": "USD Share of FX Reserves",
@@ -47,7 +50,8 @@
       "source": "manual",
       "note": "Quarterly, lagged \u2014 IMF COFER",
       "zscore": -2.2,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "down"
     },
     "us_10y": {
       "name": "US 10Y Yield",
@@ -59,7 +63,8 @@
       "source": "yfinance:^TNX",
       "change_ytd_bp": -13,
       "zscore": 0.6,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "yield_curve": {
       "name": "10Y-2Y Spread",
@@ -71,7 +76,8 @@
       "source": "fred:T10Y2Y",
       "change_ytd_bp": -8,
       "zscore": 0.7,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "tips_5y": {
       "name": "US 5Y TIPS (Real Yield)",
@@ -83,7 +89,8 @@
       "source": "fred:DFII5",
       "change_ytd_bp": -24,
       "zscore": 0.3,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "breakeven_10y": {
       "name": "10Y Breakeven Inflation",
@@ -95,7 +102,8 @@
       "source": "fred:T10YIE",
       "change_ytd_bp": 2,
       "zscore": -0.5,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "cn_10y": {
       "name": "China 10Y Yield",
@@ -108,7 +116,8 @@
       "note": "Monthly \u2014 PBOC / CEIC (no free API)",
       "change_ytd_bp": 0,
       "zscore": -1.6,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "down"
     },
     "hy_spread": {
       "name": "HY Credit Spread (OAS)",
@@ -120,7 +129,8 @@
       "source": "fred:BAMLH0A0HYM2",
       "change_ytd_bp": 9,
       "zscore": -1.0,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "fed_balance_sheet": {
       "name": "Fed Balance Sheet",
@@ -132,7 +142,8 @@
       "source": "fred:WALCL",
       "change_ytd_pct": 0.8,
       "zscore": -1.4,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "debt_to_gdp": {
       "name": "US Debt/GDP",
@@ -144,7 +155,8 @@
       "source": "fred:GFDEGDQ188S",
       "note": "Quarterly, interpolated",
       "zscore": 0.8,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "tga": {
       "name": "Treasury General Account",
@@ -156,7 +168,8 @@
       "source": "fred:WTREGEN",
       "change_ytd_pct": 15.0,
       "zscore": 1.0,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "gold": {
       "name": "Gold",
@@ -168,7 +181,8 @@
       "source": "yfinance:GC=F",
       "change_ytd_pct": 16.4,
       "zscore": 3.5,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "silver": {
       "name": "Silver",
@@ -180,7 +194,8 @@
       "source": "yfinance:SI=F",
       "change_ytd_pct": 10.3,
       "zscore": 4.1,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "copper": {
       "name": "Copper",
@@ -192,7 +207,8 @@
       "source": "yfinance:HG=F",
       "change_ytd_pct": 2.7,
       "zscore": 2.9,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "uranium": {
       "name": "Uranium (URA ETF)",
@@ -204,7 +220,8 @@
       "source": "yfinance:URA",
       "change_ytd_pct": 12.7,
       "zscore": 3.0,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "oil": {
       "name": "WTI Crude",
@@ -216,7 +233,8 @@
       "source": "yfinance:CL=F",
       "change_ytd_pct": 9.7,
       "zscore": -1.0,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "natgas": {
       "name": "Natural Gas",
@@ -228,7 +246,8 @@
       "source": "yfinance:NG=F",
       "change_ytd_pct": -10.4,
       "zscore": -0.3,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "energy_cpi": {
       "name": "Energy Services CPI YoY",
@@ -241,7 +260,8 @@
       "change_ytd_pct": 0.0,
       "note": "Monthly, lagged",
       "zscore": 0.1,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "sp500": {
       "name": "S&P 500",
@@ -253,7 +273,8 @@
       "source": "yfinance:^GSPC",
       "change_ytd_pct": -0.3,
       "zscore": 2.0,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "flat"
     },
     "qqq": {
       "name": "Nasdaq 100 ETF",
@@ -265,7 +286,8 @@
       "source": "yfinance:QQQ",
       "change_ytd_pct": -1.8,
       "zscore": 1.9,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "down"
     },
     "smh": {
       "name": "Semiconductor ETF",
@@ -277,7 +299,8 @@
       "source": "yfinance:SMH",
       "change_ytd_pct": 9.2,
       "zscore": 2.9,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "xlu": {
       "name": "Utilities ETF (XLU)",
@@ -289,7 +312,8 @@
       "source": "yfinance:XLU",
       "change_ytd_pct": 7.7,
       "zscore": 2.6,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "gsci_spy_ratio": {
       "name": "Commodities / S&P 500",
@@ -301,7 +325,8 @@
       "source": "derived:GSG",
       "change_ytd_pct": 7.4,
       "zscore": -0.9,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "vix": {
       "name": "VIX",
@@ -313,7 +338,8 @@
       "source": "yfinance:^VIX",
       "change_ytd_pct": 42.0,
       "zscore": 0.3,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "btc": {
       "name": "Bitcoin",
@@ -325,7 +351,8 @@
       "source": "yfinance:BTC-USD",
       "change_ytd_pct": -22.5,
       "zscore": 0.5,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "cb_gold_buying": {
       "name": "Central Bank Gold Buying",
@@ -337,7 +364,8 @@
       "source": "manual",
       "note": "Quarterly, lagged \u2014 World Gold Council",
       "zscore": 1.6,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "down"
     },
     "csi300": {
       "name": "CSI 300",
@@ -349,7 +377,8 @@
       "source": "yfinance:000300.SS",
       "change_ytd_pct": -1.2,
       "zscore": 1.0,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "hsi": {
       "name": "Hang Seng Index",
@@ -361,7 +390,8 @@
       "source": "yfinance:^HSI",
       "change_ytd_pct": 0.9,
       "zscore": 1.2,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "kweb": {
       "name": "China Internet ETF",
@@ -373,7 +403,8 @@
       "source": "yfinance:KWEB",
       "change_ytd_pct": -8.0,
       "zscore": 0.0,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "china_pmi": {
       "name": "China Mfg PMI",
@@ -385,7 +416,8 @@
       "source": "manual",
       "note": "NBS monthly",
       "zscore": 0.3,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "china_retail_sales": {
       "name": "China Retail Sales YoY",
@@ -397,7 +429,8 @@
       "source": "manual",
       "note": "NBS monthly",
       "zscore": -0.2,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "eem": {
       "name": "MSCI Emerging Markets ETF",
@@ -409,7 +442,8 @@
       "source": "yfinance:EEM",
       "change_ytd_pct": 8.7,
       "zscore": 3.1,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "inda": {
       "name": "India ETF (INDA)",
@@ -421,7 +455,8 @@
       "source": "yfinance:INDA",
       "change_ytd_pct": -3.1,
       "zscore": 1.0,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "ilf": {
       "name": "Latin America ETF (ILF)",
@@ -433,7 +468,8 @@
       "source": "yfinance:ILF",
       "change_ytd_pct": 17.6,
       "zscore": 4.1,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "china_cpi": {
       "name": "China CPI YoY",
@@ -446,7 +482,8 @@
       "note": "Monthly \u2014 NBS",
       "change_ytd_pct": 0.0,
       "zscore": 0.1,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "china_gdp": {
       "name": "China GDP YoY",
@@ -458,7 +495,8 @@
       "source": "manual",
       "note": "Quarterly \u2014 NBS",
       "zscore": -0.1,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "china_m2": {
       "name": "China M2 YoY",
@@ -470,7 +508,8 @@
       "source": "manual",
       "note": "Monthly \u2014 PBOC",
       "zscore": -0.9,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "move": {
       "name": "MOVE Index",
@@ -483,7 +522,8 @@
       "note": "ICE BofA \u2014 backfill required",
       "change_ytd_pct": -2.5,
       "zscore": 0.3,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "us_ism_pmi": {
       "name": "US Manufacturing PMI",
@@ -496,7 +536,8 @@
       "note": "Monthly \u2014 ISM (no free API, backfill from CSV)",
       "change_ytd_pct": 0.0,
       "zscore": -0.1,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "us_gdp": {
       "name": "US Real GDP Growth",
@@ -508,7 +549,8 @@
       "source": "fred:A191RL1Q225SBEA",
       "note": "Quarterly, annualized \u2014 BEA",
       "zscore": 0.6,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "us_cpi": {
       "name": "US CPI YoY",
@@ -521,7 +563,8 @@
       "change_ytd_pct": 0.0,
       "note": "Monthly, lagged ~2 weeks \u2014 BLS",
       "zscore": -0.8,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "umich_sentiment": {
       "name": "UMich Consumer Sentiment",
@@ -533,7 +576,8 @@
       "source": "fred:UMCSENT",
       "note": "Monthly \u2014 UMich",
       "zscore": -1.5,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "up"
     },
     "bigtech_capex": {
       "name": "Big Tech CapEx",
@@ -546,7 +590,8 @@
       "note": "Quarterly, compiled from earnings \u2014 MSFT+GOOGL+AMZN+META+ORCL",
       "change_ytd_pct": 0.0,
       "zscore": 2.7,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "growth_value": {
       "name": "Growth / Value",
@@ -558,7 +603,8 @@
       "source": "derived:VUG",
       "change_ytd_pct": -11.9,
       "zscore": 0.2,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "cap_equal": {
       "name": "Cap-Weight / Equal-Weight",
@@ -570,7 +616,8 @@
       "source": "derived:SPY",
       "change_ytd_pct": -5.1,
       "zscore": 1.2,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "atoms_bits": {
       "name": "Atoms vs Bits",
@@ -582,7 +629,8 @@
       "source": "derived:XLB+XLI+XLE+XME",
       "change_ytd_pct": 39.1,
       "zscore": 3.0,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "cn_us_spread": {
       "name": "China\u2013US 10Y Spread",
@@ -595,7 +643,8 @@
       "change_ytd_bp": 0,
       "note": "Derived: (cn_10y \u2212 us_10y) \u00d7 100",
       "zscore": -1.1,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     }
   }
 }

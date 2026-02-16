@@ -1073,7 +1073,8 @@
       "source": "yfinance:GC=F",
       "change_ytd_pct": 16.4,
       "zscore": 3.5,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "silver": {
       "name": "Silver",
@@ -2147,7 +2148,8 @@
       "source": "yfinance:SI=F",
       "change_ytd_pct": 10.3,
       "zscore": 4.1,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "copper": {
       "name": "Copper",
@@ -3221,7 +3223,8 @@
       "source": "yfinance:HG=F",
       "change_ytd_pct": 2.7,
       "zscore": 2.9,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "uranium": {
       "name": "Uranium (URA ETF)",
@@ -4295,7 +4298,8 @@
       "source": "yfinance:URA",
       "change_ytd_pct": 12.7,
       "zscore": 3.0,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     }
   }
 }

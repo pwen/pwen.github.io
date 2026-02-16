@@ -1073,7 +1073,8 @@
       "source": "yfinance:EEM",
       "change_ytd_pct": 8.7,
       "zscore": 3.1,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "inda": {
       "name": "India ETF (INDA)",
@@ -2147,7 +2148,8 @@
       "source": "yfinance:INDA",
       "change_ytd_pct": -3.1,
       "zscore": 1.0,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "ilf": {
       "name": "Latin America ETF (ILF)",
@@ -3221,7 +3223,8 @@
       "source": "yfinance:ILF",
       "change_ytd_pct": 17.6,
       "zscore": 4.1,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     }
   }
 }

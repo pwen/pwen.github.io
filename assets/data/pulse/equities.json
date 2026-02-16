@@ -1073,7 +1073,8 @@
       "source": "yfinance:^GSPC",
       "change_ytd_pct": -0.3,
       "zscore": 2.0,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "flat"
     },
     "qqq": {
       "name": "Nasdaq 100 ETF",
@@ -2147,7 +2148,8 @@
       "source": "yfinance:QQQ",
       "change_ytd_pct": -1.8,
       "zscore": 1.9,
-      "signal": "ELEVATED"
+      "signal": "ELEVATED",
+      "trend": "down"
     },
     "smh": {
       "name": "Semiconductor ETF",
@@ -3221,7 +3223,8 @@
       "source": "yfinance:SMH",
       "change_ytd_pct": 9.2,
       "zscore": 2.9,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "xlu": {
       "name": "Utilities ETF (XLU)",
@@ -4295,7 +4298,8 @@
       "source": "yfinance:XLU",
       "change_ytd_pct": 7.7,
       "zscore": 2.6,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "gsci_spy_ratio": {
       "name": "Commodities / S&P 500",
@@ -5369,7 +5373,8 @@
       "source": "derived:GSG",
       "change_ytd_pct": 7.4,
       "zscore": -0.9,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "bigtech_capex": {
       "name": "Big Tech CapEx",
@@ -5468,7 +5473,8 @@
       "note": "Quarterly, compiled from earnings \u2014 MSFT+GOOGL+AMZN+META+ORCL",
       "change_ytd_pct": 0.0,
       "zscore": 2.7,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     },
     "growth_value": {
       "name": "Growth / Value",
@@ -6542,7 +6548,8 @@
       "source": "derived:VUG",
       "change_ytd_pct": -11.9,
       "zscore": 0.2,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "cap_equal": {
       "name": "Cap-Weight / Equal-Weight",
@@ -7616,7 +7623,8 @@
       "source": "derived:SPY",
       "change_ytd_pct": -5.1,
       "zscore": 1.2,
-      "signal": "NORMAL"
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "atoms_bits": {
       "name": "Atoms vs Bits",
@@ -8690,7 +8698,8 @@
       "source": "derived:XLB+XLI+XLE+XME",
       "change_ytd_pct": 39.1,
       "zscore": 3.0,
-      "signal": "EXTREME"
+      "signal": "EXTREME",
+      "trend": "up"
     }
   }
 }
