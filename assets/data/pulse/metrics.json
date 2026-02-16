@@ -5456,7 +5456,7 @@
     "tips_5y": {
       "name": "US 5Y TIPS (Real Yield)",
       "name_zh": "\u4e94\u5e74\u671f\u5b9e\u9645\u5229\u7387\uff08TIPS\uff09",
-      "description": "The real cost of money after inflation. When negative, holding cash loses purchasing power \u2014 the engine that drives capital into gold and hard assets. Gromen's key metric for fiscal dominance.",
+      "description": "5-year Treasury Inflation-Protected Securities yield \u2014 the real (after-inflation) cost of money. Positive = cash earns real returns. Negative = holding cash loses purchasing power, pushing capital into gold and hard assets. Luke Gromen\u2019s key metric for fiscal dominance. \ud83d\udd17 Weak Dollar & Hard Assets theses: expect real yields to get pushed lower (possibly negative) as the Fed is forced to suppress rates below inflation to manage the debt burden.",
       "value": 1.22,
       "direction": "down",
       "unit": "%",
@@ -6528,7 +6528,7 @@
     "breakeven_10y": {
       "name": "10Y Breakeven Inflation",
       "name_zh": "\u5341\u5e74\u671f\u76c8\u4e8f\u5e73\u8861\u901a\u80c0\u7387",
-      "description": "Market-implied inflation expectation for the next 10 years. Rising breakevens = market pricing structurally higher inflation. Directly validates or challenges the debasement thesis.",
+      "description": "Market-implied average annual inflation over the next 10 years, derived from the spread between nominal and TIPS yields. Rising = market pricing higher inflation ahead. Falling = deflation concerns or policy credibility. \ud83d\udd17 Weak Dollar thesis: expect breakevens to rise as the market prices in structural inflation from fiscal dominance and debt monetization.",
       "value": 2.27,
       "direction": "down",
       "unit": "%",
@@ -7600,7 +7600,7 @@
     "hy_spread": {
       "name": "HY Credit Spread (OAS)",
       "name_zh": "\u9ad8\u6536\u76ca\u503a\u5229\u5dee",
-      "description": "High-yield bond spread over Treasuries. Widening = stress in credit markets, risk-off. Tight spreads = complacency. A spike above 5% historically signals recession risk.",
+      "description": "Option-adjusted spread between high-yield (junk) bonds and Treasuries \u2014 the extra yield investors demand for credit risk. Widening = stress, risk-off. Tightening = complacency, risk-on. Below 3% = extreme complacency. Above 5% = recession risk. A leading indicator: credit markets tend to smell trouble before equities do.",
       "value": 2.92,
       "direction": "up",
       "unit": "%",
@@ -8672,7 +8672,7 @@
     "fed_balance_sheet": {
       "name": "Fed Balance Sheet",
       "name_zh": "\u7f8e\u8054\u50a8\u8d44\u4ea7\u8d1f\u503a\u8868",
-      "description": "The ammo reserve of the buyer of last resort. Currently shrinking (QT), but any Treasury market stress forces re-expansion. Direction tells you whether fiscal dominance has gone from implicit to explicit.",
+      "description": "Total assets held by the Federal Reserve, including Treasuries and MBS. Expanding (QE) = Fed injecting liquidity. Shrinking (QT) = draining liquidity. Any Treasury market stress forces re-expansion \u2014 the Fed is the buyer of last resort. \ud83d\udd17 Weak Dollar thesis: expect the balance sheet to grow again as fiscal dominance forces the Fed to absorb government debt. The direction tells you whether monetization has gone from implicit to explicit.",
       "value": 6.62,
       "direction": "up",
       "unit": "$T",
@@ -9744,7 +9744,7 @@
     "debt_to_gdp": {
       "name": "US Debt/GDP",
       "name_zh": "\u7f8e\u56fd\u503a\u52a1/GDP",
-      "description": "The denominator matters as much as the numerator. If GDP grows faster than debt, the ratio stabilizes. If not, the compounding math takes over. As long as this number climbs, all other pressures persist.",
+      "description": "Total US federal debt as a percentage of GDP \u2014 the most fundamental measure of fiscal sustainability. Rising = debt growing faster than the economy. If GDP outpaces debt, the ratio stabilizes; if not, compounding takes over. \ud83d\udd17 Weak Dollar thesis: as long as this number climbs, all the pressures driving the weak-dollar thesis \u2014 fiscal dominance, debasement, hard-asset rotation \u2014 persist and intensify.",
       "value": 121.0288,
       "direction": "up",
       "unit": "%",
@@ -9832,7 +9832,7 @@
     "tga": {
       "name": "Treasury General Account",
       "name_zh": "\u8d22\u653f\u90e8\u4e00\u822c\u8d26\u6237\uff08TGA\uff09",
-      "description": "The US government's checking account at the Fed. Drawdowns inject liquidity into markets (bullish). Refills (post-debt-ceiling) drain it. Liquidity plumbing that moves risk assets.",
+      "description": "The US government\u2019s checking account at the Federal Reserve. Drawdowns inject liquidity into the financial system (bullish for risk assets). Refills (typically post-debt-ceiling resolution) drain liquidity. A plumbing indicator \u2014 not about fundamentals but about short-term liquidity flows that move markets. \ud83d\udd17 Weak Dollar thesis: watch for drawdowns that signal the government is spending faster than it can fund through normal channels.",
       "value": 915.3,
       "direction": "up",
       "unit": "$B",
@@ -10904,7 +10904,7 @@
     "gold": {
       "name": "Gold",
       "name_zh": "\u9ec4\u91d1",
-      "description": "The trust scoreboard. When gold rises alongside rising yields and a falling dollar, the market is pricing loss of confidence in the fiscal trajectory. Central banks buying gold = voting with their reserves.",
+      "description": "The oldest store of value and the ultimate no-counterparty-risk asset. Rising = loss of confidence in fiat currencies or geopolitical stress. The signal is strongest when gold rises alongside rising yields and a falling dollar \u2014 that means the market is pricing systemic distrust, not just inflation. \ud83d\udd17 Weak Dollar, Fragmentation & Hard Assets theses: expect gold to grind higher as central banks accumulate, the dollar weakens, and geopolitical fragmentation accelerates.",
       "value": 5022.0,
       "direction": "up",
       "unit": "$/oz",
@@ -11976,7 +11976,7 @@
     "silver": {
       "name": "Silver",
       "name_zh": "\u767d\u94f6",
-      "description": "Dual identity: monetary metal (like gold) AND industrial metal (solar panels, electronics). The silver market is in structural deficit. Outperforms gold in bull runs, more volatile.",
+      "description": "Both a monetary metal (like gold) and an industrial metal (solar panels, electronics, EVs). This dual identity makes it more volatile than gold \u2014 underperforms in downturns, outperforms aggressively in bull runs. The silver market has been in structural physical deficit. \ud83d\udd17 Hard Assets thesis: expect silver to outperform gold as the commodity bull market broadens. A rising gold/silver ratio reverting to the mean is part of the thesis.",
       "value": 77.851,
       "direction": "up",
       "unit": "$/oz",
@@ -13048,7 +13048,7 @@
     "copper": {
       "name": "Copper",
       "name_zh": "\u94dc",
-      "description": "The electrification bellwether. EVs use 3-4x more copper than ICE vehicles. Data centers, wind turbines, grid upgrades all need copper. Supply growth structurally constrained (mines take 7-15 years). Goldman calls it 'the new oil.'",
+      "description": "The electrification bellwether \u2014 essential for EVs (3-4x more copper than ICE vehicles), data centers, wind turbines, and grid upgrades. Supply is structurally constrained: new mines take 7-15 years from discovery to production. Rising = demand outpacing supply. \ud83d\udd17 AI, Fragmentation & Hard Assets theses: expect copper to rise as electrification demand accelerates while supply remains constrained. Goldman calls it \u2018the new oil.\u2019",
       "value": 5.7925,
       "direction": "up",
       "unit": "$/lb",
@@ -14120,7 +14120,7 @@
     "uranium": {
       "name": "Uranium (URA ETF)",
       "name_zh": "\u94c0\uff08URA ETF\uff09",
-      "description": "Global X Uranium ETF. Proxy for the nuclear renaissance thesis \u2014 30+ countries committed to tripling nuclear capacity. Supply constrained: Russia controls 40% of global enrichment.",
+      "description": "Global X Uranium ETF \u2014 a proxy for the nuclear energy thesis. 30+ countries have committed to tripling nuclear capacity. Supply is severely constrained: Russia controls ~40% of global enrichment (a geopolitical risk), and new mines take years to bring online. \ud83d\udd17 Fragmentation & Hard Assets theses: expect uranium to benefit from energy security concerns (countries diversifying away from Russian supply) and the structural build-out of nuclear power for baseload energy.",
       "value": 51.91,
       "direction": "up",
       "unit": "$",
@@ -15192,7 +15192,7 @@
     "oil": {
       "name": "WTI Crude",
       "name_zh": "WTI\u539f\u6cb9",
-      "description": "West Texas Intermediate crude oil. The one commodity with significant political suppression risk (Saudi deals, SPR releases). Tension between political will to lower prices and geological reality of tight supply.",
+      "description": "West Texas Intermediate crude oil, the US benchmark. Rising = tight supply or strong demand. Falling = weak demand or political suppression (SPR releases, Saudi deals). Unique among commodities: heavy government intervention makes it a political commodity as much as an economic one. \ud83d\udd17 Fragmentation & Hard Assets theses: expect oil to stay structurally supported as underinvestment in new supply meets rising geopolitical risk premiums.",
       "value": 62.89,
       "direction": "up",
       "unit": "$/bbl",
@@ -16264,7 +16264,7 @@
     "natgas": {
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
-      "description": "Key energy source for power generation. AI data centers are driving massive new electricity demand, tightening the gas market. Also a geopolitical commodity (Russia/Europe, LNG exports).",
+      "description": "US natural gas price. The primary fuel for electricity generation \u2014 and therefore directly tied to AI infrastructure buildout. Each new data center needs massive, reliable power. Also a geopolitical commodity (Russia/Europe gas wars, US LNG exports). \ud83d\udd17 AI thesis: expect gas prices to rise as data center demand creates a structural floor for electricity consumption. Fragmentation & Hard Assets: geopolitical tensions add a risk premium.",
       "value": 3.243,
       "direction": "up",
       "unit": "$/MMBtu",
@@ -17336,7 +17336,7 @@
     "energy_cpi": {
       "name": "Energy Services CPI YoY",
       "name_zh": "\u80fd\u6e90\u670d\u52a1CPI\uff08\u540c\u6bd4\uff09",
-      "description": "Year-over-year change in energy services prices (BLS). The hottest CPI component \u2014 directly tied to AI data center power demand. Above 7% creates real political backlash against AI deployment.",
+      "description": "Year-over-year change in US energy services prices (BLS CPI data). Captures electricity and utility cost inflation for consumers. Rising = energy costs accelerating. \ud83d\udd17 AI thesis: this is the constraint metric \u2014 AI\u2019s insatiable power demand drives energy costs up, which eventually creates political backlash against deployment. Above 7% YoY is the danger zone where regulators start pushing back.",
       "value": 7.8,
       "direction": "down",
       "unit": "% YoY",
@@ -17541,7 +17541,7 @@
     "sp500": {
       "name": "S&P 500",
       "name_zh": "\u6807\u666e500",
-      "description": "The broad US equity benchmark. Tracks overall market health. Compare with QQQ/SMH to see whether tech is leading or lagging the broader market.",
+      "description": "The broadest US large-cap equity benchmark \u2014 500 stocks across all sectors, market-cap weighted. Rising = bull market, falling = bear market. Compare S&P 500 vs commodities (GSG/SPY ratio) and vs EM (EEM) to gauge whether US financial asset outperformance is intact or cracking. \ud83d\udd17 AI thesis: a healthy S&P 500 suggests the AI capex cycle is being recognized and funded by markets.",
       "value": 6836.1699,
       "direction": "up",
       "unit": "index",
@@ -18613,7 +18613,7 @@
     "qqq": {
       "name": "Nasdaq 100 ETF",
       "name_zh": "\u7eb3\u65af\u8fbe\u514b100 ETF",
-      "description": "Tracks the 100 largest Nasdaq-listed non-financial companies. AI-heavy (Mag7 dominant). Watch QQQ vs SMH divergence to gauge whether AI beneficiary rotation is underway.",
+      "description": "Tracks the 100 largest Nasdaq-listed non-financial companies \u2014 heavily weighted toward Magnificent 7 and AI beneficiaries. Rising = tech/growth leadership intact. Watch QQQ vs SMH divergence: if QQQ outperforms SMH, the market is rotating from AI hardware to software/adopters. \ud83d\udd17 AI thesis: expect QQQ to stay strong as long as AI capex-to-revenue conversion remains credible.",
       "value": 601.92,
       "direction": "up",
       "unit": "$",
@@ -19685,7 +19685,7 @@
     "smh": {
       "name": "Semiconductor ETF",
       "name_zh": "\u534a\u5bfc\u4f53ETF",
-      "description": "VanEck Semiconductor ETF. The AI picks-and-shovels trade (Nvidia, TSMC, ASML). If SMH underperforms QQQ, leadership is rotating from builders to enablers/adopters.",
+      "description": "VanEck Semiconductor ETF \u2014 the AI picks-and-shovels trade (Nvidia, TSMC, ASML, etc.). The most direct equity proxy for AI infrastructure spending. Rising = AI capex boom intact. \ud83d\udd17 AI thesis: SMH leading QQQ = market still in \u2018build the infrastructure\u2019 phase. SMH lagging QQQ = rotating to software/adopters. Follow the capex \u2014 SMH is the signal.",
       "value": 407.72,
       "direction": "up",
       "unit": "$",
@@ -20757,7 +20757,7 @@
     "xlu": {
       "name": "Utilities ETF (XLU)",
       "name_zh": "\u516c\u7528\u4e8b\u4e1aETF",
-      "description": "The 'boring' AI winner. Data centers need massive electricity \u2014 utilities are the enablers. XLU outperforming tech = market rotating into AI infrastructure over AI hype.",
+      "description": "Select Sector Utilities ETF \u2014 traditionally the \u2018boring\u2019 dividend play. But data centers need massive, reliable electricity, making utilities the quiet AI winners. Rising = market pricing in power demand growth or seeking safety. \ud83d\udd17 AI thesis: XLU outperforming tech = the market rotating from AI hype into AI infrastructure reality. Utilities are the \u2018follow the capex\u2019 pick that most people overlook.",
       "value": 46.5,
       "direction": "up",
       "unit": "$",
@@ -21829,7 +21829,7 @@
     "gsci_spy_ratio": {
       "name": "Commodities / S&P 500",
       "name_zh": "\u5927\u5b97\u5546\u54c1/\u6807\u666e500\u6bd4\u7387",
-      "description": "GSG/SPY ratio \u2014 the broadest measure of real vs financial asset performance. A sustained move above 1.0 confirms the regime change from financial assets to hard assets. Currently turning from decades-long lows.",
+      "description": "Ratio of commodities (GSG) to the S&P 500 (SPY) \u2014 the broadest measure of real assets vs financial assets performance. Rising = commodities outperforming stocks (a regime shift). Currently near multi-decade lows, comparable to 1971 and 1999 \u2014 both preceded massive commodity bull markets. \ud83d\udd17 Hard Assets thesis: this is the single most important chart for the thesis. A sustained turn upward confirms the regime change from financial assets to hard assets.",
       "value": 0.0363,
       "direction": "up",
       "unit": "ratio",
@@ -22901,7 +22901,7 @@
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
-      "description": "The 'fear gauge'. Measures S&P 500 implied volatility. Below 15 = complacency, above 25 = elevated fear, above 35 = panic. Spikes tend to be short-lived but signal regime shifts.",
+      "description": "CBOE Volatility Index \u2014 measures 30-day implied volatility of S&P 500 options. Below 15 = complacency, 15-20 = normal, 20-25 = elevated concern, above 30 = fear, above 40 = panic. Spikes tend to be short-lived but can signal regime shifts. Useful as a contrarian indicator: extreme complacency often precedes corrections.",
       "value": 20.6,
       "direction": "down",
       "unit": "index",
@@ -23973,7 +23973,7 @@
     "btc": {
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
-      "description": "Digital debasement hedge. Correlates with global liquidity \u2014 when central banks expand balance sheets, BTC tends to rise. Also a barometer of risk appetite and monetary system distrust.",
+      "description": "The largest cryptocurrency by market cap. Highly correlated with global liquidity \u2014 when central banks expand balance sheets, BTC tends to rise. Part risk asset, part monetary system protest vote. Rising = liquidity expansion + growing distrust of traditional monetary system. \ud83d\udd17 Weak Dollar thesis: expect BTC to benefit as fiscal dominance forces central banks back into monetary expansion. BTC is the digital version of the same trade as gold.",
       "value": 68788.1875,
       "direction": "down",
       "unit": "$",
@@ -25045,7 +25045,7 @@
     "cb_gold_buying": {
       "name": "Central Bank Gold Buying",
       "name_zh": "\u592e\u884c\u8d2d\u91d1\u91cf",
-      "description": "Quarterly data from World Gold Council. Central banks have been net buyers since 2010, accelerating post-2022 (sanctions on Russia). This is the structural floor under gold \u2014 sovereign entities voting to de-dollarize.",
+      "description": "Annual central bank gold purchases (World Gold Council data, quarterly updates). Central banks have been net buyers since 2010, sharply accelerating after 2022 when Western sanctions froze Russia\u2019s FX reserves. Rising = central banks diversifying away from dollars into gold. \ud83d\udd17 Hard Assets thesis: this is the structural floor under gold prices. Sovereign entities are voting with their reserves to de-dollarize \u2014 the most powerful validation of the hard-assets regime shift.",
       "value": 1000.0,
       "direction": "up",
       "unit": "tonnes/yr",
@@ -25137,7 +25137,7 @@
     "csi300": {
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
-      "description": "China's benchmark equity index (top 300 A-shares). The cleanest signal of whether domestic and foreign capital is returning to Chinese markets.",
+      "description": "China\u2019s large-cap benchmark \u2014 the top 300 A-shares listed in Shanghai and Shenzhen. Primarily driven by domestic investors (unlike HSI). Rising = capital flowing into Chinese equities, falling = outflows or policy concerns. \ud83d\udd17 China thesis: the cleanest signal of whether the re-rating thesis is playing out. Sustained moves above key resistance levels confirm that \u2018uninvestable\u2019 is being repriced.",
       "value": 4660.4102,
       "direction": "down",
       "unit": "index",
@@ -26161,7 +26161,7 @@
     "hsi": {
       "name": "Hang Seng Index",
       "name_zh": "\u6052\u751f\u6307\u6570",
-      "description": "Hong Kong's benchmark \u2014 the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment toward China than onshore CSI 300.",
+      "description": "Hong Kong\u2019s benchmark equity index \u2014 the offshore window into Chinese markets. Unlike CSI 300, HSI is heavily influenced by foreign capital flows and global sentiment toward China. Rising = foreign capital warming to China, falling = foreign investors pulling back. \ud83d\udd17 China thesis: HSI outperforming CSI 300 = global capital returning to China. This is the signal that the \u2018uninvestable\u2019 narrative is cracking in international markets.",
       "value": 26567.1191,
       "direction": "down",
       "unit": "index",
@@ -27233,7 +27233,7 @@
     "kweb": {
       "name": "China Internet ETF",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
-      "description": "KraneShares CSI China Internet ETF. Tracks Chinese tech (Alibaba, Tencent, PDD, etc.). A proxy for foreign investor sentiment on Chinese tech and regulatory risk.",
+      "description": "KraneShares CSI China Internet ETF \u2014 tracks China\u2019s tech giants (Alibaba, Tencent, PDD, JD, etc.). The most volatile proxy for foreign sentiment on Chinese tech. Rising = market pricing regulatory risk as manageable and growth as undervalued. Falling = regulatory fears or US-China tensions. \ud83d\udd17 China thesis: KWEB recovering strongly = the market recognizing China tech at these valuations is a generational opportunity.",
       "value": 32.79,
       "direction": "up",
       "unit": "$",
@@ -28305,7 +28305,7 @@
     "china_pmi": {
       "name": "China Mfg PMI",
       "name_zh": "\u4e2d\u56fd\u5236\u9020\u4e1aPMI",
-      "description": "NBS Manufacturing PMI. 50 = expansion/contraction line. Sustained above 51 confirms recovery is real; below 49 signals contraction.",
+      "description": "National Bureau of Statistics Manufacturing Purchasing Managers Index. Above 50 = manufacturing expanding, below 50 = contracting. The most timely monthly gauge of China\u2019s factory sector health. \ud83d\udd17 China thesis: sustained readings above 51 confirm the recovery is real and broadening, not just stimulus-driven. Below 49 would challenge the thesis.",
       "value": 50.1,
       "direction": "down",
       "unit": "index",
@@ -28557,7 +28557,7 @@
     "china_retail_sales": {
       "name": "China Retail Sales YoY",
       "name_zh": "\u4e2d\u56fd\u793e\u96f6\u540c\u6bd4",
-      "description": "Monthly year-over-year growth in Chinese retail sales (NBS). The key gauge for whether China's consumption pivot thesis is playing out. Needs to sustain 4%+ and ideally move toward 5-6%.",
+      "description": "Year-over-year growth in Chinese retail sales (NBS, monthly). The key gauge of whether Chinese consumers are spending again. Rising = domestic consumption recovering, falling = consumer confidence still weak. \ud83d\udd17 China thesis: the consumption pivot is central to the bull case. Needs to sustain 4%+ and ideally move toward 5-6% to confirm China\u2019s economy is rebalancing from investment to consumption. Below 3% is a warning sign.",
       "value": 3.7,
       "direction": "up",
       "unit": "% YoY",
@@ -28809,7 +28809,7 @@
     "eem": {
       "name": "MSCI Emerging Markets ETF",
       "name_zh": "\u65b0\u5174\u5e02\u573aETF",
-      "description": "Broad EM equity benchmark. Tracks whether capital is flowing into or out of developing markets. EM outperforming DM = dollar-weakness + fragmentation trade working.",
+      "description": "iShares MSCI Emerging Markets ETF \u2014 the broadest EM equity benchmark, heavily weighted toward China, Taiwan, India, Korea. Rising = capital flowing into developing markets, falling = dollar strength or risk-off pulling capital home. \ud83d\udd17 China & Fragmentation theses: EEM outperforming US equities = the dollar-weakness + multipolar-world trade is working. EM leadership historically coincides with commodity bull markets and dollar bear markets.",
       "value": 61.12,
       "direction": "up",
       "unit": "$",
