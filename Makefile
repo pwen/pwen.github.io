@@ -1,4 +1,4 @@
-.PHONY: help install serve build clean tags optimize-image
+.PHONY: help install serve build clean tags optimize-image fetch-data
 
 # Default target
 help:
@@ -7,6 +7,7 @@ help:
 	@echo "  make serve               - Start Jekyll development server"
 	@echo "  make build               - Build the site"
 	@echo "  make tags                - Generate tags data JSON"
+	@echo "  make fetch-data          - Fetch latest pulse metrics data"
 	@echo "  make optimize-image IMG=<filename> - Optimize image for web"
 	@echo "  make clean               - Clean generated files"
 	@echo "  make help                - Show this help message"
@@ -55,3 +56,8 @@ clean:
 	@echo "Cleaning generated files..."
 	bundle exec jekyll clean
 	rm -rf _site .jekyll-cache .sass-cache
+
+# Fetch latest pulse metrics data
+fetch-data:
+	@echo "Fetching pulse data..."
+	@export $$(cat .env | xargs) && uv run scripts/fetch_pulse_data.py

@@ -11,6 +11,9 @@ vendor/
 # Ignore macOS files
 .DS_Store
 
+# Environment variables
+.env
+
 # Ignore editor files
 *.swp
 *.swo

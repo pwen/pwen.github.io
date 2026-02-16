@@ -169,16 +169,61 @@
 }
 
 .chart-metric-expand.expanded {
-    max-height: 500px;
+    max-height: 600px;
     padding: 1rem 1.2rem 1.2rem;
     border-top: 1px solid var(--border-color, #e1e4e8);
+}
+
+.chart-expand-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .chart-metric-desc {
     font-size: 0.82rem;
     color: #666;
     line-height: 1.5;
-    margin-bottom: 0.75rem;
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+/* ─── Period buttons ─── */
+.chart-period-bar {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.chart-period-btn {
+    background: none;
+    border: none;
+    padding: 0.3rem 0.55rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.15s;
+    letter-spacing: 0.02em;
+    font-family: inherit;
+}
+
+.chart-period-btn:hover {
+    color: #555;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.chart-period-btn.active {
+    color: var(--primary-color, #2c3e50);
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .chart-metric-canvas-wrap {
@@ -231,8 +276,18 @@
         display: none;
     }
 
+    .chart-expand-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
     .chart-metric-expand.expanded {
         padding: 0.75rem 0.8rem 1rem;
+    }
+
+    .chart-period-btn {
+        padding: 0.25rem 0.45rem;
+        font-size: 0.65rem;
     }
 
     .chart-metric-canvas-wrap {

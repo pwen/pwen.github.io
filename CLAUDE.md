@@ -68,8 +68,14 @@ PLAN_DASHBOARD.md            — Technical architecture plan
 - CSS variables defined in `style.css` (:root)
 - Pulse page is self-contained within `.pulse` class scope
 
+## Python Conventions
+
+- Always use `python3` (never bare `python`)
+- Use **uv** for dependency management — dependencies are declared inline via PEP 723 script metadata (`# /// script` block), not requirements.txt
+- Run scripts with `uv run scripts/foo.py` (uv auto-installs deps from the inline metadata)
+- GitHub Actions use `astral-sh/setup-uv@v4`, not `actions/setup-python`
+
 ## What's Not Built Yet
 
-- **GitHub Action data pipeline** — `.github/scripts/fetch_pulse.py` + `.github/workflows/pulse.yml` to auto-update `metrics.json` daily using yfinance, FRED API, and optionally Claude for AI summary
 - **AI market summary** section on the Pulse page
 - Blog is minimal (1 post so far)

@@ -5,60 +5,22 @@
 
     const BASE = '/assets/data/pulse';
     let metricsData = null;
-    let activeChart = null; // currently rendered Chart.js instance
-    let expandedMetric = null; // currently expanded metric id
+    let activeChart = null;
+    let expandedMetric = null;
+    let activePeriod = 'YTD';
 
-    // ─── Category definitions ───
     const CATEGORIES = [
-        {
-            id: 'currencies',
-            name: 'CURRENCIES',
-            icon: '💵',
-            metrics: ['dxy', 'eurusd', 'usdcny', 'usd_reserves_share']
-        },
-        {
-            id: 'rates',
-            name: 'RATES & YIELDS',
-            icon: '🏛️',
-            metrics: ['us_10y', 'yield_curve', 'tips_5y', 'breakeven_10y', 'hy_spread']
-        },
-        {
-            id: 'liquidity',
-            name: 'LIQUIDITY & FISCAL',
-            icon: '🏦',
-            metrics: ['fed_balance_sheet', 'debt_to_gdp', 'tga']
-        },
-        {
-            id: 'metals',
-            name: 'METALS',
-            icon: '⛏️',
-            metrics: ['gold', 'silver', 'copper', 'uranium']
-        },
-        {
-            id: 'energy',
-            name: 'ENERGY',
-            icon: '⛽',
-            metrics: ['oil', 'natgas', 'energy_cpi']
-        },
-        {
-            id: 'equities',
-            name: 'US EQUITIES & SECTORS',
-            icon: '📈',
-            metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio']
-        },
-        {
-            id: 'sentiment',
-            name: 'SENTIMENT & ALTERNATIVES',
-            icon: '🌡️',
-            metrics: ['vix', 'btc', 'cb_gold_buying']
-        },
-        {
-            id: 'em',
-            name: 'EM & CHINA',
-            icon: '🌏',
-            metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'eem']
-        }
+        { id: 'currencies', name: 'CURRENCIES', metrics: ['dxy', 'eurusd', 'usdcny', 'usd_reserves_share'] },
+        { id: 'rates', name: 'RATES & YIELDS', metrics: ['us_10y', 'yield_curve', 'tips_5y', 'breakeven_10y', 'hy_spread'] },
+        { id: 'liquidity', name: 'LIQUIDITY & FISCAL', metrics: ['fed_balance_sheet', 'debt_to_gdp', 'tga'] },
+        { id: 'metals', name: 'METALS', metrics: ['gold', 'silver', 'copper', 'uranium'] },
+        { id: 'energy', name: 'ENERGY', metrics: ['oil', 'natgas', 'energy_cpi'] },
+        { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio'] },
+        { id: 'sentiment', name: 'SENTIMENT & ALTERNATIVES', metrics: ['vix', 'btc', 'cb_gold_buying'] },
+        { id: 'em', name: 'EM & CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'eem'] }
     ];
+
+    const PERIODS = ['1M', '3M', '6M', 'YTD', '1Y', '5Y'];
 
     // ─── Bootstrap ───
     async function init() {
@@ -105,7 +67,6 @@
             `;
         }).join('');
 
-        // Bind category collapse/expand
         container.querySelectorAll('.chart-category-header').forEach(header => {
             header.addEventListener('click', () => {
                 const catId = header.dataset.cat;
@@ -121,7 +82,6 @@
             });
         });
 
-        // Bind metric row clicks
         container.querySelectorAll('.chart-metric-row').forEach(row => {
             row.addEventListener('click', () => toggleMetricChart(row.dataset.metric));
         });
@@ -131,6 +91,9 @@
     function renderMetricRow(id, m) {
         const changeText = formatChangeText(m);
         const dir = m.direction === 'up' ? 'up' : 'down';
+        const periodButtons = PERIODS.map(p =>
+            `<button class="chart-period-btn${p === activePeriod ? ' active' : ''}" data-period="${p}">${p}</button>`
+        ).join('');
 
         return `
             <div class="chart-metric-row" data-metric="${id}">
@@ -141,11 +104,15 @@
                 <div class="chart-metric-data">
                     <span class="chart-metric-value">${formatValue(m)}</span>
                     <span class="chart-metric-change ${dir}">${changeText}</span>
-                    <span class="chart-metric-icon" title="View chart">📊</span>
                 </div>
             </div>
             <div class="chart-metric-expand" id="expand-${id}">
-                <div class="chart-metric-desc" id="desc-${id}"></div>
+                <div class="chart-expand-header">
+                    <div class="chart-metric-desc" id="desc-${id}"></div>
+                    <div class="chart-period-bar" id="periods-${id}">
+                        ${periodButtons}
+                    </div>
+                </div>
                 <div class="chart-metric-canvas-wrap">
                     <canvas id="canvas-${id}"></canvas>
                 </div>
@@ -159,7 +126,6 @@
         const row = document.querySelector(`.chart-metric-row[data-metric="${metricId}"]`);
         if (!expandEl || !row) return;
 
-        // If already expanded, collapse
         if (expandedMetric === metricId) {
             expandEl.classList.remove('expanded');
             row.classList.remove('active');
@@ -169,7 +135,6 @@
             return;
         }
 
-        // Collapse previous
         if (expandedMetric) {
             const prevExpand = document.getElementById(`expand-${expandedMetric}`);
             const prevRow = document.querySelector(`.chart-metric-row[data-metric="${expandedMetric}"]`);
@@ -181,44 +146,96 @@
             if (activeChart) { activeChart.destroy(); activeChart = null; }
         }
 
-        // Expand new
         expandEl.classList.add('expanded');
         row.classList.add('active');
         row.querySelector('.chart-metric-arrow').textContent = '▾';
         expandedMetric = metricId;
 
-        // Show description
         const m = metricsData.metrics[metricId];
         const descEl = document.getElementById(`desc-${metricId}`);
-        if (descEl && m.description) {
-            descEl.textContent = m.description;
+        if (descEl && m.description) descEl.textContent = m.description;
+
+        // Bind period buttons
+        const periodBar = document.getElementById(`periods-${metricId}`);
+        if (periodBar) {
+            periodBar.querySelectorAll('.chart-period-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    activePeriod = btn.dataset.period;
+                    periodBar.querySelectorAll('.chart-period-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderChart(metricId);
+                });
+            });
         }
 
-        // Render chart
+        renderChart(metricId);
+    }
+
+    // ─── Render chart for current period ───
+    function renderChart(metricId) {
+        const m = metricsData.metrics[metricId];
         const canvas = document.getElementById(`canvas-${metricId}`);
-        if (canvas && m.spark && m.spark.length > 0) {
-            renderInlineChart(canvas, m);
+        if (!canvas) return;
+
+        if (activeChart) { activeChart.destroy(); activeChart = null; }
+
+        const chartData = getSlicedHistory(m, activePeriod);
+        if (!chartData || chartData.length === 0) return;
+
+        renderInlineChart(canvas, m, chartData);
+    }
+
+    // ─── Slice history by time period ───
+    function getSlicedHistory(m, period) {
+        // New format: history is array of [date_str, value] pairs
+        if (m.history && Array.isArray(m.history) && m.history.length > 0) {
+            const now = new Date();
+            let cutoff;
+
+            switch (period) {
+                case '1M': cutoff = new Date(now); cutoff.setMonth(cutoff.getMonth() - 1); break;
+                case '3M': cutoff = new Date(now); cutoff.setMonth(cutoff.getMonth() - 3); break;
+                case '6M': cutoff = new Date(now); cutoff.setMonth(cutoff.getMonth() - 6); break;
+                case 'YTD': cutoff = new Date(now.getFullYear(), 0, 1); break;
+                case '1Y': cutoff = new Date(now); cutoff.setFullYear(cutoff.getFullYear() - 1); break;
+                case '5Y': cutoff = new Date(now); cutoff.setFullYear(cutoff.getFullYear() - 5); break;
+                default: cutoff = new Date(now.getFullYear(), 0, 1);
+            }
+
+            const cutoffStr = cutoff.toISOString().slice(0, 10);
+            return m.history
+                .filter(point => point[0] >= cutoffStr)
+                .map(point => ({ date: point[0], value: point[1] }));
         }
+
+        // Legacy: spark array (no dates)
+        if (m.spark && m.spark.length > 0) {
+            return m.spark.map((v, i) => ({
+                date: i === m.spark.length - 1 ? 'Now' : `-${m.spark.length - 1 - i}w`,
+                value: v,
+            }));
+        }
+
+        return null;
     }
 
     // ─── Render Chart.js inline chart ───
-    function renderInlineChart(canvas, m) {
+    function renderInlineChart(canvas, m, chartData) {
         const ctx = canvas.getContext('2d');
-        const data = m.spark;
-        const labels = data.map((_, i) => {
-            const weeksAgo = data.length - 1 - i;
-            if (weeksAgo === 0) return 'Now';
-            return `-${weeksAgo}w`;
-        });
+        const values = chartData.map(d => d.value);
+        const labels = chartData.map(d => d.date);
 
-        const color = m.direction === 'up' ? '#4caf87' : '#e05555';
+        // Color based on period performance
+        const isUp = values[values.length - 1] >= values[0];
+        const color = isUp ? '#4caf87' : '#e05555';
 
         activeChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels,
                 datasets: [{
-                    data,
+                    data: values,
                     borderColor: color,
                     backgroundColor: hexToRgba(color, 0.08),
                     fill: true,
@@ -247,7 +264,19 @@
                 },
                 scales: {
                     x: {
-                        ticks: { color: '#888', maxTicksLimit: 6, font: { size: 11 } },
+                        ticks: {
+                            color: '#888',
+                            maxTicksLimit: 6,
+                            font: { size: 11 },
+                            callback: function (val) {
+                                const label = this.getLabelForValue(val);
+                                if (label && label.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                                    const d = new Date(label + 'T00:00:00');
+                                    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                                }
+                                return label;
+                            }
+                        },
                         grid: { color: 'rgba(0,0,0,0.06)' }
                     },
                     y: {
@@ -255,10 +284,7 @@
                         grid: { color: 'rgba(0,0,0,0.06)' }
                     }
                 },
-                interaction: {
-                    intersect: false,
-                    mode: 'index'
-                }
+                interaction: { intersect: false, mode: 'index' }
             }
         });
     }
@@ -271,6 +297,8 @@
         if (m.unit === '$B') return `$${v}B`;
         if (m.unit === '$/oz') return `$${v.toLocaleString()}`;
         if (m.unit === '$') return `$${v.toLocaleString()}`;
+        if (m.unit === '$/bbl') return `$${v.toFixed(2)}`;
+        if (m.unit === '$/lb') return `$${v.toFixed(2)}`;
         if (m.unit === '$/MMBtu') return `$${v.toFixed(2)}`;
         if (m.unit === '%') return `${v.toFixed(2)}%`;
         if (m.unit === '% spread') return `${v.toFixed(2)}%`;
@@ -295,6 +323,11 @@
         if (m.unit === '$/oz' || m.unit === '$') return '$' + raw.toLocaleString();
         if (m.unit === '$T') return '$' + raw + 'T';
         if (m.unit === '$B') return '$' + raw + 'B';
+        if (m.unit === '$/bbl') return '$' + raw.toFixed(2);
+        if (m.unit === '$/lb') return '$' + raw.toFixed(2);
+        if (m.unit === '$/MMBtu') return '$' + raw.toFixed(2);
+        if (m.unit === 'rate') return raw.toFixed(4);
+        if (m.unit === 'ratio') return raw.toFixed(4);
         return String(raw);
     }
 
