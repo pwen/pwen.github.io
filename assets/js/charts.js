@@ -382,6 +382,7 @@
         if (!m.trend) return '';
         if (m.trend === 'up') return '▲';
         if (m.trend === 'down') return '▼';
+        if (m.trend === 'flat') return '▶';
         return '';
     }
 

@@ -146,7 +146,7 @@
 
 .chart-metric-trend.up { color: #4caf87; }
 .chart-metric-trend.down { color: #e05555; }
-.chart-metric-trend.flat { display: none; }
+.chart-metric-trend.flat { color: #999; font-size: 0.55em; }
 
 .chart-metric-data {
     display: flex;

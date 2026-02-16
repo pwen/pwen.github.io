@@ -30,7 +30,9 @@
                 "umich_sentiment",
                 "hy_spread",
                 "usdjpy",
-                "jp_10y"
+                "jp_10y",
+                "sp500",
+                "iwm"
             ]
         },
         {
@@ -125,7 +127,9 @@
                 "jp_10y",
                 "brent",
                 "aluminum",
-                "remx"
+                "remx",
+                "sp500",
+                "djia"
             ]
         }
     ],
