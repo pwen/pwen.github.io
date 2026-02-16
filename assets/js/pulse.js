@@ -144,15 +144,15 @@
             ? thesesData.theses.find(t => t.id === thesis)
             : null;
 
-        document.querySelectorAll('.metric-card').forEach(card => {
+        document.querySelectorAll('.metric-row').forEach(row => {
             if (thesis === 'all') {
-                card.classList.remove('dimmed', 'highlighted');
-            } else if (thesesObj && thesesObj.metrics.includes(card.dataset.metric)) {
-                card.classList.remove('dimmed');
-                card.classList.add('highlighted');
+                row.classList.remove('dimmed', 'highlighted');
+            } else if (thesesObj && thesesObj.metrics.includes(row.dataset.metric)) {
+                row.classList.remove('dimmed');
+                row.classList.add('highlighted');
             } else {
-                card.classList.add('dimmed');
-                card.classList.remove('highlighted');
+                row.classList.add('dimmed');
+                row.classList.remove('highlighted');
             }
         });
     }
@@ -197,6 +197,8 @@
     }
 
     // ─── Render Dashboard ───
+    let modalChart = null; // track active chart instance for cleanup
+
     function renderDashboard() {
         const container = document.getElementById('pulse-dashboard');
         if (!container) return;
@@ -213,54 +215,143 @@
             });
         });
 
-        container.innerHTML = metricIds.map(mId => {
+        // Table header
+        let html = `<div class="metric-table-head">
+            <span class="mt-col mt-name">NAME</span>
+            <span class="mt-col mt-value">LATEST</span>
+            <span class="mt-col mt-change">YTD</span>
+            <span class="mt-col mt-dots"></span>
+        </div>`;
+
+        // Table rows
+        html += metricIds.map(mId => {
             const m = metricsData.metrics[mId];
             if (!m) return '';
 
-            // Which theses use this metric?
             const relatedTheses = thesesData.theses.filter(t => t.metrics.includes(mId));
-
-            // Format value
             const displayValue = formatValue(m);
+            const changeText = formatChangeText(m);
+            const changeDir = formatChangeDir(m);
 
-            // Format change
-            const changeHtml = formatChange(m);
-
-            // Thesis dots
             const dotsHtml = relatedTheses.map(t =>
                 `<span class="metric-dot" style="background:${t.color}" data-tooltip="${shortTitle(t.id)}" data-thesis="${t.id}"></span>`
             ).join('');
 
-            // Info icon (only if description exists)
             const infoHtml = m.description
                 ? `<span class="metric-info" data-description="${m.description.replace(/"/g, '&quot;')}">ⓘ</span>`
                 : '';
 
             return `
-        <div class="metric-card" data-metric="${mId}">
-          <div class="metric-name">${m.name}${infoHtml}</div>
-          <div class="metric-value-row">
-            <span class="metric-value">${displayValue}</span>
-            ${changeHtml}
-          </div>
-          <canvas class="metric-spark" id="spark-${mId}"></canvas>
-          <div class="metric-dots">${dotsHtml}</div>
-        </div>`;
+            <div class="metric-row" data-metric="${mId}">
+                <span class="mt-col mt-name">${m.name}${infoHtml}</span>
+                <span class="mt-col mt-value">${displayValue}</span>
+                <span class="mt-col mt-change ${changeDir}">${changeText}</span>
+                <span class="mt-col mt-dots">${dotsHtml}</span>
+            </div>`;
         }).join('');
 
-        // Render sparklines
-        metricIds.forEach(mId => {
-            const m = metricsData.metrics[mId];
-            if (m?.spark) renderSparkline(`spark-${mId}`, m.spark, m.direction);
+        container.innerHTML = html;
+
+        // Row click → open chart modal
+        container.querySelectorAll('.metric-row').forEach(row => {
+            row.addEventListener('click', () => {
+                openChartModal(row.dataset.metric);
+            });
         });
 
-        // Dot click → filter by thesis
+        // Dot click → filter by thesis (stop propagation so row click doesn't fire)
         container.querySelectorAll('.metric-dot').forEach(dot => {
             dot.addEventListener('click', e => {
                 e.stopPropagation();
                 setActiveThesis(dot.dataset.thesis);
             });
         });
+
+        // Info icon → stop propagation
+        container.querySelectorAll('.metric-info').forEach(info => {
+            info.addEventListener('click', e => e.stopPropagation());
+        });
+    }
+
+    // ─── Chart Modal ───
+    function openChartModal(metricId) {
+        const m = metricsData.metrics[metricId];
+        if (!m || !m.spark) return;
+
+        const modal = document.getElementById('chart-modal');
+        const title = document.getElementById('chart-modal-title');
+        const subtitle = document.getElementById('chart-modal-subtitle');
+        const canvas = document.getElementById('chart-modal-canvas');
+        if (!modal || !canvas) return;
+
+        title.textContent = m.name;
+        const changeText = formatChangeText(m);
+        const changeDir = formatChangeDir(m);
+        subtitle.innerHTML = `<span class="modal-value">${formatValue(m)}</span> <span class="metric-change ${changeDir}">${changeText}</span>`;
+
+        // Destroy previous chart
+        if (modalChart) { modalChart.destroy(); modalChart = null; }
+
+        const color = m.direction === 'up' ? '#2d9a5d' : m.direction === 'down' ? '#d94040' : '#888';
+
+        modalChart = new Chart(canvas, {
+            type: 'line',
+            data: {
+                labels: m.spark.map((_, i) => i),
+                datasets: [{
+                    data: m.spark,
+                    borderColor: color,
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    pointHoverRadius: 4,
+                    pointHoverBackgroundColor: color,
+                    fill: {
+                        target: 'origin',
+                        above: color + '18',
+                        below: color + '18'
+                    },
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: true,
+                        callbacks: {
+                            label: ctx => formatValue({ ...m, value: ctx.parsed.y }),
+                            title: () => ''
+                        }
+                    }
+                },
+                scales: {
+                    x: { display: false },
+                    y: {
+                        display: true,
+                        position: 'right',
+                        grid: { color: '#f0f0f0' },
+                        ticks: { font: { size: 11 }, color: '#999' }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                },
+                animation: { duration: 300 }
+            }
+        });
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeChartModal() {
+        const modal = document.getElementById('chart-modal');
+        if (modal) modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (modalChart) { modalChart.destroy(); modalChart = null; }
     }
 
     function formatValue(m) {
@@ -277,58 +368,24 @@
         return v.toString();
     }
 
-    function formatChange(m) {
+    function formatChangeText(m) {
         if (m.change_ytd_pct != null) {
             const sign = m.change_ytd_pct > 0 ? '+' : '';
-            const dir = m.change_ytd_pct > 0 ? 'up' : m.change_ytd_pct < 0 ? 'down' : 'flat';
-            const arrow = m.change_ytd_pct > 0 ? '▲' : m.change_ytd_pct < 0 ? '▼' : '—';
-            return `<span class="metric-change ${dir}">${arrow} ${sign}${m.change_ytd_pct.toFixed(1)}% ytd</span>`;
+            return `${sign}${m.change_ytd_pct.toFixed(1)}%`;
         }
         if (m.change_ytd_bp != null) {
             const sign = m.change_ytd_bp > 0 ? '+' : '';
-            const dir = m.change_ytd_bp > 0 ? 'up' : m.change_ytd_bp < 0 ? 'down' : 'flat';
-            const arrow = m.change_ytd_bp > 0 ? '▲' : m.change_ytd_bp < 0 ? '▼' : '—';
-            return `<span class="metric-change ${dir}">${arrow} ${sign}${m.change_ytd_bp}bp ytd</span>`;
+            return `${sign}${m.change_ytd_bp}bp`;
         }
-        return '';
+        return '—';
     }
 
-    // ─── Sparkline (tiny Chart.js line) ───
-    function renderSparkline(canvasId, data, direction) {
-        const canvas = document.getElementById(canvasId);
-        if (!canvas) return;
-
-        const color = direction === 'up' ? '#2d9a5d' : direction === 'down' ? '#d94040' : '#888';
-
-        new Chart(canvas, {
-            type: 'line',
-            data: {
-                labels: data.map((_, i) => i),
-                datasets: [{
-                    data: data,
-                    borderColor: color,
-                    borderWidth: 1.5,
-                    pointRadius: 0,
-                    fill: {
-                        target: 'origin',
-                        above: color + '15',
-                        below: color + '15'
-                    },
-                    tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false }, tooltip: { enabled: false } },
-                scales: {
-                    x: { display: false },
-                    y: { display: false }
-                },
-                animation: false
-            }
-        });
+    function formatChangeDir(m) {
+        const val = m.change_ytd_pct ?? m.change_ytd_bp ?? 0;
+        return val > 0 ? 'up' : val < 0 ? 'down' : 'flat';
     }
+
+    // Sparkline removed — charts now live in modal popup
 
     // ─── Reflection (for past years) ───
     function renderReflection() {
@@ -345,9 +402,26 @@
     }
 
     // ─── Init on DOM ready ───
+    function bindModalClose() {
+        const modal = document.getElementById('chart-modal');
+        if (!modal) return;
+        // Close on backdrop click
+        modal.addEventListener('click', e => {
+            if (e.target === modal) closeChartModal();
+        });
+        // Close on × button
+        const btn = modal.querySelector('.chart-modal-close');
+        if (btn) btn.addEventListener('click', closeChartModal);
+        // Close on Escape
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeChartModal();
+        });
+    }
+
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', () => { bindModalClose(); init(); });
     } else {
+        bindModalClose();
         init();
     }
 

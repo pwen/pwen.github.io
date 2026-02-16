@@ -1,5 +1,17 @@
 # 看戏的地儿 (Pulse) — pwen.github.io/pulse
 
+## Status
+
+**Phase 1 DONE** — Frontend built with sample data.
+- pulse.html, pulse.css, pulse.js — interactive thesis tracker
+- theses-2026.json — thesis definitions with colors, icons, metric mappings
+- metrics.json — sample metric data (placeholder values, will be replaced by GitHub Action)
+- 5 thesis markdown files in _pulse/ — expandable write-ups
+- Year selector for future year-over-year support
+- Reflection section for past year reviews
+
+**Next: Phase 2** — Build GitHub Action data pipeline to auto-update metrics.json daily.
+
 ## Concept
 
 A thesis-driven dashboard. I define 5 convictions about where the world is

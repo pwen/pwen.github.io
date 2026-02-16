@@ -186,48 +186,91 @@
     border-bottom: 1px solid var(--border-color);
 }
 
-/* ─── Dashboard Grid ─── */
+/* ─── Dashboard Table ─── */
 .pulse-dashboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
     margin-bottom: 3rem;
-}
-
-.metric-card {
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 1rem 1.1rem;
-    background: #fff;
-    transition: opacity 0.3s, box-shadow 0.3s, transform 0.2s;
-    position: relative;
-}
-
-.metric-card:hover {
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    transform: translateY(-1px);
-}
-
-.metric-card.dimmed {
-    opacity: 0.2;
-}
-
-.metric-card.highlighted {
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-}
-
-.metric-name {
-    font-size: 0.8rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    margin-bottom: 0.35rem;
-    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    background: #fff;
+}
+
+.metric-table-head {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
+    padding: 0.6rem 1.25rem;
+    background: var(--light-gray, #fafafa);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-row {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.3s;
+}
+
+.metric-row:last-child {
+    border-bottom: none;
+}
+
+.metric-row:hover {
+    background: var(--light-gray, #fafafa);
+}
+
+.metric-row.dimmed {
+    opacity: 0.15;
+}
+
+.metric-row.highlighted {
+    background: var(--light-gray, #fafafa);
+}
+
+/* Table columns */
+.mt-col.mt-name {
+    flex: 1;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.mt-col.mt-value {
+    width: 100px;
+    text-align: right;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-variant-numeric: tabular-nums;
+}
+
+.mt-col.mt-change {
+    width: 80px;
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+.mt-col.mt-change.up { color: #2d9a5d; }
+.mt-col.mt-change.down { color: #d94040; }
+.mt-col.mt-change.flat { color: #888; }
+
+.mt-col.mt-dots {
+    width: 70px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+    align-items: center;
 }
 
 /* Info icon + tooltip */
@@ -276,51 +319,11 @@
     pointer-events: none;
 }
 
-.metric-value-row {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.metric-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    line-height: 1;
-}
-
-.metric-change {
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-.metric-change.up {
-    color: #2d9a5d;
-}
-
-.metric-change.down {
-    color: #d94040;
-}
-
-.metric-change.flat {
-    color: #888;
-}
-
-/* Sparkline */
-.metric-spark {
-    width: 100%;
-    height: 35px;
-    margin-bottom: 0.5rem;
-}
+.metric-change.up { color: #2d9a5d; }
+.metric-change.down { color: #d94040; }
+.metric-change.flat { color: #888; }
 
 /* Thesis dots */
-.metric-dots {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-
 .metric-dot {
     width: 8px;
     height: 8px;
@@ -334,7 +337,6 @@
     transform: scale(1.5);
 }
 
-/* Tooltip on hover */
 .metric-dot[data-tooltip]:hover::after {
     content: attr(data-tooltip);
     position: absolute;
@@ -349,6 +351,74 @@
     white-space: nowrap;
     z-index: 10;
     pointer-events: none;
+}
+
+/* ─── Chart Modal ─── */
+.chart-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.chart-modal-overlay.active {
+    display: flex;
+}
+
+.chart-modal {
+    background: #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 1;
+    padding: 0.25rem;
+}
+
+.chart-modal-close:hover {
+    color: var(--primary-color);
+}
+
+.chart-modal-header {
+    padding: 1.25rem 1.5rem 0.5rem;
+}
+
+.chart-modal-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0 0 0.25rem;
+}
+
+.modal-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.chart-modal-body {
+    padding: 0.5rem 1.5rem 1.5rem;
+    height: 300px;
+    position: relative;
 }
 
 /* ─── Reflection ─── */
@@ -385,16 +455,42 @@
         font-size: 1.6rem;
     }
 
-    .pulse-dashboard {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 0.75rem;
+    .metric-table-head {
+        display: none;
     }
 
-    .metric-value {
-        font-size: 1.25rem;
+    .metric-row {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .mt-col.mt-name {
+        flex: 1;
+        font-size: 0.82rem;
+    }
+
+    .mt-col.mt-value {
+        width: auto;
+        font-size: 0.85rem;
+    }
+
+    .mt-col.mt-change {
+        width: auto;
+        font-size: 0.8rem;
+    }
+
+    .mt-col.mt-dots {
+        display: none;
+    }
+
+    .chart-modal-overlay {
+        padding: 1rem;
+    }
+
+    .chart-modal-body {
+        height: 220px;
     }
 
     .thesis-card-header {
         padding: 0.75rem 1rem;
-    }
-}

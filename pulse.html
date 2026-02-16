@@ -21,9 +21,23 @@ permalink: /pulse/
     <!-- Thesis cards (clickable to filter dashboard, expandable for detail) -->
     <div class="pulse-theses" id="pulse-theses"></div>
 
-    <!-- Dashboard metrics grid -->
+    <!-- Dashboard metrics table -->
     <h2 class="pulse-section-title">Dashboard</h2>
     <div class="pulse-dashboard" id="pulse-dashboard"></div>
+
+    <!-- Chart modal -->
+    <div class="chart-modal-overlay" id="chart-modal">
+        <div class="chart-modal">
+            <button class="chart-modal-close">&times;</button>
+            <div class="chart-modal-header">
+                <h3 id="chart-modal-title"></h3>
+                <div id="chart-modal-subtitle"></div>
+            </div>
+            <div class="chart-modal-body">
+                <canvas id="chart-modal-canvas"></canvas>
+            </div>
+        </div>
+    </div>
 
     <!-- Year reflection (shown for past years) -->
     <div class="pulse-reflection" id="pulse-reflection" style="display:none;">
