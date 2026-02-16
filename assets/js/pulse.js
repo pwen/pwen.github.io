@@ -10,8 +10,8 @@
     let currentYear = 2026;
 
     const CATEGORY_FILES = [
-        'currencies', 'rates', 'liquidity', 'metals',
-        'energy', 'equities', 'sentiment', 'em'
+        'china', 'currencies', 'rates', 'liquidity', 'metals',
+        'energy', 'equities', 'sentiment', 'row'
     ];
 
     // ─── Bootstrap ───

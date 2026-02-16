@@ -45,11 +45,12 @@ CATEGORY_MAP = [
     ("currencies", ["dxy", "eurusd", "usdcny", "usd_reserves_share"]),
     ("rates", ["us_10y", "cn_10y", "cn_us_spread", "yield_curve", "tips_5y", "breakeven_10y", "hy_spread", "move"]),
     ("liquidity", ["fed_balance_sheet", "debt_to_gdp", "tga"]),
+    ("china", ["csi300", "hsi", "kweb", "china_pmi", "china_retail_sales", "china_cpi", "china_gdp", "china_m2"]),
     ("metals", ["gold", "silver", "copper", "uranium"]),
     ("energy", ["oil", "natgas", "energy_cpi"]),
     ("equities", ["sp500", "qqq", "smh", "xlu", "gsci_spy_ratio", "bigtech_capex", "growth_value", "cap_equal", "atoms_bits"]),
     ("sentiment", ["vix", "btc", "cb_gold_buying", "us_ism_pmi", "us_gdp", "us_cpi", "umich_sentiment"]),
-    ("em", ["csi300", "hsi", "kweb", "inda", "ilf", "eem", "china_pmi", "china_retail_sales", "china_cpi", "china_gdp", "china_m2"]),
+    ("row", ["eem", "inda", "ilf"]),
 ]
 
 # ─── Metric definitions ─────────────────────────────────────────────────────

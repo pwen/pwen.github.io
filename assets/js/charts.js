@@ -11,6 +11,7 @@
     let changeMode = 'auto'; // 'auto' | 'bp' | 'pct'
 
     const CATEGORIES = [
+        { id: 'china', name: 'CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'china_cpi', 'china_gdp', 'china_m2'] },
         { id: 'currencies', name: 'CURRENCIES', metrics: ['dxy', 'eurusd', 'usdcny', 'usd_reserves_share'] },
         { id: 'rates', name: 'RATES & YIELDS', metrics: ['us_10y', 'cn_10y', 'cn_us_spread', 'yield_curve', 'tips_5y', 'breakeven_10y', 'hy_spread', 'move'] },
         { id: 'liquidity', name: 'LIQUIDITY & FISCAL', metrics: ['fed_balance_sheet', 'debt_to_gdp', 'tga'] },
@@ -18,7 +19,7 @@
         { id: 'energy', name: 'ENERGY', metrics: ['oil', 'natgas', 'energy_cpi'] },
         { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio', 'bigtech_capex', 'growth_value', 'cap_equal', 'atoms_bits'] },
         { id: 'sentiment', name: 'SENTIMENT & ALTERNATIVES', metrics: ['vix', 'btc', 'cb_gold_buying', 'us_ism_pmi', 'us_gdp', 'us_cpi', 'umich_sentiment'] },
-        { id: 'em', name: 'EM & CHINA', metrics: ['csi300', 'hsi', 'kweb', 'inda', 'ilf', 'eem', 'china_pmi', 'china_retail_sales', 'china_cpi', 'china_gdp', 'china_m2'] }
+        { id: 'row', name: 'REST OF WORLD', metrics: ['eem', 'inda', 'ilf'] }
     ];
 
     const PERIODS = ['1M', '3M', '6M', 'YTD', '1Y', '5Y'];
