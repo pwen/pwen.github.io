@@ -16,6 +16,14 @@
     align-items: baseline;
     gap: 1.5rem;
     margin-bottom: 0.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pulse-title-row .pulse-section-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .pulse-title-row h1 {
@@ -72,6 +80,7 @@
 
 .thesis-card.highlighted {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    background: rgba(91, 141, 239, 0.06);
 }
 
 .thesis-card.selected {

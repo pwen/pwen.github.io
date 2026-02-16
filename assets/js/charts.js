@@ -69,6 +69,7 @@
                             <span class="ch-chg">1M</span>
                             <span class="ch-chg">YTD</span>
                             <span class="ch-chg">1Y</span>
+                            <span class="ch-source">SOURCE</span>
                             <span class="ch-dots"></span>
                         </div>
                         ${metricRows}
@@ -100,7 +101,8 @@
     // ─── Single metric row ───
     function renderMetricRow(id, m) {
         const changeText = formatChangeText(m);
-        const dir = m.direction === 'up' ? 'up' : 'down';
+        const ytdVal = m.change_ytd_pct ?? m.change_ytd_bp ?? 0;
+        const dirYtd = ytdVal > 0 ? 'up' : ytdVal < 0 ? 'down' : 'flat';
         const periodButtons = PERIODS.map(p =>
             `<button class="chart-period-btn${p === activePeriod ? ' active' : ''}" data-period="${p}">${p}</button>`
         ).join('');
@@ -114,6 +116,8 @@
         const chg1y = formatPeriodChange(m, 365);
         const dir1y = periodChangeDir(m, 365);
 
+        const sourceLabel = (m.source || '').split(':')[0].toUpperCase() || '—';
+
         return `
             <div class="chart-metric-row" data-metric="${id}">
                 <div class="chart-metric-info">
@@ -125,8 +129,9 @@
                     <span class="chart-metric-value">${formatValue(m)}</span>
                     <span class="chart-metric-change ${dir1w}">${chg1w}</span>
                     <span class="chart-metric-change ${dir1m}">${chg1m}</span>
-                    <span class="chart-metric-change ${dir}">${changeText}</span>
+                    <span class="chart-metric-change ytd ${dirYtd}">${changeText}</span>
                     <span class="chart-metric-change ${dir1y}">${chg1y}</span>
+                    <span class="chart-metric-source">${sourceLabel}</span>
                 </div>
             </div>
             <div class="chart-metric-expand" id="expand-${id}">
@@ -478,7 +483,7 @@
                     dir = periodChangeDir(m, days);
                 }
                 el.textContent = text;
-                el.className = `chart-metric-change ${dir}`;
+                el.className = `chart-metric-change ${days === null ? 'ytd ' : ''}${dir}`;
             });
         });
     }
