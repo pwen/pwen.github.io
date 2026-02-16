@@ -5,7 +5,33 @@ permalink: /pulse/
 ---
 
 <div class="pulse">
-    <h1>看戏的地儿</h1>
-    <p class="pulse-subtitle">看戏的地儿 — Tracking my theses on where the world is heading.</p>
-    <p class="pulse-placeholder">Coming soon — data pipeline under construction.</p>
+    <div class="pulse-header">
+        <div class="pulse-title-row">
+            <h1>看戏的地儿</h1>
+            <div class="pulse-year-selector">
+                <select id="pulse-year">
+                    <option value="2026" selected>2026</option>
+                </select>
+            </div>
+        </div>
+        <p class="pulse-subtitle">Tracking my theses on where the world is heading.</p>
+        <p class="pulse-updated" id="pulse-updated"></p>
+    </div>
+
+    <!-- Thesis cards (clickable to filter dashboard, expandable for detail) -->
+    <div class="pulse-theses" id="pulse-theses"></div>
+
+    <!-- Dashboard metrics grid -->
+    <h2 class="pulse-section-title">Dashboard</h2>
+    <div class="pulse-dashboard" id="pulse-dashboard"></div>
+
+    <!-- Year reflection (shown for past years) -->
+    <div class="pulse-reflection" id="pulse-reflection" style="display:none;">
+        <h2 class="pulse-section-title">Reflection</h2>
+        <div id="pulse-reflection-content"></div>
+    </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<link rel="stylesheet" href="{{ '/assets/css/pulse.css' | relative_url }}">
+<script src="{{ '/assets/js/pulse.js' | relative_url }}"></script>

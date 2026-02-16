@@ -1,0 +1,400 @@
+/* ─── Pulse Page ─── */
+
+.pulse {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+.pulse-header {
+    margin-bottom: 2rem;
+}
+
+.pulse-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.pulse-title-row h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.pulse-year-selector select {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--text-color);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.pulse-subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.pulse-updated {
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* ─── Thesis Cards ─── */
+.pulse-theses {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.thesis-card {
+    border: 1px solid var(--border-color);
+    border-left: 4px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    transition: opacity 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.thesis-card.dimmed {
+    opacity: 0.25;
+}
+
+.thesis-card.highlighted {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.thesis-card.selected {
+    border-left-width: 5px;
+}
+
+.thesis-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    user-select: none;
+}
+
+.thesis-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.thesis-header-text {
+    flex: 1;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.thesis-header-text:hover .thesis-title {
+    opacity: 0.7;
+}
+
+.thesis-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: opacity 0.2s;
+}
+
+.thesis-summary {
+    font-size: 0.88rem;
+    color: #888;
+    line-height: 1.5;
+}
+
+.thesis-toggle {
+    font-size: 0.8rem;
+    color: #999;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    cursor: pointer;
+    padding: 0.25rem;
+    margin-top: 2px;
+}
+
+.thesis-toggle:hover {
+    color: var(--primary-color);
+}
+
+.thesis-card.expanded .thesis-toggle {
+    transform: rotate(90deg);
+}
+
+.thesis-body {
+    display: none;
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    border-top: 1px solid var(--border-color);
+    margin: 0 1.25rem;
+    padding-top: 1rem;
+}
+
+.thesis-card.expanded .thesis-body {
+    display: block;
+}
+
+.thesis-body h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 1.25rem 0 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.thesis-body h2:first-child {
+    margin-top: 0;
+}
+
+.thesis-body p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    color: #444;
+}
+
+.thesis-body ul,
+.thesis-body li {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+.thesis-body em {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* ─── Section Title ─── */
+.pulse-section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ─── Dashboard Grid ─── */
+.pulse-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.metric-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    background: #fff;
+    transition: opacity 0.3s, box-shadow 0.3s, transform 0.2s;
+    position: relative;
+}
+
+.metric-card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+.metric-card.dimmed {
+    opacity: 0.2;
+}
+
+.metric-card.highlighted {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.metric-name {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.35rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Info icon + tooltip */
+.metric-info {
+    font-size: 0.75rem;
+    color: #bbb;
+    cursor: help;
+    position: relative;
+    flex-shrink: 0;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.metric-info:hover {
+    color: #888;
+}
+
+.metric-info:hover::after {
+    content: attr(data-description);
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    width: 260px;
+    white-space: normal;
+    z-index: 20;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.metric-info:hover::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-bottom-color: var(--primary-color);
+    z-index: 21;
+    pointer-events: none;
+}
+
+.metric-value-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.metric-change {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.metric-change.up {
+    color: #2d9a5d;
+}
+
+.metric-change.down {
+    color: #d94040;
+}
+
+.metric-change.flat {
+    color: #888;
+}
+
+/* Sparkline */
+.metric-spark {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 0.5rem;
+}
+
+/* Thesis dots */
+.metric-dots {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.metric-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.15s;
+    position: relative;
+}
+
+.metric-dot:hover {
+    transform: scale(1.5);
+}
+
+/* Tooltip on hover */
+.metric-dot[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* ─── Reflection ─── */
+.pulse-reflection {
+    margin-bottom: 3rem;
+}
+
+.pulse-reflection-content {
+    padding: 1.5rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.pulse-reflection-content h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.pulse-reflection-content p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 600px) {
+    .pulse-title-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .pulse-title-row h1 {
+        font-size: 1.6rem;
+    }
+
+    .pulse-dashboard {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .metric-value {
+        font-size: 1.25rem;
+    }
+
+    .thesis-card-header {
+        padding: 0.75rem 1rem;
+    }
+}

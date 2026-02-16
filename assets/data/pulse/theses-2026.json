@@ -1,0 +1,76 @@
+{
+    "year": 2026,
+    "theses": [
+        {
+            "id": "dollar",
+            "title": "美元正在结构性走弱",
+            "summary": "债务螺旋已经启动，美联储终将被迫接盘，美元信用在一点点被磨掉。",
+            "color": "#e8c547",
+            "icon": "💵",
+            "metrics": [
+                "dxy",
+                "gold",
+                "us_10y",
+                "fed_balance_sheet",
+                "debt_to_gdp",
+                "usd_reserves_share"
+            ]
+        },
+        {
+            "id": "china",
+            "title": "中国资产正在被重估",
+            "summary": "消费转型+制度改革+价值重估，我们可能正处在长牛的起点。",
+            "color": "#e05555",
+            "icon": "🇨🇳",
+            "metrics": [
+                "csi300",
+                "usdcny",
+                "china_pmi",
+                "china_retail_sales",
+                "kweb"
+            ]
+        },
+        {
+            "id": "fragmentation",
+            "title": "旧秩序正在瓦解，地缘竞争加剧",
+            "summary": "美国主导的单极霸权正在瓦解，群雄乱战的时期，战略资源就是权力，结构性通胀才刚开始。",
+            "color": "#4caf87",
+            "icon": "⚔️",
+            "metrics": [
+                "oil",
+                "uranium",
+                "copper",
+                "gold",
+                "dxy"
+            ]
+        },
+        {
+            "id": "ai",
+            "title": "AI 正在引发真正的生产力繁荣",
+            "summary": "这是真的——但它是通缩力量还是通胀性资本支出陷阱？未知因素。",
+            "color": "#5b8def",
+            "icon": "🤖",
+            "metrics": [
+                "qqq",
+                "smh",
+                "energy_cpi",
+                "copper"
+            ]
+        },
+        {
+            "id": "hard-assets",
+            "title": "Hard assets are entering a structural bull market",
+            "summary": "Underinvestment, debasement, energy transition demand, and geopolitical premium converge.",
+            "color": "#b07ce8",
+            "icon": "⛏️",
+            "metrics": [
+                "gold",
+                "oil",
+                "copper",
+                "uranium",
+                "gsci_spy_ratio"
+            ]
+        }
+    ],
+    "reflection": null
+}
