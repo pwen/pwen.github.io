@@ -55,7 +55,7 @@ CATEGORY_MAP = [
 # ─── Metric definitions ─────────────────────────────────────────────────────
 
 # Each metric: key → config dict
-# source_type: "yfinance", "fred", "computed", "manual"
+# source_type: "yfinance", "fred", "computed", "derived", "manual"
 METRICS = {
     # ── Currencies ──
     "dxy": {
@@ -143,11 +143,12 @@ METRICS = {
         "name": "China–US 10Y Spread",
         "name_zh": "中美10年期利差",
         "description": "China 10Y minus US 10Y yield. Negative = capital outflow pressure on CNY. Narrowing (less negative) = easing pressure, CNY stabilizes. A closing gap supports the China re-rating thesis.",
-        "source_type": "manual",
-        "frequency": "monthly",
+        "source_type": "derived",
+        "derive_from": ["cn_10y", "us_10y"],
+        "derive_op": "subtract_bp",
         "unit": "bp",
         "change_mode": "bp",
-        "note": "Monthly — computed from cn_10y and us_10y",
+        "note": "Derived: (cn_10y − us_10y) × 100",
     },
     "hy_spread": {
         "name": "HY Credit Spread (OAS)",
@@ -646,6 +647,11 @@ def main():
                 config["basket_a"], config["basket_b"], start_date, end_date
             )
 
+        elif source == "derived":
+            # Defer — computed in second pass after all other metrics are fetched
+            print("deferred (derived)")
+            continue
+
         elif source == "manual":
             # Keep existing data for manual metrics
             if metric_id in existing:
@@ -713,6 +719,83 @@ def main():
         result_metrics[metric_id] = m
         count = len(history_weekly)
         print(f"✓ {count} points, value={current_value}")
+
+    # ── Second pass: derived metrics ──
+    for metric_id, config in METRICS.items():
+        if config["source_type"] != "derived":
+            continue
+        print(f"  [{metric_id}] (derived) ...", end=" ", flush=True)
+
+        sources = config["derive_from"]  # e.g. ["cn_10y", "us_10y"]
+        op = config["derive_op"]         # e.g. "subtract_bp"
+
+        # Collect history from already-fetched metrics
+        src_histories = []
+        ok = True
+        for src_id in sources:
+            src_m = result_metrics.get(src_id)
+            if not src_m or not src_m.get("history"):
+                print(f"✗ missing source metric {src_id}")
+                errors.append(metric_id)
+                ok = False
+                break
+            src_histories.append({h[0]: h[1] for h in src_m["history"]})
+        if not ok:
+            if metric_id in existing:
+                result_metrics[metric_id] = existing[metric_id]
+            continue
+
+        # Align on dates: use the sparser series as the base, find closest dates in the denser one
+        hist_a, hist_b = src_histories[0], src_histories[1]
+        base, other = (hist_a, hist_b) if len(hist_a) <= len(hist_b) else (hist_b, hist_a)
+        base_is_a = len(hist_a) <= len(hist_b)
+        other_dates = sorted(other.keys())
+
+        history = []
+        for d in sorted(base.keys()):
+            # Find closest date in the other series (within 7 days)
+            d_dt = datetime.strptime(d, "%Y-%m-%d")
+            closest = min(other_dates, key=lambda dd: abs((datetime.strptime(dd, "%Y-%m-%d") - d_dt).days))
+            if abs((datetime.strptime(closest, "%Y-%m-%d") - d_dt).days) > 7:
+                continue
+            a_val = hist_a[d] if base_is_a else hist_a.get(closest, hist_a.get(d))
+            b_val = hist_b.get(closest, hist_b.get(d)) if base_is_a else hist_b[d]
+            if op == "subtract_bp":
+                val = round((a_val - b_val) * 100, 1)
+            elif op == "subtract":
+                val = round(a_val - b_val, 4)
+            else:
+                val = round(a_val / b_val, 4) if b_val != 0 else 0
+            history.append((d, val))
+
+        if not history:
+            print("✗ no data after derivation")
+            errors.append(metric_id)
+            if metric_id in existing:
+                result_metrics[metric_id] = existing[metric_id]
+            continue
+
+        history_weekly = downsample_weekly(history)
+        current_value = history[-1][1]
+        direction = "up" if len(history) >= 2 and history[-1][1] >= history[-2][1] else "down" if len(history) >= 2 else "flat"
+        change_mode = config.get("change_mode", "pct")
+        ytd = compute_ytd_change(history, change_mode)
+
+        m = {
+            "name": config["name"],
+            "name_zh": config.get("name_zh", ""),
+            "description": config["description"],
+            "value": current_value,
+            "direction": direction,
+            "unit": config["unit"],
+            "history": history_weekly,
+            "source": f"derived:{'+'.join(sources)}",
+        }
+        m.update(ytd)
+        if "note" in config:
+            m["note"] = config["note"]
+        result_metrics[metric_id] = m
+        print(f"✓ {len(history_weekly)} points, value={current_value}")
 
     # Write per-category files
     updated_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -830,7 +913,11 @@ def backfill_from_csv(metric_id: str, csv_path: str) -> None:
         elif curr < prev:
             direction = "down"
 
-    data["metrics"][metric_id] = {
+    # Compute YTD change
+    change_mode = config.get("change_mode", "pct")
+    ytd = compute_ytd_change([(h[0], h[1]) for h in history], change_mode)
+
+    metric_obj = {
         "name": config["name"],
         "name_zh": config.get("name_zh", ""),
         "description": config["description"],
@@ -841,6 +928,9 @@ def backfill_from_csv(metric_id: str, csv_path: str) -> None:
         "source": "manual",
         "note": config.get("note", ""),
     }
+    metric_obj.update(ytd)
+
+    data["metrics"][metric_id] = metric_obj
     data["updated"] = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
 
     with open(OUTPUT_PATH, "w") as f:

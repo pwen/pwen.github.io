@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T02:45:21Z",
+  "updated": "2026-02-16T02:55:37Z",
   "metrics": {
     "vix": {
       "name": "VIX",
@@ -2491,7 +2491,8 @@
         ]
       ],
       "source": "manual",
-      "note": "Monthly \u2014 ISM (no free API, backfill from CSV)"
+      "note": "Monthly \u2014 ISM (no free API, backfill from CSV)",
+      "change_ytd_pct": 0.0
     }
   }
 }

@@ -494,7 +494,20 @@
     }
 
     function formatChangeDir(m) {
-        const val = m.change_ytd_pct ?? m.change_ytd_bp ?? 0;
+        let val = m.change_ytd_pct ?? m.change_ytd_bp;
+        if (val == null && m.history && m.history.length >= 2) {
+            // Fallback: compute from history
+            const jan1 = new Date(new Date().getFullYear(), 0, 1);
+            let closest = null, closestDiff = Infinity;
+            for (const [dateStr, v] of m.history) {
+                const diff = Math.abs(new Date(dateStr) - jan1);
+                if (diff < closestDiff) { closestDiff = diff; closest = v; }
+            }
+            if (closest != null && closest !== 0) {
+                val = m.value - closest;
+            }
+        }
+        val = val ?? 0;
         return val > 0 ? 'up' : val < 0 ? 'down' : 'flat';
     }
 

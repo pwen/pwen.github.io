@@ -113,8 +113,7 @@
     // ─── Single metric row ───
     function renderMetricRow(id, m) {
         const changeText = formatChangeText(m);
-        const ytdVal = m.change_ytd_pct ?? m.change_ytd_bp ?? 0;
-        const dirYtd = ytdVal > 0 ? 'up' : ytdVal < 0 ? 'down' : 'flat';
+        const dirYtd = formatChangeDir(m);
         const periodButtons = PERIODS.map(p =>
             `<button class="chart-period-btn${p === activePeriod ? ' active' : ''}" data-period="${p}">${p}</button>`
         ).join('');
@@ -371,7 +370,16 @@
     }
 
     function formatChangeDir(m) {
-        const val = m.change_ytd_pct ?? m.change_ytd_bp ?? 0;
+        let val = m.change_ytd_pct ?? m.change_ytd_bp;
+        if (val == null) {
+            // Fallback: compute from history (same as formatChangeText)
+            if (shouldUseBp(m)) {
+                val = computeChangeBp(m, 'ytd');
+            } else {
+                val = computeChangePct(m, 'ytd');
+            }
+        }
+        val = val ?? 0;
         return val > 0 ? 'up' : val < 0 ? 'down' : 'flat';
     }
 
