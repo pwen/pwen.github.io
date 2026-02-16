@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T13:34:51Z",
+  "updated": "2026-02-16T13:49:07Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -3218,9 +3218,9 @@
       "change_ytd_pct": -1.4
     },
     "usd_reserves_share": {
-      "name": "USD Share of Reserves",
-      "name_zh": "\u7f8e\u5143\u50a8\u5907\u5360\u6bd4",
-      "description": "Share of global central bank reserves held in dollars (IMF COFER, quarterly, lagged). Falling = structural de-dollarization. Dropped from 72% in 2000: slow-moving but largely irreversible.",
+      "name": "USD Share of FX Reserves",
+      "name_zh": "\u7f8e\u5143\u5916\u6c47\u50a8\u5907\u5360\u6bd4",
+      "description": "USD share of global foreign-exchange reserves held by central banks (IMF COFER, quarterly, ~1 Q lag). Falling = structural de-dollarization. Down from 72 % in 2000 to ~57 %: slow-moving but largely irreversible.",
       "value": 56.3,
       "direction": "down",
       "unit": "%",

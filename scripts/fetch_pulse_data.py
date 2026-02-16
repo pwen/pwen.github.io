@@ -37,7 +37,7 @@ from fredapi import Fred
 
 FRED_API_KEY = os.environ.get("FRED_API_KEY")
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "assets" / "data" / "pulse"
-OUTPUT_PATH = OUTPUT_DIR / "metrics.json"  # legacy single-file (kept for backfill compat)
+OUTPUT_PATH = OUTPUT_DIR / "metrics.json"  # lightweight index (metadata only, no history)
 LOOKBACK_YEARS = 5
 
 # Category → metric IDs  (mirrors charts.js CATEGORIES)
@@ -885,15 +885,27 @@ def main():
         total_written += len(cat_metrics)
         print(f"  → {cat_path.name}: {len(cat_metrics)} metrics ({cat_path.stat().st_size / 1024:.0f} KB)")
 
-    # Also write combined metrics.json (for backfill compatibility)
-    combined = {"updated": updated_str, "metrics": result_metrics}
+    # Write lightweight metrics.json index (metadata only — no history arrays)
+    slim_metrics = {}
+    for mid, mdata in result_metrics.items():
+        slim = {k: v for k, v in mdata.items() if k != "history"}
+        slim_metrics[mid] = slim
+    combined = {"updated": updated_str, "metrics": slim_metrics}
     with open(OUTPUT_PATH, "w") as f:
         json.dump(combined, f, indent=2)
 
-    print(f"\n✓ Wrote {total_written} metrics across {len(CATEGORY_MAP)} category files + metrics.json")
+    print(f"\n✓ Wrote {total_written} metrics across {len(CATEGORY_MAP)} category files")
+    print(f"  metrics.json index: {OUTPUT_PATH.stat().st_size / 1024:.0f} KB (metadata only)")
     if errors:
         print(f"⚠ Failed metrics: {', '.join(errors)}")
-    print(f"  Combined file size: {OUTPUT_PATH.stat().st_size / 1024:.0f} KB")
+
+
+def _category_for_metric(metric_id: str) -> str | None:
+    """Return the category ID that contains the given metric, or None."""
+    for cat_id, metric_ids in CATEGORY_MAP:
+        if metric_id in metric_ids:
+            return cat_id
+    return None
 
 
 def backfill_from_csv(metric_id: str, csv_path: str) -> None:
@@ -914,6 +926,11 @@ def backfill_from_csv(metric_id: str, csv_path: str) -> None:
 
     if METRICS[metric_id]["source_type"] != "manual":
         print(f"✗ '{metric_id}' is not a manual metric (it's {METRICS[metric_id]['source_type']}-sourced).")
+        sys.exit(1)
+
+    cat_id = _category_for_metric(metric_id)
+    if not cat_id:
+        print(f"✗ '{metric_id}' is not assigned to any category in CATEGORY_MAP")
         sys.exit(1)
 
     csv_file = Path(csv_path)
@@ -951,9 +968,10 @@ def backfill_from_csv(metric_id: str, csv_path: str) -> None:
     # Sort by date
     rows.sort(key=lambda x: x[0])
 
-    # Load existing
-    if OUTPUT_PATH.exists():
-        with open(OUTPUT_PATH) as f:
+    # Load existing data from the category file (not the combined metrics.json)
+    cat_path = OUTPUT_DIR / f"{cat_id}.json"
+    if cat_path.exists():
+        with open(cat_path) as f:
             data = json.load(f)
     else:
         data = {"updated": "", "metrics": {}}
@@ -1004,13 +1022,27 @@ def backfill_from_csv(metric_id: str, csv_path: str) -> None:
     }
     metric_obj.update(ytd)
 
+    updated_str = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
     data["metrics"][metric_id] = metric_obj
-    data["updated"] = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
+    data["updated"] = updated_str
 
-    with open(OUTPUT_PATH, "w") as f:
+    # Write back to category file
+    with open(cat_path, "w") as f:
         json.dump(data, f, indent=2)
 
-    print(f"✓ Backfilled {metric_id} from {csv_path}")
+    # Update lightweight metrics.json index (metadata only — no history)
+    if OUTPUT_PATH.exists():
+        with open(OUTPUT_PATH) as f:
+            index_data = json.load(f)
+    else:
+        index_data = {"updated": "", "metrics": {}}
+    slim = {k: v for k, v in metric_obj.items() if k != "history"}
+    index_data["metrics"][metric_id] = slim
+    index_data["updated"] = updated_str
+    with open(OUTPUT_PATH, "w") as f:
+        json.dump(index_data, f, indent=2)
+
+    print(f"✓ Backfilled {metric_id} → {cat_path.name}")
     print(f"  {new_count} new points, {replaced_count} replaced, {len(history)} total")
     print(f"  Range: {history[0][0]} → {history[-1][0]}")
     print(f"  Latest: {current_value} {config['unit']} ({direction})")
