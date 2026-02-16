@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T14:50:42Z",
+  "updated": "2026-02-16T15:02:36Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -62,7 +62,7 @@
       "unit": "%",
       "source": "manual",
       "note": "Quarterly, lagged \u2014 IMF COFER",
-      "zscore": -2.2,
+      "zscore": -2.1,
       "signal": "ELEVATED",
       "trend": "down"
     },
