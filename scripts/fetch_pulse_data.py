@@ -43,7 +43,7 @@ LOOKBACK_YEARS = 5
 # Category → metric IDs  (mirrors charts.js CATEGORIES)
 CATEGORY_MAP = [
     ("currencies", ["dxy", "eurusd", "usdcny", "usd_reserves_share"]),
-    ("rates", ["us_10y", "yield_curve", "tips_5y", "breakeven_10y", "hy_spread", "move"]),
+    ("rates", ["us_10y", "cn_10y", "cn_us_spread", "yield_curve", "tips_5y", "breakeven_10y", "hy_spread", "move"]),
     ("liquidity", ["fed_balance_sheet", "debt_to_gdp", "tga"]),
     ("metals", ["gold", "silver", "copper", "uranium"]),
     ("energy", ["oil", "natgas", "energy_cpi"]),
@@ -128,6 +128,26 @@ METRICS = {
         "series": "T10YIE",
         "unit": "%",
         "change_mode": "bp",
+    },
+    "cn_10y": {
+        "name": "China 10Y Yield",
+        "name_zh": "中国10年期国债收益率",
+        "description": "China 10-year government bond yield. Falling = PBOC easing, deflation risk. Rising = growth expectations improving. The US-China spread drives capital flows.",
+        "source_type": "manual",
+        "frequency": "monthly",
+        "unit": "%",
+        "change_mode": "bp",
+        "note": "Monthly — PBOC / CEIC (no free API)",
+    },
+    "cn_us_spread": {
+        "name": "China–US 10Y Spread",
+        "name_zh": "中美10年期利差",
+        "description": "China 10Y minus US 10Y yield. Negative = capital outflow pressure on CNY. Narrowing (less negative) = easing pressure, CNY stabilizes. A closing gap supports the China re-rating thesis.",
+        "source_type": "manual",
+        "frequency": "monthly",
+        "unit": "bp",
+        "change_mode": "bp",
+        "note": "Monthly — computed from cn_10y and us_10y",
     },
     "hy_spread": {
         "name": "HY Credit Spread (OAS)",
