@@ -34,10 +34,10 @@
 }
 
 .pulse-year-selector select {
-    font-size: 1.3rem;
-    padding: 0.4rem 0.75rem;
+    font-size: 1.1rem;
+    padding: 0.3rem 0.6rem;
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 5px;
     background: #fff;
     color: var(--text-color);
     cursor: pointer;
@@ -47,7 +47,7 @@
 
 .pulse-subtitle {
     color: #666;
-    font-size: 1rem;
+    font-size: 0.85rem;
     margin: 0;
 }
 
