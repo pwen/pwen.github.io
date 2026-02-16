@@ -1071,7 +1071,9 @@
         ]
       ],
       "source": "yfinance:^GSPC",
-      "change_ytd_pct": -0.3
+      "change_ytd_pct": -0.3,
+      "zscore": 2.0,
+      "signal": "ELEVATED"
     },
     "qqq": {
       "name": "Nasdaq 100 ETF",
@@ -2143,7 +2145,9 @@
         ]
       ],
       "source": "yfinance:QQQ",
-      "change_ytd_pct": -1.8
+      "change_ytd_pct": -1.8,
+      "zscore": 1.9,
+      "signal": "ELEVATED"
     },
     "smh": {
       "name": "Semiconductor ETF",
@@ -3215,7 +3219,9 @@
         ]
       ],
       "source": "yfinance:SMH",
-      "change_ytd_pct": 9.2
+      "change_ytd_pct": 9.2,
+      "zscore": 2.9,
+      "signal": "EXTREME"
     },
     "xlu": {
       "name": "Utilities ETF (XLU)",
@@ -4287,7 +4293,9 @@
         ]
       ],
       "source": "yfinance:XLU",
-      "change_ytd_pct": 7.7
+      "change_ytd_pct": 7.7,
+      "zscore": 2.6,
+      "signal": "EXTREME"
     },
     "gsci_spy_ratio": {
       "name": "Commodities / S&P 500",
@@ -5359,7 +5367,9 @@
         ]
       ],
       "source": "derived:GSG",
-      "change_ytd_pct": 7.4
+      "change_ytd_pct": 7.4,
+      "zscore": -0.9,
+      "signal": "NORMAL"
     },
     "bigtech_capex": {
       "name": "Big Tech CapEx",
@@ -5456,7 +5466,9 @@
       ],
       "source": "manual",
       "note": "Quarterly, compiled from earnings \u2014 MSFT+GOOGL+AMZN+META+ORCL",
-      "change_ytd_pct": 0.0
+      "change_ytd_pct": 0.0,
+      "zscore": 2.7,
+      "signal": "EXTREME"
     },
     "growth_value": {
       "name": "Growth / Value",
@@ -6528,7 +6540,9 @@
         ]
       ],
       "source": "derived:VUG",
-      "change_ytd_pct": -11.9
+      "change_ytd_pct": -11.9,
+      "zscore": 0.2,
+      "signal": "NORMAL"
     },
     "cap_equal": {
       "name": "Cap-Weight / Equal-Weight",
@@ -7600,7 +7614,9 @@
         ]
       ],
       "source": "derived:SPY",
-      "change_ytd_pct": -5.1
+      "change_ytd_pct": -5.1,
+      "zscore": 1.2,
+      "signal": "NORMAL"
     },
     "atoms_bits": {
       "name": "Atoms vs Bits",
@@ -8672,7 +8688,9 @@
         ]
       ],
       "source": "derived:XLB+XLI+XLE+XME",
-      "change_ytd_pct": 39.1
+      "change_ytd_pct": 39.1,
+      "zscore": 3.0,
+      "signal": "EXTREME"
     }
   }
 }

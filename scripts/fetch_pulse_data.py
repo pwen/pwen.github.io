@@ -658,6 +658,40 @@ def apply_transform(data: list[tuple[str, float]], config: dict) -> list[tuple[s
     return data
 
 
+def compute_zscore(history: list) -> dict:
+    """Compute z-score and signal label from history data.
+
+    Uses full history to compute mean/std, then z = (latest - mean) / std.
+    Signal thresholds (matching sruth.app convention):
+        |z| < 1.5  → NORMAL
+        1.5 ≤ |z| < 2.5 → ELEVATED
+        |z| ≥ 2.5  → EXTREME
+    """
+    if not history or len(history) < 4:
+        return {}
+
+    values = [h[1] if isinstance(h, list) else h for h in history]
+    n = len(values)
+    mean = sum(values) / n
+    variance = sum((v - mean) ** 2 for v in values) / n
+    std = variance ** 0.5
+
+    if std == 0:
+        return {"zscore": 0.0, "signal": "NORMAL"}
+
+    z = round((values[-1] - mean) / std, 1)
+    az = abs(z)
+
+    if az >= 2.5:
+        signal = "EXTREME"
+    elif az >= 1.5:
+        signal = "ELEVATED"
+    else:
+        signal = "NORMAL"
+
+    return {"zscore": z, "signal": signal}
+
+
 def compute_yoy(data: list[tuple[str, float]]) -> list[tuple[str, float]]:
     """Compute YoY percent change for monthly data."""
     if len(data) < 13:
@@ -871,6 +905,13 @@ def main():
         result_metrics[metric_id] = m
         print(f"✓ {len(history_weekly)} points, value={current_value}")
 
+    # Compute z-scores for all metrics
+    for mid, mdata in result_metrics.items():
+        hist = mdata.get("history", [])
+        zinfo = compute_zscore(hist)
+        if zinfo:
+            mdata.update(zinfo)
+
     # Write per-category files
     updated_str = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -1021,6 +1062,9 @@ def backfill_from_csv(metric_id: str, csv_path: str) -> None:
         "note": config.get("note", ""),
     }
     metric_obj.update(ytd)
+    zinfo = compute_zscore(history)
+    if zinfo:
+        metric_obj.update(zinfo)
 
     updated_str = datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ")
     data["metrics"][metric_id] = metric_obj

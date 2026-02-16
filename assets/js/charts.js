@@ -11,10 +11,10 @@
     let changeMode = 'auto'; // 'auto' | 'bp' | 'pct'
 
     const CATEGORIES = [
-        { id: 'china', name: 'CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'china_cpi', 'china_gdp', 'china_m2'] },
         { id: 'currencies', name: 'CURRENCIES', metrics: ['dxy', 'eurusd', 'usdcny', 'usd_reserves_share'] },
         { id: 'rates', name: 'RATES & YIELDS', metrics: ['us_10y', 'cn_10y', 'cn_us_spread', 'yield_curve', 'tips_5y', 'breakeven_10y', 'hy_spread', 'move'] },
         { id: 'liquidity', name: 'LIQUIDITY & FISCAL', metrics: ['fed_balance_sheet', 'debt_to_gdp', 'tga'] },
+        { id: 'china', name: 'CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'china_cpi', 'china_gdp', 'china_m2'] },
         { id: 'metals', name: 'METALS', metrics: ['gold', 'silver', 'copper', 'uranium'] },
         { id: 'energy', name: 'ENERGY', metrics: ['oil', 'natgas', 'energy_cpi'] },
         { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'qqq', 'smh', 'xlu', 'gsci_spy_ratio', 'bigtech_capex', 'growth_value', 'cap_equal', 'atoms_bits'] },
@@ -77,6 +77,7 @@
                     <div class="chart-category-body" id="cat-body-${cat.id}">
                         <div class="chart-col-headers">
                             <span class="ch-name">NAME</span>
+                            <span class="ch-signal">SIGNAL</span>
                             <span class="ch-val">LATEST</span>
                             <span class="ch-chg">1W</span>
                             <span class="ch-chg">1M</span>
@@ -138,6 +139,7 @@
                     ${zhName}
                 </div>
                 <div class="chart-metric-data">
+                    <span class="chart-metric-signal ${(m.signal || 'NORMAL').toLowerCase()}">${formatSignal(m)}</span>
                     <span class="chart-metric-value">${formatValue(m)}</span>
                     <span class="chart-metric-change ${dir1w}">${chg1w}</span>
                     <span class="chart-metric-change ${dir1m}">${chg1m}</span>
@@ -336,6 +338,13 @@
     }
 
     // ─── Formatting helpers ───
+    function formatSignal(m) {
+        if (m.zscore == null) return '';
+        const z = m.zscore;
+        const sign = z >= 0 ? '+' : '';
+        return `${sign}${z.toFixed(1)}\u03C3`;
+    }
+
     function formatValue(m) {
         const v = m.value;
         if (v == null) return '—';

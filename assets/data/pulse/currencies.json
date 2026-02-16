@@ -1071,7 +1071,9 @@
         ]
       ],
       "source": "yfinance:DX-Y.NYB",
-      "change_ytd_pct": -1.6
+      "change_ytd_pct": -1.6,
+      "zscore": -0.8,
+      "signal": "NORMAL"
     },
     "eurusd": {
       "name": "EUR/USD",
@@ -2143,7 +2145,9 @@
         ]
       ],
       "source": "yfinance:EURUSD=X",
-      "change_ytd_pct": 1.0
+      "change_ytd_pct": 1.0,
+      "zscore": 1.4,
+      "signal": "NORMAL"
     },
     "usdcny": {
       "name": "USD/CNY",
@@ -3215,7 +3219,9 @@
         ]
       ],
       "source": "yfinance:CNY=X",
-      "change_ytd_pct": -1.4
+      "change_ytd_pct": -1.4,
+      "zscore": -0.1,
+      "signal": "NORMAL"
     },
     "usd_reserves_share": {
       "name": "USD Share of FX Reserves",
@@ -3307,7 +3313,9 @@
         ]
       ],
       "source": "manual",
-      "note": "Quarterly, lagged \u2014 IMF COFER"
+      "note": "Quarterly, lagged \u2014 IMF COFER",
+      "zscore": -2.2,
+      "signal": "ELEVATED"
     }
   }
 }

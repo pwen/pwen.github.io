@@ -1071,7 +1071,9 @@
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 9.7
+      "change_ytd_pct": 9.7,
+      "zscore": -1.0,
+      "signal": "NORMAL"
     },
     "natgas": {
       "name": "Natural Gas",
@@ -2143,7 +2145,9 @@
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -10.4
+      "change_ytd_pct": -10.4,
+      "zscore": -0.3,
+      "signal": "NORMAL"
     },
     "energy_cpi": {
       "name": "Energy Services CPI YoY",
@@ -2348,7 +2352,9 @@
       ],
       "source": "fred:CUSR0000SEHF",
       "change_ytd_pct": 0.0,
-      "note": "Monthly, lagged"
+      "note": "Monthly, lagged",
+      "zscore": 0.1,
+      "signal": "NORMAL"
     }
   }
 }

@@ -170,6 +170,21 @@
     margin-left: 0.5rem;
 }
 
+/* ─── Signal badge ─── */
+.chart-metric-signal {
+    font-size: 0.68rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    width: 110px;
+    text-align: right;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.chart-metric-signal.normal { color: #4caf87; }
+.chart-metric-signal.elevated { color: #e6a23c; }
+.chart-metric-signal.extreme { color: #e05555; }
+
 /* ─── Column headers ─── */
 .chart-col-headers {
     display: flex;
@@ -191,6 +206,16 @@
 
 .chart-col-headers .ch-val {
     width: 90px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #aaa;
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.chart-col-headers .ch-signal {
+    width: 110px;
     font-size: 0.65rem;
     font-weight: 600;
     color: #aaa;
@@ -351,6 +376,15 @@
 
     .chart-col-headers .ch-val {
         width: 70px;
+    }
+
+    .chart-col-headers .ch-signal {
+        width: 80px;
+    }
+
+    .chart-metric-signal {
+        width: 80px;
+        font-size: 0.62rem;
     }
 
     .chart-col-headers .ch-chg {

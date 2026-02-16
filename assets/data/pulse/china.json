@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T13:50:34Z",
+  "updated": "2026-02-16T13:57:59Z",
   "metrics": {
     "csi300": {
       "name": "CSI 300",
@@ -1023,7 +1023,9 @@
         ]
       ],
       "source": "yfinance:000300.SS",
-      "change_ytd_pct": -1.2
+      "change_ytd_pct": -1.2,
+      "zscore": 1.0,
+      "signal": "NORMAL"
     },
     "hsi": {
       "name": "Hang Seng Index",
@@ -2095,7 +2097,9 @@
         ]
       ],
       "source": "yfinance:^HSI",
-      "change_ytd_pct": 0.9
+      "change_ytd_pct": 0.9,
+      "zscore": 1.2,
+      "signal": "NORMAL"
     },
     "kweb": {
       "name": "China Internet ETF",
@@ -3167,7 +3171,9 @@
         ]
       ],
       "source": "yfinance:KWEB",
-      "change_ytd_pct": -8.0
+      "change_ytd_pct": -8.0,
+      "zscore": 0.0,
+      "signal": "NORMAL"
     },
     "china_pmi": {
       "name": "China Mfg PMI",
@@ -3419,7 +3425,9 @@
         ]
       ],
       "source": "manual",
-      "note": "NBS monthly"
+      "note": "NBS monthly",
+      "zscore": 0.3,
+      "signal": "NORMAL"
     },
     "china_retail_sales": {
       "name": "China Retail Sales YoY",
@@ -3671,7 +3679,9 @@
         ]
       ],
       "source": "manual",
-      "note": "NBS monthly"
+      "note": "NBS monthly",
+      "zscore": -0.2,
+      "signal": "NORMAL"
     },
     "china_cpi": {
       "name": "China CPI YoY",
@@ -3880,7 +3890,9 @@
       ],
       "source": "manual",
       "note": "Monthly \u2014 NBS",
-      "change_ytd_pct": 0.0
+      "change_ytd_pct": 0.0,
+      "zscore": 0.1,
+      "signal": "NORMAL"
     },
     "china_gdp": {
       "name": "China GDP YoY",
@@ -3972,7 +3984,9 @@
         ]
       ],
       "source": "manual",
-      "note": "Quarterly \u2014 NBS"
+      "note": "Quarterly \u2014 NBS",
+      "zscore": -0.1,
+      "signal": "NORMAL"
     },
     "china_m2": {
       "name": "China M2 YoY",
@@ -4224,7 +4238,9 @@
         ]
       ],
       "source": "manual",
-      "note": "Monthly \u2014 PBOC"
+      "note": "Monthly \u2014 PBOC",
+      "zscore": -0.9,
+      "signal": "NORMAL"
     }
   }
 }

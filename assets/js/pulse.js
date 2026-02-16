@@ -10,7 +10,7 @@
     let currentYear = 2026;
 
     const CATEGORY_FILES = [
-        'china', 'currencies', 'rates', 'liquidity', 'metals',
+        'currencies', 'rates', 'liquidity', 'china', 'metals',
         'energy', 'equities', 'sentiment', 'row'
     ];
 

@@ -1071,7 +1071,9 @@
         ]
       ],
       "source": "fred:WALCL",
-      "change_ytd_pct": 0.8
+      "change_ytd_pct": 0.8,
+      "zscore": -1.4,
+      "signal": "NORMAL"
     },
     "debt_to_gdp": {
       "name": "US Debt/GDP",
@@ -1159,7 +1161,9 @@
         ]
       ],
       "source": "fred:GFDEGDQ188S",
-      "note": "Quarterly, interpolated"
+      "note": "Quarterly, interpolated",
+      "zscore": 0.8,
+      "signal": "NORMAL"
     },
     "tga": {
       "name": "Treasury General Account",
@@ -2231,7 +2235,9 @@
         ]
       ],
       "source": "fred:WTREGEN",
-      "change_ytd_pct": 15.0
+      "change_ytd_pct": 15.0,
+      "zscore": 1.0,
+      "signal": "NORMAL"
     }
   }
 }
