@@ -46,8 +46,10 @@ The Pulse macro dashboard tracks ~49 metrics across 8 categories, organized arou
 |------|-------------|
 | `yfinance` | Daily close via yfinance |
 | `fred` | FRED API series |
-| `derived` | Computed from other data at fetch time (ratios, baskets, arithmetic on fetched metrics) |
+| `computed` | Ratio of two tickers (e.g., GSG/SPY) |
+| `basket_ratio` | Normalized basket A / basket B (e.g., atoms_bits) |
 | `manual` | Backfilled from CSV in `data/backfill/` |
+| `derived` | Computed from other metrics at fetch time (e.g., cn_us_spread) |
 
 ### Automatic Fetch
 
@@ -72,7 +74,7 @@ These metrics have no free API. Their data lives in CSV files under `data/backfi
 | `usd_reserves_share` | USD Share of Reserves (美元储备占比) | IMF COFER | Quarterly | [data.imf.org](https://data.imf.org/regular.aspx?key=41175) |
 | `move` | MOVE Index (国债波动率指数) | ICE BofA | Daily | [ice.com](https://www.ice.com/marketdata/reports/258) |
 | `us_ism_pmi` | US Manufacturing PMI (美国制造业PMI) | ISM | Monthly | [ismworld.org](https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/) |
-| `bigtech_capex` | Big Tech CapEx (大型科技公司资本开支) | Earnings reports | Quarterly | MSFT+GOOGL+AMZN+META+ORCL quarterly filings |
+| `bigtech_capex` | Big Tech CapEx (大型科技公司资本开支) | Earnings reports | Quarterly | big tech quarterly filings |
 
 **Workflow:**
 
