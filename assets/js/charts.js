@@ -299,6 +299,18 @@
         return null;
     }
 
+    function unitLabel(unit) {
+        if (!unit) return '';
+        const map = {
+            '%': '%', '% spread': '%', '% YoY': '% YoY', '% QoQ': '% QoQ',
+            '$': '$', '$/oz': '$/oz', '$/bbl': '$/bbl', '$/lb': '$/lb',
+            '$/t': '$/t', '$/MMBtu': '$/MMBtu', '$T': '$T', '$B': '$B',
+            'bp': 'bp', 'index': 'index', 'rate': 'rate', 'ratio': 'ratio',
+            'tonnes/yr': 'tonnes',
+        };
+        return map[unit] || unit;
+    }
+
     // ─── Render Chart.js inline chart ───
     function renderInlineChart(canvas, m, chartData) {
         const ctx = canvas.getContext('2d');
@@ -369,7 +381,13 @@
                     },
                     y: {
                         ticks: { color: '#888', font: { size: 11 } },
-                        grid: { color: 'rgba(0,0,0,0.06)' }
+                        grid: { color: 'rgba(0,0,0,0.06)' },
+                        title: {
+                            display: !!unitLabel(m.unit),
+                            text: unitLabel(m.unit),
+                            color: '#aaa',
+                            font: { size: 11, weight: 'normal' },
+                        }
                     }
                 },
                 interaction: { intersect: false, mode: 'index' }
