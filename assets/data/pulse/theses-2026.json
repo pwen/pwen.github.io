@@ -21,6 +21,7 @@
                 "usd_reserves_share",
                 "btc",
                 "move",
+                "yield_curve",
                 "eem",
                 "inda",
                 "ilf",
@@ -47,8 +48,7 @@
                 "china_gdp",
                 "china_m2",
                 "kweb",
-                "eem",
-                "inda"
+                "eem"
             ]
         },
         {
@@ -64,7 +64,12 @@
                 "copper",
                 "gold",
                 "dxy",
+                "usdcny",
+                "usd_reserves_share",
+                "cb_gold_buying",
                 "eem",
+                "inda",
+                "ilf",
                 "us_ism_pmi"
             ]
         },
@@ -75,10 +80,10 @@
             "color": "#5b8def",
             "icon": "🤖",
             "metrics": [
-                "sp500",
                 "qqq",
                 "smh",
                 "xlu",
+                "uranium",
                 "energy_cpi",
                 "natgas",
                 "copper",
@@ -100,6 +105,8 @@
                 "uranium",
                 "gsci_spy_ratio",
                 "tips_5y",
+                "breakeven_10y",
+                "yield_curve",
                 "cb_gold_buying",
                 "growth_value",
                 "cap_equal",

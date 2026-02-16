@@ -105,7 +105,7 @@ METRICS = {
     "yield_curve": {
         "name": "10Y-2Y Spread",
         "name_zh": "收益率曲线（10Y-2Y利差）",
-        "description": "10Y minus 2Y Treasury yield. Inverted (negative) = market pricing rate cuts ahead. Re-steepening after inversion historically precedes recessions within 6-18 months.",
+        "description": "10Y minus 2Y Treasury yield: measures yield curve steepness. Positive and rising = curve steepening (long-end yields rising faster, often signaling inflation expectations or fiscal stress). Inverted (negative) = market pricing rate cuts. Re-steepening after inversion historically precedes recessions within 6-18 months.",
         "source_type": "fred",
         "series": "T10Y2Y",
         "unit": "% spread",
@@ -142,7 +142,7 @@ METRICS = {
     "cn_us_spread": {
         "name": "China–US 10Y Spread",
         "name_zh": "中美10年期利差",
-        "description": "China 10Y minus US 10Y yield. Negative = capital outflow pressure on CNY. Narrowing (less negative) = easing pressure, CNY stabilizes. A closing gap supports the China re-rating thesis.",
+        "description": "China 10Y minus US 10Y yield (in bp). Currently deeply negative: US must offer far higher yields to fund its debt. Becoming more negative = US fiscal pressure worsening, dollar weakness signal. Narrowing (less negative) = pressure easing. Also a CNY stability indicator: wide gap = capital outflow pressure on yuan.",
         "source_type": "derived",
         "derive_from": ["cn_10y", "us_10y"],
         "derive_op": "subtract_bp",
