@@ -235,10 +235,10 @@
                 plugins: {
                     legend: { display: false },
                     tooltip: {
-                        backgroundColor: '#1a1a2e',
-                        titleColor: '#ccc',
-                        bodyColor: '#fff',
-                        borderColor: '#333',
+                        backgroundColor: '#fff',
+                        titleColor: '#666',
+                        bodyColor: '#333',
+                        borderColor: '#e1e4e8',
                         borderWidth: 1,
                         callbacks: {
                             label: ctx => formatRawValue(ctx.raw, m)
@@ -247,12 +247,12 @@
                 },
                 scales: {
                     x: {
-                        ticks: { color: '#666', maxTicksLimit: 6, font: { size: 11 } },
-                        grid: { color: 'rgba(255,255,255,0.05)' }
+                        ticks: { color: '#888', maxTicksLimit: 6, font: { size: 11 } },
+                        grid: { color: 'rgba(0,0,0,0.06)' }
                     },
                     y: {
-                        ticks: { color: '#666', font: { size: 11 } },
-                        grid: { color: 'rgba(255,255,255,0.05)' }
+                        ticks: { color: '#888', font: { size: 11 } },
+                        grid: { color: 'rgba(0,0,0,0.06)' }
                     }
                 },
                 interaction: {

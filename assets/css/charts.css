@@ -19,21 +19,21 @@
 }
 
 .charts-subtitle {
-    color: #888;
+    color: #666;
     font-size: 0.95rem;
     margin: 0;
 }
 
 .charts-updated {
-    color: #666;
+    color: #888;
     font-size: 0.8rem;
     margin-top: 0.25rem;
 }
 
 /* ─── Category sections ─── */
 .chart-category {
-    background: #12121a;
-    border: 1px solid #1e1e2e;
+    background: #fff;
+    border: 1px solid var(--border-color, #e1e4e8);
     border-radius: 8px;
     margin-bottom: 1rem;
     overflow: hidden;
@@ -50,19 +50,19 @@
 }
 
 .chart-category-header:hover {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(0, 0, 0, 0.02);
 }
 
 .chart-category-name {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    color: #4cdfb0;
+    color: var(--primary-color, #2c3e50);
 }
 
 .chart-category-toggle {
     font-size: 1.2rem;
-    color: #4cdfb0;
+    color: #888;
     font-weight: 300;
     line-height: 1;
     width: 24px;
@@ -89,16 +89,16 @@
     align-items: center;
     padding: 0.75rem 1.2rem;
     cursor: pointer;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-top: 1px solid var(--border-color, #e1e4e8);
     transition: background 0.12s;
 }
 
 .chart-metric-row:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(0, 0, 0, 0.025);
 }
 
 .chart-metric-row.active {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .chart-metric-info {
@@ -109,7 +109,7 @@
 }
 
 .chart-metric-arrow {
-    color: #666;
+    color: #999;
     font-size: 0.75rem;
     transition: transform 0.15s;
     flex-shrink: 0;
@@ -118,7 +118,7 @@
 .chart-metric-name {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #ddd;
+    color: var(--text-color, #333);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -134,7 +134,7 @@
 .chart-metric-value {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #ccc;
+    color: #555;
     font-variant-numeric: tabular-nums;
 }
 
@@ -164,19 +164,19 @@
     overflow: hidden;
     transition: max-height 0.35s ease, padding 0.25s ease;
     padding: 0 1.2rem;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--light-gray, #f8f9fa);
     border-top: none;
 }
 
 .chart-metric-expand.expanded {
     max-height: 500px;
     padding: 1rem 1.2rem 1.2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-top: 1px solid var(--border-color, #e1e4e8);
 }
 
 .chart-metric-desc {
     font-size: 0.82rem;
-    color: #888;
+    color: #666;
     line-height: 1.5;
     margin-bottom: 0.75rem;
 }
