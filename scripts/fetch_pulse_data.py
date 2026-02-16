@@ -629,9 +629,9 @@ def backfill_from_csv(metric_id: str, csv_path: str) -> None:
             print(f"  Got columns: {reader.fieldnames}")
             sys.exit(1)
         for row in reader:
-            date_str = row["date"].strip()
-            val_str = row["value"].strip()
-            if not date_str or not val_str:
+            date_str = (row.get("date") or "").strip()
+            val_str = (row.get("value") or "").strip()
+            if not date_str or not val_str or date_str.startswith("#"):
                 continue
             try:
                 # Validate date format

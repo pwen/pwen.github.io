@@ -1,4 +1,4 @@
-.PHONY: help install serve build clean tags optimize-image fetch-data update-metric update-metric-all backfill-metric
+.PHONY: help install serve build clean tags optimize-image fetch-data backfill-metric
 
 # Default target
 help:
@@ -8,9 +8,7 @@ help:
 	@echo "  make build               - Build the site"
 	@echo "  make tags                - Generate tags data JSON"
 	@echo "  make fetch-data          - Fetch latest pulse metrics data"
-	@echo "  make update-metric      - Update a manual metric (e.g. make update-metric ID=china_pmi VAL=50.1)"
-	@echo "  make update-metric-all  - Interactively update all manual metrics"
-	@echo "  make backfill-metric    - Backfill history from CSV (e.g. make backfill-metric ID=china_pmi)"
+	@echo "  make backfill-metric    - Load manual metric from CSV (e.g. make backfill-metric ID=china_pmi)"
 	@echo "  make optimize-image IMG=<filename> - Optimize image for web"
 	@echo "  make clean               - Clean generated files"
 	@echo "  make help                - Show this help message"
@@ -65,25 +63,7 @@ fetch-data:
 	@echo "Fetching pulse data..."
 	@export $$(cat .env | xargs) && uv run scripts/fetch_pulse_data.py
 
-# Update a manual metric
-update-metric:
-	@if [ -z "$(ID)" ] || [ -z "$(VAL)" ]; then \
-		echo "Usage: make update-metric ID=<metric_id> VAL=<value> [DATE=YYYY-MM-DD]"; \
-		echo ""; \
-		uv run scripts/fetch_pulse_data.py update --list; \
-		exit 1; \
-	fi
-	@if [ -n "$(DATE)" ]; then \
-		uv run scripts/fetch_pulse_data.py update $(ID) $(VAL) --date $(DATE); \
-	else \
-		uv run scripts/fetch_pulse_data.py update $(ID) $(VAL); \
-	fi
-
-# Interactively update all manual metrics
-update-metric-all:
-	@uv run scripts/fetch_pulse_data.py update --all
-
-# Backfill historical data from CSV
+# Load manual metric data from CSV
 backfill-metric:
 	@if [ -z "$(ID)" ]; then \
 		echo "Usage: make backfill-metric ID=<metric_id> [CSV=path/to/file.csv]"; \
