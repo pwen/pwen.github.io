@@ -1,8 +1,8 @@
 {
-  "updated": "2026-02-16T13:57:59Z",
+  "updated": "2026-02-16T14:45:58Z",
   "metrics": {
     "dxy": {
-      "name": "US Dollar Index",
+      "name": "US Dollar Index (DXY)",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
       "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
       "value": 96.88,
@@ -37,6 +37,19 @@
       "source": "yfinance:CNY=X",
       "change_ytd_pct": -1.4,
       "zscore": -0.1,
+      "signal": "NORMAL",
+      "trend": "down"
+    },
+    "usdjpy": {
+      "name": "USD/JPY",
+      "name_zh": "\u7f8e\u5143/\u65e5\u5143",
+      "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
+      "value": 152.821,
+      "direction": "down",
+      "unit": "rate",
+      "source": "yfinance:JPY=X",
+      "change_ytd_pct": -2.5,
+      "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -105,6 +118,19 @@
       "signal": "NORMAL",
       "trend": "up"
     },
+    "jp_10y": {
+      "name": "Japan 10Y Yield",
+      "name_zh": "\u65e5\u672c10\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
+      "description": "Japan 10-year government bond yield. BOJ was the last holdout on ultra-loose policy. Rising JGB yields \u2192 Japanese investors repatriate capital from US/EU bonds \u2192 global liquidity tightening. Above 1% is a sea change for the world\u2019s largest creditor nation.",
+      "value": 2.24,
+      "direction": "up",
+      "unit": "%",
+      "source": "fred:IRLTLT01JPM156N",
+      "change_ytd_bp": 0,
+      "zscore": 2.7,
+      "signal": "EXTREME",
+      "trend": "up"
+    },
     "cn_10y": {
       "name": "China 10Y Yield",
       "name_zh": "\u4e2d\u56fd10\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
@@ -122,7 +148,7 @@
     "hy_spread": {
       "name": "HY Credit Spread (OAS)",
       "name_zh": "\u9ad8\u6536\u76ca\u503a\u5229\u5dee",
-      "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% historically signals recession risk.",
+      "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% signals recession risk. Leading indicator: when the Fed tightens or liquidity dries up, HY spreads blow out before equities sell off.",
       "value": 2.92,
       "direction": "up",
       "unit": "%",
@@ -212,7 +238,7 @@
     },
     "uranium": {
       "name": "Uranium (URA ETF)",
-      "name_zh": "\u94c0\uff08URA ETF\uff09",
+      "name_zh": "\u94c0",
       "description": "Global X Uranium ETF. Proxy for nuclear renaissance: 30+ countries committed to tripling capacity. Supply constrained, Russia controls 40% of enrichment.",
       "value": 51.91,
       "direction": "up",
@@ -225,7 +251,7 @@
     },
     "oil": {
       "name": "WTI Crude",
-      "name_zh": "WTI\u539f\u6cb9",
+      "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
       "value": 62.89,
       "direction": "up",
@@ -277,8 +303,8 @@
       "trend": "flat"
     },
     "qqq": {
-      "name": "Nasdaq 100 ETF",
-      "name_zh": "\u7eb3\u65af\u8fbe\u514b100 ETF",
+      "name": "Nasdaq 100 ETF (QQQ)",
+      "name_zh": "\u7eb3\u65af\u8fbe\u514b100",
       "description": "100 largest Nasdaq non-financial companies. AI/tech-heavy (Mag7 dominant). QQQ vs SMH divergence signals whether AI leadership is rotating.",
       "value": 601.92,
       "direction": "up",
@@ -290,8 +316,8 @@
       "trend": "down"
     },
     "smh": {
-      "name": "Semiconductor ETF",
-      "name_zh": "\u534a\u5bfc\u4f53ETF",
+      "name": "Semiconductor ETF (SMH)",
+      "name_zh": "\u534a\u5bfc\u4f53",
       "description": "VanEck Semiconductor ETF: Nvidia, TSMC, ASML. The AI picks-and-shovels trade. SMH underperforming QQQ = leadership rotating from chip builders to enablers/adopters.",
       "value": 407.72,
       "direction": "up",
@@ -304,7 +330,7 @@
     },
     "xlu": {
       "name": "Utilities ETF (XLU)",
-      "name_zh": "\u516c\u7528\u4e8b\u4e1aETF",
+      "name_zh": "\u516c\u7528\u4e8b\u4e1a",
       "description": "Utilities sector ETF. Data centers need massive electricity: XLU outperforming tech = market rotating into AI infrastructure over AI hype.",
       "value": 46.5,
       "direction": "up",
@@ -394,7 +420,7 @@
       "trend": "up"
     },
     "kweb": {
-      "name": "China Internet ETF",
+      "name": "China Internet ETF (KWEB)",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
       "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
       "value": 32.79,
@@ -433,7 +459,7 @@
       "trend": "down"
     },
     "eem": {
-      "name": "MSCI Emerging Markets ETF",
+      "name": "MSCI Emerging Markets ETF (EEM)",
       "name_zh": "\u65b0\u5174\u5e02\u573aETF",
       "description": "Broad EM equity benchmark. Rising = capital flowing into developing markets. EM outperforming DM = dollar weakness + fragmentation trade working.",
       "value": 61.12,

@@ -42,8 +42,8 @@ LOOKBACK_YEARS = 5
 
 # Category → metric IDs  (mirrors charts.js CATEGORIES)
 CATEGORY_MAP = [
-    ("currencies", ["dxy", "eurusd", "usdcny", "usd_reserves_share"]),
-    ("rates", ["us_10y", "cn_10y", "cn_us_spread", "yield_curve", "tips_5y", "breakeven_10y", "hy_spread", "move"]),
+    ("currencies", ["dxy", "eurusd", "usdcny", "usdjpy", "usd_reserves_share"]),
+    ("rates", ["us_10y", "jp_10y", "cn_10y", "cn_us_spread", "yield_curve", "tips_5y", "breakeven_10y", "hy_spread", "move"]),
     ("liquidity", ["fed_balance_sheet", "debt_to_gdp", "tga"]),
     ("china", ["csi300", "hsi", "kweb", "china_pmi", "china_retail_sales", "china_cpi", "china_gdp", "china_m2"]),
     ("metals", ["gold", "silver", "copper", "uranium"]),
@@ -81,6 +81,14 @@ METRICS = {
         "description": "Dollar-yuan exchange rate. Rising = yuan weakening, falling = yuan strengthening. Below 7.00 signals meaningful capital flow shift toward China.",
         "source_type": "yfinance",
         "ticker": "CNY=X",
+        "unit": "rate",
+    },
+    "usdjpy": {
+        "name": "USD/JPY",
+        "name_zh": "美元/日元",
+        "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
+        "source_type": "yfinance",
+        "ticker": "JPY=X",
         "unit": "rate",
     },
     "usd_reserves_share": {
@@ -130,6 +138,15 @@ METRICS = {
         "unit": "%",
         "change_mode": "bp",
     },
+    "jp_10y": {
+        "name": "Japan 10Y Yield",
+        "name_zh": "日本10年期国债收益率",
+        "description": "Japan 10-year government bond yield. BOJ was the last holdout on ultra-loose policy. Rising JGB yields → Japanese investors repatriate capital from US/EU bonds → global liquidity tightening. Above 1% is a sea change for the world’s largest creditor nation.",
+        "source_type": "fred",
+        "series": "IRLTLT01JPM156N",
+        "unit": "%",
+        "change_mode": "bp",
+    },
     "cn_10y": {
         "name": "China 10Y Yield",
         "name_zh": "中国10年期国债收益率",
@@ -154,7 +171,7 @@ METRICS = {
     "hy_spread": {
         "name": "HY Credit Spread (OAS)",
         "name_zh": "高收益债利差",
-        "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% historically signals recession risk.",
+        "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% signals recession risk. Leading indicator: when the Fed tightens or liquidity dries up, HY spreads blow out before equities sell off.",
         "source_type": "fred",
         "series": "BAMLH0A0HYM2",
         "unit": "%",
@@ -670,7 +687,7 @@ def compute_zscore(history: list) -> dict:
     if not history or len(history) < 4:
         return {}
 
-    values = [h[1] if isinstance(h, list) else h for h in history]
+    values = [h[1] if isinstance(h, (list, tuple)) else h for h in history]
     n = len(values)
     mean = sum(values) / n
     variance = sum((v - mean) ** 2 for v in values) / n
@@ -701,7 +718,7 @@ def compute_trend(history: list, lookback: int = 8) -> dict:
     if not history or len(history) < lookback + 1:
         return {}
 
-    values = [h[1] if isinstance(h, list) else h for h in history]
+    values = [h[1] if isinstance(h, (list, tuple)) else h for h in history]
     latest = values[-1]
     past = values[-(lookback + 1)]
 

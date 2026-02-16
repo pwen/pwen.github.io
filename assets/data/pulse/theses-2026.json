@@ -27,7 +27,10 @@
                 "ilf",
                 "us_gdp",
                 "us_cpi",
-                "umich_sentiment"
+                "umich_sentiment",
+                "hy_spread",
+                "usdjpy",
+                "jp_10y"
             ]
         },
         {
@@ -70,7 +73,8 @@
                 "eem",
                 "inda",
                 "ilf",
-                "us_ism_pmi"
+                "us_ism_pmi",
+                "usdjpy"
             ]
         },
         {
@@ -111,7 +115,10 @@
                 "growth_value",
                 "cap_equal",
                 "atoms_bits",
-                "us_cpi"
+                "us_cpi",
+                "hy_spread",
+                "usdjpy",
+                "jp_10y"
             ]
         }
     ],

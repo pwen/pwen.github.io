@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T13:34:51Z",
+  "updated": "2026-02-16T14:45:58Z",
   "metrics": {
     "gold": {
       "name": "Gold",
@@ -3228,7 +3228,7 @@
     },
     "uranium": {
       "name": "Uranium (URA ETF)",
-      "name_zh": "\u94c0\uff08URA ETF\uff09",
+      "name_zh": "\u94c0",
       "description": "Global X Uranium ETF. Proxy for nuclear renaissance: 30+ countries committed to tripling capacity. Supply constrained, Russia controls 40% of enrichment.",
       "value": 51.91,
       "direction": "up",
@@ -3420,7 +3420,7 @@
         ],
         [
           "2021-12-10",
-          19.8653
+          19.8652
         ],
         [
           "2021-12-17",
@@ -3564,7 +3564,7 @@
         ],
         [
           "2022-08-19",
-          17.1424
+          17.1423
         ],
         [
           "2022-08-26",

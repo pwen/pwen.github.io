@@ -1,9 +1,9 @@
 {
-  "updated": "2026-02-16T13:34:51Z",
+  "updated": "2026-02-16T14:45:58Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
-      "name_zh": "WTI\u539f\u6cb9",
+      "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
       "value": 62.89,
       "direction": "up",
