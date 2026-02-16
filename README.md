@@ -38,7 +38,17 @@ Content should be served locally at `http://localhost:4000`
 
 ## 📊 Pulse Data Pipeline
 
-The Pulse macro dashboard tracks 33 metrics. Most are fetched automatically from yfinance and FRED, but **4 metrics** require manual updates because they come from sources without free APIs.
+The Pulse macro dashboard tracks ~40 metrics across 8 categories, organized around 5 macro theses. Most are fetched automatically from yfinance and FRED; some require manual CSV backfill.
+
+### Metric Source Types
+
+| Type | How it works |
+|------|-------------|
+| `yfinance` | Daily close via yfinance |
+| `fred` | FRED API series |
+| `computed` | Ratio of two tickers (e.g., GSG/SPY) |
+| `basket_ratio` | Normalized basket A / basket B (e.g., atoms_bits) |
+| `manual` | Backfilled from CSV in `data/backfill/` |
 
 ### Automatic Fetch
 
@@ -46,11 +56,11 @@ The Pulse macro dashboard tracks 33 metrics. Most are fetched automatically from
 make fetch-data
 ```
 
-Runs daily via GitHub Actions. Pulls 5 years of weekly data from yfinance (market) and FRED (economic indicators).
+Runs daily via GitHub Actions (7AM UTC). Pulls 5 years of weekly data from yfinance and FRED, writes per-category files + combined metrics.json.
 
 ### Manual Metric Updates
 
-These 4 metrics have no free API. Their data lives in CSV files under `data/backfill/`. To update, just add a new row to the CSV and re-run backfill:
+These metrics have no free API. Their data lives in CSV files under `data/backfill/`. To update, add a new row to the CSV and re-run backfill:
 
 | Metric ID | Name | Source | Frequency | Where to Find |
 |-----------|------|--------|-----------|---------------|
@@ -58,6 +68,8 @@ These 4 metrics have no free API. Their data lives in CSV files under `data/back
 | `china_retail_sales` | China Retail Sales YoY (中国社零同比) | NBS | Monthly | [data.stats.gov.cn](https://data.stats.gov.cn) |
 | `cb_gold_buying` | Central Bank Gold Buying (央行购金量) | World Gold Council | Quarterly | [gold.org/goldhub](https://www.gold.org/goldhub/data/gold-demand-by-country) |
 | `usd_reserves_share` | USD Share of Reserves (美元储备占比) | IMF COFER | Quarterly | [data.imf.org](https://data.imf.org/regular.aspx?key=41175) |
+| `move` | MOVE Index (国债波动率指数) | ICE BofA | Daily | [ice.com](https://www.ice.com/marketdata/reports/258) |
+| `bigtech_capex` | Big Tech CapEx (大型科技公司资本开支) | Earnings reports | Quarterly | MSFT+GOOGL+AMZN+META+ORCL quarterly filings |
 
 **Workflow:**
 
@@ -69,14 +81,16 @@ These 4 metrics have no free API. Their data lives in CSV files under `data/back
 # Load one metric
 make backfill-metric ID=china_pmi
 
-# Load all 4
+# Load all manual metrics
 make backfill-metric ID=china_pmi && \
 make backfill-metric ID=china_retail_sales && \
 make backfill-metric ID=cb_gold_buying && \
-make backfill-metric ID=usd_reserves_share
+make backfill-metric ID=usd_reserves_share && \
+make backfill-metric ID=move && \
+make backfill-metric ID=bigtech_capex
 ```
 
-CSV format — columns `date,value`, one row per period:
+CSV format: columns `date,value`, one row per period:
 ```csv
 date,value
 2021-01-31,51.3

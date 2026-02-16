@@ -1,4 +1,4 @@
-# CLAUDE.md
+# Copilot Instructions
 
 ## General Preferences
 
