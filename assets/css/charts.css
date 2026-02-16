@@ -106,6 +106,7 @@
     align-items: center;
     gap: 0.6rem;
     min-width: 0;
+    flex: 1;
 }
 
 .chart-metric-arrow {
@@ -299,4 +300,64 @@
     .chart-metric-canvas-wrap {
         height: 220px;
     }
+}
+
+/* ─── Thesis dots on metric rows (injected by pulse.js) ─── */
+.thesis-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 60px;
+    flex-shrink: 0;
+}
+
+.thesis-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.15s;
+    position: relative;
+}
+
+.thesis-dot:hover {
+    transform: scale(1.6);
+}
+
+.thesis-dot[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* ─── Thesis filter states (applied by pulse.js) ─── */
+.chart-metric-row.thesis-dimmed {
+    opacity: 0.15;
+    transition: opacity 0.3s;
+}
+
+.chart-metric-row.thesis-highlighted {
+    background: rgba(0, 0, 0, 0.03);
+    transition: opacity 0.3s, background 0.3s;
+}
+
+.chart-metric-expand.thesis-dimmed {
+    opacity: 0.15;
+    transition: opacity 0.3s;
+}
+
+.chart-category-header.thesis-dimmed {
+    opacity: 0.3;
+    transition: opacity 0.3s;
 }

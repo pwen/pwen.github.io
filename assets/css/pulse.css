@@ -26,14 +26,15 @@
 }
 
 .pulse-year-selector select {
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
+    font-size: 1.3rem;
+    padding: 0.4rem 0.75rem;
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 6px;
     background: #fff;
     color: var(--text-color);
     cursor: pointer;
     font-family: inherit;
+    font-weight: 600;
 }
 
 .pulse-subtitle {
@@ -52,7 +53,7 @@
 .pulse-theses {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.4rem;
     margin-bottom: 2.5rem;
 }
 
@@ -79,24 +80,24 @@
 
 .thesis-card-header {
     display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
     user-select: none;
 }
 
 .thesis-icon {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     flex-shrink: 0;
-    margin-top: 2px;
 }
 
 .thesis-header-text {
     flex: 1;
     cursor: pointer;
     display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+    align-items: baseline;
+    gap: 0.5rem;
+    min-width: 0;
 }
 
 .thesis-header-text:hover .thesis-title {
@@ -104,26 +105,31 @@
 }
 
 .thesis-title {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--primary-color);
     transition: opacity 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .thesis-summary {
-    font-size: 0.88rem;
-    color: #888;
-    line-height: 1.5;
+    font-size: 0.82rem;
+    color: #aaa;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
 }
 
 .thesis-toggle {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #999;
     transition: transform 0.2s;
     flex-shrink: 0;
     cursor: pointer;
-    padding: 0.25rem;
-    margin-top: 2px;
+    padding: 0.2rem;
 }
 
 .thesis-toggle:hover {

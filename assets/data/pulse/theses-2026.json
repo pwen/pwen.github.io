@@ -4,7 +4,7 @@
         {
             "id": "dollar",
             "title": "美元正在结构性走弱",
-            "summary": "债务螺旋已经启动，美联储终将被迫接盘，美元信用在一点点被磨掉。",
+            "summary": "债务螺旋已经启动，美联储终将被迫接盘。Nothing stops this train.",
             "color": "#e8c547",
             "icon": "💵",
             "metrics": [
@@ -24,7 +24,7 @@
         {
             "id": "china",
             "title": "中国资产正在被重估",
-            "summary": "消费转型+制度改革+价值重估，我们可能正处在长牛的起点。",
+            "summary": "我们正站在长牛的起点：my highest-conviction contrarian thesis and I'm putting my money behind it.",
             "color": "#e05555",
             "icon": "🇨🇳",
             "metrics": [
@@ -40,7 +40,7 @@
         {
             "id": "fragmentation",
             "title": "旧秩序正在瓦解，地缘竞争加剧",
-            "summary": "美国主导的单极霸权正在瓦解，群雄乱战的时期，战略资源就是权力，结构性通胀才刚开始。",
+            "summary": "美国主导的单极霸权正在瓦解，谁有资源就有筹码。Stay nimble.",
             "color": "#4caf87",
             "icon": "⚔️",
             "metrics": [
@@ -55,8 +55,8 @@
         },
         {
             "id": "ai",
-            "title": "AI正在改变一切，而我们还没有做好准备",
-            "summary": "人工智能真的，进化是不可阻挡的，投资要看轮动和瓶颈资源，但更大的社会冲击还在后面。",
+            "title": "AI正在改变一切",
+            "summary": "AI不是泡沫，真正的技术革命。Follow the capex, not the capex spenders.",
             "color": "#5b8def",
             "icon": "🤖",
             "metrics": [
@@ -72,7 +72,7 @@
         {
             "id": "hard-assets",
             "title": "实物资产正在进入结构性牛市",
-            "summary": "我们可能正站在一个实物资产大周期的起点——供给不足、货币贬值、能源转型需求、地缘囤积，四股力量同时推升大宗商品。",
+            "summary": "前面四个主题——美元、中国、碎片化、AI——全部指向实物资产。",
             "color": "#b07ce8",
             "icon": "⛏️",
             "metrics": [

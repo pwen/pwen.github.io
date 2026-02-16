@@ -37,6 +37,7 @@
             renderTheses();
             renderDashboard();
             renderReflection();
+            waitForChartsAndInjectDots();
         } catch (err) {
             console.error('Failed to load Pulse data:', err);
         }
@@ -139,22 +140,95 @@
             }
         });
 
-        // Update metric card states
+        // Update charts.js metric row states
         const thesesObj = thesis !== 'all'
             ? thesesData.theses.find(t => t.id === thesis)
             : null;
 
-        document.querySelectorAll('.metric-row').forEach(row => {
+        document.querySelectorAll('.chart-metric-row').forEach(row => {
+            const metricId = row.dataset.metric;
+            // Also affect the expand panel below the row
+            const expandEl = document.getElementById(`expand-${metricId}`);
             if (thesis === 'all') {
-                row.classList.remove('dimmed', 'highlighted');
-            } else if (thesesObj && thesesObj.metrics.includes(row.dataset.metric)) {
-                row.classList.remove('dimmed');
-                row.classList.add('highlighted');
+                row.classList.remove('thesis-dimmed', 'thesis-highlighted');
+                if (expandEl) expandEl.classList.remove('thesis-dimmed', 'thesis-highlighted');
+            } else if (thesesObj && thesesObj.metrics.includes(metricId)) {
+                row.classList.remove('thesis-dimmed');
+                row.classList.add('thesis-highlighted');
+                if (expandEl) { expandEl.classList.remove('thesis-dimmed'); expandEl.classList.add('thesis-highlighted'); }
             } else {
-                row.classList.add('dimmed');
-                row.classList.remove('highlighted');
+                row.classList.add('thesis-dimmed');
+                row.classList.remove('thesis-highlighted');
+                if (expandEl) { expandEl.classList.add('thesis-dimmed'); expandEl.classList.remove('thesis-highlighted'); }
             }
         });
+
+        // Also dim/undim category headers if all their metrics are dimmed
+        document.querySelectorAll('.chart-category').forEach(cat => {
+            const rows = cat.querySelectorAll('.chart-metric-row');
+            const allDimmed = Array.from(rows).every(r => r.classList.contains('thesis-dimmed'));
+            const header = cat.querySelector('.chart-category-header');
+            if (thesis === 'all') {
+                if (header) header.classList.remove('thesis-dimmed');
+            } else if (allDimmed) {
+                if (header) header.classList.add('thesis-dimmed');
+            } else {
+                if (header) header.classList.remove('thesis-dimmed');
+            }
+        });
+    }
+
+    // ─── Inject thesis dots into charts.js metric rows ───
+    function injectThesisDots() {
+        const rows = document.querySelectorAll('.chart-metric-row[data-metric]');
+        if (rows.length === 0) return false; // charts not rendered yet
+
+        rows.forEach(row => {
+            // Skip if dots already injected
+            if (row.querySelector('.thesis-dots')) return;
+
+            const metricId = row.dataset.metric;
+            const related = thesesData.theses.filter(t => t.metrics.includes(metricId));
+
+            // Always inject a dots container (even if empty) so all rows have consistent column widths
+            const dotsWrap = document.createElement('span');
+            dotsWrap.className = 'thesis-dots';
+            related.forEach(t => {
+                const dot = document.createElement('span');
+                dot.className = 'thesis-dot';
+                dot.style.background = t.color;
+                dot.dataset.thesis = t.id;
+                dot.dataset.tooltip = shortTitle(t.id);
+                dot.addEventListener('click', e => {
+                    e.stopPropagation();
+                    setActiveThesis(t.id);
+                });
+                dotsWrap.appendChild(dot);
+            });
+
+            // Insert dots after the data section
+            const dataEl = row.querySelector('.chart-metric-data');
+            if (dataEl) {
+                dataEl.after(dotsWrap);
+            } else {
+                row.appendChild(dotsWrap);
+            }
+        });
+        return true;
+    }
+
+    function waitForChartsAndInjectDots() {
+        if (injectThesisDots()) return;
+        // Charts not rendered yet — observe DOM for changes
+        const observer = new MutationObserver(() => {
+            if (injectThesisDots()) observer.disconnect();
+        });
+        const container = document.getElementById('charts-categories');
+        if (container) {
+            observer.observe(container, { childList: true, subtree: true });
+        }
+        // Safety timeout
+        setTimeout(() => observer.disconnect(), 10000);
     }
 
     // ─── Render Thesis Cards ───
