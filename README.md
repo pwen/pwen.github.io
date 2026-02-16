@@ -65,11 +65,52 @@ These 4 metrics must be updated by hand when new data is released:
 # List all manual metrics and their current values
 make update-metric
 
-# Update a metric (DATE defaults to today if omitted)
-make update-metric ID=china_pmi VAL=50.1 DATE=2026-02-01
-make update-metric ID=china_retail_sales VAL=4.2 DATE=2026-01-15
-make update-metric ID=cb_gold_buying VAL=1037 DATE=2025-12-31
-make update-metric ID=usd_reserves_share VAL=57.8 DATE=2025-12-31
+# Update a single metric (DATE auto-defaults to last month/quarter based on frequency)
+make update-metric ID=china_pmi VAL=50.1
+make update-metric ID=china_retail_sales VAL=4.2
+make update-metric ID=cb_gold_buying VAL=1037
+make update-metric ID=usd_reserves_share VAL=57.8
+
+# Override the date explicitly
+make update-metric ID=china_pmi VAL=50.1 DATE=2026-01-31
+
+# Interactively update all manual metrics at once
+make update-metric-all
 ```
 
+**Date defaults** (when `DATE` is omitted):
+- Monthly metrics (`china_pmi`, `china_retail_sales`) → last day of previous month
+- Quarterly metrics (`cb_gold_buying`, `usd_reserves_share`) → last day of previous quarter
+
 Each update appends a data point to the metric's history. If the same date already exists, it replaces the value.
+
+### Backfilling Historical Data
+
+To load 5 years of history for manual metrics (similar to the auto-fetched ones), use pre-filled CSV files in `data/backfill/`:
+
+```bash
+# Backfill a single metric from its CSV
+make backfill-metric ID=china_pmi
+make backfill-metric ID=china_retail_sales
+make backfill-metric ID=cb_gold_buying
+make backfill-metric ID=usd_reserves_share
+
+# Or backfill all 4 at once
+make backfill-metric ID=china_pmi && \
+make backfill-metric ID=china_retail_sales && \
+make backfill-metric ID=cb_gold_buying && \
+make backfill-metric ID=usd_reserves_share
+
+# Use a custom CSV path
+make backfill-metric ID=china_pmi CSV=my_data.csv
+```
+
+CSV format (columns: `date,value`):
+```csv
+date,value
+2021-01-31,51.3
+2021-02-28,50.6
+...
+```
+
+Template CSVs are in `data/backfill/`. **Review and correct the values** before loading — they contain approximate data sourced from public reports. Backfill merges with existing history (new dates are added, existing dates are replaced).

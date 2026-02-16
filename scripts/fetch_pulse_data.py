@@ -16,17 +16,14 @@ Usage:
     export FRED_API_KEY=your_key_here
     uv run scripts/fetch_pulse_data.py
 
-    # Manually update a metric (for metrics with no free API):
-    uv run scripts/fetch_pulse_data.py update china_pmi 50.1 --date 2026-02-01
-    uv run scripts/fetch_pulse_data.py update cb_gold_buying 1037 --date 2025-12-31
-
-    # List all manual metrics:
-    uv run scripts/fetch_pulse_data.py update --list
+    # Load manual metrics from CSV (add new rows to CSV, then re-run):
+    uv run scripts/fetch_pulse_data.py backfill china_pmi data/backfill/china_pmi.csv
 
 Output: assets/data/pulse/metrics.json
 """
 
 import argparse
+import csv
 import json
 import os
 import sys
@@ -77,6 +74,7 @@ METRICS = {
         "name_zh": "美元储备占比",
         "description": "How much of global central bank reserves are held in dollars (IMF COFER data, quarterly, lagged). Dropped from 72% in 2000 — slow-moving but structural and largely irreversible.",
         "source_type": "manual",
+        "frequency": "quarterly",
         "unit": "%",
         "note": "Quarterly, lagged — IMF COFER",
     },
@@ -283,6 +281,7 @@ METRICS = {
         "name_zh": "央行购金量",
         "description": "Quarterly data from World Gold Council. Central banks have been net buyers since 2010, accelerating post-2022 (sanctions on Russia). This is the structural floor under gold — sovereign entities voting to de-dollarize.",
         "source_type": "manual",
+        "frequency": "quarterly",
         "unit": "tonnes/yr",
         "note": "Quarterly, lagged — World Gold Council",
     },
@@ -317,6 +316,7 @@ METRICS = {
         "name_zh": "中国制造业PMI",
         "description": "NBS Manufacturing PMI. 50 = expansion/contraction line. Sustained above 51 confirms recovery is real; below 49 signals contraction.",
         "source_type": "manual",
+        "frequency": "monthly",
         "unit": "index",
         "note": "NBS monthly",
     },
@@ -325,6 +325,7 @@ METRICS = {
         "name_zh": "中国社零同比",
         "description": "Monthly year-over-year growth in Chinese retail sales (NBS). The key gauge for whether China's consumption pivot thesis is playing out. Needs to sustain 4%+ and ideally move toward 5-6%.",
         "source_type": "manual",
+        "frequency": "monthly",
         "unit": "% YoY",
         "note": "NBS monthly",
     },
@@ -592,8 +593,15 @@ def main():
     print(f"  File size: {OUTPUT_PATH.stat().st_size / 1024:.0f} KB")
 
 
-def update_manual(metric_id: str, value: float, date_str: str | None = None) -> None:
-    """Update a single manual metric in metrics.json."""
+def backfill_from_csv(metric_id: str, csv_path: str) -> None:
+    """Backfill historical data for a manual metric from a CSV file.
+
+    CSV format: date,value (one row per data point)
+    Example:
+        date,value
+        2021-01-31,51.3
+        2021-02-28,50.6
+    """
     manual_ids = [k for k, v in METRICS.items() if v["source_type"] == "manual"]
 
     if metric_id not in METRICS:
@@ -603,11 +611,42 @@ def update_manual(metric_id: str, value: float, date_str: str | None = None) -> 
 
     if METRICS[metric_id]["source_type"] != "manual":
         print(f"✗ '{metric_id}' is not a manual metric (it's {METRICS[metric_id]['source_type']}-sourced).")
-        print(f"  Manual metrics: {', '.join(manual_ids)}")
         sys.exit(1)
 
-    date = date_str or datetime.now().strftime("%Y-%m-%d")
+    csv_file = Path(csv_path)
+    if not csv_file.exists():
+        print(f"✗ File not found: {csv_path}")
+        sys.exit(1)
+
     config = METRICS[metric_id]
+
+    # Read CSV
+    rows = []
+    with open(csv_file, newline="") as f:
+        reader = csv.DictReader(f)
+        if not reader.fieldnames or "date" not in reader.fieldnames or "value" not in reader.fieldnames:
+            print(f"✗ CSV must have 'date' and 'value' columns.")
+            print(f"  Got columns: {reader.fieldnames}")
+            sys.exit(1)
+        for row in reader:
+            date_str = row["date"].strip()
+            val_str = row["value"].strip()
+            if not date_str or not val_str:
+                continue
+            try:
+                # Validate date format
+                datetime.strptime(date_str, "%Y-%m-%d")
+                value = float(val_str)
+                rows.append([date_str, value])
+            except ValueError as e:
+                print(f"  ⚠ Skipping invalid row: date={date_str}, value={val_str} ({e})")
+
+    if not rows:
+        print(f"✗ No valid data rows found in {csv_path}")
+        sys.exit(1)
+
+    # Sort by date
+    rows.sort(key=lambda x: x[0])
 
     # Load existing
     if OUTPUT_PATH.exists():
@@ -619,15 +658,24 @@ def update_manual(metric_id: str, value: float, date_str: str | None = None) -> 
     existing = data["metrics"].get(metric_id, {})
     history = existing.get("history", [])
 
-    # Append or replace the latest point on the same date
-    if history and history[-1][0] == date:
-        history[-1][1] = value
-    else:
-        history.append([date, value])
-        # Keep sorted
-        history.sort(key=lambda x: x[0])
+    # Merge: build a dict for dedup, CSV values take precedence
+    date_map = {h[0]: h[1] for h in history}
+    new_count = 0
+    replaced_count = 0
+    for date_str, value in rows:
+        if date_str in date_map:
+            replaced_count += 1
+        else:
+            new_count += 1
+        date_map[date_str] = value
 
-    # Compute direction from last two points
+    # Rebuild sorted history
+    history = sorted([[d, v] for d, v in date_map.items()], key=lambda x: x[0])
+
+    # Current value = latest
+    current_value = history[-1][1]
+
+    # Direction from last two points
     direction = "flat"
     if len(history) >= 2:
         prev, curr = history[-2][1], history[-1][1]
@@ -640,7 +688,7 @@ def update_manual(metric_id: str, value: float, date_str: str | None = None) -> 
         "name": config["name"],
         "name_zh": config.get("name_zh", ""),
         "description": config["description"],
-        "value": value,
+        "value": current_value,
         "direction": direction,
         "unit": config["unit"],
         "history": history,
@@ -652,32 +700,10 @@ def update_manual(metric_id: str, value: float, date_str: str | None = None) -> 
     with open(OUTPUT_PATH, "w") as f:
         json.dump(data, f, indent=2)
 
-    print(f"✓ Updated {metric_id} = {value} ({config['unit']}) on {date}")
-    print(f"  History: {len(history)} data points")
-    print(f"  Direction: {direction}")
-
-
-def list_manual_metrics() -> None:
-    """Print all manual metrics and their current values."""
-    manual = {k: v for k, v in METRICS.items() if v["source_type"] == "manual"}
-
-    existing = {}
-    if OUTPUT_PATH.exists():
-        with open(OUTPUT_PATH) as f:
-            existing = json.load(f).get("metrics", {})
-
-    print(f"\nManual metrics ({len(manual)} total):")
-    print(f"{'─' * 60}")
-    for mid, config in manual.items():
-        current = existing.get(mid, {})
-        val = current.get("value")
-        pts = len(current.get("history", []))
-        last_date = current["history"][-1][0] if current.get("history") else "never"
-        val_str = f"{val} {config['unit']}" if val is not None else "(no data)"
-        print(f"  {mid:25s} {val_str:20s} last={last_date}  pts={pts}")
-        print(f"  {'':25s} {config['note']}")
-    print(f"{'─' * 60}")
-    print(f"\nUsage: uv run scripts/fetch_pulse_data.py update <metric_id> <value> [--date YYYY-MM-DD]")
+    print(f"✓ Backfilled {metric_id} from {csv_path}")
+    print(f"  {new_count} new points, {replaced_count} replaced, {len(history)} total")
+    print(f"  Range: {history[0][0]} → {history[-1][0]}")
+    print(f"  Latest: {current_value} {config['unit']} ({direction})")
 
 
 if __name__ == "__main__":
@@ -687,23 +713,16 @@ if __name__ == "__main__":
     # Default fetch (no subcommand)
     sub.add_parser("fetch", help="Fetch all API-sourced metrics (default)")
 
-    # Update manual metric
-    up = sub.add_parser("update", help="Update a manual metric")
-    up.add_argument("metric_id", nargs="?", help="Metric key (e.g. china_pmi)")
-    up.add_argument("value", nargs="?", type=float, help="New value")
-    up.add_argument("--date", "-d", help="Date for the data point (YYYY-MM-DD, default: today)")
-    up.add_argument("--list", "-l", action="store_true", help="List all manual metrics")
+    # Backfill from CSV
+    bf = sub.add_parser("backfill", help="Load manual metric data from CSV")
+    bf.add_argument("metric_id", help="Metric key (e.g. china_pmi)")
+    bf.add_argument("csv_path", nargs="?", help="Path to CSV file (default: data/backfill/<metric_id>.csv)")
 
     args = parser.parse_args()
 
-    if args.command == "update":
-        if args.list or args.metric_id is None:
-            list_manual_metrics()
-        elif args.value is None:
-            print(f"✗ Missing value. Usage: update {args.metric_id} <value> [--date YYYY-MM-DD]")
-            sys.exit(1)
-        else:
-            update_manual(args.metric_id, args.value, args.date)
+    if args.command == "backfill":
+        csv_path = args.csv_path or f"data/backfill/{args.metric_id}.csv"
+        backfill_from_csv(args.metric_id, csv_path)
     else:
         # Default: fetch
         main()
