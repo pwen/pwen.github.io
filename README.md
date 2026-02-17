@@ -38,7 +38,7 @@ Content should be served locally at `http://localhost:4000`
 
 ## 📊 Pulse Data Pipeline
 
-The Pulse macro dashboard tracks 61 metrics across 9 categories, organized around 5 macro theses. Most are fetched automatically from yfinance and FRED; some require manual CSV backfill.
+The Pulse macro dashboard tracks 62 metrics across 9 categories, organized around 5 macro theses. Most are fetched automatically from yfinance and FRED; some require manual CSV backfill.
 
 ### Metric Source Types
 
@@ -70,6 +70,7 @@ These metrics have no free API. Their data lives in CSV files under `data/backfi
 | `china_cpi` | China CPI YoY (中国CPI同比) | NBS | Monthly | [data.stats.gov.cn](https://data.stats.gov.cn) |
 | `china_gdp` | China GDP YoY (中国GDP同比) | NBS | Quarterly | [data.stats.gov.cn](https://data.stats.gov.cn) |
 | `china_m2` | China M2 YoY (中国M2同比) | PBOC | Monthly | [pbc.gov.cn](http://www.pbc.gov.cn/diaochatongjisi/116219/116319/index.html) |
+| `china_mktcap_gdp` | China Market Cap/GDP (中国股市总市值/GDP) | World Bank/CEIC | Quarterly | [ceicdata.com](https://www.ceicdata.com) or World Bank |
 | `cn_10y` | China 10Y Yield (中国10年期国债) | PBOC/CEIC | Monthly | [ceicdata.com](https://www.ceicdata.com) or PBOC |
 | `cb_gold_buying` | Central Bank Gold Buying (央行购金量) | World Gold Council | Quarterly | [gold.org/goldhub](https://www.gold.org/goldhub/data/gold-demand-by-country) |
 | `usd_reserves_share` | USD Share of Reserves (美元储备占比) | IMF COFER | Quarterly | [data.imf.org](https://data.imf.org/regular.aspx?key=41175) |

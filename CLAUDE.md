@@ -26,7 +26,7 @@ This is a multi-project workspace:
 - GitHub Actions daily cron at 7AM UTC
 
 ### Data Architecture
-- 61 metrics across 9 categories, LOOKBACK_YEARS=11 (~11 years of weekly data)
+- 62 metrics across 9 categories, LOOKBACK_YEARS=11 (~11 years of weekly data)
 - Metrics split into **per-category JSON files**: `currencies.json`, `rates.json`, `liquidity.json`, `china.json`, `metals.json`, `energy.json`, `equities.json`, `sentiment.json`, `row.json`
 - Lightweight `metrics.json` index (metadata only, no history arrays)
 - All files in `assets/data/pulse/`
@@ -41,7 +41,7 @@ This is a multi-project workspace:
 - `yfinance`: daily close via yfinance
 - `fred`: FRED API series
 - `derived`: computed from other data at fetch time (e.g., ratio of two tickers like GSG/SPY, normalized basket ratio like atoms_bits, or arithmetic on fetched metrics like cn_us_spread = cn_10y - us_10y)
-- `manual`: backfilled from CSV in `data/backfill/` (11 metrics, data back to 2015)
+- `manual`: backfilled from CSV in `data/backfill/` (12 metrics, data back to 2015)
 
 ### Backfill Command
 ```bash
@@ -62,6 +62,7 @@ Manual metrics and their sources/frequencies:
 - `china_cpi` (Monthly, NBS)
 - `china_gdp` (Quarterly, NBS)
 - `china_m2` (Monthly, PBOC)
+- `china_mktcap_gdp` (Quarterly, World Bank/CEIC)
 - `cn_10y` (Monthly, PBOC/CEIC)
 - `cb_gold_buying` (Quarterly, World Gold Council)
 - `usd_reserves_share` (Quarterly, IMF COFER)

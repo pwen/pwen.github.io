@@ -45,7 +45,7 @@ CATEGORY_MAP = [
     ("currencies", ["dxy", "eurusd", "usdcny", "usdjpy", "usd_reserves_share"]),
     ("rates", ["us_10y", "jp_10y", "cn_10y", "cn_us_spread", "yield_curve", "tips_5y", "breakeven_10y", "hy_spread", "move"]),
     ("liquidity", ["fed_balance_sheet", "debt_to_gdp", "tga", "rrp", "reserve_balances"]),
-    ("china", ["csi300", "hsi", "kweb", "china_pmi", "china_retail_sales", "china_cpi", "china_gdp", "china_m2"]),
+    ("china", ["csi300", "hsi", "kweb", "china_pmi", "china_retail_sales", "china_cpi", "china_gdp", "china_m2", "china_mktcap_gdp"]),
     ("metals", ["gold", "silver", "copper", "aluminum", "uranium", "remx"]),
     ("energy", ["oil", "brent", "natgas", "energy_cpi"]),
     ("equities", ["sp500", "djia", "qqq", "iwm", "smh", "xlu", "gsci_spy_ratio", "bigtech_capex", "growth_value", "cap_equal", "atoms_bits", "_total_mktcap", "_nominal_gdp", "buffett_indicator"]),
@@ -490,8 +490,15 @@ METRICS = {
         "unit": "% YoY",
         "note": "Monthly — PBOC",
     },
-
-    # ── Volatility & Macro Signals ──
+    "china_mktcap_gdp": {
+        "name": "China Market Cap / GDP",
+        "name_zh": "中国证券化率",
+        "description": "Total market cap of Shanghai + Shenzhen exchanges as % of nominal GDP. China's version of the Buffett Indicator. Currently ~70%: far below US (~350%) and below its own 2015 peak (~100%). Low = room for re-rating.",
+        "source_type": "manual",
+        "frequency": "quarterly",
+        "unit": "%",
+        "note": "Quarterly — CSRC / NBS",
+    },
     "move": {
         "name": "MOVE Index",
         "name_zh": "国债波动率指数",

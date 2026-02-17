@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T17:15:12Z",
+  "updated": "2026-02-16T17:21:33Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -627,6 +627,19 @@
       "zscore": -1.2,
       "signal": "NORMAL",
       "trend": "down"
+    },
+    "china_mktcap_gdp": {
+      "name": "China Market Cap / GDP",
+      "name_zh": "\u4e2d\u56fd\u8bc1\u5238\u5316\u7387",
+      "description": "Total market cap of Shanghai + Shenzhen exchanges as % of nominal GDP. China's version of the Buffett Indicator. Currently ~70%: far below US (~350%) and below its own 2015 peak (~100%). Low = room for re-rating.",
+      "value": 71.3,
+      "direction": "up",
+      "unit": "%",
+      "source": "manual",
+      "note": "Quarterly \u2014 CSRC / NBS",
+      "zscore": 0.5,
+      "signal": "NORMAL",
+      "trend": "up"
     },
     "move": {
       "name": "MOVE Index",

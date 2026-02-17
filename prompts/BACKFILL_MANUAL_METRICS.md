@@ -25,33 +25,37 @@ Here are the metrics that need updating. For each one, look up the latest availa
    - Source: https://tradingeconomics.com/china/money-supply-m2
    - Unit: % YoY
 
-5. **China 10Y Yield** — `data/backfill/cn_10y.csv`
+5. **China Market Cap/GDP** — `data/backfill/china_mktcap_gdp.csv`
+   - Source: https://tradingeconomics.com/china/market-capitalization-of-listed-domestic-companies-percent-of-gdp-wb-data.html or https://www.ceicdata.com
+   - Unit: % (market cap as percentage of GDP). Date = last day of quarter
+
+6. **China 10Y Yield** — `data/backfill/cn_10y.csv`
    - Source: https://tradingeconomics.com/china/government-bond-yield or https://www.investing.com/rates-bonds/china-10-year-bond-yield
    - Unit: % (last trading day of month)
 
-6. **US ISM Manufacturing PMI** — `data/backfill/us_ism_pmi.csv`
+7. **US ISM Manufacturing PMI** — `data/backfill/us_ism_pmi.csv`
    - Source: https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/ or https://tradingeconomics.com/united-states/business-conditions
    - Unit: index
 
-7. **MOVE Index** — `data/backfill/move.csv`
+8. **MOVE Index** — `data/backfill/move.csv`
    - ICE BofA Treasury implied volatility. Source: https://tradingeconomics.com/united-states/ice-bofa-move-index
    - Unit: index (weekly — use last trading day of the week)
 
 ### Quarterly metrics (update every quarter):
 
-8. **China GDP YoY** — `data/backfill/china_gdp.csv`
+9. **China GDP YoY** — `data/backfill/china_gdp.csv`
    - Source: https://tradingeconomics.com/china/gdp-growth-annual
    - Unit: % YoY. Date = last day of quarter (03-31, 06-30, 09-30, 12-31)
 
-9. **USD Share of FX Reserves** — `data/backfill/usd_reserves_share.csv`
+10. **USD Share of FX Reserves** — `data/backfill/usd_reserves_share.csv`
    - IMF COFER data. Source: https://data.imf.org/regular.aspx?key=41175
    - Unit: %. ~1 quarter lag. Date = last day of quarter
 
-10. **Central Bank Gold Buying** — `data/backfill/cb_gold_buying.csv`
+11. **Central Bank Gold Buying** — `data/backfill/cb_gold_buying.csv`
     - World Gold Council. Source: https://www.gold.org/goldhub/data/gold-demand-by-country
     - Unit: tonnes/yr (annualized). Date = last day of quarter
 
-11. **Big Tech CapEx** — `data/backfill/bigtech_capex.csv`
+12. **Big Tech CapEx** — `data/backfill/bigtech_capex.csv`
     - Sum of quarterly capex: MSFT + GOOGL + AMZN + META + ORCL
     - Unit: $B (annualized). Date = last day of quarter. Compiled from earnings reports.
 
@@ -80,6 +84,7 @@ Or individually:
 ### Quarterly (after quarter-end, ~1 month lag for official data)
 
 - [ ] china_gdp
+- [ ] china_mktcap_gdp
 - [ ] usd_reserves_share (~1 quarter lag from IMF)
 - [ ] cb_gold_buying (~1 quarter lag from WGC)
 - [ ] bigtech_capex (after earnings season, ~6 weeks after quarter-end)
