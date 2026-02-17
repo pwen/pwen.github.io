@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T16:48:43Z",
+  "updated": "2026-02-16T17:02:17Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -196,6 +196,32 @@
       "zscore": 1.0,
       "signal": "NORMAL",
       "trend": "up"
+    },
+    "rrp": {
+      "name": "ON RRP Usage",
+      "name_zh": "\u9694\u591c\u9006\u56de\u8d2d\u4f7f\u7528\u91cf",
+      "description": "Cash parked at the Fed's overnight reverse repo facility. High = excess liquidity sloshing around. Draining toward zero = liquidity cushion gone, markets more fragile. Peaked at ~$2.6T in late 2022, now near zero.",
+      "value": 0.4,
+      "direction": "down",
+      "unit": "$B",
+      "source": "fred:RRPONTSYD",
+      "change_ytd_pct": -93.0,
+      "zscore": -0.7,
+      "signal": "NORMAL",
+      "trend": "down"
+    },
+    "reserve_balances": {
+      "name": "Reserve Balances",
+      "name_zh": "\u94f6\u884c\u51c6\u5907\u91d1\u4f59\u989d",
+      "description": "Bank reserves held at the Fed. Below ~$3T historically triggers repo stress. The floor for 'ample reserves' regime: when reserves get scarce, the Fed is forced to stop QT or restart lending facilities.",
+      "value": 2.94,
+      "direction": "up",
+      "unit": "$T",
+      "source": "fred:WRESBAL",
+      "change_ytd_pct": -2.0,
+      "zscore": 0.2,
+      "signal": "NORMAL",
+      "trend": "down"
     },
     "gold": {
       "name": "Gold",

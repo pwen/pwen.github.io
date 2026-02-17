@@ -44,7 +44,7 @@ LOOKBACK_YEARS = 11
 CATEGORY_MAP = [
     ("currencies", ["dxy", "eurusd", "usdcny", "usdjpy", "usd_reserves_share"]),
     ("rates", ["us_10y", "jp_10y", "cn_10y", "cn_us_spread", "yield_curve", "tips_5y", "breakeven_10y", "hy_spread", "move"]),
-    ("liquidity", ["fed_balance_sheet", "debt_to_gdp", "tga"]),
+    ("liquidity", ["fed_balance_sheet", "debt_to_gdp", "tga", "rrp", "reserve_balances"]),
     ("china", ["csi300", "hsi", "kweb", "china_pmi", "china_retail_sales", "china_cpi", "china_gdp", "china_m2"]),
     ("metals", ["gold", "silver", "copper", "aluminum", "uranium", "remx"]),
     ("energy", ["oil", "brent", "natgas", "energy_cpi"]),
@@ -205,6 +205,24 @@ METRICS = {
         "series": "WTREGEN",
         "unit": "$B",
         "transform": lambda v: round(v / 1_000, 1),  # millions → billions
+    },
+    "rrp": {
+        "name": "ON RRP Usage",
+        "name_zh": "隔夜逆回购使用量",
+        "description": "Cash parked at the Fed's overnight reverse repo facility. High = excess liquidity sloshing around. Draining toward zero = liquidity cushion gone, markets more fragile. Peaked at ~$2.6T in late 2022, now near zero.",
+        "source_type": "fred",
+        "series": "RRPONTSYD",
+        "unit": "$B",
+        "transform": lambda v: round(v, 1),  # already in billions
+    },
+    "reserve_balances": {
+        "name": "Reserve Balances",
+        "name_zh": "银行准备金余额",
+        "description": "Bank reserves held at the Fed. Below ~$3T historically triggers repo stress. The floor for 'ample reserves' regime: when reserves get scarce, the Fed is forced to stop QT or restart lending facilities.",
+        "source_type": "fred",
+        "series": "WRESBAL",
+        "unit": "$T",
+        "transform": lambda v: round(v / 1_000_000, 2),  # millions → trillions
     },
 
     # ── Metals ──

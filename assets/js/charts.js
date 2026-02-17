@@ -13,7 +13,7 @@
     const CATEGORIES = [
         { id: 'currencies', name: 'CURRENCIES', metrics: ['dxy', 'eurusd', 'usdcny', 'usdjpy', 'usd_reserves_share'] },
         { id: 'rates', name: 'RATES & YIELDS', metrics: ['us_10y', 'jp_10y', 'cn_10y', 'cn_us_spread', 'yield_curve', 'tips_5y', 'breakeven_10y', 'hy_spread', 'move'] },
-        { id: 'liquidity', name: 'LIQUIDITY & FISCAL', metrics: ['fed_balance_sheet', 'debt_to_gdp', 'tga'] },
+        { id: 'liquidity', name: 'LIQUIDITY & FISCAL', metrics: ['fed_balance_sheet', 'debt_to_gdp', 'tga', 'rrp', 'reserve_balances'] },
         { id: 'china', name: 'CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'china_cpi', 'china_gdp', 'china_m2'] },
         { id: 'metals', name: 'METALS', metrics: ['gold', 'silver', 'copper', 'aluminum', 'uranium', 'remx'] },
         { id: 'energy', name: 'ENERGY', metrics: ['oil', 'brent', 'natgas', 'energy_cpi'] },
