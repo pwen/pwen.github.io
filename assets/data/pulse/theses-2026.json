@@ -34,7 +34,8 @@
                 "usdjpy",
                 "jp_10y",
                 "sp500",
-                "iwm"
+                "iwm",
+                "buffett_indicator"
             ]
         },
         {

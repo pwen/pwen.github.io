@@ -48,7 +48,7 @@ CATEGORY_MAP = [
     ("china", ["csi300", "hsi", "kweb", "china_pmi", "china_retail_sales", "china_cpi", "china_gdp", "china_m2"]),
     ("metals", ["gold", "silver", "copper", "aluminum", "uranium", "remx"]),
     ("energy", ["oil", "brent", "natgas", "energy_cpi"]),
-    ("equities", ["sp500", "djia", "qqq", "iwm", "smh", "xlu", "gsci_spy_ratio", "bigtech_capex", "growth_value", "cap_equal", "atoms_bits"]),
+    ("equities", ["sp500", "djia", "qqq", "iwm", "smh", "xlu", "gsci_spy_ratio", "bigtech_capex", "growth_value", "cap_equal", "atoms_bits", "_total_mktcap", "_nominal_gdp", "buffett_indicator"]),
     ("sentiment", ["vix", "btc", "cb_gold_buying", "us_ism_pmi", "us_gdp", "us_cpi", "umich_sentiment"]),
     ("row", ["eem", "inda", "ilf"]),
 ]
@@ -576,6 +576,35 @@ METRICS = {
         "basket_b": ["IGV", "WCLD"],
         "unit": "ratio",
     },
+
+    # ── Valuation (helper metrics: not shown in UI, used to derive buffett_indicator) ──
+    "_total_mktcap": {
+        "name": "Total US Market Cap",
+        "name_zh": "美股总市值",
+        "description": "Total US equity market capitalization (all sectors, Flow of Funds).",
+        "source_type": "fred",
+        "series": "BOGZ1FL893064105Q",
+        "unit": "$T",
+        "transform": lambda v: round(v / 1_000_000, 2),  # millions → trillions
+    },
+    "_nominal_gdp": {
+        "name": "Nominal GDP",
+        "name_zh": "名义GDP",
+        "description": "US nominal GDP (quarterly, seasonally adjusted annual rate).",
+        "source_type": "fred",
+        "series": "GDP",
+        "unit": "$T",
+        "transform": lambda v: round(v / 1_000, 2),  # billions → trillions
+    },
+    "buffett_indicator": {
+        "name": "Buffett Indicator",
+        "name_zh": "巴菲特指标",
+        "description": "Total US equity market cap / GDP. Warren Buffett's preferred valuation gauge. Historical average ~80%. Above 100% = overvalued. Currently near all-time highs: signals US equities priced for perfection.",
+        "source_type": "derived",
+        "derive_from": ["_total_mktcap", "_nominal_gdp"],
+        "derive_op": "ratio_pct",
+        "unit": "%",
+    },
 }
 
 
@@ -977,6 +1006,8 @@ def main():
                 val = round((a_val - b_val) * 100, 1)
             elif op == "subtract":
                 val = round(a_val - b_val, 4)
+            elif op == "ratio_pct":
+                val = round((a_val / b_val) * 100, 1) if b_val != 0 else 0
             else:
                 val = round(a_val / b_val, 4) if b_val != 0 else 0
             history.append((d, val))

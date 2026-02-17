@@ -17,7 +17,7 @@
         { id: 'china', name: 'CHINA', metrics: ['csi300', 'hsi', 'kweb', 'china_pmi', 'china_retail_sales', 'china_cpi', 'china_gdp', 'china_m2'] },
         { id: 'metals', name: 'METALS', metrics: ['gold', 'silver', 'copper', 'aluminum', 'uranium', 'remx'] },
         { id: 'energy', name: 'ENERGY', metrics: ['oil', 'brent', 'natgas', 'energy_cpi'] },
-        { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'djia', 'qqq', 'iwm', 'smh', 'xlu', 'gsci_spy_ratio', 'bigtech_capex', 'growth_value', 'cap_equal', 'atoms_bits'] },
+        { id: 'equities', name: 'US EQUITIES & SECTORS', metrics: ['sp500', 'djia', 'qqq', 'iwm', 'smh', 'xlu', 'gsci_spy_ratio', 'buffett_indicator', 'bigtech_capex', 'growth_value', 'cap_equal', 'atoms_bits'] },
         { id: 'sentiment', name: 'SENTIMENT & ALTERNATIVES', metrics: ['vix', 'btc', 'cb_gold_buying', 'us_ism_pmi', 'us_gdp', 'us_cpi', 'umich_sentiment'] },
         { id: 'row', name: 'REST OF WORLD', metrics: ['eem', 'inda', 'ilf'] }
     ];

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T17:02:17Z",
+  "updated": "2026-02-16T17:15:12Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -749,6 +749,30 @@
       "signal": "EXTREME",
       "trend": "up"
     },
+    "_total_mktcap": {
+      "name": "Total US Market Cap",
+      "name_zh": "\u7f8e\u80a1\u603b\u5e02\u503c",
+      "description": "Total US equity market capitalization (all sectors, Flow of Funds).",
+      "value": 108.45,
+      "direction": "up",
+      "unit": "$T",
+      "source": "fred:BOGZ1FL893064105Q",
+      "zscore": 2.4,
+      "signal": "ELEVATED",
+      "trend": "up"
+    },
+    "_nominal_gdp": {
+      "name": "Nominal GDP",
+      "name_zh": "\u540d\u4e49GDP",
+      "description": "US nominal GDP (quarterly, seasonally adjusted annual rate).",
+      "value": 31.1,
+      "direction": "up",
+      "unit": "$T",
+      "source": "fred:GDP",
+      "zscore": 1.9,
+      "signal": "ELEVATED",
+      "trend": "up"
+    },
     "cn_us_spread": {
       "name": "China\u2013US 10Y Spread",
       "name_zh": "\u4e2d\u7f8e10\u5e74\u671f\u5229\u5dee",
@@ -760,6 +784,18 @@
       "change_ytd_bp": 0,
       "note": "Derived: (cn_10y \u2212 us_10y) \u00d7 100",
       "zscore": -1.9,
+      "signal": "ELEVATED",
+      "trend": "up"
+    },
+    "buffett_indicator": {
+      "name": "Buffett Indicator",
+      "name_zh": "\u5df4\u83f2\u7279\u6307\u6807",
+      "description": "Total US equity market cap / GDP. Warren Buffett's preferred valuation gauge. Historical average ~80%. Above 100% = overvalued. Currently near all-time highs: signals US equities priced for perfection.",
+      "value": 348.7,
+      "direction": "up",
+      "unit": "%",
+      "source": "derived:_total_mktcap+_nominal_gdp",
+      "zscore": 2.2,
       "signal": "ELEVATED",
       "trend": "up"
     }

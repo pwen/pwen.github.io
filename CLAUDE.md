@@ -26,7 +26,7 @@ This is a multi-project workspace:
 - GitHub Actions daily cron at 7AM UTC
 
 ### Data Architecture
-- 56 metrics across 9 categories, LOOKBACK_YEARS=11 (~11 years of weekly data)
+- 61 metrics across 9 categories, LOOKBACK_YEARS=11 (~11 years of weekly data)
 - Metrics split into **per-category JSON files**: `currencies.json`, `rates.json`, `liquidity.json`, `china.json`, `metals.json`, `energy.json`, `equities.json`, `sentiment.json`, `row.json`
 - Lightweight `metrics.json` index (metadata only, no history arrays)
 - All files in `assets/data/pulse/`

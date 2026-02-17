@@ -38,7 +38,7 @@ Content should be served locally at `http://localhost:4000`
 
 ## 📊 Pulse Data Pipeline
 
-The Pulse macro dashboard tracks 56 metrics across 9 categories, organized around 5 macro theses. Most are fetched automatically from yfinance and FRED; some require manual CSV backfill.
+The Pulse macro dashboard tracks 61 metrics across 9 categories, organized around 5 macro theses. Most are fetched automatically from yfinance and FRED; some require manual CSV backfill.
 
 ### Metric Source Types
 
