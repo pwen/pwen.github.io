@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-16T17:21:33Z",
+  "updated": "2026-02-16T17:31:10Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -144,6 +144,20 @@
       "zscore": -2.2,
       "signal": "ELEVATED",
       "trend": "down"
+    },
+    "cn_us_spread": {
+      "name": "China\u2013US 10Y Spread",
+      "name_zh": "\u4e2d\u7f8e10\u5e74\u671f\u5229\u5dee",
+      "description": "China 10Y minus US 10Y yield (in bp). Currently deeply negative: US must offer far higher yields to fund its debt. Becoming more negative = US fiscal pressure worsening, dollar weakness signal. Narrowing (less negative) = pressure easing. Also a CNY stability indicator: wide gap = capital outflow pressure on yuan.",
+      "value": -261.1,
+      "direction": "down",
+      "unit": "bp",
+      "source": "derived:cn_10y+us_10y",
+      "change_ytd_bp": 0,
+      "note": "Derived: (cn_10y \u2212 us_10y) \u00d7 100",
+      "zscore": -1.9,
+      "signal": "ELEVATED",
+      "trend": "up"
     },
     "hy_spread": {
       "name": "HY Credit Spread (OAS)",
@@ -474,14 +488,14 @@
     "cb_gold_buying": {
       "name": "Central Bank Gold Buying",
       "name_zh": "\u592e\u884c\u8d2d\u91d1\u91cf",
-      "description": "Quarterly net purchases by central banks (World Gold Council). Net buyers since 2010, accelerating post-2022. Rising = structural de-dollarization demand.",
+      "description": "Trailing 12-month net purchases by central banks (World Gold Council). Structural shift post-2022: ~1,000 t/yr vs ~300\u2013650 pre-2022. Rising = de-dollarization demand.",
       "value": 1000.0,
-      "direction": "up",
+      "direction": "down",
       "unit": "tonnes/yr",
       "source": "manual",
       "note": "Quarterly, lagged \u2014 World Gold Council",
-      "zscore": 2.2,
-      "signal": "ELEVATED",
+      "zscore": 1.0,
+      "signal": "NORMAL",
       "trend": "down"
     },
     "csi300": {
@@ -783,20 +797,6 @@
       "unit": "$T",
       "source": "fred:GDP",
       "zscore": 1.9,
-      "signal": "ELEVATED",
-      "trend": "up"
-    },
-    "cn_us_spread": {
-      "name": "China\u2013US 10Y Spread",
-      "name_zh": "\u4e2d\u7f8e10\u5e74\u671f\u5229\u5dee",
-      "description": "China 10Y minus US 10Y yield (in bp). Currently deeply negative: US must offer far higher yields to fund its debt. Becoming more negative = US fiscal pressure worsening, dollar weakness signal. Narrowing (less negative) = pressure easing. Also a CNY stability indicator: wide gap = capital outflow pressure on yuan.",
-      "value": -261.1,
-      "direction": "down",
-      "unit": "bp",
-      "source": "derived:cn_10y+us_10y",
-      "change_ytd_bp": 0,
-      "note": "Derived: (cn_10y \u2212 us_10y) \u00d7 100",
-      "zscore": -1.9,
       "signal": "ELEVATED",
       "trend": "up"
     },

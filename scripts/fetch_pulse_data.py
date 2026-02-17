@@ -389,7 +389,7 @@ METRICS = {
     "cb_gold_buying": {
         "name": "Central Bank Gold Buying",
         "name_zh": "央行购金量",
-        "description": "Quarterly net purchases by central banks (World Gold Council). Net buyers since 2010, accelerating post-2022. Rising = structural de-dollarization demand.",
+        "description": "Trailing 12-month net purchases by central banks (World Gold Council). Structural shift post-2022: ~1,000 t/yr vs ~300–650 pre-2022. Rising = de-dollarization demand.",
         "source_type": "manual",
         "frequency": "quarterly",
         "unit": "tonnes/yr",
@@ -847,7 +847,7 @@ def compute_yoy(data: list[tuple[str, float]]) -> list[tuple[str, float]]:
 
 # ─── Main pipeline ───────────────────────────────────────────────────────────
 
-def main():
+def main(only: list[str] | None = None):
     if not FRED_API_KEY:
         print("✗ FRED_API_KEY not set. Export it: export FRED_API_KEY=your_key")
         sys.exit(1)
@@ -857,6 +857,13 @@ def main():
     end_date = now.strftime("%Y-%m-%d")
     start_date = (now - timedelta(days=LOOKBACK_YEARS * 365 + 30)).strftime("%Y-%m-%d")
 
+    if only:
+        # Validate metric IDs
+        unknown = [m for m in only if m not in METRICS]
+        if unknown:
+            print(f"✗ Unknown metric(s): {', '.join(unknown)}")
+            sys.exit(1)
+        print(f"Fetching {len(only)} metric(s): {', '.join(only)}")
     print(f"Fetching data: {start_date} → {end_date}")
     print(f"Output: {OUTPUT_PATH}\n")
 
@@ -875,6 +882,13 @@ def main():
 
     for metric_id, config in METRICS.items():
         source = config["source_type"]
+
+        # Selective fetch: skip metrics not in the requested list
+        if only and metric_id not in only:
+            if metric_id in existing:
+                result_metrics[metric_id] = existing[metric_id]
+            continue
+
         print(f"  [{metric_id}] ({source}) ...", end=" ", flush=True)
 
         history = []
@@ -973,6 +987,13 @@ def main():
     for metric_id, config in METRICS.items():
         if config["source_type"] != "derived" or "derive_from" not in config:
             continue
+        # Selective fetch: skip unless explicitly requested or a source was refreshed
+        if only and metric_id not in only:
+            sources_refreshed = any(s in only for s in config["derive_from"])
+            if not sources_refreshed:
+                if metric_id in existing:
+                    result_metrics[metric_id] = existing[metric_id]
+                continue
         print(f"  [{metric_id}] (derived) ...", end=" ", flush=True)
 
         sources = config["derive_from"]  # e.g. ["cn_10y", "us_10y"]
@@ -1246,7 +1267,11 @@ if __name__ == "__main__":
     sub = parser.add_subparsers(dest="command")
 
     # Default fetch (no subcommand)
-    sub.add_parser("fetch", help="Fetch all API-sourced metrics (default)")
+    fetch_parser = sub.add_parser("fetch", help="Fetch API-sourced metrics (all by default)")
+    fetch_parser.add_argument(
+        "metrics", nargs="*", default=None,
+        help="Optional metric IDs to fetch (e.g. dxy gold). Omit to fetch all.",
+    )
 
     # Backfill from CSV
     bf = sub.add_parser("backfill", help="Load manual metric data from CSV")
@@ -1258,6 +1283,9 @@ if __name__ == "__main__":
     if args.command == "backfill":
         csv_path = args.csv_path or f"data/backfill/{args.metric_id}.csv"
         backfill_from_csv(args.metric_id, csv_path)
+    elif args.command == "fetch":
+        only = args.metrics if args.metrics else None
+        main(only=only)
     else:
-        # Default: fetch
+        # No subcommand: fetch all
         main()
