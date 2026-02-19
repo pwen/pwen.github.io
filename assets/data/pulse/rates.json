@@ -1,12 +1,12 @@
 {
-  "updated": "2026-02-18T07:19:12Z",
+  "updated": "2026-02-19T07:19:02Z",
   "metrics": {
     "us_10y": {
       "name": "US 10Y Yield",
       "name_zh": "\u7f8e\u56fd\u5341\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
       "description": "Benchmark Treasury yield. Rising = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
-      "value": 4.052,
-      "direction": "down",
+      "value": 4.079,
+      "direction": "up",
       "unit": "%",
       "history": [
         [
@@ -2322,12 +2322,12 @@
           4.056
         ],
         [
-          "2026-02-17",
-          4.052
+          "2026-02-18",
+          4.079
         ]
       ],
       "source": "yfinance:^TNX",
-      "change_ytd_bp": -14,
+      "change_ytd_bp": -11,
       "zscore": 1.2,
       "signal": "NORMAL",
       "trend": "down"
@@ -3980,7 +3980,7 @@
       "name_zh": "\u6536\u76ca\u7387\u66f2\u7ebf\uff0810Y-2Y\u5229\u5dee\uff09",
       "description": "10Y minus 2Y Treasury yield: measures yield curve steepness. Positive and rising = curve steepening (long-end yields rising faster, often signaling inflation expectations or fiscal stress). Inverted (negative) = market pricing rate cuts. Re-steepening after inversion historically precedes recessions within 6-18 months.",
       "value": 0.62,
-      "direction": "down",
+      "direction": "up",
       "unit": "% spread",
       "history": [
         [
@@ -6296,7 +6296,7 @@
           0.64
         ],
         [
-          "2026-02-17",
+          "2026-02-18",
           0.62
         ]
       ],
@@ -6310,8 +6310,8 @@
       "name": "US 5Y TIPS (Real Yield)",
       "name_zh": "\u4e94\u5e74\u671f\u5b9e\u9645\u5229\u7387\uff08TIPS\uff09",
       "description": "Real cost of money after inflation. Rising = tighter real conditions, falling = looser. Negative real yields push capital toward gold and hard assets.",
-      "value": 1.19,
-      "direction": "down",
+      "value": 1.24,
+      "direction": "up",
       "unit": "%",
       "history": [
         [
@@ -8625,11 +8625,15 @@
         [
           "2026-02-13",
           1.19
+        ],
+        [
+          "2026-02-17",
+          1.24
         ]
       ],
       "source": "fred:DFII5",
-      "change_ytd_bp": -27,
-      "zscore": 0.7,
+      "change_ytd_bp": -22,
+      "zscore": 0.8,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -8637,8 +8641,8 @@
       "name": "10Y Breakeven Inflation",
       "name_zh": "\u5341\u5e74\u671f\u76c8\u4e8f\u5e73\u8861\u901a\u80c0\u7387",
       "description": "Market-implied inflation expectation for the next 10 years. Rising = market pricing higher inflation, falling = disinflation expectations.",
-      "value": 2.26,
-      "direction": "down",
+      "value": 2.29,
+      "direction": "up",
       "unit": "%",
       "history": [
         [
@@ -10954,13 +10958,13 @@
           2.27
         ],
         [
-          "2026-02-17",
-          2.26
+          "2026-02-18",
+          2.29
         ]
       ],
       "source": "fred:T10YIE",
-      "change_ytd_bp": 1,
-      "zscore": 0.6,
+      "change_ytd_bp": 4,
+      "zscore": 0.7,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -10969,7 +10973,7 @@
       "name_zh": "\u9ad8\u6536\u76ca\u503a\u5229\u5dee",
       "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% signals recession risk. Leading indicator: when the Fed tightens or liquidity dries up, HY spreads blow out before equities sell off.",
       "value": 2.94,
-      "direction": "down",
+      "direction": "up",
       "unit": "%",
       "history": [
         [
@@ -13285,7 +13289,7 @@
           2.95
         ],
         [
-          "2026-02-16",
+          "2026-02-17",
           2.94
         ]
       ],
