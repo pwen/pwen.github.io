@@ -1,12 +1,12 @@
 {
-  "updated": "2026-02-20T07:17:50Z",
+  "updated": "2026-02-21T07:10:21Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 20.23,
-      "direction": "up",
+      "value": 19.09,
+      "direction": "down",
       "unit": "index",
       "history": [
         [
@@ -2318,13 +2318,13 @@
           20.6
         ],
         [
-          "2026-02-19",
-          20.23
+          "2026-02-20",
+          19.09
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 39.4,
-      "zscore": 0.3,
+      "change_ytd_pct": 31.6,
+      "zscore": 0.1,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -2332,7 +2332,7 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 66957.5234,
+      "value": 68005.4219,
       "direction": "up",
       "unit": "$",
       "history": [
@@ -4649,12 +4649,12 @@
           68788.1875
         ],
         [
-          "2026-02-19",
-          66957.5234
+          "2026-02-20",
+          68005.4219
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -24.5,
+      "change_ytd_pct": -23.4,
       "zscore": 1.2,
       "signal": "NORMAL",
       "trend": "down"
@@ -5402,8 +5402,8 @@
       "name": "US Real GDP Growth",
       "name_zh": "\u7f8e\u56fd\u5b9e\u9645GDP\u589e\u901f",
       "description": "Real GDP growth rate (SAAR). The headline US growth number. Above 2% = solid, above 3% = strong, below 0% for 2 consecutive quarters = recession.",
-      "value": 4.4,
-      "direction": "up",
+      "value": 1.4,
+      "direction": "down",
       "unit": "% QoQ",
       "history": [
         [
@@ -5577,11 +5577,15 @@
         [
           "2025-07-01",
           4.4
+        ],
+        [
+          "2025-10-01",
+          1.4
         ]
       ],
       "source": "fred:A191RL1Q225SBEA",
       "note": "Quarterly, annualized \u2014 BEA",
-      "zscore": 0.2,
+      "zscore": -0.2,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -6085,7 +6089,7 @@
       "name": "UMich Consumer Sentiment",
       "name_zh": "\u5bc6\u6b47\u6839\u6d88\u8d39\u8005\u4fe1\u5fc3\u6307\u6570",
       "description": "University of Michigan consumer sentiment index. Below 60 = deep pessimism (recession risk), above 80 = confidence. A leading indicator: consumers cut spending before GDP falls.",
-      "value": 52.9,
+      "value": 56.4,
       "direction": "up",
       "unit": "index",
       "history": [
@@ -6616,11 +6620,16 @@
         [
           "2025-12-01",
           52.9
+        ],
+        [
+          "2026-01-01",
+          56.4
         ]
       ],
       "source": "fred:UMCSENT",
+      "change_ytd_pct": 0.0,
       "note": "Monthly \u2014 UMich",
-      "zscore": -1.8,
+      "zscore": -1.6,
       "signal": "ELEVATED",
       "trend": "up"
     }
