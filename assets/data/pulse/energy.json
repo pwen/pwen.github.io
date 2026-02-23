@@ -1,12 +1,12 @@
 {
-  "updated": "2026-02-22T07:13:04Z",
+  "updated": "2026-02-23T07:21:23Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 66.48,
-      "direction": "up",
+      "value": 66.39,
+      "direction": "down",
       "unit": "$/bbl",
       "history": [
         [
@@ -2319,11 +2319,11 @@
         ],
         [
           "2026-02-20",
-          66.48
+          66.39
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 16.0,
+      "change_ytd_pct": 15.8,
       "zscore": 0.2,
       "signal": "NORMAL",
       "trend": "up"
@@ -2332,8 +2332,8 @@
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 71.3,
-      "direction": "down",
+      "value": 71.76,
+      "direction": "up",
       "unit": "$/bbl",
       "history": [
         [
@@ -4646,11 +4646,11 @@
         ],
         [
           "2026-02-20",
-          71.3
+          71.76
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 17.4,
+      "change_ytd_pct": 18.1,
       "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "up"
@@ -4659,8 +4659,8 @@
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 2.984,
-      "direction": "down",
+      "value": 3.047,
+      "direction": "up",
       "unit": "$/MMBtu",
       "history": [
         [
@@ -6973,11 +6973,11 @@
         ],
         [
           "2026-02-20",
-          2.984
+          3.047
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -17.5,
+      "change_ytd_pct": -15.8,
       "zscore": -0.1,
       "signal": "NORMAL",
       "trend": "down"
