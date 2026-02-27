@@ -1,18 +1,14 @@
 {
-  "updated": "2026-02-16T17:31:10Z",
+  "updated": "2026-02-26T07:19:13Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 20.6,
+      "value": 17.93,
       "direction": "down",
       "unit": "index",
       "history": [
-        [
-          "2015-01-23",
-          16.66
-        ],
         [
           "2015-01-30",
           20.97
@@ -2320,11 +2316,19 @@
         [
           "2026-02-13",
           20.6
+        ],
+        [
+          "2026-02-20",
+          19.09
+        ],
+        [
+          "2026-02-25",
+          17.93
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 42.0,
-      "zscore": 0.4,
+      "change_ytd_pct": 23.6,
+      "zscore": -0.0,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -2332,14 +2336,10 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 68788.1875,
-      "direction": "down",
+      "value": 67960.125,
+      "direction": "up",
       "unit": "$",
       "history": [
-        [
-          "2015-01-25",
-          253.718
-        ],
         [
           "2015-02-01",
           226.972
@@ -4647,11 +4647,19 @@
         [
           "2026-02-15",
           68788.1875
+        ],
+        [
+          "2026-02-22",
+          67659.3906
+        ],
+        [
+          "2026-02-25",
+          67960.125
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -22.5,
-      "zscore": 1.3,
+      "change_ytd_pct": -23.4,
+      "zscore": 1.2,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -5398,8 +5406,8 @@
       "name": "US Real GDP Growth",
       "name_zh": "\u7f8e\u56fd\u5b9e\u9645GDP\u589e\u901f",
       "description": "Real GDP growth rate (SAAR). The headline US growth number. Above 2% = solid, above 3% = strong, below 0% for 2 consecutive quarters = recession.",
-      "value": 4.4,
-      "direction": "up",
+      "value": 1.4,
+      "direction": "down",
       "unit": "% QoQ",
       "history": [
         [
@@ -5573,11 +5581,15 @@
         [
           "2025-07-01",
           4.4
+        ],
+        [
+          "2025-10-01",
+          1.4
         ]
       ],
       "source": "fred:A191RL1Q225SBEA",
       "note": "Quarterly, annualized \u2014 BEA",
-      "zscore": 0.2,
+      "zscore": -0.2,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -6081,7 +6093,7 @@
       "name": "UMich Consumer Sentiment",
       "name_zh": "\u5bc6\u6b47\u6839\u6d88\u8d39\u8005\u4fe1\u5fc3\u6307\u6570",
       "description": "University of Michigan consumer sentiment index. Below 60 = deep pessimism (recession risk), above 80 = confidence. A leading indicator: consumers cut spending before GDP falls.",
-      "value": 52.9,
+      "value": 56.4,
       "direction": "up",
       "unit": "index",
       "history": [
@@ -6612,11 +6624,16 @@
         [
           "2025-12-01",
           52.9
+        ],
+        [
+          "2026-01-01",
+          56.4
         ]
       ],
       "source": "fred:UMCSENT",
+      "change_ytd_pct": 0.0,
       "note": "Monthly \u2014 UMich",
-      "zscore": -1.8,
+      "zscore": -1.6,
       "signal": "ELEVATED",
       "trend": "up"
     }
