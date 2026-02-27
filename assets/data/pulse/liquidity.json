@@ -1,12 +1,12 @@
 {
-  "updated": "2026-02-26T07:19:13Z",
+  "updated": "2026-02-27T07:16:07Z",
   "metrics": {
     "fed_balance_sheet": {
       "name": "Fed Balance Sheet",
       "name_zh": "\u7f8e\u8054\u50a8\u8d44\u4ea7\u8d1f\u503a\u8868",
       "description": "Total assets held by the Federal Reserve. Rising = QE / liquidity injection, falling = QT / tightening. Treasury market stress forces re-expansion.",
       "value": 6.61,
-      "direction": "down",
+      "direction": "up",
       "unit": "$T",
       "history": [
         [
@@ -2316,6 +2316,10 @@
         [
           "2026-02-18",
           6.61
+        ],
+        [
+          "2026-02-25",
+          6.61
         ]
       ],
       "source": "fred:WALCL",
@@ -2515,7 +2519,7 @@
       "name": "Treasury General Account",
       "name_zh": "\u8d22\u653f\u90e8\u4e00\u822c\u8d26\u6237\uff08TGA\uff09",
       "description": "US government's checking account at the Fed. Drawdowns inject liquidity into markets (bullish for risk assets). Refills drain liquidity.",
-      "value": 912.7,
+      "value": 887.6,
       "direction": "down",
       "unit": "$B",
       "history": [
@@ -4826,11 +4830,15 @@
         [
           "2026-02-18",
           912.7
+        ],
+        [
+          "2026-02-25",
+          887.6
         ]
       ],
       "source": "fred:WTREGEN",
-      "change_ytd_pct": 14.6,
-      "zscore": 1.0,
+      "change_ytd_pct": 11.5,
+      "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -4838,14 +4846,10 @@
       "name": "ON RRP Usage",
       "name_zh": "\u9694\u591c\u9006\u56de\u8d2d\u4f7f\u7528\u91cf",
       "description": "Cash parked at the Fed's overnight reverse repo facility. High = excess liquidity sloshing around. Draining toward zero = liquidity cushion gone, markets more fragile. Peaked at ~$2.6T in late 2022, now near zero.",
-      "value": 1.2,
+      "value": 3.8,
       "direction": "up",
       "unit": "$B",
       "history": [
-        [
-          "2015-01-30",
-          190.8
-        ],
         [
           "2015-02-06",
           122.0
@@ -7155,12 +7159,12 @@
           0.5
         ],
         [
-          "2026-02-25",
-          1.2
+          "2026-02-26",
+          3.8
         ]
       ],
       "source": "fred:RRPONTSYD",
-      "change_ytd_pct": -78.9,
+      "change_ytd_pct": -33.3,
       "zscore": -0.7,
       "signal": "NORMAL",
       "trend": "down"
@@ -7169,7 +7173,7 @@
       "name": "Reserve Balances",
       "name_zh": "\u94f6\u884c\u51c6\u5907\u91d1\u4f59\u989d",
       "description": "Bank reserves held at the Fed. Below ~$3T historically triggers repo stress. The floor for 'ample reserves' regime: when reserves get scarce, the Fed is forced to stop QT or restart lending facilities.",
-      "value": 2.95,
+      "value": 2.97,
       "direction": "up",
       "unit": "$T",
       "history": [
@@ -9480,10 +9484,14 @@
         [
           "2026-02-18",
           2.95
+        ],
+        [
+          "2026-02-25",
+          2.97
         ]
       ],
       "source": "fred:WRESBAL",
-      "change_ytd_pct": -1.7,
+      "change_ytd_pct": -1.0,
       "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "flat"
