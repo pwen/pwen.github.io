@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-27T07:16:07Z",
+  "updated": "2026-02-28T07:05:53Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 18.63,
+      "value": 19.86,
       "direction": "up",
       "unit": "index",
       "history": [
@@ -2318,13 +2318,13 @@
           19.09
         ],
         [
-          "2026-02-26",
-          18.63
+          "2026-02-27",
+          19.86
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 28.4,
-      "zscore": 0.1,
+      "change_ytd_pct": 36.9,
+      "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -2332,7 +2332,7 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 67453.7734,
+      "value": 65881.7969,
       "direction": "down",
       "unit": "$",
       "history": [
@@ -4649,12 +4649,12 @@
           67659.3906
         ],
         [
-          "2026-02-26",
-          67453.7734
+          "2026-02-27",
+          65881.7969
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -24.0,
+      "change_ytd_pct": -25.8,
       "zscore": 1.2,
       "signal": "NORMAL",
       "trend": "down"
@@ -5598,10 +5598,6 @@
       "unit": "% YoY",
       "history": [
         [
-          "2016-01-01",
-          1.2
-        ],
-        [
           "2016-02-01",
           0.8
         ],
@@ -6093,10 +6089,6 @@
       "direction": "up",
       "unit": "index",
       "history": [
-        [
-          "2015-01-01",
-          98.1
-        ],
         [
           "2015-02-01",
           95.4
@@ -6629,7 +6621,7 @@
       "source": "fred:UMCSENT",
       "change_ytd_pct": 0.0,
       "note": "Monthly \u2014 UMich",
-      "zscore": -1.6,
+      "zscore": -1.5,
       "signal": "ELEVATED",
       "trend": "up"
     }
