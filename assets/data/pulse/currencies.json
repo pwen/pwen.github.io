@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-28T07:05:53Z",
+  "updated": "2026-03-01T07:11:48Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
       "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
-      "value": 97.61,
+      "value": 97.646,
       "direction": "down",
       "unit": "index",
       "history": [
@@ -2319,12 +2319,12 @@
         ],
         [
           "2026-02-27",
-          97.61
+          97.646
         ]
       ],
       "source": "yfinance:DX-Y.NYB",
       "change_ytd_pct": -0.8,
-      "zscore": -0.2,
+      "zscore": -0.1,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -4659,8 +4659,8 @@
       "name": "USD/CNY",
       "name_zh": "\u7f8e\u5143/\u4eba\u6c11\u5e01",
       "description": "Dollar-yuan exchange rate. Rising = yuan weakening, falling = yuan strengthening. Below 7.00 signals meaningful capital flow shift toward China.",
-      "value": 6.8409,
-      "direction": "down",
+      "value": 6.8574,
+      "direction": "up",
       "unit": "rate",
       "history": [
         [
@@ -6972,13 +6972,13 @@
           6.9081
         ],
         [
-          "2026-02-27",
-          6.8409
+          "2026-02-28",
+          6.8574
         ]
       ],
       "source": "yfinance:CNY=X",
-      "change_ytd_pct": -2.2,
-      "zscore": 0.1,
+      "change_ytd_pct": -2.0,
+      "zscore": 0.2,
       "signal": "NORMAL",
       "trend": "down"
     },
