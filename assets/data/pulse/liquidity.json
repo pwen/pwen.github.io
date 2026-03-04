@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-03T07:15:08Z",
+  "updated": "2026-03-04T07:13:05Z",
   "metrics": {
     "fed_balance_sheet": {
       "name": "Fed Balance Sheet",
@@ -9,10 +9,6 @@
       "direction": "up",
       "unit": "$T",
       "history": [
-        [
-          "2015-02-04",
-          4.5
-        ],
         [
           "2015-02-11",
           4.5
@@ -2332,7 +2328,7 @@
       "name": "US Debt/GDP",
       "name_zh": "\u7f8e\u56fd\u503a\u52a1/GDP",
       "description": "Federal debt as a share of GDP. Rising = fiscal trajectory worsening. If GDP grows faster than debt, the ratio stabilizes; otherwise compounding takes over.",
-      "value": 121.0288,
+      "value": 122.3053,
       "direction": "up",
       "unit": "%",
       "history": [
@@ -2507,11 +2503,15 @@
         [
           "2025-07-01",
           121.0288
+        ],
+        [
+          "2025-10-01",
+          122.3053
         ]
       ],
       "source": "fred:GFDEGDQ188S",
       "note": "Quarterly, interpolated",
-      "zscore": 1.0,
+      "zscore": 1.1,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -2523,10 +2523,6 @@
       "direction": "down",
       "unit": "$B",
       "history": [
-        [
-          "2015-02-04",
-          167.3
-        ],
         [
           "2015-02-11",
           158.9
@@ -4846,8 +4842,8 @@
       "name": "ON RRP Usage",
       "name_zh": "\u9694\u591c\u9006\u56de\u8d2d\u4f7f\u7528\u91cf",
       "description": "Cash parked at the Fed's overnight reverse repo facility. High = excess liquidity sloshing around. Draining toward zero = liquidity cushion gone, markets more fragile. Peaked at ~$2.6T in late 2022, now near zero.",
-      "value": 0.6,
-      "direction": "down",
+      "value": 1.2,
+      "direction": "up",
       "unit": "$B",
       "history": [
         [
@@ -7163,12 +7159,12 @@
           16.3
         ],
         [
-          "2026-03-02",
-          0.6
+          "2026-03-03",
+          1.2
         ]
       ],
       "source": "fred:RRPONTSYD",
-      "change_ytd_pct": -89.5,
+      "change_ytd_pct": -78.9,
       "zscore": -0.7,
       "signal": "NORMAL",
       "trend": "down"
@@ -7181,10 +7177,6 @@
       "direction": "up",
       "unit": "$T",
       "history": [
-        [
-          "2015-02-04",
-          2.68
-        ],
         [
           "2015-02-11",
           2.54
