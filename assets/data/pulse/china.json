@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-11T07:15:13Z",
+  "updated": "2026-03-12T07:16:10Z",
   "metrics": {
     "csi300": {
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
       "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
-      "value": 4674.7598,
+      "value": 4704.5,
       "direction": "up",
       "unit": "index",
       "history": [
@@ -1030,13 +1030,13 @@
           4660.4399
         ],
         [
-          "2026-03-10",
-          4674.7598
+          "2026-03-11",
+          4704.5
         ]
       ],
       "source": "yfinance:000300.SS",
-      "change_ytd_pct": -0.9,
-      "zscore": 1.0,
+      "change_ytd_pct": -0.3,
+      "zscore": 1.1,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -1044,8 +1044,8 @@
       "name": "Hang Seng Index",
       "name_zh": "\u6052\u751f\u6307\u6570",
       "description": "Hong Kong's benchmark: the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment than onshore CSI 300.",
-      "value": 25959.9004,
-      "direction": "up",
+      "value": 25898.7598,
+      "direction": "down",
       "unit": "index",
       "history": [
         [
@@ -3361,12 +3361,12 @@
           25757.2891
         ],
         [
-          "2026-03-10",
-          25959.9004
+          "2026-03-11",
+          25898.7598
         ]
       ],
       "source": "yfinance:^HSI",
-      "change_ytd_pct": -1.4,
+      "change_ytd_pct": -1.7,
       "zscore": 0.5,
       "signal": "NORMAL",
       "trend": "down"
@@ -3375,8 +3375,8 @@
       "name": "China Internet ETF (KWEB)",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
       "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
-      "value": 30.99,
-      "direction": "up",
+      "value": 30.49,
+      "direction": "down",
       "unit": "$",
       "history": [
         [
@@ -3401,7 +3401,7 @@
         ],
         [
           "2015-03-20",
-          26.1954
+          26.1953
         ],
         [
           "2015-03-27",
@@ -3777,7 +3777,7 @@
         ],
         [
           "2017-01-06",
-          29.4109
+          29.411
         ],
         [
           "2017-01-13",
@@ -4025,7 +4025,7 @@
         ],
         [
           "2018-03-16",
-          53.8798
+          53.8797
         ],
         [
           "2018-03-23",
@@ -4061,7 +4061,7 @@
         ],
         [
           "2018-05-18",
-          48.3173
+          48.3174
         ],
         [
           "2018-05-25",
@@ -4301,7 +4301,7 @@
         ],
         [
           "2019-07-12",
-          35.9195
+          35.9194
         ],
         [
           "2019-07-19",
@@ -4441,7 +4441,7 @@
         ],
         [
           "2020-03-13",
-          37.3809
+          37.3808
         ],
         [
           "2020-03-20",
@@ -4457,7 +4457,7 @@
         ],
         [
           "2020-04-09",
-          38.2299
+          38.2298
         ],
         [
           "2020-04-17",
@@ -4469,7 +4469,7 @@
         ],
         [
           "2020-05-01",
-          38.0884
+          38.0883
         ],
         [
           "2020-05-08",
@@ -4485,7 +4485,7 @@
         ],
         [
           "2020-05-29",
-          43.7899
+          43.79
         ],
         [
           "2020-06-05",
@@ -4553,7 +4553,7 @@
         ],
         [
           "2020-09-25",
-          55.3013
+          55.3014
         ],
         [
           "2020-10-02",
@@ -4949,7 +4949,7 @@
         ],
         [
           "2022-08-19",
-          24.4664
+          24.4663
         ],
         [
           "2022-08-26",
@@ -5057,7 +5057,7 @@
         ],
         [
           "2023-02-24",
-          25.8997
+          25.8998
         ],
         [
           "2023-03-03",
@@ -5692,13 +5692,13 @@
           29.71
         ],
         [
-          "2026-03-10",
-          30.99
+          "2026-03-11",
+          30.49
         ]
       ],
       "source": "yfinance:KWEB",
-      "change_ytd_pct": -13.0,
-      "zscore": -0.4,
+      "change_ytd_pct": -14.4,
+      "zscore": -0.5,
       "signal": "NORMAL",
       "trend": "down"
     },
