@@ -4,6 +4,7 @@ title: "2026年2月：乱世之中的底色是耐心"
 date: 2026-02-28
 lang: zh
 tags: [2026]
+image: /assets/images/IMG_0319.jpg
 excerpt: |
   如果非要给这个二月（甚至这整个2026年）定一个基调，我想大概是：耐心。
 
