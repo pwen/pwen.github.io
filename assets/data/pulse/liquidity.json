@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-13T07:16:03Z",
+  "updated": "2026-03-14T07:12:49Z",
   "metrics": {
     "fed_balance_sheet": {
       "name": "Fed Balance Sheet",
@@ -2332,7 +2332,7 @@
       "name": "US Debt/GDP",
       "name_zh": "\u7f8e\u56fd\u503a\u52a1/GDP",
       "description": "Federal debt as a share of GDP. Rising = fiscal trajectory worsening. If GDP grows faster than debt, the ratio stabilizes; otherwise compounding takes over.",
-      "value": 122.3053,
+      "value": 122.4904,
       "direction": "up",
       "unit": "%",
       "history": [
@@ -2510,7 +2510,7 @@
         ],
         [
           "2025-10-01",
-          122.3053
+          122.4904
         ]
       ],
       "source": "fred:GFDEGDQ188S",
@@ -4850,8 +4850,8 @@
       "name": "ON RRP Usage",
       "name_zh": "\u9694\u591c\u9006\u56de\u8d2d\u4f7f\u7528\u91cf",
       "description": "Cash parked at the Fed's overnight reverse repo facility. High = excess liquidity sloshing around. Draining toward zero = liquidity cushion gone, markets more fragile. Peaked at ~$2.6T in late 2022, now near zero.",
-      "value": 0.1,
-      "direction": "down",
+      "value": 0.4,
+      "direction": "up",
       "unit": "$B",
       "history": [
         [
@@ -7163,12 +7163,12 @@
           1.5
         ],
         [
-          "2026-03-12",
-          0.1
+          "2026-03-13",
+          0.4
         ]
       ],
       "source": "fred:RRPONTSYD",
-      "change_ytd_pct": -98.2,
+      "change_ytd_pct": -93.0,
       "zscore": -0.7,
       "signal": "NORMAL",
       "trend": "down"

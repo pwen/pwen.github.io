@@ -1,12 +1,12 @@
 {
-  "updated": "2026-03-13T07:16:03Z",
+  "updated": "2026-03-14T07:12:49Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 27.29,
-      "direction": "up",
+      "value": 27.19,
+      "direction": "down",
       "unit": "index",
       "history": [
         [
@@ -2318,12 +2318,12 @@
           29.49
         ],
         [
-          "2026-03-12",
-          27.29
+          "2026-03-13",
+          27.19
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 88.1,
+      "change_ytd_pct": 87.4,
       "zscore": 1.3,
       "signal": "NORMAL",
       "trend": "up"
@@ -4649,7 +4649,7 @@
           65969.7812
         ],
         [
-          "2026-03-13",
+          "2026-03-14",
           NaN
         ]
       ],
@@ -5402,7 +5402,7 @@
       "name": "US Real GDP Growth",
       "name_zh": "\u7f8e\u56fd\u5b9e\u9645GDP\u589e\u901f",
       "description": "Real GDP growth rate (SAAR). The headline US growth number. Above 2% = solid, above 3% = strong, below 0% for 2 consecutive quarters = recession.",
-      "value": 1.4,
+      "value": 0.7,
       "direction": "down",
       "unit": "% QoQ",
       "history": [
@@ -5580,12 +5580,12 @@
         ],
         [
           "2025-10-01",
-          1.4
+          0.7
         ]
       ],
       "source": "fred:A191RL1Q225SBEA",
       "note": "Quarterly, annualized \u2014 BEA",
-      "zscore": -0.2,
+      "zscore": -0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
