@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-14T07:12:49Z",
+  "updated": "2026-03-15T07:16:46Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
@@ -2332,8 +2332,8 @@
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 103.14,
-      "direction": "up",
+      "value": 98.91,
+      "direction": "down",
       "unit": "$/bbl",
       "history": [
         [
@@ -4646,12 +4646,12 @@
         ],
         [
           "2026-03-13",
-          103.14
+          98.91
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 69.8,
-      "zscore": 2.0,
+      "change_ytd_pct": 62.8,
+      "zscore": 1.8,
       "signal": "ELEVATED",
       "trend": "up"
     },
