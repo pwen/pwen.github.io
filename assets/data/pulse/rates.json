@@ -1,12 +1,12 @@
 {
-  "updated": "2026-03-16T07:28:18Z",
+  "updated": "2026-03-17T07:20:25Z",
   "metrics": {
     "us_10y": {
       "name": "US 10Y Yield",
       "name_zh": "\u7f8e\u56fd\u5341\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
       "description": "Benchmark Treasury yield. Rising = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
-      "value": 4.285,
-      "direction": "up",
+      "value": 4.22,
+      "direction": "down",
       "unit": "%",
       "history": [
         [
@@ -2320,20 +2320,24 @@
         [
           "2026-03-13",
           4.285
+        ],
+        [
+          "2026-03-16",
+          4.22
         ]
       ],
       "source": "yfinance:^TNX",
-      "change_ytd_bp": 10,
-      "zscore": 1.4,
+      "change_ytd_bp": 3,
+      "zscore": 1.3,
       "signal": "NORMAL",
-      "trend": "up"
+      "trend": "flat"
     },
     "jp_10y": {
       "name": "Japan 10Y Yield",
       "name_zh": "\u65e5\u672c10\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
       "description": "Japan 10-year government bond yield. BOJ was the last holdout on ultra-loose policy. Rising JGB yields \u2192 Japanese investors repatriate capital from US/EU bonds \u2192 global liquidity tightening. Above 1% is a sea change for the world\u2019s largest creditor nation.",
-      "value": 2.24,
-      "direction": "up",
+      "value": 2.11,
+      "direction": "down",
       "unit": "%",
       "history": [
         [
@@ -2863,11 +2867,15 @@
         [
           "2026-01-01",
           2.24
+        ],
+        [
+          "2026-02-01",
+          2.11
         ]
       ],
       "source": "fred:IRLTLT01JPM156N",
-      "change_ytd_bp": 0,
-      "zscore": 3.6,
+      "change_ytd_bp": -13,
+      "zscore": 3.2,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -6282,6 +6290,10 @@
         [
           "2026-03-13",
           0.55
+        ],
+        [
+          "2026-03-16",
+          0.55
         ]
       ],
       "source": "fred:T10Y2Y",
@@ -6294,7 +6306,7 @@
       "name": "US 5Y TIPS (Real Yield)",
       "name_zh": "\u4e94\u5e74\u671f\u5b9e\u9645\u5229\u7387\uff08TIPS\uff09",
       "description": "Real cost of money after inflation. Rising = tighter real conditions, falling = looser. Negative real yields push capital toward gold and hard assets.",
-      "value": 1.25,
+      "value": 1.26,
       "direction": "up",
       "unit": "%",
       "history": [
@@ -8607,12 +8619,12 @@
           1.16
         ],
         [
-          "2026-03-12",
-          1.25
+          "2026-03-13",
+          1.26
         ]
       ],
       "source": "fred:DFII5",
-      "change_ytd_bp": -21,
+      "change_ytd_bp": -20,
       "zscore": 0.8,
       "signal": "NORMAL",
       "trend": "down"
@@ -8622,7 +8634,7 @@
       "name_zh": "\u5341\u5e74\u671f\u76c8\u4e8f\u5e73\u8861\u901a\u80c0\u7387",
       "description": "Market-implied inflation expectation for the next 10 years. Rising = market pricing higher inflation, falling = disinflation expectations.",
       "value": 2.36,
-      "direction": "down",
+      "direction": "up",
       "unit": "%",
       "history": [
         [
@@ -10936,6 +10948,10 @@
         [
           "2026-03-13",
           2.36
+        ],
+        [
+          "2026-03-16",
+          2.36
         ]
       ],
       "source": "fred:T10YIE",
@@ -10948,7 +10964,7 @@
       "name": "HY Credit Spread (OAS)",
       "name_zh": "\u9ad8\u6536\u76ca\u503a\u5229\u5dee",
       "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% signals recession risk. Leading indicator: when the Fed tightens or liquidity dries up, HY spreads blow out before equities sell off.",
-      "value": 3.17,
+      "value": 3.28,
       "direction": "up",
       "unit": "%",
       "history": [
@@ -13261,13 +13277,13 @@
           3.13
         ],
         [
-          "2026-03-12",
-          3.17
+          "2026-03-13",
+          3.28
         ]
       ],
       "source": "fred:BAMLH0A0HYM2",
-      "change_ytd_bp": 34,
-      "zscore": -0.9,
+      "change_ytd_bp": 45,
+      "zscore": -0.8,
       "signal": "NORMAL",
       "trend": "up"
     },
