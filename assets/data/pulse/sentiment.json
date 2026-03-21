@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-20T07:16:08Z",
+  "updated": "2026-03-21T07:11:37Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 25.09,
+      "value": 26.78,
       "direction": "up",
       "unit": "index",
       "history": [
@@ -2318,13 +2318,13 @@
           27.19
         ],
         [
-          "2026-03-18",
-          25.09
+          "2026-03-20",
+          26.78
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 72.9,
-      "zscore": 1.0,
+      "change_ytd_pct": 84.6,
+      "zscore": 1.2,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -4649,7 +4649,7 @@
           72789.9141
         ],
         [
-          "2026-03-20",
+          "2026-03-21",
           NaN
         ]
       ],
