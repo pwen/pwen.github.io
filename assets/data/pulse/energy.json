@@ -1,18 +1,14 @@
 {
-  "updated": "2026-03-26T07:24:26Z",
+  "updated": "2026-03-27T07:23:30Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": NaN,
-      "direction": "down",
+      "value": 94.48,
+      "direction": "up",
       "unit": "$/bbl",
       "history": [
-        [
-          "2015-02-27",
-          49.76
-        ],
         [
           "2015-03-06",
           49.61
@@ -2323,27 +2319,23 @@
         ],
         [
           "2026-03-26",
-          NaN
+          94.48
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": NaN,
-      "zscore": NaN,
-      "signal": "NORMAL",
-      "trend": "flat"
+      "change_ytd_pct": 64.8,
+      "zscore": 1.8,
+      "signal": "ELEVATED",
+      "trend": "up"
     },
     "brent": {
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": NaN,
-      "direction": "down",
+      "value": 108.01,
+      "direction": "up",
       "unit": "$/bbl",
       "history": [
-        [
-          "2015-02-27",
-          62.58
-        ],
         [
           "2015-03-06",
           59.73
@@ -4654,27 +4646,23 @@
         ],
         [
           "2026-03-26",
-          NaN
+          108.01
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": NaN,
-      "zscore": NaN,
-      "signal": "NORMAL",
-      "trend": "flat"
+      "change_ytd_pct": 77.8,
+      "zscore": 2.3,
+      "signal": "ELEVATED",
+      "trend": "up"
     },
     "natgas": {
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": NaN,
-      "direction": "down",
+      "value": 2.999,
+      "direction": "up",
       "unit": "$/MMBtu",
       "history": [
-        [
-          "2015-02-27",
-          2.734
-        ],
         [
           "2015-03-06",
           2.839
@@ -6985,14 +6973,14 @@
         ],
         [
           "2026-03-26",
-          NaN
+          2.999
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": NaN,
-      "zscore": NaN,
+      "change_ytd_pct": -17.1,
+      "zscore": -0.1,
       "signal": "NORMAL",
-      "trend": "flat"
+      "trend": "down"
     },
     "energy_cpi": {
       "name": "Energy Services CPI YoY",
