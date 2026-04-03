@@ -1,18 +1,14 @@
 {
-  "updated": "2026-04-02T07:26:42Z",
+  "updated": "2026-04-03T07:24:59Z",
   "metrics": {
     "us_10y": {
       "name": "US 10Y Yield",
       "name_zh": "\u7f8e\u56fd\u5341\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
       "description": "Benchmark Treasury yield. Rising = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
-      "value": 4.319,
-      "direction": "up",
+      "value": 4.313,
+      "direction": "down",
       "unit": "%",
       "history": [
-        [
-          "2015-03-06",
-          2.24
-        ],
         [
           "2015-03-13",
           2.112
@@ -2322,8 +2318,8 @@
           4.44
         ],
         [
-          "2026-04-01",
-          4.319
+          "2026-04-02",
+          4.313
         ]
       ],
       "source": "yfinance:^TNX",
@@ -3432,10 +3428,6 @@
       "unit": "bp",
       "history": [
         [
-          "2015-02-28",
-          117.0
-        ],
-        [
           "2015-03-31",
           161.6
         ],
@@ -3975,10 +3967,6 @@
       "direction": "up",
       "unit": "% spread",
       "history": [
-        [
-          "2015-03-06",
-          1.51
-        ],
         [
           "2015-03-13",
           1.45
@@ -6288,7 +6276,7 @@
           0.56
         ],
         [
-          "2026-04-01",
+          "2026-04-02",
           0.52
         ]
       ],
@@ -6302,14 +6290,10 @@
       "name": "US 5Y TIPS (Real Yield)",
       "name_zh": "\u4e94\u5e74\u671f\u5b9e\u9645\u5229\u7387\uff08TIPS\uff09",
       "description": "Real cost of money after inflation. Rising = tighter real conditions, falling = looser. Negative real yields push capital toward gold and hard assets.",
-      "value": 1.38,
-      "direction": "down",
+      "value": 1.42,
+      "direction": "up",
       "unit": "%",
       "history": [
-        [
-          "2015-03-06",
-          0.15
-        ],
         [
           "2015-03-13",
           0.2
@@ -8619,12 +8603,12 @@
           1.5
         ],
         [
-          "2026-03-31",
-          1.38
+          "2026-04-01",
+          1.42
         ]
       ],
       "source": "fred:DFII5",
-      "change_ytd_bp": -8,
+      "change_ytd_bp": -4,
       "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "up"
@@ -8633,14 +8617,10 @@
       "name": "10Y Breakeven Inflation",
       "name_zh": "\u5341\u5e74\u671f\u76c8\u4e8f\u5e73\u8861\u901a\u80c0\u7387",
       "description": "Market-implied inflation expectation for the next 10 years. Rising = market pricing higher inflation, falling = disinflation expectations.",
-      "value": 2.31,
+      "value": 2.34,
       "direction": "up",
       "unit": "%",
       "history": [
-        [
-          "2015-03-06",
-          1.83
-        ],
         [
           "2015-03-13",
           1.69
@@ -10950,28 +10930,24 @@
           2.31
         ],
         [
-          "2026-04-01",
-          2.31
+          "2026-04-02",
+          2.34
         ]
       ],
       "source": "fred:T10YIE",
-      "change_ytd_bp": 6,
-      "zscore": 0.7,
+      "change_ytd_bp": 9,
+      "zscore": 0.8,
       "signal": "NORMAL",
-      "trend": "down"
+      "trend": "flat"
     },
     "hy_spread": {
       "name": "HY Credit Spread (OAS)",
       "name_zh": "\u9ad8\u6536\u76ca\u503a\u5229\u5dee",
       "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% signals recession risk. Leading indicator: when the Fed tightens or liquidity dries up, HY spreads blow out before equities sell off.",
-      "value": 3.28,
+      "value": 3.16,
       "direction": "down",
       "unit": "%",
       "history": [
-        [
-          "2015-03-06",
-          4.42
-        ],
         [
           "2015-03-13",
           4.68
@@ -13281,13 +13257,13 @@
           3.42
         ],
         [
-          "2026-03-31",
-          3.28
+          "2026-04-01",
+          3.16
         ]
       ],
       "source": "fred:BAMLH0A0HYM2",
-      "change_ytd_bp": 45,
-      "zscore": -0.8,
+      "change_ytd_bp": 33,
+      "zscore": -0.9,
       "signal": "NORMAL",
       "trend": "up"
     },
