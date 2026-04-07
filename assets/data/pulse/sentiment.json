@@ -1,12 +1,12 @@
 {
-  "updated": "2026-04-06T07:29:09Z",
+  "updated": "2026-04-07T07:27:51Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 23.87,
-      "direction": "down",
+      "value": 24.17,
+      "direction": "up",
       "unit": "index",
       "history": [
         [
@@ -2320,11 +2320,15 @@
         [
           "2026-04-02",
           23.87
+        ],
+        [
+          "2026-04-06",
+          24.17
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 64.5,
-      "zscore": 0.8,
+      "change_ytd_pct": 66.6,
+      "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -2332,8 +2336,8 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 68981.8984,
-      "direction": "up",
+      "value": 68859.8281,
+      "direction": "down",
       "unit": "$",
       "history": [
         [
@@ -4647,13 +4651,17 @@
         [
           "2026-04-05",
           68981.8984
+        ],
+        [
+          "2026-04-06",
+          68859.8281
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -22.3,
+      "change_ytd_pct": -22.4,
       "zscore": 1.2,
       "signal": "NORMAL",
-      "trend": "down"
+      "trend": "flat"
     },
     "cb_gold_buying": {
       "name": "Central Bank Gold Buying",
