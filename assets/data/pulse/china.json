@@ -1,11 +1,11 @@
 {
-  "updated": "2026-04-07T07:27:51Z",
+  "updated": "2026-04-08T07:28:38Z",
   "metrics": {
     "csi300": {
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
       "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
-      "value": 4440.79,
+      "value": NaN,
       "direction": "down",
       "unit": "index",
       "history": [
@@ -1044,13 +1044,17 @@
         [
           "2026-04-03",
           4440.79
+        ],
+        [
+          "2026-04-07",
+          NaN
         ]
       ],
       "source": "yfinance:000300.SS",
-      "change_ytd_pct": -5.9,
-      "zscore": 0.6,
+      "change_ytd_pct": NaN,
+      "zscore": NaN,
       "signal": "NORMAL",
-      "trend": "down"
+      "trend": "flat"
     },
     "hsi": {
       "name": "Hang Seng Index",
@@ -3383,17 +3387,17 @@
       "name": "China Internet ETF (KWEB)",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
       "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
-      "value": 28.14,
-      "direction": "up",
+      "value": NaN,
+      "direction": "down",
       "unit": "$",
       "history": [
         [
           "2015-03-13",
-          24.8584
+          24.8585
         ],
         [
           "2015-03-20",
-          26.1953
+          26.1954
         ],
         [
           "2015-03-27",
@@ -3509,7 +3513,7 @@
         ],
         [
           "2015-10-09",
-          25.8753
+          25.8754
         ],
         [
           "2015-10-16",
@@ -4017,7 +4021,7 @@
         ],
         [
           "2018-03-16",
-          53.8798
+          53.8797
         ],
         [
           "2018-03-23",
@@ -4293,7 +4297,7 @@
         ],
         [
           "2019-07-12",
-          35.9195
+          35.9194
         ],
         [
           "2019-07-19",
@@ -4365,7 +4369,7 @@
         ],
         [
           "2019-11-15",
-          38.4228
+          38.4227
         ],
         [
           "2019-11-22",
@@ -4433,7 +4437,7 @@
         ],
         [
           "2020-03-13",
-          37.3808
+          37.3809
         ],
         [
           "2020-03-20",
@@ -4449,7 +4453,7 @@
         ],
         [
           "2020-04-09",
-          38.2299
+          38.2298
         ],
         [
           "2020-04-17",
@@ -4461,7 +4465,7 @@
         ],
         [
           "2020-05-01",
-          38.0884
+          38.0883
         ],
         [
           "2020-05-08",
@@ -4549,7 +4553,7 @@
         ],
         [
           "2020-10-02",
-          56.2919
+          56.2918
         ],
         [
           "2020-10-09",
@@ -4665,7 +4669,7 @@
         ],
         [
           "2021-04-23",
-          64.939
+          64.9389
         ],
         [
           "2021-04-30",
@@ -4729,7 +4733,7 @@
         ],
         [
           "2021-08-13",
-          40.2424
+          40.2425
         ],
         [
           "2021-08-20",
@@ -4789,7 +4793,7 @@
         ],
         [
           "2021-11-26",
-          38.0132
+          38.0133
         ],
         [
           "2021-12-03",
@@ -4941,7 +4945,7 @@
         ],
         [
           "2022-08-19",
-          24.4664
+          24.4663
         ],
         [
           "2022-08-26",
@@ -5700,15 +5704,15 @@
           28.09
         ],
         [
-          "2026-04-06",
-          28.14
+          "2026-04-07",
+          NaN
         ]
       ],
       "source": "yfinance:KWEB",
-      "change_ytd_pct": -21.0,
-      "zscore": -0.7,
+      "change_ytd_pct": NaN,
+      "zscore": NaN,
       "signal": "NORMAL",
-      "trend": "down"
+      "trend": "flat"
     },
     "china_pmi": {
       "name": "China Mfg PMI",

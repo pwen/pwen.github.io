@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-07T07:27:51Z",
+  "updated": "2026-04-08T07:28:38Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -2336,8 +2336,8 @@
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
-      "value": 1.151,
-      "direction": "down",
+      "value": 1.1541,
+      "direction": "up",
       "unit": "rate",
       "history": [
         [
@@ -4653,12 +4653,12 @@
           1.1542
         ],
         [
-          "2026-04-06",
-          1.151
+          "2026-04-07",
+          1.1541
         ]
       ],
       "source": "yfinance:EURUSD=X",
-      "change_ytd_pct": -2.0,
+      "change_ytd_pct": -1.8,
       "zscore": 0.6,
       "signal": "NORMAL",
       "trend": "down"
@@ -4667,7 +4667,7 @@
       "name": "USD/CNY",
       "name_zh": "\u7f8e\u5143/\u4eba\u6c11\u5e01",
       "description": "Dollar-yuan exchange rate. Rising = yuan weakening, falling = yuan strengthening. Below 7.00 signals meaningful capital flow shift toward China.",
-      "value": 6.8824,
+      "value": 6.8823,
       "direction": "down",
       "unit": "rate",
       "history": [
@@ -6984,8 +6984,8 @@
           6.8851
         ],
         [
-          "2026-04-06",
-          6.8824
+          "2026-04-07",
+          6.8823
         ]
       ],
       "source": "yfinance:CNY=X",
@@ -6998,8 +6998,8 @@
       "name": "USD/JPY",
       "name_zh": "\u7f8e\u5143/\u65e5\u5143",
       "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
-      "value": 159.78,
-      "direction": "up",
+      "value": 159.683,
+      "direction": "down",
       "unit": "rate",
       "history": [
         [
@@ -9315,8 +9315,8 @@
           159.491
         ],
         [
-          "2026-04-06",
-          159.78
+          "2026-04-07",
+          159.683
         ]
       ],
       "source": "yfinance:JPY=X",
