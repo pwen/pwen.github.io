@@ -1,11 +1,11 @@
 {
-  "updated": "2026-04-09T07:28:34Z",
+  "updated": "2026-04-10T07:28:52Z",
   "metrics": {
     "csi300": {
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
       "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
-      "value": NaN,
+      "value": 4566.2202,
       "direction": "down",
       "unit": "index",
       "history": [
@@ -1046,28 +1046,24 @@
           4440.79
         ],
         [
-          "2026-04-08",
-          NaN
+          "2026-04-09",
+          4566.2202
         ]
       ],
       "source": "yfinance:000300.SS",
-      "change_ytd_pct": NaN,
-      "zscore": NaN,
+      "change_ytd_pct": -3.2,
+      "zscore": 0.8,
       "signal": "NORMAL",
-      "trend": "flat"
+      "trend": "down"
     },
     "hsi": {
       "name": "Hang Seng Index",
       "name_zh": "\u6052\u751f\u6307\u6570",
       "description": "Hong Kong's benchmark: the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment than onshore CSI 300.",
-      "value": 25116.5293,
+      "value": 25752.4004,
       "direction": "down",
       "unit": "index",
       "history": [
-        [
-          "2015-03-13",
-          23823.2109
-        ],
         [
           "2015-03-20",
           24375.2402
@@ -3375,11 +3371,15 @@
         [
           "2026-04-02",
           25116.5293
+        ],
+        [
+          "2026-04-09",
+          25752.4004
         ]
       ],
       "source": "yfinance:^HSI",
-      "change_ytd_pct": -4.6,
-      "zscore": 0.3,
+      "change_ytd_pct": -2.2,
+      "zscore": 0.5,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -3387,14 +3387,10 @@
       "name": "China Internet ETF (KWEB)",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
       "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
-      "value": NaN,
+      "value": 28.79,
       "direction": "down",
       "unit": "$",
       "history": [
-        [
-          "2015-03-13",
-          24.8585
-        ],
         [
           "2015-03-20",
           26.1953
@@ -3581,7 +3577,7 @@
         ],
         [
           "2016-02-05",
-          24.7748
+          24.7749
         ],
         [
           "2016-02-12",
@@ -3625,7 +3621,7 @@
         ],
         [
           "2016-04-22",
-          29.4266
+          29.4265
         ],
         [
           "2016-04-29",
@@ -3941,7 +3937,7 @@
         ],
         [
           "2017-10-27",
-          44.4921
+          44.492
         ],
         [
           "2017-11-03",
@@ -4169,7 +4165,7 @@
         ],
         [
           "2018-11-30",
-          34.982
+          34.9821
         ],
         [
           "2018-12-07",
@@ -4297,11 +4293,11 @@
         ],
         [
           "2019-07-12",
-          35.9194
+          35.9195
         ],
         [
           "2019-07-19",
-          35.62
+          35.6201
         ],
         [
           "2019-07-26",
@@ -4465,7 +4461,7 @@
         ],
         [
           "2020-05-01",
-          38.0883
+          38.0884
         ],
         [
           "2020-05-08",
@@ -4729,7 +4725,7 @@
         ],
         [
           "2021-08-06",
-          40.6348
+          40.6349
         ],
         [
           "2021-08-13",
@@ -4973,7 +4969,7 @@
         ],
         [
           "2022-10-07",
-          22.164
+          22.1639
         ],
         [
           "2022-10-14",
@@ -5053,7 +5049,7 @@
         ],
         [
           "2023-02-24",
-          25.8998
+          25.8997
         ],
         [
           "2023-03-03",
@@ -5161,7 +5157,7 @@
         ],
         [
           "2023-09-01",
-          26.6165
+          26.6164
         ],
         [
           "2023-09-08",
@@ -5329,7 +5325,7 @@
         ],
         [
           "2024-06-21",
-          25.7804
+          25.7803
         ],
         [
           "2024-06-28",
@@ -5704,15 +5700,15 @@
           28.09
         ],
         [
-          "2026-04-08",
-          NaN
+          "2026-04-09",
+          28.79
         ]
       ],
       "source": "yfinance:KWEB",
-      "change_ytd_pct": NaN,
-      "zscore": NaN,
+      "change_ytd_pct": -19.2,
+      "zscore": -0.6,
       "signal": "NORMAL",
-      "trend": "flat"
+      "trend": "down"
     },
     "china_pmi": {
       "name": "China Mfg PMI",
