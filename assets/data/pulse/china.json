@@ -1,11 +1,11 @@
 {
-  "updated": "2026-04-14T07:29:28Z",
+  "updated": "2026-04-15T07:29:23Z",
   "metrics": {
     "csi300": {
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
       "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
-      "value": 4646.1602,
+      "value": 4701.2798,
       "direction": "up",
       "unit": "index",
       "history": [
@@ -1050,22 +1050,22 @@
           4636.5698
         ],
         [
-          "2026-04-13",
-          4646.1602
+          "2026-04-14",
+          4701.2798
         ]
       ],
       "source": "yfinance:000300.SS",
-      "change_ytd_pct": -1.5,
-      "zscore": 0.9,
+      "change_ytd_pct": -0.3,
+      "zscore": 1.0,
       "signal": "NORMAL",
-      "trend": "flat"
+      "trend": "up"
     },
     "hsi": {
       "name": "Hang Seng Index",
       "name_zh": "\u6052\u751f\u6307\u6570",
       "description": "Hong Kong's benchmark: the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment than onshore CSI 300.",
-      "value": 25660.8496,
-      "direction": "down",
+      "value": 25872.3203,
+      "direction": "up",
       "unit": "index",
       "history": [
         [
@@ -3381,13 +3381,13 @@
           25893.5391
         ],
         [
-          "2026-04-13",
-          25660.8496
+          "2026-04-14",
+          25872.3203
         ]
       ],
       "source": "yfinance:^HSI",
-      "change_ytd_pct": -2.6,
-      "zscore": 0.4,
+      "change_ytd_pct": -1.8,
+      "zscore": 0.5,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -3395,7 +3395,7 @@
       "name": "China Internet ETF (KWEB)",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
       "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
-      "value": 28.72,
+      "value": 29.37,
       "direction": "up",
       "unit": "$",
       "history": [
@@ -3585,7 +3585,7 @@
         ],
         [
           "2016-02-05",
-          24.7748
+          24.7749
         ],
         [
           "2016-02-12",
@@ -4001,7 +4001,7 @@
         ],
         [
           "2018-02-02",
-          50.2546
+          50.2545
         ],
         [
           "2018-02-09",
@@ -4061,7 +4061,7 @@
         ],
         [
           "2018-05-18",
-          48.3173
+          48.3174
         ],
         [
           "2018-05-25",
@@ -4213,7 +4213,7 @@
         ],
         [
           "2019-02-08",
-          35.9693
+          35.9694
         ],
         [
           "2019-02-15",
@@ -4581,7 +4581,7 @@
         ],
         [
           "2020-11-13",
-          64.399
+          64.3989
         ],
         [
           "2020-11-20",
@@ -4673,7 +4673,7 @@
         ],
         [
           "2021-04-23",
-          64.939
+          64.9389
         ],
         [
           "2021-04-30",
@@ -4733,7 +4733,7 @@
         ],
         [
           "2021-08-06",
-          40.6349
+          40.6348
         ],
         [
           "2021-08-13",
@@ -4949,7 +4949,7 @@
         ],
         [
           "2022-08-19",
-          24.4664
+          24.4663
         ],
         [
           "2022-08-26",
@@ -4977,7 +4977,7 @@
         ],
         [
           "2022-10-07",
-          22.164
+          22.1639
         ],
         [
           "2022-10-14",
@@ -5057,7 +5057,7 @@
         ],
         [
           "2023-02-24",
-          25.8998
+          25.8997
         ],
         [
           "2023-03-03",
@@ -5165,7 +5165,7 @@
         ],
         [
           "2023-09-01",
-          26.6165
+          26.6164
         ],
         [
           "2023-09-08",
@@ -5712,12 +5712,12 @@
           28.7
         ],
         [
-          "2026-04-13",
-          28.72
+          "2026-04-14",
+          29.37
         ]
       ],
       "source": "yfinance:KWEB",
-      "change_ytd_pct": -19.4,
+      "change_ytd_pct": -17.6,
       "zscore": -0.6,
       "signal": "NORMAL",
       "trend": "down"
