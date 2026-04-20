@@ -1,11 +1,11 @@
 {
-  "updated": "2026-04-19T07:27:56Z",
+  "updated": "2026-04-20T07:31:54Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 82.59,
+      "value": 83.85,
       "direction": "down",
       "unit": "$/bbl",
       "history": [
@@ -2319,12 +2319,12 @@
         ],
         [
           "2026-04-17",
-          82.59
+          83.85
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 44.1,
-      "zscore": 1.1,
+      "change_ytd_pct": 46.3,
+      "zscore": 1.2,
       "signal": "NORMAL",
       "trend": "up"
     },
