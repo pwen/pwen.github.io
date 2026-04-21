@@ -1,12 +1,12 @@
 {
-  "updated": "2026-04-20T07:31:54Z",
+  "updated": "2026-04-21T07:29:47Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 83.85,
-      "direction": "down",
+      "value": 89.61,
+      "direction": "up",
       "unit": "$/bbl",
       "history": [
         [
@@ -2320,20 +2320,24 @@
         [
           "2026-04-17",
           83.85
+        ],
+        [
+          "2026-04-20",
+          89.61
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 46.3,
-      "zscore": 1.2,
-      "signal": "NORMAL",
+      "change_ytd_pct": 56.3,
+      "zscore": 1.5,
+      "signal": "ELEVATED",
       "trend": "up"
     },
     "brent": {
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 90.38,
-      "direction": "down",
+      "value": 95.48,
+      "direction": "up",
       "unit": "$/bbl",
       "history": [
         [
@@ -4647,19 +4651,23 @@
         [
           "2026-04-17",
           90.38
+        ],
+        [
+          "2026-04-20",
+          95.48
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 48.8,
-      "zscore": 1.3,
-      "signal": "NORMAL",
+      "change_ytd_pct": 57.2,
+      "zscore": 1.6,
+      "signal": "ELEVATED",
       "trend": "up"
     },
     "natgas": {
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 2.674,
+      "value": 2.689,
       "direction": "up",
       "unit": "$/MMBtu",
       "history": [
@@ -6974,10 +6982,14 @@
         [
           "2026-04-17",
           2.674
+        ],
+        [
+          "2026-04-20",
+          2.689
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -26.1,
+      "change_ytd_pct": -25.7,
       "zscore": -0.4,
       "signal": "NORMAL",
       "trend": "down"
