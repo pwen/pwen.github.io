@@ -1,11 +1,11 @@
 {
-  "updated": "2026-04-24T07:32:27Z",
+  "updated": "2026-04-25T07:27:41Z",
   "metrics": {
     "csi300": {
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
       "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
-      "value": 4786.3301,
+      "value": 4769.3701,
       "direction": "down",
       "unit": "index",
       "history": [
@@ -1054,12 +1054,12 @@
           4728.6699
         ],
         [
-          "2026-04-23",
-          4786.3301
+          "2026-04-24",
+          4769.3701
         ]
       ],
       "source": "yfinance:000300.SS",
-      "change_ytd_pct": 1.5,
+      "change_ytd_pct": 1.1,
       "zscore": 1.2,
       "signal": "NORMAL",
       "trend": "up"
@@ -1068,8 +1068,8 @@
       "name": "Hang Seng Index",
       "name_zh": "\u6052\u751f\u6307\u6570",
       "description": "Hong Kong's benchmark: the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment than onshore CSI 300.",
-      "value": 25915.1992,
-      "direction": "down",
+      "value": 25978.0703,
+      "direction": "up",
       "unit": "index",
       "history": [
         [
@@ -3381,12 +3381,12 @@
           26160.3301
         ],
         [
-          "2026-04-23",
-          25915.1992
+          "2026-04-24",
+          25978.0703
         ]
       ],
       "source": "yfinance:^HSI",
-      "change_ytd_pct": -1.6,
+      "change_ytd_pct": -1.4,
       "zscore": 0.5,
       "signal": "NORMAL",
       "trend": "down"
@@ -3395,8 +3395,8 @@
       "name": "China Internet ETF (KWEB)",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
       "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
-      "value": 28.43,
-      "direction": "down",
+      "value": 28.83,
+      "direction": "up",
       "unit": "$",
       "history": [
         [
@@ -3745,7 +3745,7 @@
         ],
         [
           "2016-11-25",
-          30.082
+          30.0821
         ],
         [
           "2016-12-02",
@@ -3989,7 +3989,7 @@
         ],
         [
           "2018-01-26",
-          54.9327
+          54.9328
         ],
         [
           "2018-02-02",
@@ -4009,7 +4009,7 @@
         ],
         [
           "2018-03-02",
-          51.4361
+          51.4362
         ],
         [
           "2018-03-09",
@@ -4165,7 +4165,7 @@
         ],
         [
           "2018-11-30",
-          34.982
+          34.9821
         ],
         [
           "2018-12-07",
@@ -4205,7 +4205,7 @@
         ],
         [
           "2019-02-08",
-          35.9694
+          35.9693
         ],
         [
           "2019-02-15",
@@ -4225,7 +4225,7 @@
         ],
         [
           "2019-03-15",
-          38.822
+          38.8219
         ],
         [
           "2019-03-22",
@@ -4449,7 +4449,7 @@
         ],
         [
           "2020-04-09",
-          38.2298
+          38.2299
         ],
         [
           "2020-04-17",
@@ -4461,7 +4461,7 @@
         ],
         [
           "2020-05-01",
-          38.0883
+          38.0884
         ],
         [
           "2020-05-08",
@@ -4477,7 +4477,7 @@
         ],
         [
           "2020-05-29",
-          43.79
+          43.7899
         ],
         [
           "2020-06-05",
@@ -4549,7 +4549,7 @@
         ],
         [
           "2020-10-02",
-          56.2918
+          56.2919
         ],
         [
           "2020-10-09",
@@ -4665,7 +4665,7 @@
         ],
         [
           "2021-04-23",
-          64.939
+          64.9389
         ],
         [
           "2021-04-30",
@@ -4725,7 +4725,7 @@
         ],
         [
           "2021-08-06",
-          40.6348
+          40.6349
         ],
         [
           "2021-08-13",
@@ -4969,7 +4969,7 @@
         ],
         [
           "2022-10-07",
-          22.164
+          22.1639
         ],
         [
           "2022-10-14",
@@ -5125,7 +5125,7 @@
         ],
         [
           "2023-07-07",
-          24.6187
+          24.6186
         ],
         [
           "2023-07-14",
@@ -5325,7 +5325,7 @@
         ],
         [
           "2024-06-21",
-          25.7804
+          25.7803
         ],
         [
           "2024-06-28",
@@ -5708,12 +5708,12 @@
           30.45
         ],
         [
-          "2026-04-23",
-          28.43
+          "2026-04-24",
+          28.83
         ]
       ],
       "source": "yfinance:KWEB",
-      "change_ytd_pct": -20.2,
+      "change_ytd_pct": -19.1,
       "zscore": -0.6,
       "signal": "NORMAL",
       "trend": "down"

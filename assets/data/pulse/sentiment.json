@@ -1,12 +1,12 @@
 {
-  "updated": "2026-04-24T07:32:27Z",
+  "updated": "2026-04-25T07:27:41Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 19.31,
-      "direction": "up",
+      "value": 18.71,
+      "direction": "down",
       "unit": "index",
       "history": [
         [
@@ -2318,13 +2318,13 @@
           17.48
         ],
         [
-          "2026-04-23",
-          19.31
+          "2026-04-24",
+          18.71
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 33.1,
-      "zscore": 0.2,
+      "change_ytd_pct": 28.9,
+      "zscore": 0.1,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -2332,8 +2332,8 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 78268.9531,
-      "direction": "up",
+      "value": 77455.3125,
+      "direction": "down",
       "unit": "$",
       "history": [
         [
@@ -4649,12 +4649,12 @@
           73856.3516
         ],
         [
-          "2026-04-23",
-          78268.9531
+          "2026-04-24",
+          77455.3125
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -11.8,
+      "change_ytd_pct": -12.7,
       "zscore": 1.5,
       "signal": "ELEVATED",
       "trend": "up"
@@ -6089,8 +6089,8 @@
       "name": "UMich Consumer Sentiment",
       "name_zh": "\u5bc6\u6b47\u6839\u6d88\u8d39\u8005\u4fe1\u5fc3\u6307\u6570",
       "description": "University of Michigan consumer sentiment index. Below 60 = deep pessimism (recession risk), above 80 = confidence. A leading indicator: consumers cut spending before GDP falls.",
-      "value": 56.6,
-      "direction": "up",
+      "value": 53.3,
+      "direction": "down",
       "unit": "index",
       "history": [
         [
@@ -6620,12 +6620,16 @@
         [
           "2026-02-01",
           56.6
+        ],
+        [
+          "2026-03-01",
+          53.3
         ]
       ],
       "source": "fred:UMCSENT",
-      "change_ytd_pct": 0.4,
+      "change_ytd_pct": -5.5,
       "note": "Monthly \u2014 UMich",
-      "zscore": -1.5,
+      "zscore": -1.7,
       "signal": "ELEVATED",
       "trend": "down"
     }
