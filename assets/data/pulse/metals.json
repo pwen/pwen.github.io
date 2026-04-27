@@ -1,11 +1,11 @@
 {
-  "updated": "2026-04-26T07:28:53Z",
+  "updated": "2026-04-27T07:44:27Z",
   "metrics": {
     "gold": {
       "name": "Gold",
       "name_zh": "\u9ec4\u91d1",
       "description": "Spot gold price. Rising = inflation hedge demand / loss of confidence in fiat. Central banks buying gold = voting to diversify away from dollars.",
-      "value": 4740.8999,
+      "value": 4722.2998,
       "direction": "up",
       "unit": "$/oz",
       "history": [
@@ -2319,12 +2319,12 @@
         ],
         [
           "2026-04-24",
-          4740.8999
+          4722.2998
         ]
       ],
       "source": "yfinance:GC=F",
-      "change_ytd_pct": 9.9,
-      "zscore": 3.5,
+      "change_ytd_pct": 9.5,
+      "zscore": 3.4,
       "signal": "EXTREME",
       "trend": "down"
     },
@@ -2332,7 +2332,7 @@
       "name": "Silver",
       "name_zh": "\u767d\u94f6",
       "description": "Both monetary and industrial metal (solar, electronics). Market in structural deficit. Outperforms gold in bull runs, more volatile.",
-      "value": 76.414,
+      "value": 76.383,
       "direction": "up",
       "unit": "$/oz",
       "history": [
@@ -4646,7 +4646,7 @@
         ],
         [
           "2026-04-24",
-          76.414
+          76.383
         ]
       ],
       "source": "yfinance:SI=F",
@@ -4659,7 +4659,7 @@
       "name": "Copper",
       "name_zh": "\u94dc",
       "description": "Electrification bellwether: EVs, data centers, wind turbines, grid upgrades. Supply structurally constrained (mines take 7-15 years). Rising = industrial and green demand outpacing supply.",
-      "value": 6.027,
+      "value": 6.0235,
       "direction": "down",
       "unit": "$/lb",
       "history": [
@@ -6973,11 +6973,11 @@
         ],
         [
           "2026-04-24",
-          6.027
+          6.0235
         ]
       ],
       "source": "yfinance:HG=F",
-      "change_ytd_pct": 6.9,
+      "change_ytd_pct": 6.8,
       "zscore": 2.7,
       "signal": "EXTREME",
       "trend": "flat"
@@ -6986,7 +6986,7 @@
       "name": "Aluminum",
       "name_zh": "\u94dd",
       "description": "Aluminum futures. The most China-sensitive industrial metal (~60% of global production). Proxy for Chinese industrial activity and global construction/infrastructure demand.",
-      "value": 3555.75,
+      "value": 3607.75,
       "direction": "down",
       "unit": "$/t",
       "history": [
@@ -9280,12 +9280,12 @@
         ],
         [
           "2026-04-24",
-          3555.75
+          3607.75
         ]
       ],
       "source": "yfinance:ALI=F",
-      "change_ytd_pct": 21.0,
-      "zscore": 3.1,
+      "change_ytd_pct": 22.8,
+      "zscore": 3.2,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -10379,7 +10379,7 @@
         ],
         [
           "2020-06-05",
-          9.0778
+          9.0777
         ],
         [
           "2020-06-12",
@@ -10479,7 +10479,7 @@
         ],
         [
           "2020-11-27",
-          9.7244
+          9.7245
         ],
         [
           "2020-12-04",
@@ -10771,7 +10771,7 @@
         ],
         [
           "2022-04-22",
-          21.2388
+          21.2387
         ],
         [
           "2022-04-29",
@@ -10839,7 +10839,7 @@
         ],
         [
           "2022-08-19",
-          17.1424
+          17.1423
         ],
         [
           "2022-08-26",
@@ -10915,7 +10915,7 @@
         ],
         [
           "2022-12-30",
-          17.5792
+          17.5793
         ],
         [
           "2023-01-06",
@@ -11646,7 +11646,7 @@
         ],
         [
           "2015-05-08",
-          57.059
+          57.0591
         ],
         [
           "2015-05-15",
@@ -11842,7 +11842,7 @@
         ],
         [
           "2016-04-15",
-          34.7489
+          34.7488
         ],
         [
           "2016-04-22",
@@ -11914,7 +11914,7 @@
         ],
         [
           "2016-08-19",
-          39.4086
+          39.4087
         ],
         [
           "2016-08-26",
@@ -12038,7 +12038,7 @@
         ],
         [
           "2017-03-24",
-          40.3587
+          40.3586
         ],
         [
           "2017-03-31",
@@ -12070,7 +12070,7 @@
         ],
         [
           "2017-05-19",
-          39.7008
+          39.7007
         ],
         [
           "2017-05-26",
@@ -12138,7 +12138,7 @@
         ],
         [
           "2017-09-15",
-          58.0312
+          58.0311
         ],
         [
           "2017-09-22",
@@ -12306,7 +12306,7 @@
         ],
         [
           "2018-07-06",
-          53.136
+          53.1359
         ],
         [
           "2018-07-13",
@@ -12486,7 +12486,7 @@
         ],
         [
           "2019-05-17",
-          35.8829
+          35.883
         ],
         [
           "2019-05-24",
@@ -12526,7 +12526,7 @@
         ],
         [
           "2019-07-26",
-          36.7467
+          36.7466
         ],
         [
           "2019-08-02",
@@ -12590,7 +12590,7 @@
         ],
         [
           "2019-11-15",
-          33.1871
+          33.1872
         ],
         [
           "2019-11-22",
@@ -12746,7 +12746,7 @@
         ],
         [
           "2020-08-14",
-          37.1568
+          37.1567
         ],
         [
           "2020-08-21",
@@ -13082,7 +13082,7 @@
         ],
         [
           "2022-03-25",
-          110.2657
+          110.2658
         ],
         [
           "2022-04-01",
