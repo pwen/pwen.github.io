@@ -1,12 +1,12 @@
 {
-  "updated": "2026-04-27T07:44:27Z",
+  "updated": "2026-04-28T07:44:15Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 94.4,
-      "direction": "down",
+      "value": 96.37,
+      "direction": "up",
       "unit": "$/bbl",
       "history": [
         [
@@ -2320,11 +2320,15 @@
         [
           "2026-04-24",
           94.4
+        ],
+        [
+          "2026-04-27",
+          96.37
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 64.7,
-      "zscore": 1.8,
+      "change_ytd_pct": 68.1,
+      "zscore": 1.9,
       "signal": "ELEVATED",
       "trend": "up"
     },
@@ -2332,7 +2336,7 @@
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 105.33,
+      "value": 108.23,
       "direction": "up",
       "unit": "$/bbl",
       "history": [
@@ -4647,11 +4651,15 @@
         [
           "2026-04-24",
           105.33
+        ],
+        [
+          "2026-04-27",
+          108.23
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 73.4,
-      "zscore": 2.1,
+      "change_ytd_pct": 78.2,
+      "zscore": 2.2,
       "signal": "ELEVATED",
       "trend": "up"
     },
@@ -4659,8 +4667,8 @@
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 2.523,
-      "direction": "down",
+      "value": 2.55,
+      "direction": "up",
       "unit": "$/MMBtu",
       "history": [
         [
@@ -6974,10 +6982,14 @@
         [
           "2026-04-24",
           2.523
+        ],
+        [
+          "2026-04-27",
+          2.55
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -30.3,
+      "change_ytd_pct": -29.5,
       "zscore": -0.5,
       "signal": "NORMAL",
       "trend": "down"
@@ -6990,10 +7002,6 @@
       "direction": "down",
       "unit": "% YoY",
       "history": [
-        [
-          "2016-03-01",
-          -3.7
-        ],
         [
           "2016-04-01",
           -3.1

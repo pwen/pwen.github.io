@@ -1,11 +1,11 @@
 {
-  "updated": "2026-04-27T07:44:27Z",
+  "updated": "2026-04-28T07:44:15Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 18.71,
+      "value": 18.02,
       "direction": "down",
       "unit": "index",
       "history": [
@@ -2320,11 +2320,15 @@
         [
           "2026-04-24",
           18.71
+        ],
+        [
+          "2026-04-27",
+          18.02
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 28.9,
-      "zscore": 0.1,
+      "change_ytd_pct": 24.2,
+      "zscore": -0.0,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -2332,8 +2336,8 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 78657.5391,
-      "direction": "up",
+      "value": 77366.625,
+      "direction": "down",
       "unit": "$",
       "history": [
         [
@@ -4647,10 +4651,14 @@
         [
           "2026-04-26",
           78657.5391
+        ],
+        [
+          "2026-04-27",
+          77366.625
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -11.4,
+      "change_ytd_pct": -12.8,
       "zscore": 1.5,
       "signal": "ELEVATED",
       "trend": "up"
@@ -5403,10 +5411,6 @@
       "unit": "% QoQ",
       "history": [
         [
-          "2015-01-01",
-          3.6
-        ],
-        [
           "2015-04-01",
           2.5
         ],
@@ -5593,10 +5597,6 @@
       "direction": "up",
       "unit": "% YoY",
       "history": [
-        [
-          "2016-03-01",
-          0.9
-        ],
         [
           "2016-04-01",
           1.2
@@ -6089,10 +6089,6 @@
       "direction": "down",
       "unit": "index",
       "history": [
-        [
-          "2015-03-01",
-          93.0
-        ],
         [
           "2015-04-01",
           95.9
