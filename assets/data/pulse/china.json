@@ -1,12 +1,12 @@
 {
-  "updated": "2026-04-29T07:39:57Z",
+  "updated": "2026-04-30T07:42:50Z",
   "metrics": {
     "csi300": {
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
       "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
-      "value": 4758.21,
-      "direction": "down",
+      "value": 4810.3501,
+      "direction": "up",
       "unit": "index",
       "history": [
         [
@@ -1058,13 +1058,13 @@
           4769.3701
         ],
         [
-          "2026-04-28",
-          4758.21
+          "2026-04-29",
+          4810.3501
         ]
       ],
       "source": "yfinance:000300.SS",
-      "change_ytd_pct": 0.9,
-      "zscore": 1.1,
+      "change_ytd_pct": 2.0,
+      "zscore": 1.2,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -1072,14 +1072,10 @@
       "name": "Hang Seng Index",
       "name_zh": "\u6052\u751f\u6307\u6570",
       "description": "Hong Kong's benchmark: the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment than onshore CSI 300.",
-      "value": 25679.7793,
-      "direction": "down",
+      "value": 26111.8398,
+      "direction": "up",
       "unit": "index",
       "history": [
-        [
-          "2015-04-02",
-          25275.6406
-        ],
         [
           "2015-04-10",
           27272.3906
@@ -3389,28 +3385,24 @@
           25978.0703
         ],
         [
-          "2026-04-28",
-          25679.7793
+          "2026-04-29",
+          26111.8398
         ]
       ],
       "source": "yfinance:^HSI",
-      "change_ytd_pct": -2.5,
-      "zscore": 0.5,
+      "change_ytd_pct": -0.9,
+      "zscore": 0.6,
       "signal": "NORMAL",
-      "trend": "flat"
+      "trend": "up"
     },
     "kweb": {
       "name": "China Internet ETF (KWEB)",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
       "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
-      "value": 28.11,
+      "value": 28.01,
       "direction": "down",
       "unit": "$",
       "history": [
-        [
-          "2015-04-02",
-          27.5244
-        ],
         [
           "2015-04-10",
           30.0881
@@ -3753,7 +3745,7 @@
         ],
         [
           "2016-11-25",
-          30.082
+          30.0821
         ],
         [
           "2016-12-02",
@@ -3945,7 +3937,7 @@
         ],
         [
           "2017-10-27",
-          44.492
+          44.4921
         ],
         [
           "2017-11-03",
@@ -3997,7 +3989,7 @@
         ],
         [
           "2018-01-26",
-          54.9327
+          54.9328
         ],
         [
           "2018-02-02",
@@ -4061,7 +4053,7 @@
         ],
         [
           "2018-05-18",
-          48.3173
+          48.3174
         ],
         [
           "2018-05-25",
@@ -4213,7 +4205,7 @@
         ],
         [
           "2019-02-08",
-          35.9693
+          35.9694
         ],
         [
           "2019-02-15",
@@ -4441,7 +4433,7 @@
         ],
         [
           "2020-03-13",
-          37.3809
+          37.3808
         ],
         [
           "2020-03-20",
@@ -4469,7 +4461,7 @@
         ],
         [
           "2020-05-01",
-          38.0884
+          38.0883
         ],
         [
           "2020-05-08",
@@ -4557,7 +4549,7 @@
         ],
         [
           "2020-10-02",
-          56.2918
+          56.2919
         ],
         [
           "2020-10-09",
@@ -4625,7 +4617,7 @@
         ],
         [
           "2021-01-29",
-          72.4615
+          72.4614
         ],
         [
           "2021-02-05",
@@ -4673,7 +4665,7 @@
         ],
         [
           "2021-04-23",
-          64.939
+          64.9389
         ],
         [
           "2021-04-30",
@@ -4925,7 +4917,7 @@
         ],
         [
           "2022-07-08",
-          28.7666
+          28.7665
         ],
         [
           "2022-07-15",
@@ -4949,7 +4941,7 @@
         ],
         [
           "2022-08-19",
-          24.4663
+          24.4664
         ],
         [
           "2022-08-26",
@@ -5057,7 +5049,7 @@
         ],
         [
           "2023-02-24",
-          25.8998
+          25.8997
         ],
         [
           "2023-03-03",
@@ -5333,7 +5325,7 @@
         ],
         [
           "2024-06-21",
-          25.7804
+          25.7803
         ],
         [
           "2024-06-28",
@@ -5720,12 +5712,12 @@
           28.83
         ],
         [
-          "2026-04-28",
-          28.11
+          "2026-04-29",
+          28.01
         ]
       ],
       "source": "yfinance:KWEB",
-      "change_ytd_pct": -21.1,
+      "change_ytd_pct": -21.4,
       "zscore": -0.7,
       "signal": "NORMAL",
       "trend": "down"
