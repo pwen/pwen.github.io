@@ -1,12 +1,12 @@
 {
-  "updated": "2026-04-30T07:42:50Z",
+  "updated": "2026-05-01T07:42:24Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 18.81,
-      "direction": "up",
+      "value": 16.89,
+      "direction": "down",
       "unit": "index",
       "history": [
         [
@@ -2318,13 +2318,13 @@
           18.71
         ],
         [
-          "2026-04-29",
-          18.81
+          "2026-04-30",
+          16.89
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 29.6,
-      "zscore": 0.1,
+      "change_ytd_pct": 16.4,
+      "zscore": -0.2,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -2332,8 +2332,8 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 75776.1328,
-      "direction": "down",
+      "value": 76304.3203,
+      "direction": "up",
       "unit": "$",
       "history": [
         [
@@ -4649,12 +4649,12 @@
           78657.5391
         ],
         [
-          "2026-04-29",
-          75776.1328
+          "2026-04-30",
+          76304.3203
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -14.6,
+      "change_ytd_pct": -14.0,
       "zscore": 1.4,
       "signal": "NORMAL",
       "trend": "up"
@@ -5402,8 +5402,8 @@
       "name": "US Real GDP Growth",
       "name_zh": "\u7f8e\u56fd\u5b9e\u9645GDP\u589e\u901f",
       "description": "Real GDP growth rate (SAAR). The headline US growth number. Above 2% = solid, above 3% = strong, below 0% for 2 consecutive quarters = recession.",
-      "value": 0.5,
-      "direction": "down",
+      "value": 2.0,
+      "direction": "up",
       "unit": "% QoQ",
       "history": [
         [
@@ -5577,13 +5577,18 @@
         [
           "2025-10-01",
           0.5
+        ],
+        [
+          "2026-01-01",
+          2.0
         ]
       ],
       "source": "fred:A191RL1Q225SBEA",
+      "change_ytd_pct": 0.0,
       "note": "Quarterly, annualized \u2014 BEA",
-      "zscore": -0.3,
+      "zscore": -0.1,
       "signal": "NORMAL",
-      "trend": "down"
+      "trend": "up"
     },
     "us_cpi": {
       "name": "US CPI YoY",

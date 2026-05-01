@@ -1,12 +1,12 @@
 {
-  "updated": "2026-04-30T07:42:50Z",
+  "updated": "2026-05-01T07:42:24Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 106.88,
-      "direction": "up",
+      "value": 105.07,
+      "direction": "down",
       "unit": "$/bbl",
       "history": [
         [
@@ -2318,14 +2318,14 @@
           94.4
         ],
         [
-          "2026-04-29",
-          106.88
+          "2026-04-30",
+          105.07
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 86.5,
-      "zscore": 2.5,
-      "signal": "EXTREME",
+      "change_ytd_pct": 83.3,
+      "zscore": 2.4,
+      "signal": "ELEVATED",
       "trend": "up"
     },
     "brent": {
@@ -4659,7 +4659,7 @@
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 2.647,
+      "value": 2.767,
       "direction": "up",
       "unit": "$/MMBtu",
       "history": [
@@ -6972,13 +6972,13 @@
           2.523
         ],
         [
-          "2026-04-29",
-          2.647
+          "2026-04-30",
+          2.767
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -26.8,
-      "zscore": -0.4,
+      "change_ytd_pct": -23.5,
+      "zscore": -0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
