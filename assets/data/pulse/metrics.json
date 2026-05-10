@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-09T07:30:50Z",
+  "updated": "2026-05-10T07:40:47Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -462,11 +462,11 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 80186.7656,
+      "value": 80664.3672,
       "direction": "up",
       "unit": "$",
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -9.6,
+      "change_ytd_pct": -9.1,
       "zscore": 1.6,
       "signal": "ELEVATED",
       "trend": "up"
