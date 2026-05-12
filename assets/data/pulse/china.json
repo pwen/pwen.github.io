@@ -1,12 +1,12 @@
 {
-  "updated": "2026-05-11T08:06:38Z",
+  "updated": "2026-05-12T07:54:03Z",
   "metrics": {
     "csi300": {
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
       "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
-      "value": 4871.9102,
-      "direction": "down",
+      "value": 4951.8398,
+      "direction": "up",
       "unit": "index",
       "history": [
         [
@@ -1064,20 +1064,24 @@
         [
           "2026-05-08",
           4871.9102
+        ],
+        [
+          "2026-05-11",
+          4951.8398
         ]
       ],
       "source": "yfinance:000300.SS",
-      "change_ytd_pct": 3.3,
-      "zscore": 1.4,
-      "signal": "NORMAL",
+      "change_ytd_pct": 5.0,
+      "zscore": 1.5,
+      "signal": "ELEVATED",
       "trend": "up"
     },
     "hsi": {
       "name": "Hang Seng Index",
       "name_zh": "\u6052\u751f\u6307\u6570",
       "description": "Hong Kong's benchmark: the offshore window into Chinese equities. More sensitive to global capital flows and foreign sentiment than onshore CSI 300.",
-      "value": 26393.7109,
-      "direction": "down",
+      "value": 26406.8398,
+      "direction": "up",
       "unit": "index",
       "history": [
         [
@@ -3391,10 +3395,14 @@
         [
           "2026-05-08",
           26393.7109
+        ],
+        [
+          "2026-05-11",
+          26406.8398
         ]
       ],
       "source": "yfinance:^HSI",
-      "change_ytd_pct": 0.2,
+      "change_ytd_pct": 0.3,
       "zscore": 0.6,
       "signal": "NORMAL",
       "trend": "up"
@@ -3403,7 +3411,7 @@
       "name": "China Internet ETF (KWEB)",
       "name_zh": "\u4e2d\u6982\u4e92\u8054\u7f51ETF",
       "description": "KraneShares China Internet ETF: Alibaba, Tencent, PDD, etc. Rising = foreign confidence in Chinese tech improving.",
-      "value": 29.55,
+      "value": 29.59,
       "direction": "up",
       "unit": "$",
       "history": [
@@ -3937,7 +3945,7 @@
         ],
         [
           "2017-10-27",
-          44.492
+          44.4921
         ],
         [
           "2017-11-03",
@@ -4017,7 +4025,7 @@
         ],
         [
           "2018-03-16",
-          53.8797
+          53.8798
         ],
         [
           "2018-03-23",
@@ -4293,7 +4301,7 @@
         ],
         [
           "2019-07-12",
-          35.9194
+          35.9195
         ],
         [
           "2019-07-19",
@@ -4365,7 +4373,7 @@
         ],
         [
           "2019-11-15",
-          38.4227
+          38.4228
         ],
         [
           "2019-11-22",
@@ -4449,7 +4457,7 @@
         ],
         [
           "2020-04-09",
-          38.2299
+          38.2298
         ],
         [
           "2020-04-17",
@@ -4549,7 +4557,7 @@
         ],
         [
           "2020-10-02",
-          56.2919
+          56.2918
         ],
         [
           "2020-10-09",
@@ -4581,7 +4589,7 @@
         ],
         [
           "2020-11-27",
-          64.5405
+          64.5404
         ],
         [
           "2020-12-04",
@@ -4617,7 +4625,7 @@
         ],
         [
           "2021-01-29",
-          72.4614
+          72.4615
         ],
         [
           "2021-02-05",
@@ -4725,7 +4733,7 @@
         ],
         [
           "2021-08-06",
-          40.6349
+          40.6348
         ],
         [
           "2021-08-13",
@@ -4969,7 +4977,7 @@
         ],
         [
           "2022-10-07",
-          22.1639
+          22.164
         ],
         [
           "2022-10-14",
@@ -5049,7 +5057,7 @@
         ],
         [
           "2023-02-24",
-          25.8997
+          25.8998
         ],
         [
           "2023-03-03",
@@ -5718,13 +5726,17 @@
         [
           "2026-05-08",
           29.55
+        ],
+        [
+          "2026-05-11",
+          29.59
         ]
       ],
       "source": "yfinance:KWEB",
-      "change_ytd_pct": -17.1,
+      "change_ytd_pct": -17.0,
       "zscore": -0.5,
       "signal": "NORMAL",
-      "trend": "down"
+      "trend": "up"
     },
     "china_pmi": {
       "name": "China Mfg PMI",
