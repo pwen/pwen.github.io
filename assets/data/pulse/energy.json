@@ -1,12 +1,12 @@
 {
-  "updated": "2026-05-19T08:06:57Z",
+  "updated": "2026-05-20T08:06:48Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 108.66,
-      "direction": "up",
+      "value": 107.77,
+      "direction": "down",
       "unit": "$/bbl",
       "history": [
         [
@@ -2322,12 +2322,12 @@
           105.42
         ],
         [
-          "2026-05-18",
-          108.66
+          "2026-05-19",
+          107.77
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 89.6,
+      "change_ytd_pct": 88.0,
       "zscore": 2.5,
       "signal": "EXTREME",
       "trend": "up"
@@ -2336,8 +2336,8 @@
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 112.1,
-      "direction": "up",
+      "value": 111.28,
+      "direction": "down",
       "unit": "$/bbl",
       "history": [
         [
@@ -4653,21 +4653,21 @@
           109.26
         ],
         [
-          "2026-05-18",
-          112.1
+          "2026-05-19",
+          111.28
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 84.5,
+      "change_ytd_pct": 83.2,
       "zscore": 2.4,
       "signal": "ELEVATED",
-      "trend": "flat"
+      "trend": "down"
     },
     "natgas": {
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 3.024,
+      "value": 3.114,
       "direction": "up",
       "unit": "$/MMBtu",
       "history": [
@@ -6984,15 +6984,15 @@
           2.96
         ],
         [
-          "2026-05-18",
-          3.024
+          "2026-05-19",
+          3.114
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -16.4,
-      "zscore": -0.1,
+      "change_ytd_pct": -13.9,
+      "zscore": -0.0,
       "signal": "NORMAL",
-      "trend": "down"
+      "trend": "up"
     },
     "energy_cpi": {
       "name": "Energy Services CPI YoY",
