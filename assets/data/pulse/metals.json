@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-01T08:47:37Z",
+  "updated": "2026-06-02T08:29:23Z",
   "metrics": {
     "gold": {
       "name": "Gold",
       "name_zh": "\u9ec4\u91d1",
       "description": "Spot gold price. Rising = inflation hedge demand / loss of confidence in fiat. Central banks buying gold = voting to diversify away from dollars.",
-      "value": 4560.5,
-      "direction": "up",
+      "value": 4475.2002,
+      "direction": "down",
       "unit": "$/oz",
       "history": [
         [
@@ -2320,11 +2320,15 @@
         [
           "2026-05-29",
           4560.5
+        ],
+        [
+          "2026-06-01",
+          4475.2002
         ]
       ],
       "source": "yfinance:GC=F",
-      "change_ytd_pct": 5.7,
-      "zscore": 3.1,
+      "change_ytd_pct": 3.7,
+      "zscore": 2.9,
       "signal": "EXTREME",
       "trend": "down"
     },
@@ -2332,7 +2336,7 @@
       "name": "Silver",
       "name_zh": "\u767d\u94f6",
       "description": "Both monetary and industrial metal (solar, electronics). Market in structural deficit. Outperforms gold in bull runs, more volatile.",
-      "value": 75.616,
+      "value": 75.007,
       "direction": "down",
       "unit": "$/oz",
       "history": [
@@ -4647,20 +4651,24 @@
         [
           "2026-05-29",
           75.616
+        ],
+        [
+          "2026-06-01",
+          75.007
         ]
       ],
       "source": "yfinance:SI=F",
-      "change_ytd_pct": 7.2,
-      "zscore": 3.8,
+      "change_ytd_pct": 6.3,
+      "zscore": 3.7,
       "signal": "EXTREME",
-      "trend": "up"
+      "trend": "down"
     },
     "copper": {
       "name": "Copper",
       "name_zh": "\u94dc",
       "description": "Electrification bellwether: EVs, data centers, wind turbines, grid upgrades. Supply structurally constrained (mines take 7-15 years). Rising = industrial and green demand outpacing supply.",
-      "value": 6.3595,
-      "direction": "down",
+      "value": 6.524,
+      "direction": "up",
       "unit": "$/lb",
       "history": [
         [
@@ -6974,11 +6982,15 @@
         [
           "2026-05-29",
           6.3595
+        ],
+        [
+          "2026-06-01",
+          6.524
         ]
       ],
       "source": "yfinance:HG=F",
-      "change_ytd_pct": 12.8,
-      "zscore": 2.9,
+      "change_ytd_pct": 15.7,
+      "zscore": 3.0,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -6986,7 +6998,7 @@
       "name": "Aluminum",
       "name_zh": "\u94dd",
       "description": "Aluminum futures. The most China-sensitive industrial metal (~60% of global production). Proxy for Chinese industrial activity and global construction/infrastructure demand.",
-      "value": 3917.75,
+      "value": 3980.75,
       "direction": "up",
       "unit": "$/t",
       "history": [
@@ -9281,11 +9293,15 @@
         [
           "2026-05-29",
           3917.75
+        ],
+        [
+          "2026-06-01",
+          3980.75
         ]
       ],
       "source": "yfinance:ALI=F",
-      "change_ytd_pct": 33.3,
-      "zscore": 3.7,
+      "change_ytd_pct": 35.5,
+      "zscore": 3.8,
       "signal": "EXTREME",
       "trend": "up"
     },
@@ -9293,8 +9309,8 @@
       "name": "Uranium (URA ETF)",
       "name_zh": "\u94c0",
       "description": "Global X Uranium ETF. Proxy for nuclear renaissance: 30+ countries committed to tripling capacity. Supply constrained, Russia controls 40% of enrichment.",
-      "value": 50.76,
-      "direction": "up",
+      "value": 50.54,
+      "direction": "down",
       "unit": "$",
       "history": [
         [
@@ -9455,7 +9471,7 @@
         ],
         [
           "2016-02-05",
-          9.1744
+          9.1745
         ],
         [
           "2016-02-12",
@@ -10359,7 +10375,7 @@
         ],
         [
           "2020-06-05",
-          9.0777
+          9.0778
         ],
         [
           "2020-06-12",
@@ -10439,7 +10455,7 @@
         ],
         [
           "2020-10-23",
-          9.0886
+          9.0887
         ],
         [
           "2020-10-30",
@@ -10447,7 +10463,7 @@
         ],
         [
           "2020-11-06",
-          9.0886
+          9.0887
         ],
         [
           "2020-11-13",
@@ -10675,7 +10691,7 @@
         ],
         [
           "2021-12-10",
-          19.8653
+          19.8652
         ],
         [
           "2021-12-17",
@@ -10895,7 +10911,7 @@
         ],
         [
           "2022-12-30",
-          17.5793
+          17.5792
         ],
         [
           "2023-01-06",
@@ -11079,7 +11095,7 @@
         ],
         [
           "2023-11-17",
-          25.082
+          25.0819
         ],
         [
           "2023-11-24",
@@ -11608,19 +11624,23 @@
         [
           "2026-05-29",
           50.76
+        ],
+        [
+          "2026-06-01",
+          50.54
         ]
       ],
       "source": "yfinance:URA",
-      "change_ytd_pct": 10.2,
+      "change_ytd_pct": 9.7,
       "zscore": 3.0,
       "signal": "EXTREME",
-      "trend": "up"
+      "trend": "down"
     },
     "remx": {
       "name": "Rare Earth ETF (REMX)",
       "name_zh": "\u7a00\u571fETF",
       "description": "VanEck Rare Earth/Strategic Metals ETF. Proxy for rare earth supply chain. China controls ~70% of processing. Critical for EV motors, wind turbines, defense, and AI hardware.",
-      "value": 99.63,
+      "value": 99.45,
       "direction": "down",
       "unit": "$",
       "history": [
@@ -11698,7 +11718,7 @@
         ],
         [
           "2015-09-11",
-          36.3947
+          36.3946
         ],
         [
           "2015-09-18",
@@ -11954,7 +11974,7 @@
         ],
         [
           "2016-12-02",
-          39.2089
+          39.209
         ],
         [
           "2016-12-09",
@@ -12018,7 +12038,7 @@
         ],
         [
           "2017-03-24",
-          40.3587
+          40.3586
         ],
         [
           "2017-03-31",
@@ -12158,11 +12178,11 @@
         ],
         [
           "2017-11-24",
-          65.0865
+          65.0866
         ],
         [
           "2017-12-01",
-          64.5875
+          64.5874
         ],
         [
           "2017-12-08",
@@ -12202,7 +12222,7 @@
         ],
         [
           "2018-02-09",
-          63.7913
+          63.7912
         ],
         [
           "2018-02-16",
@@ -12510,7 +12530,7 @@
         ],
         [
           "2019-08-02",
-          35.5951
+          35.595
         ],
         [
           "2019-08-09",
@@ -12574,7 +12594,7 @@
         ],
         [
           "2019-11-22",
-          32.6114
+          32.6113
         ],
         [
           "2019-11-29",
@@ -12726,7 +12746,7 @@
         ],
         [
           "2020-08-14",
-          37.1567
+          37.1568
         ],
         [
           "2020-08-21",
@@ -13935,10 +13955,14 @@
         [
           "2026-05-29",
           99.63
+        ],
+        [
+          "2026-06-01",
+          99.45
         ]
       ],
       "source": "yfinance:REMX",
-      "change_ytd_pct": 29.8,
+      "change_ytd_pct": 29.5,
       "zscore": 1.9,
       "signal": "ELEVATED",
       "trend": "up"
