@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-09T08:09:36Z",
+  "updated": "2026-06-10T08:19:09Z",
   "metrics": {
     "vix": {
       "name": "VIX",
@@ -2336,7 +2336,7 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 63090.5898,
+      "value": 61643.7812,
       "direction": "down",
       "unit": "$",
       "history": [
@@ -4653,12 +4653,12 @@
           63239.5195
         ],
         [
-          "2026-06-08",
-          63090.5898
+          "2026-06-09",
+          61643.7812
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -28.9,
+      "change_ytd_pct": -30.5,
       "zscore": 1.0,
       "signal": "NORMAL",
       "trend": "down"
