@@ -1,12 +1,12 @@
 {
-  "updated": "2026-06-10T08:19:09Z",
+  "updated": "2026-06-11T08:30:10Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 18.92,
-      "direction": "down",
+      "value": 19.87,
+      "direction": "up",
       "unit": "index",
       "history": [
         [
@@ -2322,13 +2322,13 @@
           21.51
         ],
         [
-          "2026-06-08",
-          18.92
+          "2026-06-09",
+          19.87
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 30.4,
-      "zscore": 0.1,
+      "change_ytd_pct": 36.9,
+      "zscore": 0.2,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -2336,7 +2336,7 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 61643.7812,
+      "value": 61449.2891,
       "direction": "down",
       "unit": "$",
       "history": [
@@ -4653,12 +4653,12 @@
           63239.5195
         ],
         [
-          "2026-06-09",
-          61643.7812
+          "2026-06-10",
+          61449.2891
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -30.5,
+      "change_ytd_pct": -30.7,
       "zscore": 1.0,
       "signal": "NORMAL",
       "trend": "down"
@@ -5598,7 +5598,7 @@
       "name": "US CPI YoY",
       "name_zh": "\u7f8e\u56fdCPI\uff08\u540c\u6bd4\uff09",
       "description": "Headline consumer price inflation, year-over-year. The Fed's dual mandate target is 2%. Above 3% = hawkish pressure, below 2% = rate cut runway. Drives gold, bonds, and dollar.",
-      "value": 3.9,
+      "value": 4.3,
       "direction": "up",
       "unit": "% YoY",
       "history": [
@@ -6077,12 +6077,16 @@
         [
           "2026-04-01",
           3.9
+        ],
+        [
+          "2026-05-01",
+          4.3
         ]
       ],
       "source": "fred:CPIAUCSL",
-      "change_ytd_pct": 39.3,
+      "change_ytd_pct": 53.6,
       "note": "Monthly, lagged ~2 weeks \u2014 BLS",
-      "zscore": 0.3,
+      "zscore": 0.5,
       "signal": "NORMAL",
       "trend": "up"
     },
