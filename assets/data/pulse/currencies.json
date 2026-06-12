@@ -1,18 +1,14 @@
 {
-  "updated": "2026-06-11T08:30:10Z",
+  "updated": "2026-06-12T08:28:07Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
       "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
-      "value": 99.91,
+      "value": 99.86,
       "direction": "down",
       "unit": "index",
       "history": [
-        [
-          "2015-05-15",
-          93.14
-        ],
         [
           "2015-05-22",
           96.01
@@ -2322,8 +2318,8 @@
           100.07
         ],
         [
-          "2026-06-09",
-          99.91
+          "2026-06-11",
+          99.86
         ]
       ],
       "source": "yfinance:DX-Y.NYB",
@@ -2336,14 +2332,10 @@
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
-      "value": 1.1535,
+      "value": 1.1536,
       "direction": "up",
       "unit": "rate",
       "history": [
-        [
-          "2015-05-15",
-          1.1405
-        ],
         [
           "2015-05-22",
           1.1112
@@ -4653,8 +4645,8 @@
           1.1613
         ],
         [
-          "2026-06-10",
-          1.1535
+          "2026-06-11",
+          1.1536
         ]
       ],
       "source": "yfinance:EURUSD=X",
@@ -4671,10 +4663,6 @@
       "direction": "up",
       "unit": "rate",
       "history": [
-        [
-          "2015-05-15",
-          6.1916
-        ],
         [
           "2015-05-22",
           6.1868
@@ -6984,7 +6972,7 @@
           6.7735
         ],
         [
-          "2026-06-10",
+          "2026-06-11",
           6.7725
         ]
       ],
@@ -6998,14 +6986,10 @@
       "name": "USD/JPY",
       "name_zh": "\u7f8e\u5143/\u65e5\u5143",
       "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
-      "value": 160.384,
+      "value": 160.527,
       "direction": "up",
       "unit": "rate",
       "history": [
-        [
-          "2015-05-15",
-          119.191
-        ],
         [
           "2015-05-22",
           121.039
@@ -9315,13 +9299,13 @@
           159.99
         ],
         [
-          "2026-06-10",
-          160.384
+          "2026-06-11",
+          160.527
         ]
       ],
       "source": "yfinance:JPY=X",
-      "change_ytd_pct": 2.3,
-      "zscore": 1.9,
+      "change_ytd_pct": 2.4,
+      "zscore": 2.0,
       "signal": "ELEVATED",
       "trend": "up"
     },
