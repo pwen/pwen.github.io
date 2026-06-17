@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-16T08:53:24Z",
+  "updated": "2026-06-17T08:42:12Z",
   "metrics": {
     "fed_balance_sheet": {
       "name": "Fed Balance Sheet",
@@ -9,10 +9,6 @@
       "direction": "up",
       "unit": "$T",
       "history": [
-        [
-          "2015-05-20",
-          4.48
-        ],
         [
           "2015-05-27",
           4.46
@@ -2524,10 +2520,6 @@
       "unit": "$B",
       "history": [
         [
-          "2015-05-20",
-          181.6
-        ],
-        [
           "2015-05-27",
           175.6
         ],
@@ -4846,7 +4838,7 @@
       "name": "ON RRP Usage",
       "name_zh": "\u9694\u591c\u9006\u56de\u8d2d\u4f7f\u7528\u91cf",
       "description": "Cash parked at the Fed's overnight reverse repo facility. High = excess liquidity sloshing around. Draining toward zero = liquidity cushion gone, markets more fragile. Peaked at ~$2.6T in late 2022, now near zero.",
-      "value": 0.6,
+      "value": 10.7,
       "direction": "up",
       "unit": "$B",
       "history": [
@@ -7163,13 +7155,13 @@
           0.5
         ],
         [
-          "2026-06-15",
-          0.6
+          "2026-06-16",
+          10.7
         ]
       ],
       "source": "fred:RRPONTSYD",
-      "change_ytd_pct": -89.5,
-      "zscore": -0.7,
+      "change_ytd_pct": 87.7,
+      "zscore": -0.6,
       "signal": "NORMAL",
       "trend": "up"
     },
@@ -7181,10 +7173,6 @@
       "direction": "up",
       "unit": "$T",
       "history": [
-        [
-          "2015-05-20",
-          2.64
-        ],
         [
           "2015-05-27",
           2.51
