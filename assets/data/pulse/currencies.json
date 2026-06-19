@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-18T08:30:35Z",
+  "updated": "2026-06-19T08:44:40Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -9,10 +9,6 @@
       "direction": "up",
       "unit": "index",
       "history": [
-        [
-          "2015-05-22",
-          96.01
-        ],
         [
           "2015-05-29",
           96.91
@@ -2336,14 +2332,10 @@
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
-      "value": 1.161,
-      "direction": "up",
+      "value": 1.1507,
+      "direction": "down",
       "unit": "rate",
       "history": [
-        [
-          "2015-05-22",
-          1.1112
-        ],
         [
           "2015-05-29",
           1.096
@@ -4653,13 +4645,13 @@
           1.1576
         ],
         [
-          "2026-06-17",
-          1.161
+          "2026-06-18",
+          1.1507
         ]
       ],
       "source": "yfinance:EURUSD=X",
-      "change_ytd_pct": -1.2,
-      "zscore": 0.7,
+      "change_ytd_pct": -2.1,
+      "zscore": 0.5,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -4671,10 +4663,6 @@
       "direction": "up",
       "unit": "rate",
       "history": [
-        [
-          "2015-05-22",
-          6.1868
-        ],
         [
           "2015-05-29",
           6.1912
@@ -6984,7 +6972,7 @@
           6.7755
         ],
         [
-          "2026-06-17",
+          "2026-06-18",
           6.7572
         ]
       ],
@@ -6998,14 +6986,10 @@
       "name": "USD/JPY",
       "name_zh": "\u7f8e\u5143/\u65e5\u5143",
       "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
-      "value": 160.419,
+      "value": 160.6,
       "direction": "up",
       "unit": "rate",
       "history": [
-        [
-          "2015-05-22",
-          121.039
-        ],
         [
           "2015-05-29",
           123.82
@@ -9315,15 +9299,15 @@
           160.13
         ],
         [
-          "2026-06-17",
-          160.419
+          "2026-06-18",
+          160.6
         ]
       ],
       "source": "yfinance:JPY=X",
-      "change_ytd_pct": 2.4,
+      "change_ytd_pct": 2.5,
       "zscore": 1.9,
       "signal": "ELEVATED",
-      "trend": "flat"
+      "trend": "up"
     },
     "usd_reserves_share": {
       "name": "USD Share of FX Reserves",

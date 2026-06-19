@@ -1,18 +1,14 @@
 {
-  "updated": "2026-06-18T08:30:35Z",
+  "updated": "2026-06-19T08:44:40Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 76.79,
-      "direction": "up",
+      "value": 76.6,
+      "direction": "down",
       "unit": "$/bbl",
       "history": [
-        [
-          "2015-05-22",
-          59.72
-        ],
         [
           "2015-05-29",
           60.3
@@ -2322,12 +2318,12 @@
           84.88
         ],
         [
-          "2026-06-17",
-          76.79
+          "2026-06-18",
+          76.6
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 34.0,
+      "change_ytd_pct": 33.6,
       "zscore": 0.7,
       "signal": "NORMAL",
       "trend": "down"
@@ -2336,14 +2332,10 @@
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 79.55,
+      "value": 79.85,
       "direction": "up",
       "unit": "$/bbl",
       "history": [
-        [
-          "2015-05-22",
-          65.37
-        ],
         [
           "2015-05-29",
           65.56
@@ -4653,12 +4645,12 @@
           87.33
         ],
         [
-          "2026-06-17",
-          79.55
+          "2026-06-18",
+          79.85
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 30.9,
+      "change_ytd_pct": 31.4,
       "zscore": 0.6,
       "signal": "NORMAL",
       "trend": "down"
@@ -4667,14 +4659,10 @@
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 3.145,
-      "direction": "down",
+      "value": 3.233,
+      "direction": "up",
       "unit": "$/MMBtu",
       "history": [
-        [
-          "2015-05-22",
-          2.887
-        ],
         [
           "2015-05-29",
           2.642
@@ -6984,13 +6972,13 @@
           3.12
         ],
         [
-          "2026-06-17",
-          3.145
+          "2026-06-18",
+          3.233
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -13.1,
-      "zscore": -0.0,
+      "change_ytd_pct": -10.6,
+      "zscore": 0.0,
       "signal": "NORMAL",
       "trend": "up"
     },
