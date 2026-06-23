@@ -1,11 +1,11 @@
 {
-  "updated": "2026-06-22T08:59:00Z",
+  "updated": "2026-06-23T08:08:39Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
       "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
-      "value": 100.85,
+      "value": 101.02,
       "direction": "up",
       "unit": "index",
       "history": [
@@ -2320,10 +2320,14 @@
         [
           "2026-06-18",
           100.85
+        ],
+        [
+          "2026-06-22",
+          101.02
         ]
       ],
       "source": "yfinance:DX-Y.NYB",
-      "change_ytd_pct": 2.5,
+      "change_ytd_pct": 2.6,
       "zscore": 0.5,
       "signal": "NORMAL",
       "trend": "up"
@@ -2332,8 +2336,8 @@
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
-      "value": 1.1459,
-      "direction": "down",
+      "value": 1.1463,
+      "direction": "up",
       "unit": "rate",
       "history": [
         [
@@ -4647,10 +4651,14 @@
         [
           "2026-06-19",
           1.1459
+        ],
+        [
+          "2026-06-22",
+          1.1463
         ]
       ],
       "source": "yfinance:EURUSD=X",
-      "change_ytd_pct": -2.5,
+      "change_ytd_pct": -2.4,
       "zscore": 0.5,
       "signal": "NORMAL",
       "trend": "down"
@@ -6974,6 +6982,10 @@
         [
           "2026-06-19",
           6.7686
+        ],
+        [
+          "2026-06-22",
+          6.7686
         ]
       ],
       "source": "yfinance:CNY=X",
@@ -6986,7 +6998,7 @@
       "name": "USD/JPY",
       "name_zh": "\u7f8e\u5143/\u65e5\u5143",
       "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
-      "value": 161.289,
+      "value": 161.433,
       "direction": "up",
       "unit": "rate",
       "history": [
@@ -9301,10 +9313,14 @@
         [
           "2026-06-19",
           161.289
+        ],
+        [
+          "2026-06-22",
+          161.433
         ]
       ],
       "source": "yfinance:JPY=X",
-      "change_ytd_pct": 2.9,
+      "change_ytd_pct": 3.0,
       "zscore": 2.0,
       "signal": "ELEVATED",
       "trend": "up"
