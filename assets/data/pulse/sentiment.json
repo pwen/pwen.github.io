@@ -1,18 +1,14 @@
 {
-  "updated": "2026-06-25T08:05:14Z",
+  "updated": "2026-06-26T08:10:13Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 18.63,
-      "direction": "down",
+      "value": 18.89,
+      "direction": "up",
       "unit": "index",
       "history": [
-        [
-          "2015-05-29",
-          13.84
-        ],
         [
           "2015-06-05",
           14.21
@@ -2322,12 +2318,12 @@
           16.4
         ],
         [
-          "2026-06-24",
-          18.63
+          "2026-06-25",
+          18.89
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 28.4,
+      "change_ytd_pct": 30.2,
       "zscore": 0.1,
       "signal": "NORMAL",
       "trend": "up"
@@ -2336,7 +2332,7 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 60995.1328,
+      "value": 59721.6758,
       "direction": "down",
       "unit": "$",
       "history": [
@@ -4653,12 +4649,12 @@
           63237.5391
         ],
         [
-          "2026-06-24",
-          60995.1328
+          "2026-06-25",
+          59721.6758
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -31.3,
+      "change_ytd_pct": -32.7,
       "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "down"
@@ -5406,7 +5402,7 @@
       "name": "US Real GDP Growth",
       "name_zh": "\u7f8e\u56fd\u5b9e\u9645GDP\u589e\u901f",
       "description": "Real GDP growth rate (SAAR). The headline US growth number. Above 2% = solid, above 3% = strong, below 0% for 2 consecutive quarters = recession.",
-      "value": 1.6,
+      "value": 2.1,
       "direction": "up",
       "unit": "% QoQ",
       "history": [
@@ -5584,7 +5580,7 @@
         ],
         [
           "2026-01-01",
-          1.6
+          2.1
         ]
       ],
       "source": "fred:A191RL1Q225SBEA",
