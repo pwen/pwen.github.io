@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T08:05:14Z",
+  "updated": "2026-06-29T08:35:22Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -2332,7 +2332,7 @@
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
-      "value": 1.139,
+      "value": 1.1362,
       "direction": "up",
       "unit": "rate",
       "history": [
@@ -4646,11 +4646,11 @@
         ],
         [
           "2026-06-26",
-          1.139
+          1.1362
         ]
       ],
       "source": "yfinance:EURUSD=X",
-      "change_ytd_pct": -3.1,
+      "change_ytd_pct": -3.3,
       "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "down"

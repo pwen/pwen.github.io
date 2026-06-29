@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T08:05:14Z",
+  "updated": "2026-06-29T08:35:22Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
@@ -2332,7 +2332,7 @@
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 72.6,
+      "value": 71.99,
       "direction": "down",
       "unit": "$/bbl",
       "history": [
@@ -4646,12 +4646,12 @@
         ],
         [
           "2026-06-26",
-          72.6
+          71.99
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 19.5,
-      "zscore": 0.3,
+      "change_ytd_pct": 18.5,
+      "zscore": 0.2,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -4659,7 +4659,7 @@
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 3.279,
+      "value": 3.231,
       "direction": "down",
       "unit": "$/MMBtu",
       "history": [
@@ -6973,12 +6973,12 @@
         ],
         [
           "2026-06-26",
-          3.279
+          3.231
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -9.4,
-      "zscore": 0.1,
+      "change_ytd_pct": -10.7,
+      "zscore": 0.0,
       "signal": "NORMAL",
       "trend": "up"
     },
