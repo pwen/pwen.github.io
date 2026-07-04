@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T09:47:06Z",
+  "updated": "2026-07-04T09:11:17Z",
   "metrics": {
     "us_10y": {
       "name": "US 10Y Yield",
@@ -10928,8 +10928,8 @@
       "name": "HY Credit Spread (OAS)",
       "name_zh": "\u9ad8\u6536\u76ca\u503a\u5229\u5dee",
       "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% signals recession risk. Leading indicator: when the Fed tightens or liquidity dries up, HY spreads blow out before equities sell off.",
-      "value": 2.74,
-      "direction": "down",
+      "value": 2.75,
+      "direction": "up",
       "unit": "%",
       "history": [
         [
@@ -11557,12 +11557,12 @@
           2.83
         ],
         [
-          "2026-07-01",
-          2.74
+          "2026-07-02",
+          2.75
         ]
       ],
       "source": "fred:BAMLH0A0HYM2",
-      "change_ytd_bp": -9,
+      "change_ytd_bp": -8,
       "zscore": -1.0,
       "signal": "NORMAL",
       "trend": "down"
