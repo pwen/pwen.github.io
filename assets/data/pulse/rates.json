@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-04T09:11:17Z",
+  "updated": "2026-07-05T09:32:19Z",
   "metrics": {
     "us_10y": {
       "name": "US 10Y Yield",
       "name_zh": "\u7f8e\u56fd\u5341\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
       "description": "Benchmark Treasury yield. Rising = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
-      "value": 4.372,
-      "direction": "down",
+      "value": 4.485,
+      "direction": "up",
       "unit": "%",
       "history": [
         [
@@ -2316,13 +2316,17 @@
         [
           "2026-06-26",
           4.372
+        ],
+        [
+          "2026-07-02",
+          4.485
         ]
       ],
       "source": "yfinance:^TNX",
-      "change_ytd_bp": 18,
-      "zscore": 1.4,
-      "signal": "NORMAL",
-      "trend": "flat"
+      "change_ytd_bp": 30,
+      "zscore": 1.5,
+      "signal": "ELEVATED",
+      "trend": "up"
     },
     "jp_10y": {
       "name": "Japan 10Y Yield",

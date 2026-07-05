@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-04T09:11:17Z",
+  "updated": "2026-07-05T09:32:19Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
       "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
-      "value": 100.857,
+      "value": 100.86,
       "direction": "down",
       "unit": "index",
       "source": "yfinance:DX-Y.NYB",
@@ -70,14 +70,14 @@
       "name": "US 10Y Yield",
       "name_zh": "\u7f8e\u56fd\u5341\u5e74\u671f\u56fd\u503a\u6536\u76ca\u7387",
       "description": "Benchmark Treasury yield. Rising = market demanding more compensation to hold US debt. Above 5% is a yellow flag, above 6% likely forces Fed intervention.",
-      "value": 4.372,
-      "direction": "down",
+      "value": 4.485,
+      "direction": "up",
       "unit": "%",
       "source": "yfinance:^TNX",
-      "change_ytd_bp": 18,
-      "zscore": 1.4,
-      "signal": "NORMAL",
-      "trend": "flat"
+      "change_ytd_bp": 30,
+      "zscore": 1.5,
+      "signal": "ELEVATED",
+      "trend": "up"
     },
     "yield_curve": {
       "name": "10Y-2Y Spread",
@@ -463,12 +463,12 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 61485.3008,
+      "value": 62544.1992,
       "direction": "up",
       "unit": "$",
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -30.7,
-      "zscore": 0.9,
+      "change_ytd_pct": -29.5,
+      "zscore": 1.0,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -489,14 +489,14 @@
       "name": "CSI 300",
       "name_zh": "\u6caa\u6df1300",
       "description": "China's benchmark equity index (top 300 A-shares). Rising = domestic and foreign capital returning to Chinese markets.",
-      "value": NaN,
-      "direction": "down",
+      "value": 4842.1699,
+      "direction": "up",
       "unit": "index",
       "source": "yfinance:000300.SS",
-      "change_ytd_pct": NaN,
-      "zscore": NaN,
+      "change_ytd_pct": 2.6,
+      "zscore": 1.2,
       "signal": "NORMAL",
-      "trend": "flat"
+      "trend": "down"
     },
     "hsi": {
       "name": "Hang Seng Index",
