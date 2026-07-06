@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-05T09:32:19Z",
+  "updated": "2026-07-06T11:18:16Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 68.78,
+      "value": 68.69,
       "direction": "up",
       "unit": "$/bbl",
       "history": [
@@ -2318,12 +2318,12 @@
           69.23
         ],
         [
-          "2026-07-03",
-          68.78
+          "2026-07-02",
+          68.69
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 20.0,
+      "change_ytd_pct": 19.8,
       "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "down"
@@ -2332,7 +2332,7 @@
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 72.13,
+      "value": 71.8,
       "direction": "up",
       "unit": "$/bbl",
       "history": [
@@ -4645,12 +4645,12 @@
           71.99
         ],
         [
-          "2026-07-03",
-          72.13
+          "2026-07-02",
+          71.8
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 18.7,
+      "change_ytd_pct": 18.2,
       "zscore": 0.2,
       "signal": "NORMAL",
       "trend": "down"
@@ -4659,8 +4659,8 @@
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 3.245,
-      "direction": "up",
+      "value": 3.196,
+      "direction": "down",
       "unit": "$/MMBtu",
       "history": [
         [
@@ -6972,12 +6972,12 @@
           3.231
         ],
         [
-          "2026-07-03",
-          3.245
+          "2026-07-02",
+          3.196
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -10.3,
+      "change_ytd_pct": -11.7,
       "zscore": 0.0,
       "signal": "NORMAL",
       "trend": "up"
