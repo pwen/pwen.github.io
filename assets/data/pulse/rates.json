@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T11:18:16Z",
+  "updated": "2026-07-07T10:15:11Z",
   "metrics": {
     "us_10y": {
       "name": "US 10Y Yield",
@@ -6266,6 +6266,10 @@
         [
           "2026-07-02",
           0.35
+        ],
+        [
+          "2026-07-06",
+          0.35
         ]
       ],
       "source": "fred:T10Y2Y",
@@ -6278,7 +6282,7 @@
       "name": "US 5Y TIPS (Real Yield)",
       "name_zh": "\u4e94\u5e74\u671f\u5b9e\u9645\u5229\u7387\uff08TIPS\uff09",
       "description": "Real cost of money after inflation. Rising = tighter real conditions, falling = looser. Negative real yields push capital toward gold and hard assets.",
-      "value": 1.98,
+      "value": 1.99,
       "direction": "up",
       "unit": "%",
       "history": [
@@ -8591,12 +8595,12 @@
           1.91
         ],
         [
-          "2026-07-01",
-          1.98
+          "2026-07-02",
+          1.99
         ]
       ],
       "source": "fred:DFII5",
-      "change_ytd_bp": 52,
+      "change_ytd_bp": 53,
       "zscore": 1.4,
       "signal": "NORMAL",
       "trend": "up"
@@ -8605,7 +8609,7 @@
       "name": "10Y Breakeven Inflation",
       "name_zh": "\u5341\u5e74\u671f\u76c8\u4e8f\u5e73\u8861\u901a\u80c0\u7387",
       "description": "Market-implied inflation expectation for the next 10 years. Rising = market pricing higher inflation, falling = disinflation expectations.",
-      "value": 2.23,
+      "value": 2.24,
       "direction": "up",
       "unit": "%",
       "history": [
@@ -10920,10 +10924,14 @@
         [
           "2026-07-02",
           2.23
+        ],
+        [
+          "2026-07-06",
+          2.24
         ]
       ],
       "source": "fred:T10YIE",
-      "change_ytd_bp": -2,
+      "change_ytd_bp": -1,
       "zscore": 0.5,
       "signal": "NORMAL",
       "trend": "down"
@@ -10932,8 +10940,8 @@
       "name": "HY Credit Spread (OAS)",
       "name_zh": "\u9ad8\u6536\u76ca\u503a\u5229\u5dee",
       "description": "High-yield bond spread over Treasuries. Widening = credit stress / risk-off. Tight = complacency. Above 5% signals recession risk. Leading indicator: when the Fed tightens or liquidity dries up, HY spreads blow out before equities sell off.",
-      "value": 2.75,
-      "direction": "up",
+      "value": 2.74,
+      "direction": "down",
       "unit": "%",
       "history": [
         [
@@ -11561,12 +11569,12 @@
           2.83
         ],
         [
-          "2026-07-02",
-          2.75
+          "2026-07-03",
+          2.74
         ]
       ],
       "source": "fred:BAMLH0A0HYM2",
-      "change_ytd_bp": -8,
+      "change_ytd_bp": -9,
       "zscore": -1.0,
       "signal": "NORMAL",
       "trend": "down"
