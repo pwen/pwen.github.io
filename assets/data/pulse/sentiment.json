@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-07T10:15:11Z",
+  "updated": "2026-07-08T09:16:59Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 15.57,
-      "direction": "down",
+      "value": 16.13,
+      "direction": "up",
       "unit": "index",
       "history": [
         [
@@ -2322,13 +2322,13 @@
           16.15
         ],
         [
-          "2026-07-06",
-          15.57
+          "2026-07-07",
+          16.13
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 7.3,
-      "zscore": -0.4,
+      "change_ytd_pct": 11.2,
+      "zscore": -0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -2336,8 +2336,8 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 63995.0156,
-      "direction": "up",
+      "value": 63297.3945,
+      "direction": "down",
       "unit": "$",
       "history": [
         [
@@ -4653,12 +4653,12 @@
           63547.8828
         ],
         [
-          "2026-07-06",
-          63995.0156
+          "2026-07-07",
+          63297.3945
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -27.9,
+      "change_ytd_pct": -28.7,
       "zscore": 1.0,
       "signal": "NORMAL",
       "trend": "down"
