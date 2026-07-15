@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T08:56:14Z",
+  "updated": "2026-07-15T09:02:19Z",
   "metrics": {
     "vix": {
       "name": "VIX",
@@ -2336,8 +2336,8 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 62239.1211,
-      "direction": "down",
+      "value": 64956.1133,
+      "direction": "up",
       "unit": "$",
       "history": [
         [
@@ -4653,12 +4653,12 @@
           63758.2188
         ],
         [
-          "2026-07-13",
-          62239.1211
+          "2026-07-14",
+          64956.1133
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -29.9,
+      "change_ytd_pct": -26.8,
       "zscore": 1.0,
       "signal": "NORMAL",
       "trend": "down"
@@ -5598,8 +5598,8 @@
       "name": "US CPI YoY",
       "name_zh": "\u7f8e\u56fdCPI\uff08\u540c\u6bd4\uff09",
       "description": "Headline consumer price inflation, year-over-year. The Fed's dual mandate target is 2%. Above 3% = hawkish pressure, below 2% = rate cut runway. Drives gold, bonds, and dollar.",
-      "value": 4.3,
-      "direction": "up",
+      "value": 3.7,
+      "direction": "down",
       "unit": "% YoY",
       "history": [
         [
@@ -6077,12 +6077,16 @@
         [
           "2026-05-01",
           4.3
+        ],
+        [
+          "2026-06-01",
+          3.7
         ]
       ],
       "source": "fred:CPIAUCSL",
-      "change_ytd_pct": 53.6,
+      "change_ytd_pct": 32.1,
       "note": "Monthly, lagged ~2 weeks \u2014 BLS",
-      "zscore": 0.5,
+      "zscore": 0.2,
       "signal": "NORMAL",
       "trend": "up"
     },

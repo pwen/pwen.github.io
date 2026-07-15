@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-14T08:56:14Z",
+  "updated": "2026-07-15T09:02:19Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 78.14,
+      "value": 79.34,
       "direction": "up",
       "unit": "$/bbl",
       "history": [
@@ -2322,13 +2322,13 @@
           71.41
         ],
         [
-          "2026-07-13",
-          78.14
+          "2026-07-14",
+          79.34
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 36.3,
-      "zscore": 0.8,
+      "change_ytd_pct": 38.4,
+      "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -2336,7 +2336,7 @@
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 83.3,
+      "value": 84.73,
       "direction": "up",
       "unit": "$/bbl",
       "history": [
@@ -4653,13 +4653,13 @@
           76.01
         ],
         [
-          "2026-07-13",
-          83.3
+          "2026-07-14",
+          84.73
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 37.1,
-      "zscore": 0.8,
+      "change_ytd_pct": 39.5,
+      "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -4667,8 +4667,8 @@
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 2.897,
-      "direction": "down",
+      "value": 2.904,
+      "direction": "up",
       "unit": "$/MMBtu",
       "history": [
         [
@@ -6984,12 +6984,12 @@
           2.94
         ],
         [
-          "2026-07-13",
-          2.897
+          "2026-07-14",
+          2.904
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -19.9,
+      "change_ytd_pct": -19.7,
       "zscore": -0.2,
       "signal": "NORMAL",
       "trend": "flat"
@@ -6998,7 +6998,7 @@
       "name": "Energy Services CPI YoY",
       "name_zh": "\u80fd\u6e90\u670d\u52a1CPI\uff08\u540c\u6bd4\uff09",
       "description": "Year-over-year change in energy services prices (BLS). Rising = energy inflation accelerating. Directly tied to AI data center power demand. Above 7% creates political backlash.",
-      "value": 5.8,
+      "value": 4.5,
       "direction": "down",
       "unit": "% YoY",
       "history": [
@@ -7477,12 +7477,16 @@
         [
           "2026-05-01",
           5.8
+        ],
+        [
+          "2026-06-01",
+          4.5
         ]
       ],
       "source": "fred:CUSR0000SEHF",
-      "change_ytd_pct": -25.6,
+      "change_ytd_pct": -42.3,
       "note": "Monthly, lagged",
-      "zscore": 0.3,
+      "zscore": 0.1,
       "signal": "NORMAL",
       "trend": "down"
     }
