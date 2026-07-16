@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-15T09:02:19Z",
+  "updated": "2026-07-16T09:06:04Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
       "name_zh": "\u539f\u6cb9",
       "description": "WTI crude futures. Rising = supply tightening or demand growth. Politically suppressed via Saudi deals and SPR releases, but geological supply constraints persist.",
-      "value": 79.34,
+      "value": 79.6,
       "direction": "up",
       "unit": "$/bbl",
       "history": [
@@ -2322,12 +2322,12 @@
           71.41
         ],
         [
-          "2026-07-14",
-          79.34
+          "2026-07-15",
+          79.6
         ]
       ],
       "source": "yfinance:CL=F",
-      "change_ytd_pct": 38.4,
+      "change_ytd_pct": 38.9,
       "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "down"
@@ -2336,7 +2336,7 @@
       "name": "Brent Crude",
       "name_zh": "\u5e03\u4f26\u7279\u539f\u6cb9",
       "description": "Brent crude futures \u2014 the global oil benchmark. OPEC+ prices off Brent, not WTI. More geopolitically relevant: Middle East tensions, Russia sanctions, and tanker route disruptions show up here first.",
-      "value": 84.73,
+      "value": 84.95,
       "direction": "up",
       "unit": "$/bbl",
       "history": [
@@ -4653,12 +4653,12 @@
           76.01
         ],
         [
-          "2026-07-14",
-          84.73
+          "2026-07-15",
+          84.95
         ]
       ],
       "source": "yfinance:BZ=F",
-      "change_ytd_pct": 39.5,
+      "change_ytd_pct": 39.8,
       "zscore": 0.9,
       "signal": "NORMAL",
       "trend": "down"
@@ -4667,7 +4667,7 @@
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 2.904,
+      "value": 2.924,
       "direction": "up",
       "unit": "$/MMBtu",
       "history": [
@@ -6984,15 +6984,15 @@
           2.94
         ],
         [
-          "2026-07-14",
-          2.904
+          "2026-07-15",
+          2.924
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -19.7,
+      "change_ytd_pct": -19.2,
       "zscore": -0.2,
       "signal": "NORMAL",
-      "trend": "flat"
+      "trend": "up"
     },
     "energy_cpi": {
       "name": "Energy Services CPI YoY",
