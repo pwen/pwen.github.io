@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-22T09:18:58Z",
+  "updated": "2026-07-23T09:15:48Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
       "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
-      "value": 101.18,
-      "direction": "up",
+      "value": 101.14,
+      "direction": "down",
       "unit": "index",
       "history": [
         [
@@ -2322,8 +2322,8 @@
           100.75
         ],
         [
-          "2026-07-21",
-          101.18
+          "2026-07-22",
+          101.14
         ]
       ],
       "source": "yfinance:DX-Y.NYB",
@@ -2336,7 +2336,7 @@
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
-      "value": 1.1418,
+      "value": 1.1404,
       "direction": "down",
       "unit": "rate",
       "history": [
@@ -4653,13 +4653,13 @@
           1.1445
         ],
         [
-          "2026-07-21",
-          1.1418
+          "2026-07-22",
+          1.1404
         ]
       ],
       "source": "yfinance:EURUSD=X",
-      "change_ytd_pct": -2.8,
-      "zscore": 0.4,
+      "change_ytd_pct": -2.9,
+      "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -4667,8 +4667,8 @@
       "name": "USD/CNY",
       "name_zh": "\u7f8e\u5143/\u4eba\u6c11\u5e01",
       "description": "Dollar-yuan exchange rate. Rising = yuan weakening, falling = yuan strengthening. Below 7.00 signals meaningful capital flow shift toward China.",
-      "value": 6.7725,
-      "direction": "up",
+      "value": 6.7656,
+      "direction": "down",
       "unit": "rate",
       "history": [
         [
@@ -6984,12 +6984,12 @@
           6.7725
         ],
         [
-          "2026-07-21",
-          6.7725
+          "2026-07-22",
+          6.7656
         ]
       ],
       "source": "yfinance:CNY=X",
-      "change_ytd_pct": -3.2,
+      "change_ytd_pct": -3.3,
       "zscore": -0.2,
       "signal": "NORMAL",
       "trend": "flat"
@@ -6998,8 +6998,8 @@
       "name": "USD/JPY",
       "name_zh": "\u7f8e\u5143/\u65e5\u5143",
       "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
-      "value": 162.487,
-      "direction": "down",
+      "value": 163.186,
+      "direction": "up",
       "unit": "rate",
       "history": [
         [
@@ -9315,12 +9315,12 @@
           162.376
         ],
         [
-          "2026-07-21",
-          162.487
+          "2026-07-22",
+          163.186
         ]
       ],
       "source": "yfinance:JPY=X",
-      "change_ytd_pct": 3.7,
+      "change_ytd_pct": 4.1,
       "zscore": 2.0,
       "signal": "ELEVATED",
       "trend": "up"
