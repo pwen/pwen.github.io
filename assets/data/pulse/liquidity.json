@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-23T09:15:48Z",
+  "updated": "2026-07-24T09:12:54Z",
   "metrics": {
     "fed_balance_sheet": {
       "name": "Fed Balance Sheet",
       "name_zh": "\u7f8e\u8054\u50a8\u8d44\u4ea7\u8d1f\u503a\u8868",
       "description": "Total assets held by the Federal Reserve. Rising = QE / liquidity injection, falling = QT / tightening. Treasury market stress forces re-expansion.",
-      "value": 6.74,
+      "value": 6.75,
       "direction": "up",
       "unit": "$T",
       "history": [
@@ -2316,13 +2316,17 @@
         [
           "2026-07-15",
           6.74
+        ],
+        [
+          "2026-07-22",
+          6.75
         ]
       ],
       "source": "fred:WALCL",
-      "change_ytd_pct": 2.6,
+      "change_ytd_pct": 2.7,
       "zscore": 0.3,
       "signal": "NORMAL",
-      "trend": "flat"
+      "trend": "up"
     },
     "debt_to_gdp": {
       "name": "US Debt/GDP",
@@ -2520,8 +2524,8 @@
       "name": "Treasury General Account",
       "name_zh": "\u8d22\u653f\u90e8\u4e00\u822c\u8d26\u6237\uff08TGA\uff09",
       "description": "US government's checking account at the Fed. Drawdowns inject liquidity into markets (bullish for risk assets). Refills drain liquidity.",
-      "value": 756.2,
-      "direction": "down",
+      "value": 829.6,
+      "direction": "up",
       "unit": "$B",
       "history": [
         [
@@ -4831,26 +4835,26 @@
         [
           "2026-07-15",
           756.2
+        ],
+        [
+          "2026-07-22",
+          829.6
         ]
       ],
       "source": "fred:WTREGEN",
-      "change_ytd_pct": -5.0,
-      "zscore": 0.5,
+      "change_ytd_pct": 4.2,
+      "zscore": 0.7,
       "signal": "NORMAL",
-      "trend": "down"
+      "trend": "flat"
     },
     "rrp": {
       "name": "ON RRP Usage",
       "name_zh": "\u9694\u591c\u9006\u56de\u8d2d\u4f7f\u7528\u91cf",
       "description": "Cash parked at the Fed's overnight reverse repo facility. High = excess liquidity sloshing around. Draining toward zero = liquidity cushion gone, markets more fragile. Peaked at ~$2.6T in late 2022, now near zero.",
-      "value": 0.4,
+      "value": 0.9,
       "direction": "up",
       "unit": "$B",
       "history": [
-        [
-          "2015-06-26",
-          86.5
-        ],
         [
           "2015-07-02",
           176.1
@@ -7160,12 +7164,12 @@
           0.1
         ],
         [
-          "2026-07-22",
-          0.4
+          "2026-07-23",
+          0.9
         ]
       ],
       "source": "fred:RRPONTSYD",
-      "change_ytd_pct": -93.0,
+      "change_ytd_pct": -84.2,
       "zscore": -0.7,
       "signal": "NORMAL",
       "trend": "down"
@@ -7174,8 +7178,8 @@
       "name": "Reserve Balances",
       "name_zh": "\u94f6\u884c\u51c6\u5907\u91d1\u4f59\u989d",
       "description": "Bank reserves held at the Fed. Below ~$3T historically triggers repo stress. The floor for 'ample reserves' regime: when reserves get scarce, the Fed is forced to stop QT or restart lending facilities.",
-      "value": 3.14,
-      "direction": "up",
+      "value": 3.06,
+      "direction": "down",
       "unit": "$T",
       "history": [
         [
@@ -9485,11 +9489,15 @@
         [
           "2026-07-15",
           3.14
+        ],
+        [
+          "2026-07-22",
+          3.06
         ]
       ],
       "source": "fred:WRESBAL",
-      "change_ytd_pct": 4.7,
-      "zscore": 0.5,
+      "change_ytd_pct": 2.0,
+      "zscore": 0.4,
       "signal": "NORMAL",
       "trend": "flat"
     }
