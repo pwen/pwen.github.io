@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-24T09:12:54Z",
+  "updated": "2026-07-26T09:05:35Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
       "name_zh": "\u7f8e\u5143\u6307\u6570",
       "description": "Dollar vs a basket of major fiat currencies (euro-heavy). Rising = dollar strengthening, falling = dollar weakening. A relative measure: if all currencies debase together, DXY stays flat.",
-      "value": 101.43,
+      "value": 101.47,
       "direction": "up",
       "unit": "index",
       "history": [
@@ -2318,8 +2318,8 @@
           100.75
         ],
         [
-          "2026-07-23",
-          101.43
+          "2026-07-24",
+          101.47
         ]
       ],
       "source": "yfinance:DX-Y.NYB",
@@ -2332,8 +2332,8 @@
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
-      "value": 1.1412,
-      "direction": "up",
+      "value": 1.1375,
+      "direction": "down",
       "unit": "rate",
       "history": [
         [
@@ -4645,13 +4645,13 @@
           1.1445
         ],
         [
-          "2026-07-23",
-          1.1412
+          "2026-07-24",
+          1.1375
         ]
       ],
       "source": "yfinance:EURUSD=X",
-      "change_ytd_pct": -2.9,
-      "zscore": 0.4,
+      "change_ytd_pct": -3.2,
+      "zscore": 0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -6972,7 +6972,7 @@
           6.7725
         ],
         [
-          "2026-07-23",
+          "2026-07-24",
           6.7725
         ]
       ],
@@ -6986,8 +6986,8 @@
       "name": "USD/JPY",
       "name_zh": "\u7f8e\u5143/\u65e5\u5143",
       "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
-      "value": 163.081,
-      "direction": "down",
+      "value": 163.791,
+      "direction": "up",
       "unit": "rate",
       "history": [
         [
@@ -9299,13 +9299,13 @@
           162.376
         ],
         [
-          "2026-07-23",
-          163.081
+          "2026-07-24",
+          163.791
         ]
       ],
       "source": "yfinance:JPY=X",
-      "change_ytd_pct": 4.1,
-      "zscore": 2.0,
+      "change_ytd_pct": 4.5,
+      "zscore": 2.1,
       "signal": "ELEVATED",
       "trend": "up"
     },
