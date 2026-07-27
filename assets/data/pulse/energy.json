@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T09:05:35Z",
+  "updated": "2026-07-27T10:30:02Z",
   "metrics": {
     "oil": {
       "name": "WTI Crude",
@@ -4659,7 +4659,7 @@
       "name": "Natural Gas",
       "name_zh": "\u5929\u7136\u6c14",
       "description": "Henry Hub natural gas futures. Rising = tightening supply or seasonal/structural demand. AI data centers driving new electricity demand. Also a geopolitical commodity (Russia/Europe, LNG).",
-      "value": 2.888,
+      "value": 2.871,
       "direction": "down",
       "unit": "$/MMBtu",
       "history": [
@@ -6973,11 +6973,11 @@
         ],
         [
           "2026-07-24",
-          2.888
+          2.871
         ]
       ],
       "source": "yfinance:NG=F",
-      "change_ytd_pct": -20.2,
+      "change_ytd_pct": -20.6,
       "zscore": -0.2,
       "signal": "NORMAL",
       "trend": "down"

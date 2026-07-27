@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T09:05:35Z",
+  "updated": "2026-07-27T10:30:02Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -2332,7 +2332,7 @@
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
-      "value": 1.1375,
+      "value": 1.1377,
       "direction": "down",
       "unit": "rate",
       "history": [
@@ -4646,7 +4646,7 @@
         ],
         [
           "2026-07-24",
-          1.1375
+          1.1377
         ]
       ],
       "source": "yfinance:EURUSD=X",
@@ -6986,7 +6986,7 @@
       "name": "USD/JPY",
       "name_zh": "\u7f8e\u5143/\u65e5\u5143",
       "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
-      "value": 163.791,
+      "value": 163.832,
       "direction": "up",
       "unit": "rate",
       "history": [
@@ -9300,7 +9300,7 @@
         ],
         [
           "2026-07-24",
-          163.791
+          163.832
         ]
       ],
       "source": "yfinance:JPY=X",
