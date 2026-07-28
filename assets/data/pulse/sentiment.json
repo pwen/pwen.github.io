@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-27T10:30:02Z",
+  "updated": "2026-07-28T09:28:38Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 18.58,
+      "value": 18.67,
       "direction": "down",
       "unit": "index",
       "history": [
@@ -2318,22 +2318,26 @@
           18.77
         ],
         [
-          "2026-07-24",
-          18.58
+          "2026-07-23",
+          18.7
+        ],
+        [
+          "2026-07-27",
+          18.67
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 28.0,
-      "zscore": 0.0,
+      "change_ytd_pct": 28.7,
+      "zscore": 0.1,
       "signal": "NORMAL",
-      "trend": "up"
+      "trend": "down"
     },
     "btc": {
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 65340.3008,
-      "direction": "up",
+      "value": 63724.8984,
+      "direction": "down",
       "unit": "$",
       "history": [
         [
@@ -4647,13 +4651,17 @@
         [
           "2026-07-26",
           65340.3008
+        ],
+        [
+          "2026-07-27",
+          63724.8984
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -26.4,
+      "change_ytd_pct": -28.2,
       "zscore": 1.0,
       "signal": "NORMAL",
-      "trend": "down"
+      "trend": "up"
     },
     "cb_gold_buying": {
       "name": "Central Bank Gold Buying",
@@ -5403,10 +5411,6 @@
       "unit": "% QoQ",
       "history": [
         [
-          "2015-04-01",
-          2.5
-        ],
-        [
           "2015-07-01",
           1.6
         ],
@@ -5594,10 +5598,6 @@
       "direction": "down",
       "unit": "% YoY",
       "history": [
-        [
-          "2016-06-01",
-          1.1
-        ],
         [
           "2016-07-01",
           0.9
@@ -6090,10 +6090,6 @@
       "direction": "down",
       "unit": "index",
       "history": [
-        [
-          "2015-06-01",
-          96.1
-        ],
         [
           "2015-07-01",
           93.1
