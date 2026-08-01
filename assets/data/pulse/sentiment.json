@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-31T09:35:11Z",
+  "updated": "2026-08-01T08:58:01Z",
   "metrics": {
     "vix": {
       "name": "VIX",
       "name_zh": "\u6050\u614c\u6307\u6570",
       "description": "S&P 500 implied volatility. Below 15 = complacency, above 25 = fear, above 35 = panic. Spikes tend to be short-lived but can signal regime shifts.",
-      "value": 17.09,
+      "value": 15.99,
       "direction": "down",
       "unit": "index",
       "history": [
@@ -2318,13 +2318,13 @@
           18.58
         ],
         [
-          "2026-07-30",
-          17.09
+          "2026-07-31",
+          15.99
         ]
       ],
       "source": "yfinance:^VIX",
-      "change_ytd_pct": 17.8,
-      "zscore": -0.2,
+      "change_ytd_pct": 10.2,
+      "zscore": -0.3,
       "signal": "NORMAL",
       "trend": "down"
     },
@@ -2332,8 +2332,8 @@
       "name": "Bitcoin",
       "name_zh": "\u6bd4\u7279\u5e01",
       "description": "Digital debasement hedge. Correlates with global liquidity: central bank balance sheet expansion = BTC tailwind. Also a barometer of risk appetite.",
-      "value": 64725.3086,
-      "direction": "up",
+      "value": 62813.7461,
+      "direction": "down",
       "unit": "$",
       "history": [
         [
@@ -4649,15 +4649,15 @@
           65340.3008
         ],
         [
-          "2026-07-30",
-          64725.3086
+          "2026-07-31",
+          62813.7461
         ]
       ],
       "source": "yfinance:BTC-USD",
-      "change_ytd_pct": -27.1,
+      "change_ytd_pct": -29.2,
       "zscore": 1.0,
       "signal": "NORMAL",
-      "trend": "up"
+      "trend": "down"
     },
     "cb_gold_buying": {
       "name": "Central Bank Gold Buying",
@@ -6086,8 +6086,8 @@
       "name": "UMich Consumer Sentiment",
       "name_zh": "\u5bc6\u6b47\u6839\u6d88\u8d39\u8005\u4fe1\u5fc3\u6307\u6570",
       "description": "University of Michigan consumer sentiment index. Below 60 = deep pessimism (recession risk), above 80 = confidence. A leading indicator: consumers cut spending before GDP falls.",
-      "value": 44.8,
-      "direction": "down",
+      "value": 49.5,
+      "direction": "up",
       "unit": "index",
       "history": [
         [
@@ -6613,12 +6613,16 @@
         [
           "2026-05-01",
           44.8
+        ],
+        [
+          "2026-06-01",
+          49.5
         ]
       ],
       "source": "fred:UMCSENT",
-      "change_ytd_pct": -20.6,
+      "change_ytd_pct": -12.2,
       "note": "Monthly \u2014 UMich",
-      "zscore": -2.1,
+      "zscore": -1.8,
       "signal": "ELEVATED",
       "trend": "down"
     }
