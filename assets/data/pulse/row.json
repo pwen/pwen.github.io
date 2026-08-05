@@ -1,12 +1,12 @@
 {
-  "updated": "2026-08-04T09:31:11Z",
+  "updated": "2026-08-05T09:28:02Z",
   "metrics": {
     "eem": {
       "name": "MSCI Emerging Markets ETF (EEM)",
       "name_zh": "\u65b0\u5174\u5e02\u573aETF",
       "description": "Broad EM equity benchmark. Rising = capital flowing into developing markets. EM outperforming DM = dollar weakness + fragmentation trade working.",
-      "value": NaN,
-      "direction": "down",
+      "value": 66.0,
+      "direction": "up",
       "unit": "$",
       "history": [
         [
@@ -39,7 +39,7 @@
         ],
         [
           "2015-08-28",
-          26.5071
+          26.5072
         ],
         [
           "2015-09-04",
@@ -71,7 +71,7 @@
         ],
         [
           "2015-10-23",
-          28.4768
+          28.4767
         ],
         [
           "2015-10-30",
@@ -183,7 +183,7 @@
         ],
         [
           "2016-05-06",
-          26.1632
+          26.1631
         ],
         [
           "2016-05-13",
@@ -443,7 +443,7 @@
         ],
         [
           "2017-08-04",
-          35.8693
+          35.8692
         ],
         [
           "2017-08-11",
@@ -667,7 +667,7 @@
         ],
         [
           "2018-08-31",
-          36.0002
+          36.0003
         ],
         [
           "2018-09-07",
@@ -1083,7 +1083,7 @@
         ],
         [
           "2020-08-28",
-          39.9096
+          39.9097
         ],
         [
           "2020-09-04",
@@ -1295,7 +1295,7 @@
         ],
         [
           "2021-09-03",
-          47.2294
+          47.2293
         ],
         [
           "2021-09-10",
@@ -1335,7 +1335,7 @@
         ],
         [
           "2021-11-12",
-          46.2336
+          46.2335
         ],
         [
           "2021-11-19",
@@ -1375,7 +1375,7 @@
         ],
         [
           "2022-01-21",
-          44.2138
+          44.2137
         ],
         [
           "2022-01-28",
@@ -1811,7 +1811,7 @@
         ],
         [
           "2024-02-23",
-          38.5175
+          38.5174
         ],
         [
           "2024-03-01",
@@ -1891,15 +1891,15 @@
         ],
         [
           "2024-07-12",
-          42.5184
+          42.5185
         ],
         [
           "2024-07-19",
-          40.8277
+          40.8276
         ],
         [
           "2024-07-26",
-          40.4646
+          40.4647
         ],
         [
           "2024-08-02",
@@ -2322,22 +2322,22 @@
           64.09
         ],
         [
-          "2026-08-03",
-          NaN
+          "2026-08-04",
+          66.0
         ]
       ],
       "source": "yfinance:EEM",
-      "change_ytd_pct": NaN,
-      "zscore": NaN,
-      "signal": "NORMAL",
-      "trend": "flat"
+      "change_ytd_pct": 18.0,
+      "zscore": 3.2,
+      "signal": "EXTREME",
+      "trend": "down"
     },
     "inda": {
       "name": "India ETF (INDA)",
       "name_zh": "\u5370\u5ea6ETF",
       "description": "iShares MSCI India ETF. Tracks large and mid-cap Indian equities. India is the fastest-growing major economy with strong demographics and manufacturing push (Make in India).",
-      "value": NaN,
-      "direction": "down",
+      "value": 50.53,
+      "direction": "up",
       "unit": "$",
       "history": [
         [
@@ -2694,7 +2694,7 @@
         ],
         [
           "2017-03-17",
-          27.9781
+          27.978
         ],
         [
           "2017-03-24",
@@ -2986,7 +2986,7 @@
         ],
         [
           "2018-08-10",
-          32.1337
+          32.1338
         ],
         [
           "2018-08-17",
@@ -3002,7 +3002,7 @@
         ],
         [
           "2018-09-07",
-          31.4963
+          31.4964
         ],
         [
           "2018-09-14",
@@ -3334,7 +3334,7 @@
         ],
         [
           "2020-04-09",
-          23.6113
+          23.6112
         ],
         [
           "2020-04-17",
@@ -3518,7 +3518,7 @@
         ],
         [
           "2021-02-26",
-          38.185
+          38.1851
         ],
         [
           "2021-03-05",
@@ -4653,21 +4653,21 @@
           49.8
         ],
         [
-          "2026-08-03",
-          NaN
+          "2026-08-04",
+          50.53
         ]
       ],
       "source": "yfinance:INDA",
-      "change_ytd_pct": NaN,
-      "zscore": NaN,
+      "change_ytd_pct": -7.4,
+      "zscore": 1.2,
       "signal": "NORMAL",
-      "trend": "flat"
+      "trend": "up"
     },
     "ilf": {
       "name": "Latin America ETF (ILF)",
       "name_zh": "\u62c9\u7f8eETF",
       "description": "iShares Latin America 40 ETF. Tracks Brazil, Mexico, Chile, Colombia. Commodity-rich region benefiting from nearshoring (Mexico) and resource nationalism.",
-      "value": NaN,
+      "value": 35.08,
       "direction": "down",
       "unit": "$",
       "history": [
@@ -4793,7 +4793,7 @@
         ],
         [
           "2016-02-05",
-          12.465
+          12.4651
         ],
         [
           "2016-02-12",
@@ -5057,7 +5057,7 @@
         ],
         [
           "2017-05-12",
-          20.3502
+          20.3503
         ],
         [
           "2017-05-19",
@@ -5501,7 +5501,7 @@
         ],
         [
           "2019-06-28",
-          22.4247
+          22.4246
         ],
         [
           "2019-07-05",
@@ -5797,7 +5797,7 @@
         ],
         [
           "2020-11-27",
-          18.419
+          18.4189
         ],
         [
           "2020-12-04",
@@ -6805,7 +6805,7 @@
         ],
         [
           "2025-09-26",
-          27.6128
+          27.6127
         ],
         [
           "2025-10-03",
@@ -6984,15 +6984,15 @@
           35.37
         ],
         [
-          "2026-08-03",
-          NaN
+          "2026-08-04",
+          35.08
         ]
       ],
       "source": "yfinance:ILF",
-      "change_ytd_pct": NaN,
-      "zscore": NaN,
-      "signal": "NORMAL",
-      "trend": "flat"
+      "change_ytd_pct": 15.2,
+      "zscore": 3.0,
+      "signal": "EXTREME",
+      "trend": "up"
     }
   }
 }
