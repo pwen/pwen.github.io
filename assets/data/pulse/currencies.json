@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T07:42:01Z",
+  "updated": "2026-08-10T08:18:18Z",
   "metrics": {
     "dxy": {
       "name": "US Dollar Index (DXY)",
@@ -2332,8 +2332,8 @@
       "name": "EUR/USD",
       "name_zh": "\u6b27\u5143/\u7f8e\u5143",
       "description": "Euro vs dollar. DXY's largest component (~58%). Rising = dollar weakening, falling = dollar strengthening.",
-      "value": 1.1562,
-      "direction": "up",
+      "value": 1.1525,
+      "direction": "down",
       "unit": "rate",
       "history": [
         [
@@ -4646,11 +4646,11 @@
         ],
         [
           "2026-08-07",
-          1.1562
+          1.1525
         ]
       ],
       "source": "yfinance:EURUSD=X",
-      "change_ytd_pct": -1.6,
+      "change_ytd_pct": -1.9,
       "zscore": 0.6,
       "signal": "NORMAL",
       "trend": "flat"
@@ -6986,7 +6986,7 @@
       "name": "USD/JPY",
       "name_zh": "\u7f8e\u5143/\u65e5\u5143",
       "description": "Dollar-yen exchange rate. Rising = yen weakening (carry trade expanding, risk-on). Falling = yen strengthening (carry trade unwinding, risk-off). Sharp yen rallies can trigger global liquidation cascades as leveraged carry positions unwind.",
-      "value": 157.745,
+      "value": 158.409,
       "direction": "up",
       "unit": "rate",
       "history": [
@@ -9300,12 +9300,12 @@
         ],
         [
           "2026-08-07",
-          157.745
+          158.409
         ]
       ],
       "source": "yfinance:JPY=X",
-      "change_ytd_pct": 0.6,
-      "zscore": 1.7,
+      "change_ytd_pct": 1.1,
+      "zscore": 1.8,
       "signal": "ELEVATED",
       "trend": "down"
     },
